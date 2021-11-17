@@ -1,0 +1,109 @@
+	body{
+  background-color: #F6F6F6; 
+}
+.brandSection{
+  background-color: #3B99B3;
+  border:1px solid #417482;
+}
+.headerLeft h1{
+  color:#fff;
+  margin: 0px;
+  font-size:28px;
+}
+.header{
+  border-bottom: 2px solid #417482;
+  padding: 10px;
+}
+.headerRight p{
+  margin: 0px;
+  font-size:10px;
+  color:#88CFE3;
+  text-align: right;
+}
+.contentSection{
+  background-color: #fff;
+  padding: 0px;
+}
+.content{
+  background-color: #fff;
+  padding:20px;
+}
+.content h1{
+  font-size:22px;
+  margin:0px;
+}
+.content p{
+  margin: 0px;
+  font-size: 11px;
+}
+.content span{
+  font-size: 11px;
+  color:#F2635F;
+}
+.panelPart{
+  background-color: #fff;
+}
+.panel-body{
+  background-color: #3BA4C2;
+  color:#fff;
+  padding: 5px;
+}
+.panel-footer {
+  background-color:#fff; 
+}
+.panel-footer h1{
+  font-size: 20px;
+  padding:15px;
+}
+.panel-footer p{
+  font-size:13px;
+  background-color: #F6F6F6;
+  padding: 5px;
+}
+.tableSection{
+  background-color: #fff;
+}
+.tableSection h1{
+  font-size:18px;
+  margin:0px;
+}
+th{
+  background-color: #383C3D;
+  color:#fff;
+}
+.table{
+  padding-bottom: 10px;
+  margin:0px;
+  border:1px solid #DDDDDD;
+}
+td:nth-child(2){
+  text-align: left;
+}
+td { 
+  height: 100%;
+}
+.bg {
+ background-color: #f00;
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+}
+.lastSectionleft{
+  background-color: #fff;
+  padding-top:20px;
+}
+.Sectionleft p{
+  border:1px solid #DDDDDD;
+  height:140px;
+  padding: 5px;
+}
+.Sectionleft span{
+  color:#42A5C5;
+}
+.lastPanel{
+  text-align:center;
+}
+.panelLastLeft p,.panelLastRight p{
+  font-size:11px;
+  padding:5px 2px 5px 10px;
+}
