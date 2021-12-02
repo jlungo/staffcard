@@ -1,12 +1,16 @@
 <<<<<<< HEAD
 <?php
-session_start();   
+session_start();  
+
+ //Connecting to the database 
 include("db_connect.php"); 
- 
+
+ //Posting crredential in the database
 if(isset($_POST['login_button'])) {
 	$user_email = trim($_POST['user_email']);
 	$user_password = trim($_POST['password']);
-	
+
+//Verify Email and password
 	$sql = "SELECT * FROM Administrator WHERE Email='$user_email' && Password='$user_password'";
 	$resultset = mysqli_query($db, $sql) or die("database error:". mysqli_error($db));
 	$row = mysqli_fetch_assoc($resultset);	
@@ -20,7 +24,7 @@ if(isset($_POST['login_button'])) {
 		
 	}
 	
-	
+//Sending rejection note	
 	else {				
 		echo "email or password does not exist."; // wrong details 
 	       }		
@@ -49,7 +53,7 @@ if(isset($_POST['login_button'])) {
 		echo "ok";		
 		
 	}
-	//lesson_compelete
+
 	
 	else {				
 		echo "email or password does not exist."; // wrong details 
