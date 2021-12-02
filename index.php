@@ -5,11 +5,10 @@ include_once("db_connect.php");
 $sqluse ="SELECT * FROM Inorg WHERE id=1 ";
 $retrieve = mysqli_query($db,$sqluse);
     while($foundk = mysqli_fetch_array($retrieve))
-	     {
-              $name = $foundk['name'];
-			  $website = $foundk['website'];
-		     
-		 }	
+    {
+        $name = $foundk['name'];
+        $website = $foundk['website'];
+    }	
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +56,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	<h2></h2>		
 	
 	<form class="form-login" method="post" id="login-form">
-		<h2 class="form-login-heading">Login Here</h2><hr />
+		<h2 class="form-login-heading">Login Page</h2><hr />
 		<div id="error">
 		</div>
 		<div class="form-group">
@@ -81,6 +80,9 @@ $retrieve = mysqli_query($db,$sqluse);
 </div>
 </div>
 </body>
+<<<<<<< HEAD
+</html>
+=======
 =======
 <?php 
 include_once("db_connect.php");
@@ -166,3 +168,4 @@ $retrieve = mysqli_query($db,$sqluse);
 </body>
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
 </html>
+>>>>>>> 051e3a05876a2d069f673a826bf346c66ef58c96

@@ -19,7 +19,7 @@ $retrieved = mysqli_query($db,$sqluser);
  }else{
 	 header('location:index.php');
       exit;
-}
+
 	
 
 if(isset($_GET['ids'])) 
@@ -545,6 +545,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	 
 
 </body>
+<<<<<<< HEAD
+</html>
+=======
 =======
 <?php 
 session_start();
@@ -1094,3 +1097,4 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 </body>
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
 </html>
+>>>>>>> 051e3a05876a2d069f673a826bf346c66ef58c96
