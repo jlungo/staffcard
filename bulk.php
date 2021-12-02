@@ -542,9 +542,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	 <!-- Bootstrap Core JavaScript -->
     <script src="admin/js/bootstrap.js"> </script>
 	  <!-- //Bootstrap Core JavaScript -->
-	 
 
 </body>
+<<<<<<< HEAD
+</html>
+=======
 <<<<<<< HEAD
 </html>
 =======
@@ -1098,3 +1100,4 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
 </html>
 >>>>>>> 051e3a05876a2d069f673a826bf346c66ef58c96
+>>>>>>> 7eabdf6d7d9de5536e593380bdf14673cf4650fe
