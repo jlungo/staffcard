@@ -317,9 +317,6 @@ $(document).ready(function(){
 	                 {
                        $idsx=$found['id'];
                      }
-      
-	  
-	    
 
 $sqluse ="SELECT * FROM Inorg ORDER BY id DESC ";
 $retrieve = mysqli_query($db,$sqluse);
@@ -627,6 +624,9 @@ $retrieve = mysqli_query($db,$sqluse);
               </li>
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
+               </li>
+               <li class="treeview">
+              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
                </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>

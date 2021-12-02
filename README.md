@@ -3,14 +3,20 @@ Here is the project where an administrator of a company or organisation can use 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 System functions include:d
 =======
+=======
+>>>>>>> d5cdbe7241a7542673c6a4a44b5ffb926995f652
 <<<<<<< HEAD
 System functions include:
 =======
 System functions include:d
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
+<<<<<<< HEAD
 >>>>>>> 051e3a05876a2d069f673a826bf346c66ef58c96
+=======
+>>>>>>> d5cdbe7241a7542673c6a4a44b5ffb926995f652
 
 Add the organisation logo to be displayed on the cards
 Add staff details using a form
