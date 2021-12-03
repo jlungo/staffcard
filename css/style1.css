@@ -1,11 +1,10 @@
 
-
 @charset "utf-8";
  /* Popover */
  
 
 body {
-	background:#f1f9f9;
+	background:#eee;
 }
 .form-login {
 	max-width: 500px;

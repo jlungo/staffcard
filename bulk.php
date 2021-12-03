@@ -1,3 +1,4 @@
+
 <?php 
 session_start();
 include("db_connect.php");
@@ -18,7 +19,7 @@ $retrieved = mysqli_query($db,$sqluser);
  }else{
 	 header('location:index.php');
       exit;
-
+}
 	
 
 if(isset($_GET['ids'])) 
