@@ -10,6 +10,7 @@ $retrieve = mysqli_query($db,$sqluse);
         $website = $foundk['website'];
     }	
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,6 +55,8 @@ $retrieve = mysqli_query($db,$sqluse);
 	</div>
            <div class="container">
 	<h2></h2>		
+
+	
 	
 	<form class="form-login" method="post" id="login-form">
 		<h2 class="form-login-heading">Login Page</h2><hr />
@@ -155,7 +158,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		<hr />
 		<div class="form-group">
 			<button type="submit" class="btn btn-default" name="login_button" id="login_button">
-			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign in
 			</button> 
 		</div> 
 	</form>	
