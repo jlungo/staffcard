@@ -38,7 +38,7 @@ $retrieve = mysqli_query($db,$sqluse);
     <!-- <link rel="stylesheet" href="style.css"> -->  
   
 </head>
-<body class="" style="background-color:#008080">
+<body class="" style="background-color: #008080">
 <div role="navigation" class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-collapse collapse">
