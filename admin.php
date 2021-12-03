@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php 
 session_start();
 include("db_connect.php");
@@ -840,7 +840,6 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
-=======
 <?php 
 session_start();
 include("db_connect.php");
@@ -860,7 +859,6 @@ $retrieved = mysqli_query($db,$sqluser);
 			  $emails = $found['Email'];
 			  	   $id= $found['id'];			  
    
-             
   	     
 }		 
 		 
@@ -1683,5 +1681,5 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
->>>>>>> df822572559672ea85bbd59693e524784893f56f
+
 </html>
