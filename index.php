@@ -25,7 +25,9 @@ $retrieve = mysqli_query($db,$sqluse);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
 <title>
-	<?php if(isset($website)){echo$website;}?>
+	<?php if(isset($website)){echo$website;}
+			else echo "Staffcard - Login";
+	?>
 	
 </title>
 <script type="text/javascript" src="script/validation.min.js"></script>
