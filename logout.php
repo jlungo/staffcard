@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 	session_start();
 include("db_connect.php"); 
@@ -24,7 +24,7 @@ include("db_connect.php");
 		    header("Location: index.php");
 	    }
 	else{ header("Location: index.php");}
-=======
+	?>
 <?php
 	session_start();
 include("db_connect.php"); 
@@ -50,5 +50,5 @@ include("db_connect.php");
 		    header("Location: index.php");
 	    }
 	else{ header("Location: index.php");}
->>>>>>> df822572559672ea85bbd59693e524784893f56f
+
 ?>
