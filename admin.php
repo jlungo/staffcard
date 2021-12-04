@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php 
 session_start();
 include("db_connect.php");
@@ -29,7 +29,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>admin</title>
+<title>Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -840,7 +840,6 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
-=======
 <?php 
 session_start();
 include("db_connect.php");
@@ -860,7 +859,6 @@ $retrieved = mysqli_query($db,$sqluser);
 			  $emails = $found['Email'];
 			  	   $id= $found['id'];			  
    
-             
   	     
 }		 
 		 
@@ -1683,5 +1681,5 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
->>>>>>> df822572559672ea85bbd59693e524784893f56f
+
 </html>
