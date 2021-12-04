@@ -1,6 +1,6 @@
 
 <?php 
-include_once("db_connect.php");
+include_once("db_connect.SAMPLE.php");
 
 $sqluse ="SELECT * FROM Inorg WHERE id=1 ";
 $retrieve = mysqli_query($db,$sqluse);

@@ -1,6 +1,6 @@
 <?php
 session_start();   
-include("db_connect.php"); 
+include("db_connect.SAMPLE.php");
  
 if(isset($_POST['login_button'])) {
 	$user_email = trim($_POST['user_email']);
@@ -11,7 +11,7 @@ if(isset($_POST['login_button'])) {
 	$row = mysqli_fetch_assoc($resultset);	
 	
 				
-	if($row['Password']==$user_password){				
+	if($row['Password']==$user_password){
 		
         setcookie("adminid",$user_password,time()+(60*60*24*7));
         setcookie("adminemail",$user_email,time()+(60*60*24*7));
