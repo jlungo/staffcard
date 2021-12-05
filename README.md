@@ -2,12 +2,12 @@
 Here is the project where an administrator of a company or organisation can use to register new staff and create their id card and print the id card. The Staff ID Card Generator allows you to create customizable Staff ID Card and downloadable image (PNG), work in localhost or web hosting (IPV6 version).
 
 
-System functions include:d
+##System functions include:d
 
-Add the organisation logo to be displayed on the cards
-Add staff details using a form
-Add multiple staff details at once using csv file format
-Edit staff details
+-Add the organisation logo to be displayed on the cards
+-Add staff details using a form
+-Add multiple staff details at once using csv file format
+-Edit staff details
 Print id one by one
 Print multiple ids at one
 Delete staff
