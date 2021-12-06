@@ -8,15 +8,15 @@ Here is the project where an administrator of a company or organisation can use 
 -Add staff details using a form
 -Add multiple staff details at once using csv file format
 -Edit staff details
-Print id one by one
-Print multiple ids at one
-Delete staff
-Standard Badge Size (2 5/16” x 3 1/2”) or (506px x 750px)
-Customize name and position
-Upload your photo (support GIF,JPG or PNG), and
-Downloadable Badge ID Card (in the IPV6 version)
-The ids produced have a barcode containig the staff id number of the employee hence they can be used for biometrics scanner.
-Steps of using the system
+-Print id one by one
+-Print multiple ids at one
+-Delete staff
+-Standard Badge Size (2 5/16” x 3 1/2”) or (506px x 750px)
+-Customize name and position
+-Upload your photo (support GIF,JPG or PNG), and
+-Downloadable Badge ID Card (in the IPV6 version)
+-The ids produced have a barcode containig the staff id number of the employee hence they can be used for biometrics scanner.
+-Steps of using the system
 
 Download the compressed file
 Extract the folder and paste it in your www or htdocs folder
