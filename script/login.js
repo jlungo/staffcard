@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 $('document').ready(function() { 
 	/* handling form validation */
 	$("#login-form").validate({
@@ -50,7 +49,6 @@ $('document').ready(function() {
 		});
 		return false;
 	}   
-=======
 $('document').ready(function() { 
 	/* handling form validation */
 	$("#login-form").validate({
@@ -101,9 +99,9 @@ $('document').ready(function() {
 		});
 		return false;
 	}   
->>>>>>> df822572559672ea85bbd59693e524784893f56f
 });
-=======
+
+
 $("document").ready(function () {
   /* handling form validation */
   $("#login-form").validate({
@@ -167,4 +165,3 @@ $("document").ready(function () {
     return false;
   }
 });
->>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
