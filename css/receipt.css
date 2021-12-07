@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 	body{
   background-color: #F6F6F6; 
 }
@@ -108,6 +109,9 @@ td {
   font-size:11px;
   padding:5px 2px 5px 10px;
 =======
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 	body{
   background-color: #F6F6F6; 
 }
@@ -121,7 +125,11 @@ td {
   font-size:28px;
 }
 .header{
+<<<<<<< HEAD
   border-bottom: 2px solid #417482;
+=======
+  border-bottom: 2px solid #418244;
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
   padding: 10px;
 }
 .headerRight p{
@@ -216,5 +224,9 @@ td {
 .panelLastLeft p,.panelLastRight p{
   font-size:11px;
   padding:5px 2px 5px 10px;
+<<<<<<< HEAD
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 }

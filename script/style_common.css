@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .view {
    width: 375px;
    height: 360px;
@@ -309,6 +310,9 @@
    transition-delay: 0.3s;
 }
 =======
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 .view {
    width: 375px;
    height: 360px;
@@ -373,7 +377,11 @@
    -moz-box-shadow: 0 0 1px #000;
    box-shadow: 0 0 1px #000;
 }
+<<<<<<< HEAD
 .view a.info: hover {
+=======
+.view a.info hover {
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
    -webkit-box-shadow: 0 0 5px #000;
    -moz-box-shadow: 0 0 5px #000;
    box-shadow: 0 0 5px #000;
@@ -618,5 +626,9 @@
    -ms-transition-delay: 0.3s;
    transition-delay: 0.3s;
 }
+<<<<<<< HEAD
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 				
