@@ -3,6 +3,8 @@
 <?php
 session_start();  
 
+
+
  //Connecting to the database 
 include("db_connect.php"); 
 
