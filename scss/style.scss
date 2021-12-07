@@ -144,11 +144,11 @@ h1 {
   }
   .content {
     background-color: $white;
-    box-shadow: 0 5px 30px 10px rgba($black, 0.3);
+    box-shadow: 0 5px 30px 10px rgba($black, 0.4);
   }
   .title {
     a {
-      color: lighten($black, 50%);
+      color: lighten($black, 60%);
     }
   }
   .menu-button {
