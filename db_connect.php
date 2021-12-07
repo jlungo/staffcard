@@ -5,8 +5,9 @@
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
-
    
+
+
 	 
              mysqli_select_db($db,"staff_db");
              
