@@ -1,3 +1,4 @@
+
 .view {
    width: 375px;
    height: 360px;
@@ -62,7 +63,7 @@
    -moz-box-shadow: 0 0 1px #000;
    box-shadow: 0 0 1px #000;
 }
-.view a.info: hover {
+.view a.info hover {
    -webkit-box-shadow: 0 0 5px #000;
    -moz-box-shadow: 0 0 5px #000;
    box-shadow: 0 0 5px #000;
@@ -307,4 +308,5 @@
    -ms-transition-delay: 0.3s;
    transition-delay: 0.3s;
 }
+
 				
