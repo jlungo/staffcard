@@ -30,9 +30,9 @@
                                  $db->query( $stable1);
                
                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
-                                  Firstname varchar(200)NOT NULL, 
-                                  Sirname varchar(200)NOT NULL,
-                                  Mtitle varchar(30)NOT NULL,                                 
+                                  Firstname varchar(300)NOT NULL, 
+                                  Sirname varchar(300)NOT NULL,
+                                  Mtitle Varchar(30)NOT NULL,                                 
                                   Rank varchar(30)NOT NULL,                                 
                                   Department varchar(300)NOT NULL,
                                   Email varchar(300)NOT NULL,
@@ -42,12 +42,7 @@
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-/*
-$stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment, Firstname varchar(200)NOT NULL, Sirname varchar(200)NOT NULL, Mtitle varchar(30) NOT NULL, Rank varchar(30)NOT NULL,
-Department varchar(300)NOT NULL, Email varchar(300)NOT NULL, Staffid varchar(300)NOT NULL, Online varchar(300)NOT NULL, Picname varchar(1000)NOT NULL, Time bigint(30)NOT NULL, PRIMARY KEY(id))";
-$db->query($stable56); 
-*/
-
+                         
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,

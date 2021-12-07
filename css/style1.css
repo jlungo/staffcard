@@ -4,7 +4,11 @@
  
 
 body {
+<<<<<<< HEAD
 	background:#f1f9f9;
+=======
+	background:#eee;
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 }
 .form-login {
 	max-width: 500px;
@@ -40,5 +44,9 @@ body {
 }
 #btn-submit{
 	height:45px;
+<<<<<<< HEAD
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
 }
+=======
+}
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e

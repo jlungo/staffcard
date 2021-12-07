@@ -1512,6 +1512,7 @@ Converter.prototype.getValues = function(space) {
 module.exports = convert;
 },{"3":3}],5:[function(require,module,exports){
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use strict'
 
 module.exports = {
@@ -1665,6 +1666,9 @@ module.exports = {
 	"yellowgreen": [154, 205, 50]
 };
 =======
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 'use strict'
 
 module.exports = {
@@ -1817,7 +1821,11 @@ module.exports = {
 	"yellow": [255, 255, 0],
 	"yellowgreen": [154, 205, 50]
 };
+<<<<<<< HEAD
 >>>>>>> df822572559672ea85bbd59693e524784893f56f
+=======
+
+>>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 
 },{}],6:[function(require,module,exports){
 //! moment.js
