@@ -9,4 +9,4 @@ Editing again the sanalyst.txt file on line 8 .....Anna-marie
 Let's proceed commiting
 Line 10 keep commiting... Thomas 
 Line 11 git commands are fun
-Git commands are tiresome
+Git commands are tiresome but interesting
