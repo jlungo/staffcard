@@ -8,3 +8,4 @@ Editing the sanalyst.txt file on line 7....Anna-marie
 Editing again the sanalyst.txt file on line 8 .....Anna-marie
 Let's proceed commiting
 Line 10 keep commiting... Thomas 
+Line 11 git commands are fun
