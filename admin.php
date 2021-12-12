@@ -186,7 +186,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is already a staff with those details in the database", "error");     				              
                                });
                 </script>
            <?php 
@@ -232,7 +232,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    				              sweetAlert("Oops...", "This category already in the system", "error");     				              
                                });
                 </script>
            <?php 

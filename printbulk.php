@@ -85,7 +85,7 @@ font-family: sans-serif;
 		  	float: left;
 		  	margin:auto;		  	
 		  	margin-left:270px;
-		  		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+		  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
 		  	transition: 0.4s;
 
 		  	
