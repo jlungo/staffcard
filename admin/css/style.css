@@ -3,6 +3,7 @@
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+/*style.css*/
 /*
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -158,8 +159,10 @@ button#showLeftPush:hover {
 .cbp-spmenu-push.cbp-spmenu-push-toright div#page-wrapper {
     margin: 0;
 }
+
 /*--//push-menu-css--*/
 /*--side-menu--*/
+
 .sidebar ul li{
 	 margin-bottom: 1em;
 }
