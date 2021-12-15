@@ -15,6 +15,8 @@ include("db_connect.php");
 							
 		    header("Location: index.php");
 	   }
+
+
 	
 	elseif(isset($_COOKIE['adminid']))
 	   {
