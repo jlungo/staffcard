@@ -51,7 +51,8 @@
                                       $db->query($stable4);
 
 
-                                      
+
+                                     //Disciplinary Information System Table                           
                                       $stableG8="CREATE TABLE IF NOT EXISTS Disciplinary (id int(11) NOT NULL auto_increment,
                                       Emp_No int(11) NOT NULL,
                                       Emp_Name varchar(300)NOT NULL, 
@@ -67,6 +68,8 @@
 						
 			 	 	
 		
+
+                             
 					$sql="SELECT * FROM Administrator ";					
                    $result=mysqli_query($db,$sql);
                    $rowcount=mysqli_num_rows($result);
