@@ -1,0 +1,8 @@
+    <label for="Objective"><b>Apraisee score</b></label>
+    <input type="text" placeholder="Apraisee score" name="Objective" id="Objective" required>
+	    <label for="Objective"><b>Supervisorscore</b></label>
+    <input type="text" placeholder="Supervisorscore" name="Objective" id="Objective" required>
+	    <label for="Objective"><b>Performance score</b></label>
+    <input type="text" placeholder="Performance score" name="Objective" id="Objective" required>
+	  <label for="Objective"><b>Recommendations</b></label>
+    <input type="text" placeholder="Recommendations" name="Objective" id="Objective" required>

@@ -627,9 +627,18 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
-              <li class="treeview">
-              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
-               </li>
+               <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cog"></i>
+                <span>OPRAS</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id=''  href="lungo/index.php" class='open-Initial'><i class="fa fa-plus"></i>Add OPRAS DETAIL</a></li>
+                  <li><a data-toggle='modal' data-id='' href="lungo/report.php" class='open-Initial2'><i class="fa fa-minus"></i>VIEW OPRAS REPORT</a></li>
+                </ul>
+              </li>
+             
                           
                 </ul>
           </div>
