@@ -554,7 +554,7 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       </div>
        </form>
-  </div>
+   </div>
   </div> 
 
 
@@ -634,7 +634,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id=''  href="lungo/index.php" class='open-Initial'><i class="fa fa-plus"></i>Add OPRAS DETAIL</a></li>
+                  <li><a data-toggle='modal' data-id=''  href="#lungo" class='open-Initial'><i class="fa fa-plus"></i>Add OPRAS DETAIL</a></li>
                   <li><a data-toggle='modal' data-id='' href="lungo/report.php" class='open-Initial2'><i class="fa fa-minus"></i>VIEW OPRAS REPORT</a></li>
                 </ul>
               </li>
@@ -646,6 +646,49 @@ $retrieve = mysqli_query($db,$sqluse);
       </nav>
     </aside>
 	</div>
+  <div id="lungo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD OPRAS DETAIL
+        	</center></h4>
+      </div>
+      	<form action="lungo/insert.php" method="POST" enctype='multipart/form-data'>        		
+
+      <div class="modal-body" >       	
+      	<center> 
+        		
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp_Name:<label style="color: red;font-size:20px;">*</label>
+        	    	<input style="width:270px;" type="text" placeholder="Enter Emp_Name" name="Emp_Name" value="<?php if(isset($phone)){echo$phone;} ?>"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Objective:<label style="color: red;font-size:20px;">*</label>
+        			<input style="width:270px;" type="text" placeholder="Objective" name="Objective"  value="<?php if(isset($mail)){echo$mail;} ?>"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Apraisee_score:<label style="color: red;font-size:20px;">*</label>
+        	     	<input style="width:270px;" type="text"  placeholder="Apraisee score" name="Apraisee_score" value="<?php if(isset($website)){echo$website;} ?>"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
+        	     	<input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Performance_score:<label style="color: red;font-size:20px;">*</label>
+        	     	<input style="width:270px;" type="text" placeholder="Performance score" name="Performance_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Recommendations:<label style="color: red;font-size:20px;">*</label>
+        	     	<input style="width:270px;" type="text" placeholder="Recommendations" name="Recommendations" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
+        	     	<input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+
+                                          	      	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+                          	      	<input type="hidden" name="pageid" value="<?php echo$idz; ?>"/> 	
+      	
+         </center>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="Update" id="addmember" name="orgupdate"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+   </div>
+  </div> 
 		<!--left-fixed -navigation-->
 		
 		<!-- header-starts -->

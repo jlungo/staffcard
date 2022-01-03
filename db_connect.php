@@ -55,15 +55,15 @@
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-        $stable56="CREATE TABLE IF NOT EXISTS opras (id int(11) NOT NULL auto_increment,
-                         Emp_No bigint(30)NOT NULL, 
+        $stable56="CREATE TABLE IF NOT EXISTS opras (Emp_No int(11) NOT NULL auto_increment,
+                        
                          Emp_Name varchar(300)NOT NULL,
                          Objective Varchar(30)NOT NULL,                                 
                          Apraisee_score varchar(30)NOT NULL,                                 
                          Supervisor_score varchar(300)NOT NULL,
                          Performance_score varchar(300)NOT NULL,
                          Recommendations varchar(300)NOT NULL,                        
-                         PRIMARY KEY(id) )";
+                         PRIMARY KEY(Emp_No) )";
                 $db->query($stable56); 
                          
                         
