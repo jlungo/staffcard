@@ -49,6 +49,21 @@
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,Mtitle Varchar(30)NOT NULL,
                                   Phone varchar(30)NOT NULL,Password varchar(30)NOT NULL,Email varchar(30)NOT NULL,PRIMARY KEY(id) )";
                                       $db->query($stable4);
+
+
+
+                                      $stableG8="CREATE TABLE IF NOT EXISTS Disciplinary (id int(11) NOT NULL auto_increment,
+                                      Emp_No int(11) NOT NULL,
+                                      Emp_Name varchar(300)NOT NULL, 
+                                      Disciplinary_Type varchar(300)NOT NULL,
+                                      Date_commited DATE NOT NULL,
+                                      Date_discussed DATE NOT NULL,  
+                                      Description TEXT NOT NULL,                             
+                                      Action_taken TEXT NOT NULL,                                 
+                                      Reports TEXT NOT NULL,
+                                      List_of_disciplinary_actions TEXT NOT NULL,                      
+                                      PRIMARY KEY(id) )";
+                             $db->query($stableG8);                             
 						
 			 	 	
 		
