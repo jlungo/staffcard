@@ -10,6 +10,12 @@ $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 mysqli_select_db($db, "staff_db");
 
 
+$tableleaves= "CREATE TABLE IF NOT EXISTS leaves (id int(11) NOT NULL auto_increment,
+Empno varchar(300)NOT NULL,Empname varchar(100)NOT NULL,
+leavestart date NOT NULL,leaveend date NOT NULL,
+totaldays int(10) NOT NULL,homeaddress varchar(300) NOT NULL,nameofdependant varchar(300) NOT NULL, PRIMARY KEY(id) )";
+$db->query($tableleaves);
+
 
 
 $stableYZ = "CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
