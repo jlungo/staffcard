@@ -140,6 +140,9 @@ if(isset($_POST['addmember']))
                
           }
 
+		   		   
+
+
  if(isset($_POST['Valuedel'])){ 	
 	
 	 $tutor=$_POST['Valuedel'];

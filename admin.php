@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 include("db_connect.php");
@@ -770,6 +771,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
 
+=======
+<?php include ('includes/topbar.php')?>
+>>>>>>> 6df371e58666c86156138d7f319af5567a076780
 
 
 
