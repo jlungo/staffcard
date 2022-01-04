@@ -1,6 +1,7 @@
 <?php 
 session_start();
-include("db_connect.php");
+include_once "db_connect.php";
+$result = mysqli_query($db, "SELECT * FROM Pension");
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	
@@ -771,51 +772,36 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>ID</th>
-                <th>Name</th>
-                <th>STAFF ID</th>
-                <th>RANK</th>              
-                <th>DEPARTMENT</th>
-                <th>CONTACTS</th>           
-                <th>PRINT</th>
-                <th>EDIT</th>
-                <th>DELETE</th>
+            	
+              <th> Employee Number </th>
+              <th> Employee Name </th>
+              <th> Pension Type </th>
+              <th> Pensioner Number </th>
+               <th> Registered date </th>
+               <th> monthly contribution </th>
+             <th> current balance </th>
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
-			       $retrieve = mysqli_query($db,$sqlmember);
-				                    $count=0;
-                     while($found = mysqli_fetch_array($retrieve))
-	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
-					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>"; 
-					 
-					 } 
-		
-		           	?>
+        <?php
+      $i=0;
+      while ($rows = mysqli_fetch_assoc($result))
+
+      {
+?>
+  <tr>
+    <th><?php echo $rows["Emp_No"]; ?></th>
+    <th><?php echo $rows["Emp_Name"]; ?></th>
+    <th><?php echo $rows["Pension_Type"]; ?></th>
+    <th><?php echo $rows["Pension_Number"]; ?></th>
+    <th><?php echo $rows["Registered_Date"]; ?></th>
+    <th><?php echo $rows["Monthly_Contribution"]; ?></th>
+    <th><?php echo $rows["Current_Balance"]; ?></th>
+  </tr>
+<?php
+    $i++;  
+    }
+?>
             </tbody>
         
     </table>
