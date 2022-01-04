@@ -592,7 +592,7 @@ $retrieve = mysqli_query($db,$sqluse);
             <h1>
             	<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
             		
-            	</span>MAIN MENU<span class="dashboard_text"></span>
+            	</span>Main menu<span class="dashboard_text"></span>
             	</a>
            </h1>
            <?php } ?> 
