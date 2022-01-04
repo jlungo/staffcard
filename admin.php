@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 include("db_connect.php");
@@ -472,7 +471,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
           <center>
-            ADD STAFF DETAILS
+            ADD STAFF LEAVE DETAILS
           </center>
         </h4>
       </div>
@@ -496,9 +495,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
             <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
-            Add profile picture:<input name='filed' type='file' id='filed'>
+            <!-- Add profile picture:<input name='filed' type='file' id='filed'>
 
-            <input type="hidden" name="page" value="admin.php" />
+            <input type="hidden" name="page" value="admin.php" /> -->
         </center>
       </div>
       <div class="modal-footer">
@@ -771,9 +770,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
 
-=======
-<?php include ('includes/topbar.php')?>
->>>>>>> 6df371e58666c86156138d7f319af5567a076780
 
 
 
