@@ -106,7 +106,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			?>
         	<img src="images/love.png" alt="Avatar"  width="70px" height="70px"> <?php }?>
         	</td>
-        <td><h3><b>THE STATE GOVERNMENT OF MALAWI</b></h3></td>
+        <td><h3><b>THE STATE GOVERNMENT OF TANZANIA</b></h3></td>
        </tr>        
     </table><center>
         <?php  
