@@ -638,11 +638,15 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <li class="header">
                 <h4>Administrator</h4>
               </li>
+
+
               <li class="treeview">
                 <a href="admin.php">
                   <i class="fa fa-tv"></i> <span>Control Panel</span>
                 </a>
               </li>
+
+
               <li class="treeview">
                 <a href="#">
                   <i class="fa fa-cog"></i>
@@ -654,6 +658,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
                 </ul>
               </li>
+
+
               <li class="treeview">
                 <a href="#">
                   <i class="fa fa-sign-out"></i>
@@ -673,6 +679,16 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <li class="treeview">
                 <a href="bulk.php"><i class='fa fa-print'></i>Bulk registration</a>
               </li>
+
+
+
+              <li class="treeview">
+                <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-sign-out" aria-hidden="true"></i>Staff Leave Info</a>
+
+                
+              </li>
+
+
               <li class="treeview">
                 <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
               </li>
