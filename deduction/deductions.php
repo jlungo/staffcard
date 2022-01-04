@@ -1,24 +1,24 @@
 <?php
 session_start();
-include("db_connect.php");
+include("../db_connect.php");
 
 if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 
-  $userid = $_COOKIE['adminid'];
-  $useremail = $_COOKIE['adminemail'];
+	$userid = $_COOKIE['adminid'];
+	$useremail = $_COOKIE['adminemail'];
 
-  $sqluser = "SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
+	$sqluser = "SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
 
-  $retrieved = mysqli_query($db, $sqluser);
-  while ($found = mysqli_fetch_array($retrieved)) {
-    $firstname = $found['Firstname'];
-    $sirname = $found['Sirname'];
-    $emails = $found['Email'];
-    $id = $found['id'];
-  }
+	$retrieved = mysqli_query($db, $sqluser);
+	while ($found = mysqli_fetch_array($retrieved)) {
+		$firstname = $found['Firstname'];
+		$sirname = $found['Sirname'];
+		$emails = $found['Email'];
+		$id = $found['id'];
+	}
 } else {
-  header('location:index.php');
-  exit;
+	header('location:index.php');
+	exit;
 }
 ?>
 <!DOCTYPE HTML>
@@ -41,22 +41,22 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 		</script>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="../admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 		<!-- Custom CSS -->
-		<link href="admin/css/style.css" rel='stylesheet' type='text/css' />
+		<link href="../admin/css/style.css" rel='stylesheet' type='text/css' />
 
 		<!-- font-awesome icons CSS -->
-		<link href="admin/css/font-awesome.css" rel="stylesheet">
+		<link href="../admin/css/font-awesome.css" rel="stylesheet">
 		<!-- //font-awesome icons CSS-->
 
 		<!-- side nav css file -->
-		<link href='admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+		<link href='../admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
 		<!-- //side nav css file -->
 
 		<!-- js-->
-		<script src="admin/js/jquery-1.11.1.min.js"></script>
-		<script src="admin/js/modernizr.custom.js"></script>
+		<script src="../admin/js/jquery-1.11.1.min.js"></script>
+		<script src="../admin/js/modernizr.custom.js"></script>
 
 		<!--webfonts-->
 		<link
@@ -65,20 +65,20 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 		<!--//webfonts-->
 
 		<!-- chart -->
-		<script src="admin/js/Chart.js"></script>
+		<script src="../admin/js/Chart.js"></script>
 		<!-- //chart -->
 
 		<!-- Metis Menu -->
-		<script src="admin/js/metisMenu.min.js"></script>
-		<script src="admin/js/custom.js"></script>
-		<link href="admin/css/custom.css" rel="stylesheet">
+		<script src="../admin/js/metisMenu.min.js"></script>
+		<script src="../admin/js/custom.js"></script>
+		<link href="../admin/css/custom.css" rel="stylesheet">
 		<!--//Metis Menu -->
-		<script src="script/sweetalert.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="script/sweetalert.css">
+		<script src="../script/sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../script/sweetalert.css">
 
 		<!-- <script src="jquery.js"></script> -->
-		<link href="css/animate.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="css/bootstrap-dropdownhover.css">
+		<link href="../css/animate.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/bootstrap-dropdownhover.css">
 
 
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
@@ -195,7 +195,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	</script>
 
 	<?php
-  session_destroy();
+	session_destroy();
 } ?>
 	<?php if (isset($_SESSION['memberexist'])) { ?>
 	<script type="text/javascript">
@@ -204,7 +204,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 	<?php if (isset($_SESSION['emptytextboxes'])) { ?>
@@ -214,7 +214,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 	<?php if (isset($_SESSION['tutor'])) { ?>
@@ -242,7 +242,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 	<?php if (isset($_SESSION['cat'])) { ?>
@@ -252,7 +252,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 	<?php if (isset($_SESSION['category'])) { ?>
@@ -280,7 +280,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 	<?php if (isset($_SESSION['del'])) { ?>
@@ -299,16 +299,16 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 			},
 			function(isConfirm) {
 				if (isConfirm) {
-					window.location = "administrator.php?id=4";
+					window.location = "../administrator.php?id=4";
 				} else {
-					window.location = "administrator.php";
+					window.location = "../administrator.php";
 				}
 			});
 
 	});
 	</script>
 	<?php
-  session_destroy();
+	session_destroy();
 }
 ?>
 
@@ -333,7 +333,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	<?php $sqlid = "SELECT * FROM Users Order BY id DESC";
 $ret = mysqli_query($db, $sqlid);
 while ($found = mysqli_fetch_array($ret)) {
-  $idsx = $found['id'];
+	$idsx = $found['id'];
 }
 
 
@@ -342,12 +342,12 @@ while ($found = mysqli_fetch_array($ret)) {
 $sqluse = "SELECT * FROM Inorg ORDER BY id DESC ";
 $retrieve = mysqli_query($db, $sqluse);
 while ($foundk = mysqli_fetch_array($retrieve)) {
-  $name = $foundk['name'];
-  $website = $foundk['website'];
-  $phone = $foundk['Phone'];
-  $year = $foundk['year'];
-  $mail = $foundk['email'];
-  $idz = $foundk['id'];
+	$name = $foundk['name'];
+	$website = $foundk['website'];
+	$phone = $foundk['Phone'];
+	$year = $foundk['year'];
+	$mail = $foundk['email'];
+	$idz = $foundk['id'];
 }
 
 ?>
@@ -618,30 +618,30 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 									style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label
 										style="color: red;font-size:20px;">*</label>
 									<input style="width:270px;" type="text" name="orgname" value="<?php if (isset($name)) {
-                                                                                echo $name;
-                                                                              } ?>"></span></p>
+																									echo $name;
+																								} ?>"></span></p>
 							<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
 									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label
 										style="color: red;font-size:20px;">*</label>
 									<input style="width:270px;" type="text" name="orgphone" value="<?php if (isset($phone)) {
-                                                                                  echo $phone;
-                                                                                } ?>"></span></p>
+																									echo $phone;
+																								} ?>"></span></p>
 							<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
 									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label
 										style="color: red;font-size:20px;">*</label>
 									<input style="width:270px;" type="text" name="orgemail" value="<?php if (isset($mail)) {
-                                                                                  echo $mail;
-                                                                                } ?>"></span></p>
+																									echo $mail;
+																								} ?>"></span></p>
 							<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
 									&nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label>
 									<input style="width:270px;" type="text" name="orgwebsite" value="<?php if (isset($website)) {
-                                                                                    echo $website;
-                                                                                  } ?>"></span></p>
+																										echo $website;
+																									} ?>"></span></p>
 							<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active
 									Year:<label style="color: red;font-size:20px;">*</label>
 									<input style="width:270px;" type="text" name="orgyear" value="<?php if (isset($year)) {
-                                                                                echo $year;
-                                                                              } ?>"></span></p>
+																									echo $year;
+																								} ?>"></span></p>
 							Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>
 							)<input name='filed' type='file' id='filed'>
 							<input type="hidden" name="page" value="admin.php" />
@@ -677,16 +677,16 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
 							<?php
-            $sqln = "SELECT * FROM Inorg ";
-            $rgetb = mysqli_query($db, $sqln);
-            $numb = mysqli_num_rows($rgetb);
-            if ($numb != 0) {
-              while ($foundl = mysqli_fetch_array($rgetb)) {
-                $profile = $foundl['pname'];
-              }
-              echo "<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";
-            } else {
-            ?>
+						$sqln = "SELECT * FROM Inorg ";
+						$rgetb = mysqli_query($db, $sqln);
+						$numb = mysqli_num_rows($rgetb);
+						if ($numb != 0) {
+							while ($foundl = mysqli_fetch_array($rgetb)) {
+								$profile = $foundl['pname'];
+							}
+							echo "<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";
+						} else {
+						?>
 							<h1>
 								<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
 
@@ -780,24 +780,24 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 									<div class="profile_img">
 										<span class="prfil-img">
 											<?php
-                    $sql = "SELECT * FROM Profilepictures WHERE ids='$id' && Category='User'";
-                    $rget = mysqli_query($db, $sql);
-                    $num = mysqli_num_rows($rget);
-                    if ($num != 0) {
-                      while ($found = mysqli_fetch_array($rget)) {
-                        $profile = $found['name'];
-                      }
-                      echo "<img src='admin/images/$profile' height='50px' width='50px' alt=''>";
-                    } else {
-                      echo "<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";
-                    }
+										$sql = "SELECT * FROM Profilepictures WHERE ids='$id' && Category='User'";
+										$rget = mysqli_query($db, $sql);
+										$num = mysqli_num_rows($rget);
+										if ($num != 0) {
+											while ($found = mysqli_fetch_array($rget)) {
+												$profile = $found['name'];
+											}
+											echo "<img src='admin/images/$profile' height='50px' width='50px' alt=''>";
+										} else {
+											echo "<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";
+										}
 
-                    ?>
+										?>
 										</span>
 										<div class="user-name">
 											<p style="color:#1D809F;"><?php if (isset($sirname)) {
-                                                echo "<strong>" . $firstname . " " . $sirname . "! </strong>";
-                                              } ?>
+																		echo "<strong>" . $firstname . " " . $sirname . "! </strong>";
+																	} ?>
 											</p>
 											<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px'
 													width='15px' alt=''>
@@ -843,38 +843,28 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 										<tr>
 											<th>ID</th>
 											<th>Name</th>
-											<th>STAFF ID</th>
-											<th>RANK</th>
-											<th>DEPARTMENT</th>
-											<th>CONTACTS</th>
-											<th>PRINT</th>
+											<th>Amount</th>
 											<th>EDIT</th>
 											<th>DELETE</th>
 										</tr>
 									</thead>
 									<tbody>
-										<?php $sqlmember = "SELECT * FROM Users ";
-                  $retrieve = mysqli_query($db, $sqlmember);
-                  $count = 0;
-                  while ($found = mysqli_fetch_array($retrieve)) {
-                    $title = $found['Mtitle'];
-                    $firstname = $found['Firstname'];
-                    $sirname = $found['Sirname'];
-                    $rank = $found['Rank'];
-                    $id = $found['id'];
-                    $dept = $found['Department'];
-                    $contact = $found['Email'];
-                    $count = $count + 1;
-                    $get_time = $found['Time'];
-                    $time = time();
-                    $pass = $found['Staffid'];
-                    $names = $firstname . " " . $sirname;
+										<?php $sqlmember = "SELECT * FROM deduction";
+									$retrieve = mysqli_query($db, $sqlmember);
+									$count = 0;
+									while ($found = mysqli_fetch_array($retrieve)) {
+										$title = $found['title'];
+										$firstname = $found['amount'];
+										$sirname = $found['Sirname'];
+										$rank = $found['Rank'];
+										$count = $count + 1;
+										$get_time = $found['Time'];
+										$time = time();
+										$pass = $found['Staffid'];
+										$names = $firstname . " " . $sirname;
 
-                    echo "<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
+										echo "<tr>    <td>$id</td>                                       
+                            <td>$title $firstname $sirname</td>
 			                 <td>$dept</td>
 			                 <td>$rank</td>
 			                 <td>
@@ -889,9 +879,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 							 
 			                 </td>			 
                              </tr>";
-                  }
+									}
 
-                  ?>
+									?>
 									</tbody>
 
 								</table>
@@ -916,13 +906,13 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 		<!-- new added graphs chart js-->
 
-		<script src="admin/js/Chart.bundle.js"></script>
-		<script src="admin/js/utils.js"></script>
+		<script src="../admin/js/Chart.bundle.js"></script>
+		<script src="../admin/js/utils.js"></script>
 
 
 		<!-- Classie -->
 		<!-- for toggle left push menu script -->
-		<script src="admin/js/classie.js"></script>
+		<script src="../admin/js/classie.js"></script>
 		<script>
 		var menuLeft = document.getElementById('cbp-spmenu-s1'),
 			showLeftPush = document.getElementById('showLeftPush'),
@@ -946,8 +936,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 		<!-- //for toggle left push menu script -->
 
 		<!--scrolling js-->
-		<script src="admin/js/jquery.nicescroll.js"></script>
-		<script src="admin/js/scripts.js"></script>
+		<script src="../admin/js/jquery.nicescroll.js"></script>
+		<script src="../admin/js/scripts.js"></script>
 		<!--//scrolling js-->
 
 		<!-- side nav js -->
@@ -957,9 +947,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 		</script>
 
 		<!-- Bootstrap Core JavaScript -->
-		<script src="admin/js/bootstrap.js""> </script>
-	<!-- //Bootstrap Core JavaScript -->
-	 	<script src=" css/bootstrap-dropdownhover.js"></script>
+		<script src="../admin/js/bootstrap.js"> </script>
+		<!-- //Bootstrap Core JavaScript -->
+		<script src=" ../css/bootstrap-dropdownhover.js"></script>
 
 	</body>
 
