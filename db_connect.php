@@ -43,6 +43,20 @@
                                   PRIMARY KEY(id) )";
                       $query1= $db->query($stable56); 
 
+
+
+
+                      $stable175="CREATE TABLE IF NOT EXISTS StaffDep (id int(11) NOT NULL auto_increment,
+                      EmployeeNo varchar(300)NOT NULL, 
+                      EmployeeName varchar(300)NOT NULL,
+                      FDepNo int(3)NOT NULL DEFAULT 0,                                 
+                      MDepNo int(3)NOT NULL DEFAULT 0,                               
+                      AgeOldDep int(3)NOT NULL DEFAULT 0,
+                      AgeYoungDep int(3)NOT NULL DEFAULT 0,
+                      `Address` varchar(300)NOT NULL,
+                      
+                      PRIMARY KEY(id) )";
+                      $db->query($stable175); 
                       print_r($db->error);
   
 			   

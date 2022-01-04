@@ -484,6 +484,57 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
        </form>
   </div>
+ </div>
+
+
+
+  <div id="Depadd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD STAFF DEPENDANT DETAILS
+        	</center></h4>
+      </div>
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
+
+            	
+      	        <!-- <p style="margin-bottom:10px;">  
+        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
+        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+        		</p> -->
+
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Male Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="FDepNo"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Female Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="MDepNo"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the oldest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeOldDep"></span></p>
+
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the youngest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeYoungDep"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Home address <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Address"></span></p>
+
+        	
+        		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+       <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addDependant"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+
+
+
   </div> 
   
   <div id="Initialisation" class="modal fade" role="dialog">
@@ -622,6 +673,10 @@ $retrieve = mysqli_query($db,$sqluse);
                             
               <li class="treeview">
                   <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
+         
+              </li>
+              <li class="treeview">
+                  <a data-toggle='modal' data-id='' href='#Depadd' class='open-adduser'><i class="fa fa-user"></i>Add Dependant</a>
          
               </li>
               <li class="treeview">
