@@ -117,9 +117,9 @@ if(isset($_POST['addmember']))
 							  {
 							  	                                  move_uploaded_file ($orgtmpName,'images/'.$orgName);
 								
-							  	$query = "INSERT INTO Users (Firstname,Sirname,Mtitle,Email,Staffid,Rank,Department,Online,Picname) ".
+							  	$query = "INSERT INTO Users (Firstname,Sirname,Mtitle,Email,Staffid,`Rank`,Department,`Online`,Picname) ".
                             "VALUES ('$mfname','$msname', '$mtitle','$mphone','$mpassword','$memail','$minstititution','Offline','$orgName')";
-                                 $db->query($query) or die('Error1, query failed');	
+                                 $db->query($query) or die('Error1, query failed '. $db->error);	
 								 
 							     $memberadd="tyy";					  
 			                     $_SESSION['memberadded']=$memberadd;
@@ -170,7 +170,7 @@ if(isset($_POST['addmember']))
 				       $userid=$_COOKIE['userid'];
                        $useremail=$_COOKIE['useremail'];
 
-                          $sqluser ="SELECT * FROM Users WHERE Password='$userid' && Email='$useremail'";
+                          $sqluser ="SELECT * FROM Users WHERE `Password`='$userid' && Email='$useremail'";
 
                           $retrieved = mysqli_query($db,$sqluser);
                           while($found = mysqli_fetch_array($retrieved))
@@ -301,7 +301,7 @@ if(isset($_POST['addmember']))
 			$sid = $filesop[6];
 				 $count++;
 			  if($count>1){ 
-			$query = "INSERT INTO Users (Firstname,Sirname,Mtitle,Email,Staffid,Rank,Department) ".
+			$query = "INSERT INTO Users (Firstname,Sirname,Mtitle,Email,Staffid,`Rank`,Department) ".
                             "VALUES ('$mfname','$msname', '$mtitle','$mphone','$sid','$rank','$minstititution')";
                                  $db->query($query) or die('Error1, query failed');	
 								 
