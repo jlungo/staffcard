@@ -517,7 +517,40 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-  
+  <!--created a modal for add pension  -->
+  <div id="add_pension" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD PENSION INFORMATION
+        	</center></h4>
+      </div>
+      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ptype"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pnumber"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="regdate"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mon_contribution"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="curr_balance"></span></p>
+                                   	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="orginitial"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div>
+ 
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -630,7 +663,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     
+                     <!--menu for pension informartion -->
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -638,8 +671,8 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add Pension</a></li>
-                  <li><a href='admin.php' class='open-Initial2'><i class="fa fa-minus"></i>Pension Report</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_pension' class='open-Initial'><i class="fa fa-plus"></i>Add Pension</a></li>
+                  <li><a href='pension_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Pension Report</a></li>
                 </ul>
               </li>
 
