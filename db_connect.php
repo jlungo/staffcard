@@ -45,7 +45,19 @@
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-                         
+
+                         //Next of kin information table
+                         $stable97="CREATE TABLE IF NOT EXISTS Next_Of_Kin_Information (id int(11) NOT NULL auto_increment,
+                                  Emp_No varchar(300)NOT NULL, 
+                                  Emp_Name varchar(300)NOT NULL,
+                                  Next_Of_Kin_Name Varchar(300)NOT NULL,                                 
+                                  Next_Of_kin_Relationship varchar(30)NOT NULL,                                 
+                                  Next_Of_kin_Sex varchar(300)NOT NULL,
+                                  Next_Of_Kin_Address varchar(300)NOT NULL,
+                                  Next_Of_Kin_Mobile_Number varchar(300)NOT NULL,                        
+                                  PRIMARY KEY(id) )";
+                         $db->query($stable97); 
+                   
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
