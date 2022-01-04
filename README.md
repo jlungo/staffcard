@@ -22,4 +22,4 @@ Download the compressed file
 Extract the folder and paste it in your www or htdocs folder
 Run the project using your local server
 Dataase is created automatically no need to import
-Login by using email: admin@gmail.com and password: admin
+Login by using email: admin@gmail.com and password: admin.
