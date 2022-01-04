@@ -181,6 +181,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php 
 	   session_destroy();		
 		    }?>
+
+<?php if(isset($_SESSION['dependantAdded'])){?>
+ <script type="text/javascript"> 
+ 	          $(document).ready(function(){
+ 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!!.", type: "success"});
+                                  });
+              </script>
+            
+           <?php 
+	   session_destroy();		
+		    }?>
+
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
@@ -190,6 +202,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php 
        	   session_destroy();}  
            ?>
+
+<?php if(isset($_SESSION['dependantExists'])){?>
+                <script type="text/javascript"> 
+            $(document).ready(function(){    	
+    				              sweetAlert("Oops...", "There is arleady a staff dependant with those details in the database", "error");     				              
+                               });
+                </script>
+           <?php 
+       	   session_destroy();}  
+           ?>
+
+
             <?php if(isset($_SESSION['emptytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
