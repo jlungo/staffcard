@@ -43,18 +43,6 @@
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
 
-                         $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
-                                  Emp_No varchar(300)NOT NULL, 
-                                  Emp_Name varchar(300)NOT NULL,
-                                  Pension_Type Varchar(30)NOT NULL,                                 
-                                  Pension_Number varchar(30)NOT NULL,                                 
-                                  Registered_Date date NOT NULL,
-                                  Monthly_Contribution varchar(300)NOT NULL,
-                                  Current_Balance varchar(300)NOT NULL,
-                                  PRIMARY KEY(id) )";
-                         $db->query($stable17); 
-                         
-                        
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,Mtitle Varchar(30)NOT NULL,
@@ -72,13 +60,22 @@
                            $enter="INSERT INTO Administrator (Password,Email,Firstname,Sirname,Mtitle,Phone) VALUES('admin','admin@gmail.com','Patrick','Mvuma','Mr','265999107724')";
                                   $db->query($enter);
 								  
-						   
                                                     $querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
                                      $db->query($querydy) or die('Errorr, query failed to upload');	
                                   
                           }
                      
-					 		
+          $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
+                          Employee_No varchar(300)NOT NULL, 
+                          Employee_Name varchar(300)NOT NULL,
+                          Pension_Type Varchar(30)NOT NULL,                                 
+                          Pension_Number varchar(30)NOT NULL,                                 
+                          Registered_Date date NOT NULL,
+                          Monthly_Contribution varchar(300)NOT NULL,
+                          Current_Balance varchar(300)NOT NULL,
+                          PRIMARY KEY(id) )";
+            $db->query($stable17); 
+                      
 
 ?>
