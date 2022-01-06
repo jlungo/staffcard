@@ -56,7 +56,7 @@
                                   -- Picname varchar(1000)NOT NULL,
                                   -- Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(emp_id) )";
-                         $db->query($createStaffBen); 
+                         $db->query(); 
                          
                         
 			   
