@@ -67,8 +67,8 @@
                           }
                      
           $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
-                          Employee_No varchar(300)NOT NULL, 
-                          Employee_Name varchar(300)NOT NULL,
+                          Emp_No varchar(300)NOT NULL, 
+                          Emp_Name varchar(300)NOT NULL,
                           Pension_Type Varchar(30)NOT NULL,                                 
                           Pension_Number varchar(30)NOT NULL,                                 
                           Registered_Date date NOT NULL,
