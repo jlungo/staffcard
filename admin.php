@@ -628,7 +628,10 @@ $retrieve = mysqli_query($db,$sqluse);
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
               <li class="treeview">
-              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
+              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing1</a>
+               </li>
+               <li class="treeview">
+              	  <a  href="staffSafari.php" class="Open-Taxreceipted"><i class='fa fa-print'></i>Staff Safaris</a>
                </li>
                           
                 </ul>

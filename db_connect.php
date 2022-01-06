@@ -29,6 +29,8 @@
                                    content longblob NOT NULL,PRIMARY KEY(id) )";
                                  $db->query( $stable1);
                
+                                 
+                                 
                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(300)NOT NULL, 
                                   Sirname varchar(300)NOT NULL,
@@ -41,9 +43,23 @@
                                   Picname varchar(1000)NOT NULL,
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
-                         $db->query($stable56); 
+                         $db->query($stable56);
                          
-                        
+                         
+
+
+
+                         $stable56="CREATE TABLE IF NOT EXISTS staff_safari (emp_no int(11) NOT NULL auto_increment, 
+                                  emp_name varchar(300)NOT NULL,
+                                  safari_start_date Varchar(30)NOT NULL,                                 
+                                  safari_return_date varchar(30)NOT NULL,                                 
+                                  purpose_of_safari varchar(300)NOT NULL,
+                                  authorisation_status varchar(300)NOT NULL,
+                                  Safari_sourse_of_und varchar(300)NOT NULL,
+                                  reports varchar(300)NOT NULL,
+                                  list_of_staff_with_benefits varchar(100)NOT NULL,                         
+                                  PRIMARY KEY(emp_no) )";
+                         $db->query($stable56);
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,Mtitle Varchar(30)NOT NULL,
