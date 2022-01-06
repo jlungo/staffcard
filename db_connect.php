@@ -43,6 +43,20 @@
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
+
+                         
+                  $createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(11) NOT NULL auto_increment,
+                                  Employee_numb varchar(300)NOT NULL, 
+                                  Employee_name varchar(300)NOT NULL,
+                                  Benefit_type Varchar(30)NOT NULL,                               
+                                  Benefit_desc varchar(300)NOT NULL,
+                                  Benefit_amount float(10)NOT NULL,
+                                  date_start date NOT NULL,
+                                  date_end date NOT NULL,
+                                  -- Picname varchar(1000)NOT NULL,
+                                  -- Time bigint(30)NOT NULL,                         
+                                  PRIMARY KEY(emp_id) )";
+                         $db->query($createStaffBen); 
                          
                         
 			   
