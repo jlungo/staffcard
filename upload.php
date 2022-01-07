@@ -283,7 +283,40 @@ if(isset($_POST['addmember']))
                       	     	 	echo"Contents arleady exists"; 
 						        //exit;  
 					      }                
-                     }                
+                     } 
+					 if(isset($_POST['staff_ben'])){         
+	           
+						$Employee_numb = mysqli_real_escape_string($db,$_POST["Employee_numb"]);	//Email variable
+						$orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
+						$orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
+						$orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
+						$year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+						 $pagez= mysqli_real_escape_string($db,$_POST["page"]);
+						   $orgName = $_FILES['filed']['name'];
+						   $orgtmpName = $_FILES['filed']['tmp_name'];
+						   $orgSize = $_FILES['filed']['size'];
+						   $orgType = $_FILES['filed']['type'];
+					  
+					  
+					$sqln="SELECT * FROM Inorg  WHERE name='$orgname' && website='$orgwebsite'";
+							 $resultn=mysqli_query($db,$sqln);                    
+								   if($rowcount=mysqli_num_rows($resultn)==0)
+								   {                 //$date= date("d.m.y");
+								   
+											move_uploaded_file ($orgtmpName, 'media/'.$orgName);
+											$enter="INSERT INTO staff_ben (,Employee_numb,year,email,Phone,pname,size,content,type) 
+												  VALUES('$Employee_numb','$orgwebsite','$year','$orgmail','$orgphone','$orgName','$orgSize','$orgName','$orgType')";
+											$db->query($enter);
+											
+											$_SESSION['regk']="Pamzey";
+											
+										   header("Location:admin.php");
+																	   
+								   }
+								else{
+												  echo"Contents arleady exists"; 
+										  //exit;  
+									}                               
                  
  if(isset($_POST["bulk"]))
 	{
