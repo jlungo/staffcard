@@ -1,12 +1,151 @@
 <?php 
 
-include ('includes/topbar.php');
+include ('includes/db_connection.php');
 
 $leave = "SELECT * FROM leaves ORDER BY id DESC ";
 $leaveretrieve = mysqli_query($db, $leave);
 $count = 1;
 
 ?>
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <script type="application/x-javascript">
+    addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+  <!-- Custom CSS -->
+  <link href="admin/css/style.css" rel='stylesheet' type='text/css' />
+
+  <!-- font-awesome icons CSS -->
+  <link href="admin/css/font-awesome.css" rel="stylesheet">
+  <!-- //font-awesome icons CSS-->
+
+  <!-- side nav css file -->
+  <link href='admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+  <!-- //side nav css file -->
+
+  <!-- js-->
+  <script src="admin/js/jquery-1.11.1.min.js"></script>
+  <script src="admin/js/modernizr.custom.js"></script>
+
+  <!--webfonts-->
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <!--//webfonts-->
+
+  <!-- chart -->
+  <script src="admin/js/Chart.js"></script>
+  <!-- //chart -->
+
+  <!-- Metis Menu -->
+  <script src="admin/js/metisMenu.min.js"></script>
+  <script src="admin/js/custom.js"></script>
+  <link href="admin/css/custom.css" rel="stylesheet">
+  <!--//Metis Menu -->
+  <script src="script/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="script/sweetalert.css">
+
+  <!-- <script src="jquery.js"></script> -->
+  <link href="css/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap-dropdownhover.css">
+
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
+
+
+  <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+  <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js'></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable({
+
+
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).on("click", ".open-Delete", function() {
+      var myValue = $(this).data('id');
+      swal({
+          title: "Are you sure?",
+          text: "You want to remove this staff from the database!",
+          type: "warning",
+          showCancelButton: true,
+          cancelButtonColor: "red",
+          confirmButtonColor: "green",
+          confirmButtonText: "Yes, remove!",
+          cancelButtonText: "No, cancel!",
+          closeOnConfirm: false,
+          closeOnCancel: false,
+          buttonsStyling: false
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+            var vals = myValue;
+            $.ajax({
+              type: 'POST',
+              url: "upload.php",
+              data: {
+                Valuedel: vals
+              },
+              success: function(result) {
+                if (result == "ok") {
+                  swal({
+                      title: "Deleted!",
+                      text: "Staff has been deleted from the database.",
+                      type: "success"
+                    },
+                    function() {
+                      location.reload();
+                    }
+                  );
+                }
+
+              }
+            });
+          } else {
+            swal("Cancelled", "This user is safe :)", "error");
+          }
+        });
+
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).on("click", ".open-Updatepicture", function() {
+      var myTitle = $(this).data('id');
+      $(".modal-body #bookId").val(myTitle);
+
+    });
+  </script>
+  <!-- requried-jsfiles-for owl -->
+  <!-- //requried-jsfiles-for owl -->
+</head>
 
         <div class="charts">
           <div class="mid-content-top charts-grids">

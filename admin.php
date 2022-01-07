@@ -712,6 +712,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#Leaveadd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff On Leave</a></li>
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit Staff On Leave</a></li>
+                  <li><a href="Leave_report.php"><i class="fa fa-tv"></i>View Leave report </a></li>
                 </ul>
               </li>
 
@@ -901,6 +902,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     </div>
     <!--//footer-->
   </div>
+
+  
 
   <!-- new added graphs chart js-->
 
