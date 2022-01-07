@@ -485,7 +485,60 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div> 
+
   
+
+
+
+<!-- Next of kin form --> 
+<!-- Next of kin form --> 
+<!-- Next of kin form --> 
+
+  <div id="Nextofkinadd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD NEXT OF KIN DETAILS
+        	</center></h4>
+      </div>
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
+
+        		                                                           	      		
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mno" id='oldname'></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Emp name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mname" id='ss'></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Next of Kin name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="nname"  id='cc'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next of kin relationship:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="nrelationship" id='dd'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Next of kin Sex:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="nsex" id='bb'></span></p>
+                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Next of kin address:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="naddress" id='bb'></span></p>
+        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Next of Kin Phone no:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="nphone" id='oldpass'></span></p>
+        		
+                    
+        		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+       <input type="submit" class="btn btn-success" value="Submit" id="addnok" name="addnok"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div>
+
+
+
+<!-- Next of kin form --> 
+<!-- Next of kin form --> 
+<!-- Next of kin form -->
+
+
+
   <div id="Initialisation" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -631,9 +684,9 @@ $retrieve = mysqli_query($db,$sqluse);
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
 
-               <!--Added menu for next of kin-->
+               <!--Added menu for  of kin-->
                <li class="treeview">
-              	  <a  href="#" ><i class='fa fa-group'></i>Next of Kin</a> <!--php page goes at href-->
+              	  <a data-toggle='modal' data-id='' href='#Nextofkinadd' class='open-adduser'><i class='fa fa-group'></i> Next of Kin</a> <!--php page goes at href-->
                </li>
                           
                 </ul>
@@ -787,8 +840,94 @@ $retrieve = mysqli_query($db,$sqluse);
 
 					<!--//sreen-gallery-cursual---->
 			</div>
+
+
+
+<!-- Displaying Next of kin results -->
+<!-- Displaying Next of kin results -->
+<!-- Displaying Next of kin results -->
+
+
+			<div class="charts">		
+			<div class="mid-content-top charts-grids">
+				<div class="middle-content">
+						<h4 class="title">Next of Kin </h4>
+					<!-- start content_slider -->
+          <div class="alert alert-info">
+                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                         </div>
+					
+					     <table id="example" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+          	<th>ID</th>
+                <th>EmployeeNo</th>
+                <th>EmployeeName</th>
+                <th>Name</th>              
+                <th>Relationship</th>
+                <th>Sex</th>            
+                <th>PRINT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>       
+            </tr>
+        </thead>
+        <tbody>
+        	 <?php   $sqlmember ="SELECT * FROM Next_Of_Kin_Information ";
+			       $retrieve = mysqli_query($db,$sqlmember);
+				                    $count=0;
+                     while($found = mysqli_fetch_array($retrieve))
+	                 {
+                       $employeeno=$found['Emp_No'];$employeename=$found['Emp_Name'];$nokname=$found['Next_Of_Kin_Name'];
+                       $id=$found['id'];$nokrelationship=$found['Next_Of_kin_Relationship'];$noksex=$found['Next_Of_kin_Sex'];
+			                $count=$count+1;  
+					    	 
+			      echo"<tr>    <td>$id</td>                                       
+                             <td>$employeeno</td>        	
+                             <td>$employeename</td>
+                             <td>$nokname</td>
+                             
+			                 <td>$nokrelationship</td>
+			                 <td>$noksex</td>
+			                 <td>
+			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                              </td>
+			                 <td>
+			                   <a data-toggle='modal' data-id='$id' data-ie='$employeename'   data-if='$employeeno' data-ig='$rank' data-ih='$nokname' data-ij='$nokrelationship' data-ik='$noksex' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+							 
+			                 </td>				                 
+			                 <td>
+			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+							 
+			                 </td>			 
+                             </tr>"; 
+					 
+					 } 
+		
+		           	?>
+            </tbody>
+        
+    </table>
+             <button id="clear-all-button">Clear All Filters</button>
+                           
+				        </div>
+		
+				</div>
+
+					<!--//sreen-gallery-cursual---->
+			</div>
 		 </div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
 	<!--footer-->
 	<div class="footer">
 	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com

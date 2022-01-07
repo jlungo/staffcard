@@ -140,6 +140,75 @@ if(isset($_POST['addmember']))
                
           }
 
+
+
+
+		  //added next of kin to database 
+		  //added next of kin to database
+		  if(isset($_POST['addnok']))
+		  {
+			   if($_POST['mno']!=''&&$_POST['mname']!=''&&$_POST['nname']!=''&&$_POST['nrelationship']!=''&&$_POST['nsex']!=''&&$_POST['naddress']!=''&&$_POST['nphone']!='')
+				{              
+				 
+				$mno = mysqli_real_escape_string($db,$_POST['mno']);
+			 $mname = mysqli_real_escape_string($db,$_POST['mname']);		
+		   $nname=mysqli_real_escape_string($db,$_POST['nname']);
+			 $nrelationship =mysqli_real_escape_string($db,$_POST['nrelationship']);
+			  $nsex = mysqli_real_escape_string($db,$_POST['nsex']);
+				$naddress = mysqli_real_escape_string($db,$_POST['naddress']);
+				$nphone = mysqli_real_escape_string($db,$_POST['nphone']);
+				$pagex = mysqli_real_escape_string($db,$_POST['page']);
+				
+			  
+	 
+									
+									$check="SELECT * FROM Next_Of_Kin_Information WHERE Employeeno='$mno' && Employeename='$mname'";
+									$checks=mysqli_query($db,$check);
+							   $found=mysqli_num_rows($checks);
+								   if($found==0)
+								   {
+																		 move_uploaded_file ($orgtmpName,'images/'.$orgName);
+									 
+									   $query = "INSERT INTO Next_Of_Kin_Information (Emp_No,Emp_Name,Next_Of_Kin_Name,Next_Of_kin_Relationship,Next_Of_kin_Sex,Next_Of_Kin_Address,Next_Of_Kin_Mobile_Number) ".
+								 "VALUES ('$mno','$mname', '$nname','$nrelationship','$nsex','$naddress','$nphone')";
+									  $db->query($query) or die('Error1, query failed');	
+									  
+									  $nokadd="tyy";					  
+									  $_SESSION['memberadded']=$nokadd;
+										 header("Location:$pagex");  //member added successfully
+					  
+				   
+				   
+								   }else{
+									   $_SESSION['memberexist']="member already exist";
+									  header("Location:$pagex");  
+					  
+								   }
+					 }else{
+						 $_SESSION['emptytextboxes']="Not all text boxes were completed";
+									  header("Location:$pagex");  
+					  
+						 }
+					
+			   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  if(isset($_POST['Valuedel'])){ 	
 	
 	 $tutor=$_POST['Valuedel'];
