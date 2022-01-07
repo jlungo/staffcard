@@ -651,9 +651,55 @@ if(isset($_POST['addmember']))
 
 	}
 ?>
- 	
-?>
-<<<<<<< HEAD
->>>>>>> df822572559672ea85bbd59693e524784893f56f
-=======
->>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
+<?
+	 if(isset($_POST['addStaff']))
+     {
+     	 if($_POST['EmployeeNo']!=''&&$_POST['EmployeeName']!=''&&$_POST['SDate']!=''&&$_POST['TimeIn']!=''&&$_POST['TimeOuty']!=''&&$_POST['ActivitiesList']!='' &&$_POST['Supervisor']!='')
+           {              
+            
+   		$EmployeeNo = mysqli_real_escape_string($db,$_POST['EmployeeNo']);
+		$EmployeeName = mysqli_real_escape_string($db,$_POST['EmployeeName']);		
+
+	  	$SDate=mysqli_real_escape_string($db,$_POST['SDate']);
+	    $TimeIn =mysqli_real_escape_string($db,$_POST['TimeIn']);
+
+		$TimeOuty = mysqli_real_escape_string($db,$_POST['TimeOuty']);
+		$ActivitiesList = mysqli_real_escape_string($db,$_POST['ActivitiesList']);
+	
+		$Supervisor=mysqli_real_escape_string($db,$_POST["Supervisor"]);
+
+
+							   $check="SELECT * FROM StaffAttend WHERE EmployeeNo='$EmployeeNo' && EmployeeName='$EmployeeName'";
+
+						       $checks=mysqli_query($db,$check);
+						  $found=mysqli_num_rows($checks);
+
+							  if($found==0)
+							  {
+								
+							  	$query = "INSERT INTO StaffAttend (EmployeeNo,EmployeeName,SDate,TimeIn,TimeOuty,`ActivitiesList`,`Supervisor`) ".
+                            "VALUES ('$EmployeeNo','$EmployeeName', '$SDate','$TimeIn','$TimeOuty','$ActivitiesList','$Supervisor')";
+                                 $db->query($query) or die('Error1, query failed '. $db->error);	
+								 
+							     $memberadd="steve";	
+
+			                     $_SESSION['staffAdded']=$memberadd;
+								
+                                    header("Location:admin.php");  //member added successfully
+				 
+			  
+			  
+							  }else{
+							  	$_SESSION['staffExists']="member already exist";
+                                 header("Location:admin.php");  
+				 
+							  }
+				}else{
+					$_SESSION['emptytextboxes']="Not all text boxes were completed";
+                                 header("Location:admin.php");  
+				 
+				    }
+               
+          }
+
+
