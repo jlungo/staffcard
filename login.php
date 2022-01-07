@@ -16,7 +16,8 @@ if(isset($_POST['login_button'])) {
 		
         setcookie("adminid",$user_password,time()+(60*60*24*7));
         setcookie("adminemail",$user_email,time()+(60*60*24*7));
-		echo "ok";		
+		header('location:admin.php');
+        exit;		
 		
 	}
 	

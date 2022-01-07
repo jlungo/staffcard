@@ -1,4 +1,3 @@
-
 <?php 
 session_start();
 include("db_connect.php");
@@ -182,6 +181,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php 
 	   session_destroy();		
 		    }?>
+
+<?php if(isset($_SESSION['dependantAdded'])){?>
+ <script type="text/javascript"> 
+ 	          $(document).ready(function(){
+ 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!!.", type: "success"});
+                                  });
+              </script>
+            
+           <?php 
+	   session_destroy();		
+		    }?>
+
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
@@ -191,6 +202,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php 
        	   session_destroy();}  
            ?>
+
+<?php if(isset($_SESSION['dependantExists'])){?>
+                <script type="text/javascript"> 
+            $(document).ready(function(){    	
+    				              sweetAlert("Oops...", "There is arleady a staff dependant with those details in the database", "error");     				              
+                               });
+                </script>
+           <?php 
+       	   session_destroy();}  
+           ?>
+
+
             <?php if(isset($_SESSION['emptytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
@@ -317,6 +340,9 @@ $(document).ready(function(){
 	                 {
                        $idsx=$found['id'];
                      }
+      
+	  
+	    
 
 $sqluse ="SELECT * FROM Inorg ORDER BY id DESC ";
 $retrieve = mysqli_query($db,$sqluse);
@@ -482,6 +508,58 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
        </form>
   </div>
+ </div>
+
+
+
+  <div id="StaffAdd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD STAFF ATTENDANCE DETAILS
+        	</center></h4>
+      </div>
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
+
+            	
+      	        <!-- <p style="margin-bottom:10px;">  
+        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
+        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+        		</p> -->
+
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="SDate"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeIn"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeOuty"></span></p>
+
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Main activities <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ActivitiesList"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Supervisor <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Supervisor"></span></p>
+
+        	
+        		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+       <input type="submit" class="btn btn-success" value="Submit" id="addstaff" name="addStaff"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+       <!-- lot of errors -->
+  </div>
+
+
+
   </div> 
   
   <div id="Initialisation" class="modal fade" role="dialog">
@@ -623,10 +701,11 @@ $retrieve = mysqli_query($db,$sqluse);
          
               </li>
               <li class="treeview">
+                  <a data-toggle='modal' data-id='' href='#StaffAdd' class='open-adduser'><i class="fa fa-user"></i>Add Staff</a>
+         
+              </li>
+              <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
-               </li>
-               <li class="treeview">
-              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
                </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
@@ -840,4 +919,4 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
-    </HTML>
+</html>

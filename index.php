@@ -58,7 +58,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
 	
 	
-	<form class="form-login" method="post" id="login-form">
+	<form class="form-login" method="post" id="login-form" action="login.php">
 		<h2 class="form-login-heading">Login Page</h2><hr />
 		<div id="error">
 		</div>
