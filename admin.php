@@ -627,6 +627,9 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
                </li>
+               <li class="treeview">
+              	  <a  href="staffBen.php" ><i class='fa fa-print'></i>Staff Benefit Information</a>
+               </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
