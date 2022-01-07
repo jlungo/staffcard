@@ -292,7 +292,7 @@ if(isset($_POST['addmember']))
 						$orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
 						$year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
 						 $pagez= mysqli_real_escape_string($db,$_POST["page"]);
-						   $orgName = $_FILES['filed']['name'];
+						   $Employee_name = $_FILES['filed']['name'];
 						   $orgtmpName = $_FILES['filed']['tmp_name'];
 						   $orgSize = $_FILES['filed']['size'];
 						   $orgType = $_FILES['filed']['type'];
