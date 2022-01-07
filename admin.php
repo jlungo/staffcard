@@ -1,5 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> b125b401454b56be238d78304a11077324913289
 <?php 
 session_start();
 include("db_connect.php");
@@ -18,9 +22,9 @@ $retrieved = mysqli_query($db,$sqluser);
 		      $sirname= $found['Sirname'];
 			  $emails = $found['Email'];
 			  	   $id= $found['id'];			  
-   
+  
   	     
-}		 
+}	;	 
 		 
 }else{
 	 header('location:index.php');
@@ -861,6 +865,8 @@ $retrieved = mysqli_query($db,$sqluser);
 			  $emails = $found['Email'];
 			  	   $id= $found['id'];			  
    
+=======
+>>>>>>> b125b401454b56be238d78304a11077324913289
   	     
 }		 
 		 
@@ -1160,9 +1166,6 @@ $(document).ready(function(){
 	                 {
                        $idsx=$found['id'];
                      }
-      
-	  
-	    
 
 $sqluse ="SELECT * FROM Inorg ORDER BY id DESC ";
 $retrieve = mysqli_query($db,$sqluse);
@@ -1471,6 +1474,9 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
+               <li class="treeview">
+              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
+               </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
@@ -1683,8 +1689,4 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
-<<<<<<< HEAD
->>>>>>> df822572559672ea85bbd59693e524784893f56f
-=======
->>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
-</html>
+    </HTML>
