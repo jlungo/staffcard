@@ -795,14 +795,14 @@ $retrieve = mysqli_query($db,$sqluse);
 			                   
 			               
 			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+			                   <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                               </td>
 			                 <td>
 			                   <a data-toggle='modal' data-id='$id' data-ie='$empno'   data-if='$empname' data-ig='$disciplinary_type' data-ih='$date_commited' data-ij='$date_discussed' data-ik='$description'  data-il='$action_taken' class='open-disciplinary_edit btn  btn-info' title='edit user details' href='#disciplinary_edit'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
 							 
 			                 </td>				                 
 			                 <td>
-							 <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                  <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 						
 			                 </td>			 
                              </tr>"; 
