@@ -695,15 +695,25 @@ $retrieve = mysqli_query($db,$sqluse);
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
                 </ul>
               </li>
+              
                             
               <li class="treeview">
                   <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
          
               </li>
+
               <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#StaffAdd' class='open-adduser'><i class="fa fa-user"></i>Add Staff</a>
-         
+                <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Staffs Attendance</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#StaffAdd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#staffs' class='open-Initial2'><i class="fa fa-minus"></i>Staffs attendance list</a></li>
+                </ul>
               </li>
+
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
