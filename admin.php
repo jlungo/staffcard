@@ -538,19 +538,19 @@ $retrieve = mysqli_query($db,$sqluse);
 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="FDepNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="MDepNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeOldDep"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="SDate"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeIn"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeOuty"></span></p>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Main activities <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeYoungDep"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Supervisor <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Address"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Main activities <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ActivitiesList"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Supervisor <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Supervisor"></span></p>
 
         	
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
       <div class="modal-footer">
-       <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addStaff"> &nbsp;
+       <input type="submit" class="btn btn-success" value="Submit" id="addstaff" name="addStaff"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
