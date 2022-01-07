@@ -98,6 +98,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         } );
       
       </script>
+
+	  <!-- Delete disciplinary record js-->
 <script type="text/javascript"> 
             $(document).on("click", ".open-Delete_disciplinary", function () {
                                   var myValue = $(this).data('id');
@@ -139,6 +141,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                        });
                 </script>
 
+
+<!-- Delete disciplinary record js-->
+<?php if(isset($_SESSION['disciplinarydeleted'])){?>
+ <script type="text/javascript"> 
+ 	          $(document).ready(function(){
+ 	          	                             swal({title: "Successful!", text: "Disciplinary record deleted successful.", type: "success"});
+                                  });
+              </script>
+            
+           <?php 
+	   session_destroy();		
+		    }?>
+
 <script type="text/javascript">
  $(document).on("click", ".open-Updatepicture", function () {
      var myTitle = $(this).data('id');
@@ -149,6 +164,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
  	<!-- requried-jsfiles-for owl -->
 									<!-- //requried-jsfiles-for owl -->
 </head> 
+
+
+
+<!-- Edit disciplinary record js-->
 <script type="text/javascript">
  $(document).on("click", ".open-disciplinary_edit", function () {
      
@@ -173,34 +192,47 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	  $(".modal-body #olddiscid").val(discid); 
 }); 
  </script>
-<?php if(isset($_SESSION['memberadded'])){?>
+
+
+
+
+
+
+ <!-- Add disciplinary record js-->
+<?php if(isset($_SESSION['disciplinaryadded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Staff added successfully!!.", type: "success"});
+ 	          	                             swal({title: "Successful!", text: "Disciplinary record added successful.", type: "success"});
                                   });
               </script>
             
            <?php 
 	   session_destroy();		
 		    }?>
-		    <?php if(isset($_SESSION['memberexist'])){?>
+		    <?php if(isset($_SESSION['disciplinaryexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is arleady a disciplinary record in the database", "error");     				              
                                });
                 </script>
            <?php 
        	   session_destroy();}  
            ?>
-            <?php if(isset($_SESSION['emptytextboxes'])){?>
+            <?php if(isset($_SESSION['emptydisciplinarytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form", "error");     				              
+    				              sweetAlert("Oops...", "You have unfilled textboxes on the form", "error");     				              
                                });
                 </script>
            <?php 
        	   session_destroy();}  
            ?>
+
+
+
+
+
+
            <?php if(isset($_SESSION['tutor'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
@@ -300,11 +332,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
  
- <?php if(isset($_SESSION['pass'])) {?>
+ <?php if(isset($_SESSION['pass_disciplinary_edit'])) {?>
 <script type="text/javascript"> 
 
 $(document).ready(function(){  
- 		                           swal({title: "Successful!", text: "Staff details edited!!.", type: "success"});
+ 		                           swal({title: "Successful!", text: "disciplinary record edited!!.", type: "success"});
 
                                });
        
@@ -512,7 +544,7 @@ $retrieve = mysqli_query($db,$sqluse);
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
-			<input type="hidden" name="entry" value="Disciplinary.php"/>  
+			<!-- <input type="hidden" name="entry" value="Disciplinary.php"/>   -->
                                            	      		
          </center>
       </div>
@@ -770,8 +802,8 @@ $retrieve = mysqli_query($db,$sqluse);
 							 
 			                 </td>				                 
 			                 <td>
-			                   <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
+							 <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+						
 			                 </td>			 
                              </tr>"; 
 					 

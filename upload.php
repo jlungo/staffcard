@@ -86,7 +86,7 @@ $datecommited = mysqli_real_escape_string($db,$_POST['datecommited']);
 $datediscussed = mysqli_real_escape_string($db,$_POST['datediscussed']);
 $description = mysqli_real_escape_string($db,$_POST['description']);
 $actiontaken = mysqli_real_escape_string($db,$_POST['actiontaken']);
-$pagex = mysqli_real_escape_string($db,$_POST['entry']);
+// $pagex = mysqli_real_escape_string($db,$_POST['entry']);
 
 
 $sqln="SELECT * FROM disciplinary  WHERE Emp_No='$empno' && Emp_Name='$empname' && Disciplinary_Type='$disciplinarytype' &&   Date_commited= '$datecommited'
@@ -101,10 +101,9 @@ VALUES ('$empno', '$empname', '$disciplinarytype','$datecommited','$datediscusse
 if ($db->query($sql) === TRUE) {
 
 //  echo "New record created successfully";
-
-$memberadd="new disciplinary record created successfully";					  
-$_SESSION['memberadded']=$memberadd;
-   header("Location:$pagex");  
+				  
+$_SESSION['disciplinaryadded']="new disciplinary record created successfully";
+   header("Location:Disciplinary.php ");  
 
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
@@ -112,15 +111,15 @@ $_SESSION['memberadded']=$memberadd;
 
 		  }
 		  else{
-               echo "disciplinary record already exists";
-			// $_SESSION['memberexist']="disciplinary record already exist";
-			// header("Location:$pagex");  
+            //    echo "disciplinary record already exists";
+			$_SESSION['disciplinaryexist']="disciplinary record already exist";
+			header("Location:Disciplinary.php ");  
 		  }
 }
 else{
-      echo " make sure all fields are filled";
-	// $_SESSION['emptytextboxes']="make sure all fields are filled";
-	// header("Location:$pagex");  
+    //   echo " make sure all fields are filled";
+	$_SESSION['emptydisciplinarytextboxes']="make sure all fields are filled";
+	header("Location:Disciplinary.php ");  
 }
 
 	
@@ -159,7 +158,7 @@ if(isset($_POST['edit_disciplinary'])){
 								 $query = "UPDATE disciplinary SET Emp_No='$empno',Emp_Name='$empname',Disciplinary_Type='$disciplinarytype',Date_commited='$datecommited',Date_discussed='$datediscussed',Description='$description',Action_Taken='$actiontaken' WHERE id='$id' ";
 								   $db->query($query) or die('Errorr, query failed to update');	
 								   
-								   $_SESSION['pass']="okjs";				
+								   $_SESSION['pass_disciplinary_edit']="okjs";				
 							   header("Location:Disciplinary.php");
 }
 					  }
@@ -178,6 +177,8 @@ if(isset($_POST['edit_disciplinary'])){
 													$querr="DELETE FROM disciplinary WHERE id='$tutor'";
 												 $results=mysqli_query($db,$querr);
 												  echo"ok"; 
+												
+
 										 }
 										  
 					   
