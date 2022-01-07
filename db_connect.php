@@ -1,13 +1,10 @@
 <?php
  
- $db = new mysqli("localhost","root","localpassword");
+ $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
-   
-
-
 	 
              mysqli_select_db($db,"staff_db");
              
@@ -44,9 +41,9 @@
                                   Picname varchar(1000)NOT NULL,
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
-                         $db->query($stable56); 
+                         $db->query($stable56);
 
-                         //Next of kin information table
+                          //Next of kin information table
                          $stable97="CREATE TABLE IF NOT EXISTS Next_Of_Kin_Information (id int(11) NOT NULL auto_increment,
                                   Emp_No varchar(300)NOT NULL, 
                                   Emp_Name varchar(300)NOT NULL,
@@ -57,7 +54,7 @@
                                   Next_Of_Kin_Mobile_Number varchar(300)NOT NULL,                        
                                   PRIMARY KEY(id) )";
                          $db->query($stable97); 
-                   
+                         
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
