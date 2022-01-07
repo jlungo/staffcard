@@ -555,6 +555,7 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       </div>
        </form>
+       <!-- lot of errors -->
   </div>
 
 
