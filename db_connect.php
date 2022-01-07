@@ -10,7 +10,7 @@ $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 mysqli_select_db($db, "staff_db");
 
 
-$tableleaves= "CREATE TABLE IF NOT EXISTS leaves (id int(11) NOT NULL auto_increment,
+$tableleaves = "CREATE TABLE IF NOT EXISTS leaves (id int(11) NOT NULL auto_increment,
 Empno varchar(300)NOT NULL,Empname varchar(100)NOT NULL,
 leavestart date NOT NULL,leaveend date NOT NULL,
 totaldays int(10) NOT NULL,homeaddress varchar(300) NOT NULL,nameofdependant varchar(300) NOT NULL, PRIMARY KEY(id) )";
@@ -57,7 +57,7 @@ $stable4 = "CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_i
                                   Phone varchar(30)NOT NULL,Password varchar(30)NOT NULL,Email varchar(30)NOT NULL,PRIMARY KEY(id) )";
 $db->query($stable4);
 
-$stable01 = "CREATE TABLE IF NOT EXISTS Pension (
+$stable01 = "CREATE TABLE IF NOT EXISTS StaffLeave (
   id int(11) NOT NULL auto_increment,
   emp_no varchar(300)NOT NULL, 
   emp_name varchar(300)NOT NULL,
