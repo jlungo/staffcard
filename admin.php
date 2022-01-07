@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <?php 
 session_start();
 include("db_connect.php");
@@ -1683,8 +1682,4 @@ $retrieve = mysqli_query($db,$sqluse);
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
-<<<<<<< HEAD
->>>>>>> df822572559672ea85bbd59693e524784893f56f
-=======
->>>>>>> 41be9d74513052b591eec7d91050db9fa06e3a9e
 </html>
