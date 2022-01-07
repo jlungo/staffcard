@@ -57,7 +57,7 @@
                       
                       PRIMARY KEY(id) )";
                       $db->query($stable175); 
-                      print_r($db->error);
+                      // print_r($db->error);
   
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,

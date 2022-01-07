@@ -369,7 +369,7 @@ $retrieve = mysqli_query($db,$sqluse);
         	</center></h4>
       </div>
 
-      <div class="modal-body" >       	
+      <div class="modal-body" >         	
       	     <form action="printbulk.php" method="post">
   <div class="input-group" style="margin-bottom:10px">
     <span class="input-group-addon">From</span>
@@ -557,8 +557,6 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
 
-
-
   </div> 
   
   <div id="Initialisation" class="modal fade" role="dialog">
@@ -699,10 +697,19 @@ $retrieve = mysqli_query($db,$sqluse);
                   <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
          
               </li>
+
               <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#Depadd' class='open-adduser'><i class="fa fa-user"></i>Add Dependant</a>
-         
+                <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Staff Dependant</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#Depadd' class='open-Initial'><i class="fa fa-plus"></i>Add Dependant</a></li>
+                  <li><a  data-id='' href='staffDep.php' class='open-Initial2'><i class="fa fa-minus"></i>View Dependants</a></li>
+                </ul>
               </li>
+
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
