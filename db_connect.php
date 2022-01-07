@@ -45,7 +45,7 @@
                          $db->query($stable56); 
 
                          
-                  $createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(11) NOT NULL auto_increment,
+                  $createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(10) NOT NULL auto_increment,
                                   Employee_numb varchar(300)NOT NULL, 
                                   Employee_name varchar(300)NOT NULL,
                                   Benefit_type Varchar(30)NOT NULL,                               
