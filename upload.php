@@ -356,7 +356,7 @@ if(isset($_POST['addmember']))
 							 	
 							$memberadd="tyy";	
 
-							$_SESSION['dependantAdded']=$memberadd; 
+							$_SESSION['staffAdded']=$memberadd; 
 						
 						       if($result){
 							   header("Location:admin.php");  //member added successfully
@@ -364,7 +364,7 @@ if(isset($_POST['addmember']))
 		 
 		 
 						 }else{
-							 $_SESSION['dependantExists']="member already exist";
+							 $_SESSION['staffExists']="member already exist";
 							header("Location:admin.php");  
 			
 						 }
