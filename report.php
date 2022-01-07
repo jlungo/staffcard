@@ -19,9 +19,8 @@ $retrieved = mysqli_query($db,$sqluser);
  }else{
 	 header('location:index.php');
       exit;
- }
 
-	
+ }
 
 if(isset($_GET['ids'])) 
           {	           
@@ -50,7 +49,7 @@ if(isset($_GET['ids']))
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Revenue Agency</title>
+<title>Attendance List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -278,20 +277,44 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-tv"></i> <span>Control Panel</span>
                 </a>
               </li>
-               
-                            
+
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cog"></i>
+                <span>Initialisation</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add System Info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
+                </ul>
+              </li>
+
               <li class="treeview">
                   <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
          
               </li>
+
+
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Staffs Attendance</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#StaffAdd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff</a></li>
+                  <li><a  href="report.php" ><i class='fa fa-print'></i>Staffs attendance list</a></li>
+                </ul>
+              </li>
+
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                          
-                </ul>
+
           </div>
           <!-- /.navbar-collapse -->
       </nav>
@@ -386,24 +409,44 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             				      
             				      		<div class="middle-content">
 					
-					     <table id="example" class="display nowrap" style="width:100%">
+                                          <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Bulk registration upload from Excel</th>
-                             
-                <th>&nbsp;</th>
-                 
-               <?php
-            				                                      
-		           echo"<th><a href='bulk.php?ids=1'> <i class='fa fa-download'></i></a>&nbsp;<a href='groups_.php'> <i class='fa fa-refresh'></i></a>&nbsp;<a href='administrator.php'> <i class='fa fa-close'></i></a></th>";										             			 	
-				                        
-		         ?>  
-        
+            	<th>id  </th>
+                <th>EmployeeNo</th>
+                <th>EmployeeName</th>
+                <th>SDate</th>
+                <th>TimeIn</th>              
+                <th>TimeOuty</th> 
+                <th>ActivitiesList</th>					
+                <th>Supervisor</th>           
             </tr>
         </thead>
-        <tbody>      	
-
-        </tbody>
+        <tbody>
+        	 <?php   $sqlmember ="SELECT * FROM staffattend ";
+			       $retrieve = mysqli_query($db,$sqlmember);
+				                    
+                     while($found = mysqli_fetch_array($retrieve))
+	                 {
+                       $id=$found['id'];$employeeNo=$found['EmployeeNo'];$employeeName=$found['EmployeeName'];$date=$found['SDate'];
+                       $Timein=$found['TimeIn'];$Timeout=$found['TimeOuty'];$Actlist=$found['ActivitiesList']; $supervisor=$found['Supervisor'];
+			               
+					    	 
+			      echo"<tr>    <td>$id</td>                                       
+                             <td>$employeeNo</td>        	
+                             <td>$employeeName</td>
+                             <td>$date</td>
+                             
+			                 <td>$Timein</td>
+			                 <td>$Timeout</td>
+                             <td>$Actlist</td>
+                             <td>$supervisor</td>			 
+                             </tr>"; 
+					 
+					 } 
+		
+		           	?>
+            </tbody>
         
     </table>
 
@@ -414,85 +457,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					<!--//sreen-gallery-cursual---->
 			</div>
 		</div>
-		<div class="charts" >
-			<div class="mid-content-top charts-grids">
-				
-				<div class="alert alert-success">
-                             <i class="fa fa-info-circle"></i>&nbsp;Ensure that the file upload is in CSV Format Otherwise it will not save
-                              </div>
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
-		<div class="charts" >		
-			<div class="mid-content-top charts-grids" style="background-color:#00ACED">
-				<div class="middle-content" >
-						<h4 class="title">
-                            <i class="fa fa-info-circle"></i>&nbsp;Steps to save the file!
-
-						</h4>
-					<!-- start content_slider -->
-					     <div class="container">
-					     	<ol>
-					     		<li>Download the sample file format below  on the mail icon or on top of the to the right corner of this page on a downoad icon</li>
-					     		<li>Fill the employee details in the columns of the file</li>
-					     		<li>Save the file as CSV not as xls </li>
-					     		<li>Upload the file</li>
-					        </ol>
-                        </div>
-                        SAMPLE FORMAT&nbsp;<a href='bulk.php?ids=1'><i class="fa fa-envelope"></i></a>&nbsp;Note:The web as file type will only be noted on excel files download from this application
-
-					
-			   </div>
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
-		<div class="charts" >		
-			<div class="mid-content-top charts-grids" >
-				
-						
-					<!-- start content_slider -->
-					      
-
-        <form method="post" action="upload.php" enctype='multipart/form-data'>        		
-           <p style="margin-bottom:10px;">
-               <input id="datepicker-starting-view" type="text" class="form-control" data-zdp_readonly_element="false" placeholder="Select Submission Date" name="sbd" style='width:255px;'>  
-           </p>  
-             				                           
-            				                           <p style="margin-bottom:10px;">
-        			
-           </p> 
-        	<p style="margin-bottom:10px;">
-        			<input name='file' type='file' id='file' >
-           </p>  
-          
-          <button class="btn btn-success" name="bulk" id="btns3" >&nbsp;       		 
-       		 <span class="glyphicon glyphicon-import" style="color: #F0F0F0"> </span> &nbsp;Import </button>
-       	 
-      
-      
-       </form>
-                           
-
-					
-			   
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
-	
-	
-	
-	
 		
-			
-				
-		
-		
-				</div>
-		</div>
 	<!--footer-->
-	<div class="footer">
-	   <p>  <a href="#" target="">Design and Developed by mvumapatrick@gmail.com</a></p>		
-	</div>
+	
     <!--//footer-->
 	</div>
 		

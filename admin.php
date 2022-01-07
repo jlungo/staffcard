@@ -710,7 +710,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#StaffAdd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff</a></li>
-                  <li><a data-toggle='modal' data-id='' href='#staffs' class='open-Initial2'><i class="fa fa-minus"></i>Staffs attendance list</a></li>
+                  <li><a  href="report.php" ><i class='fa fa-print'></i>Staffs attendance list</a></li>
                 </ul>
               </li>
 
