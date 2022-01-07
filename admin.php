@@ -182,10 +182,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	   session_destroy();		
 		    }?>
 
-<?php if(isset($_SESSION['dependantAdded'])){?>
+<?php if(isset($_SESSION['staffAdded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!!.", type: "success"});
+ 	          	                             swal({title: "Successful!", text: "Staff attendant added successfully!!.", type: "success"});
                                   });
               </script>
             
@@ -203,10 +203,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
        	   session_destroy();}  
            ?>
 
-<?php if(isset($_SESSION['dependantExists'])){?>
+<?php if(isset($_SESSION['staffExists'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff dependant with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is arleady a staff attendant with those details in the database", "error");     				              
                                });
                 </script>
            <?php 
@@ -537,10 +537,10 @@ $retrieve = mysqli_query($db,$sqluse);
         		</p> -->
 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="SDate"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeIn"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="TimeOuty"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName" placeholder="eg. Stephen Mhuli"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="SDate" placeholder="eg. 23.12.2022"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="TimeIn" placeholder="eg. 1400"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="TimeOuty" placeholder="eg. 1900"></span></p>
 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Main activities <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ActivitiesList"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Supervisor <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Supervisor"></span></p>
