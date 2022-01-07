@@ -354,5 +354,3 @@ if(isset($_POST['addmember']))
 
 	}
 ?>
- 	
-?>
