@@ -10,10 +10,9 @@ $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 
 mysqli_select_db($db, "staff_db");
 
-$stableYZ = "CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
-              name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
-              website varchar(300)NOT NULL,year varchar(10)NOT NULL,pname varchar(1000)NOT NULL,type varchar(30)NOT NULL,
-              size decimal(10)NOT NULL,content longblob NOT NULL, PRIMARY KEY(id) )";
+//below is  a table of activities and supervisors
+$stableYZ = "CREATE TABLE IF NOT EXISTS Activities (id int(11) NOT NULL auto_increment,
+              activityname varchar(100)NOT NULL,supervisor varchar(100)NOT NULL,content longblob NOT NULL, PRIMARY KEY(id) )";
 $db->query($stableYZ);
 
 $stableZ = "CREATE TABLE IF NOT EXISTS Profilepictures (id int(11) NOT NULL auto_increment,
