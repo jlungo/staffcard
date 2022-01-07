@@ -99,11 +99,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       
       </script>
 <script type="text/javascript"> 
-            $(document).on("click", ".open-Delete", function () {
+            $(document).on("click", ".open-Delete_disciplinary", function () {
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
-                                         text: "You want to remove this staff from the database!",
+                                         text: "You want to remove this disciplinary record from the database!",
                                          type: "warning",
                                          showCancelButton: true,
                                         cancelButtonColor: "red",
@@ -120,10 +120,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { Valuedel: vals},
+                                                      data: { disciplinary_delete: vals},
                                                       success: function(result) {
                                                       if(result=="ok"){
-                                                                    swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
+                                                                    swal({title: "Deleted!", text: "disciplinary record has been deleted from the database.", type: "success"},
                                                           function(){ 
                                                                           location.reload();
                                                                           }
@@ -150,25 +150,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<!-- //requried-jsfiles-for owl -->
 </head> 
 <script type="text/javascript">
- $(document).on("click", ".open-Passwords", function () {
+ $(document).on("click", ".open-disciplinary_edit", function () {
      
-       var myT = $(this).data('id');
-     var myTitle = $(this).data('ie');
-       var myp = $(this).data('if');
-       var mym = $(this).data('ig');
-       var myn = $(this).data('ih');
-       var myk = $(this).data('ij');
-       var mykm = $(this).data('ik');
+       var discid = $(this).data('id');
+     var empno = $(this).data('ie');
+       var empname = $(this).data('if');
+       var disctype = $(this).data('ig');
+       var datecommited = $(this).data('ih');
+       var datediscussed = $(this).data('ij');
+       var description = $(this).data('ik');
+	   var actiontaken = $(this).data('il');
        
        
-     $(".modal-title #oldname").val(myTitle);
-       $(".modal-body #oldname").val(myTitle);
-       $(".modal-body #oldpass").val(mykm);
-     $(".modal-body #ss").val(myp);     
-     $(".modal-body #bb").val(mym);
-     $(".modal-body #cc").val(myn);
-     $(".modal-body #dd").val(myk);
-      $(".modal-body #staffid").val(myT); 
+     $(".modal-title #oldempno").val(empno);
+       $(".modal-body #oldempno").val(empno);
+       $(".modal-body #oldempname").val(empname);
+     $(".modal-body #olddisctype").val(disctype);     
+     $(".modal-body #olddatecommited").val(datecommited);
+     $(".modal-body #olddatediscussed").val(datediscussed);
+     $(".modal-body #olddescription").val(description);
+      $(".modal-body #oldactiontaken").val(actiontaken); 
+	  $(".modal-body #olddiscid").val(discid); 
 }); 
  </script>
 <?php if(isset($_SESSION['memberadded'])){?>
@@ -372,43 +374,7 @@ $retrieve = mysqli_query($db,$sqluse);
  
 
 
-<div id="Passwords" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
-      <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;"><center>
-                   Edit details of <input style="border: none;background:#222d32" type="text" id="oldname" value="" readonly="readonly" />
-	    	
-        	</center></h4>
-      </div>
-      <div class="modal-body" >
-        <center>
-             
-        	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
-            
-        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"  id='cc'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail" id='bb'></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mid" id='oldpass'></span></p>
-        		Add profile picture:<input name='filed' type='file' id='filed' >
-                <input type="hidden" name="page" id="staffid"/>                                                       	      		
-           
-        </center>
-        
-      </div>
-      <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-       </form>
-  </div>
-  </div>
-  
+
 <div id="Updatepicture" class="modal fade" role="dialog">
   <div class="modal-dialog" style="float:right;width:20%">
     <!-- Modal content-->
@@ -546,12 +512,12 @@ $retrieve = mysqli_query($db,$sqluse);
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
-  
+			<input type="hidden" name="entry" value="Disciplinary.php"/>  
                                            	      		
          </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="disciplinary" name="disciplinary"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="disciplinary_entry" name="disciplinary_entry"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -561,47 +527,52 @@ $retrieve = mysqli_query($db,$sqluse);
 
 
 
+<!--Disciplinary Information System Data Edit Form-->
 
-
-  
- <div id="Initialisation2" class="modal fade" role="dialog">
+<div id="disciplinary_edit" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	EDIT SYSTEM INFORMATION
+        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;"><center>
+                   Edit details of <input style="border: none;background:#222d32" type="text" id="oldempno" value="" readonly="readonly" />
+	    	
         	</center></h4>
       </div>
-      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
-
-      <div class="modal-body" >       	
-      	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label>
-        			<input style="width:270px;" type="text" name="orgname" value="<?php if(isset($name)){echo$name;} ?>"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label>
-        	    	<input style="width:270px;" type="text" name="orgphone" value="<?php if(isset($phone)){echo$phone;} ?>"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label>
-        			<input style="width:270px;" type="text" name="orgemail" value="<?php if(isset($mail)){echo$mail;} ?>"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" name="orgwebsite" value="<?php if(isset($website)){echo$website;} ?>"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active Year:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" name="orgyear" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
-        	                         	   Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>)<input name='filed' type='file' id='filed' >
-                                          	      	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-                          	      	<input type="hidden" name="pageid" value="<?php echo$idz; ?>"/> 	
-      	
-         </center>
+      <div class="modal-body" >
+        <center>
+             
+        	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
+            
+			<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno" id ="oldempno"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname" id="oldempname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Disciplinary Type<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="disciplinarytype" id ="olddisctype"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Commited:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datecommited" id="olddatecommited"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed" id ="olddatediscussed"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description" id="olddescription"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken" id="oldactiontaken"></span></p>
+		
+			<input type="hidden" name="id" id="olddiscid" />   	                                                      	      		
+           
+        </center>
+        
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Update" id="addmember" name="orgupdate"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="edit_disciplinary"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
        </form>
   </div>
-  </div> 
+  </div>
+
+
+
+
+
+
+
 
 
 <body class="cbp-spmenu-push">
@@ -654,36 +625,16 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-tv"></i> <span>Control Panel</span>
                 </a>
               </li>
-               <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cog"></i>
-                <span>Initialisation</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add System Info</a></li>
-                  <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
-                </ul>
-              </li>
+  
 
+              <!--Disciplinary Information System Info Menu Left hand side Panel-->
+            
 
-                            
-              <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
+			  <li class="treeview">
+			  <a data-toggle='modal' data-id='' href="#Disciplinary_data_entry" class='open-Initial'><i class="fa fa-plus"></i>Add Disciplinary Info</a>    
          
               </li>
-              <li class="treeview">
-              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
-               </li>
 
-
-               <li class="treeview">
-              	  <a  href="Disciplinary.php" ><i class='fa fa-print'></i>Disciplinary Information</a>
-               </li>
-
-              <li class="treeview">
-              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
-               </li>
                           
                 </ul>
           </div>
@@ -761,12 +712,13 @@ $retrieve = mysqli_query($db,$sqluse);
 		<!-- main content start-->
 		<div id="page-wrapper"  >
 			<div class="main-page" >
-			
+	
+				
 	
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Users</h4>
+						<h4 class="title">List of Disciplinary Action</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -775,44 +727,50 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>ID</th>
-                <th>Name</th>
-                <th>STAFF ID</th>
-                <th>RANK</th>              
-                <th>DEPARTMENT</th>
-                <th>CONTACTS</th>           
+				
+            	<th>EMP NO</th>
+                <th>EMP NAME</th>
+                <th>DISCIPLINARY TYPE</th>
+                <th>DATE COMMITED</th>              
+                <th>DATE DISCUSSED</th>
+                <th>DESCRIPTION</th>
+				<th>ACTION TAKEN</th>          
                 <th>PRINT</th>
                 <th>EDIT</th>
                 <th>DELETE</th>
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
+        	 <?php   $sqlmember ="SELECT * FROM disciplinary ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+                   
+
+						  $empno = $found['Emp_No']; $empname = $found['Emp_Name']; $disciplinary_type = $found['Disciplinary_Type'];
+						  $date_commited = $found['Date_commited']; $date_discussed = $found['Date_discussed']; $description = $found['Description'];
+						  $action_taken = $found['Action_taken'];$id=$found['id'];
 					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
+			      echo"<tr> 
+				           <td>$empno</td>                                       
+                             <td>$empname</td>        	
+                             <td>$disciplinary_type</td>
+                             <td>$date_commited</td>
+							 <td>$date_discussed</td>
+							 <td>$description</td>
+                             <td>$action_taken</td>
+			                   
+			               
 			                 <td>
 			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                               </td>
 			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+			                   <a data-toggle='modal' data-id='$id' data-ie='$empno'   data-if='$empname' data-ig='$disciplinary_type' data-ih='$date_commited' data-ij='$date_discussed' data-ik='$description'  data-il='$action_taken' class='open-disciplinary_edit btn  btn-info' title='edit user details' href='#disciplinary_edit'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
 							 
 			                 </td>				                 
 			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                   <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 							 
 			                 </td>			 
                              </tr>"; 

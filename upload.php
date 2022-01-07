@@ -64,7 +64,129 @@ include("db_connect.php");
                                     header("Location:admin.php");
  }
 					       }
- 
+
+
+
+
+
+
+
+//disciplinary action information system data entry validation
+
+if(isset($_POST['disciplinary_entry'])){
+
+if($_POST['empno']!=''&& $_POST['empname']!=''&&$_POST['disciplinarytype']!=''&&$_POST['datecommited']!=''&&$_POST['datediscussed']!=''
+&&$_POST['description']!=''&&$_POST['actiontaken']!=''){
+
+	
+$empno = mysqli_real_escape_string($db,$_POST['empno']);
+$empname = mysqli_real_escape_string($db,$_POST['empname']);
+$disciplinarytype = mysqli_real_escape_string($db,$_POST['disciplinarytype']);
+$datecommited = mysqli_real_escape_string($db,$_POST['datecommited']);
+$datediscussed = mysqli_real_escape_string($db,$_POST['datediscussed']);
+$description = mysqli_real_escape_string($db,$_POST['description']);
+$actiontaken = mysqli_real_escape_string($db,$_POST['actiontaken']);
+$pagex = mysqli_real_escape_string($db,$_POST['entry']);
+
+
+$sqln="SELECT * FROM disciplinary  WHERE Emp_No='$empno' && Emp_Name='$empname' && Disciplinary_Type='$disciplinarytype' &&   Date_commited= '$datecommited'
+	&& Date_discussed='$datediscussed' && Description = '$description' && Action_Taken = '$actiontaken'  ";
+	$resultn=mysqli_query($db,$sqln);                    
+		  if($rowcount=mysqli_num_rows($resultn)==0)
+		  {  
+
+$sql = "INSERT INTO disciplinary (Emp_No, Emp_Name, Disciplinary_Type, Date_commited,Date_discussed,Description,Action_Taken)
+VALUES ('$empno', '$empname', '$disciplinarytype','$datecommited','$datediscussed','$description','$actiontaken')";
+
+if ($db->query($sql) === TRUE) {
+
+//  echo "New record created successfully";
+
+$memberadd="new disciplinary record created successfully";					  
+$_SESSION['memberadded']=$memberadd;
+   header("Location:$pagex");  
+
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+		  }
+		  else{
+               echo "disciplinary record already exists";
+			// $_SESSION['memberexist']="disciplinary record already exist";
+			// header("Location:$pagex");  
+		  }
+}
+else{
+      echo " make sure all fields are filled";
+	// $_SESSION['emptytextboxes']="make sure all fields are filled";
+	// header("Location:$pagex");  
+}
+
+	
+}
+
+
+
+
+
+
+//disciplinary action information system data edit
+
+
+
+if(isset($_POST['edit_disciplinary'])){
+	 	                  
+	
+	$empno = mysqli_real_escape_string($db,$_POST['empno']);
+	$empname = mysqli_real_escape_string($db,$_POST['empname']);
+	$disciplinarytype = mysqli_real_escape_string($db,$_POST['disciplinarytype']);
+	$datecommited = mysqli_real_escape_string($db,$_POST['datecommited']);
+	$datediscussed = mysqli_real_escape_string($db,$_POST['datediscussed']);
+	$description = mysqli_real_escape_string($db,$_POST['description']);
+	$actiontaken = mysqli_real_escape_string($db,$_POST['actiontaken']);
+	$id = mysqli_real_escape_string($db,$_POST['id']);
+	   
+	  
+	
+
+	  $check="SELECT * FROM disciplinary WHERE id='$id' ";
+						  $checks=mysqli_query($db,$check);
+					 $found=mysqli_num_rows($checks);
+						 if($found!=0)
+						 {            
+						
+								 $query = "UPDATE disciplinary SET Emp_No='$empno',Emp_Name='$empname',Disciplinary_Type='$disciplinarytype',Date_commited='$datecommited',Date_discussed='$datediscussed',Description='$description',Action_Taken='$actiontaken' WHERE id='$id' ";
+								   $db->query($query) or die('Errorr, query failed to update');	
+								   
+								   $_SESSION['pass']="okjs";				
+							   header("Location:Disciplinary.php");
+}
+					  }
+
+
+//disciplinary action information system data delete
+
+					  if(isset($_POST['disciplinary_delete'])){ 	
+	
+						$tutor=$_POST['disciplinary_delete'];
+						 $querry="SELECT * FROM disciplinary WHERE id='$tutor' ";
+										$results=mysqli_query($db,$querry);
+									   $checks=mysqli_num_rows($results);
+										if($checks!=0)
+										{
+													$querr="DELETE FROM disciplinary WHERE id='$tutor'";
+												 $results=mysqli_query($db,$querr);
+												  echo"ok"; 
+										 }
+										  
+					   
+					}
+
+
+
+
+
  		   
 if(isset($_POST['addmember']))
      {
@@ -322,4 +444,3 @@ if(isset($_POST['addmember']))
 	}
 ?>
  	
-?>

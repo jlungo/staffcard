@@ -60,9 +60,7 @@
                                       Date_commited DATE NOT NULL,
                                       Date_discussed DATE NOT NULL,  
                                       Description TEXT NOT NULL,                             
-                                      Action_taken TEXT NOT NULL,                                 
-                                      Reports TEXT NOT NULL,
-                                      List_of_disciplinary_actions TEXT NOT NULL,                      
+                                      Action_taken TEXT NOT NULL,                                                      
                                       PRIMARY KEY(id) )";
                              $db->query($stableG8);                             
 						
