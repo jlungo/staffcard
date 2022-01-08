@@ -7,7 +7,19 @@
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 	 
              mysqli_select_db($db,"staff_db");
-             
+    
+    $tablestaffposition="CREATE TABLE IF NOT EXISTS staff_position (
+      id int(11) NOT NULL auto_increment,
+      EmpNo varchar(300) NOT NULL,
+      EmpName varchar(300) NOT NULL,
+      PosTitle varchar(300) NOT NULL,
+      DateAss date NOT NULL,
+      DateDis date NOT NULL,
+      Descript varchar(300),
+      ActionTaken varchar(300),
+      PRIMARY KEY (id)
+      )";
+      $db->query($tablestaffposition);         
    
         		                       
 		    
