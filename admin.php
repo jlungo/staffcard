@@ -25,11 +25,9 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 <html>
 
 <head>
-  <title>admin</title>
+  <title>Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
   <script type="application/x-javascript">
     addEventListener("load", function() {
       setTimeout(hideURLbar, 0);
@@ -282,9 +280,6 @@ while ($found = mysqli_fetch_array($ret)) {
   $idsx = $found['id'];
 }
 
-
-
-
 $sqluse = "SELECT * FROM Inorg ORDER BY id DESC ";
 $retrieve = mysqli_query($db, $sqluse);
 while ($foundk = mysqli_fetch_array($retrieve)) {
@@ -343,7 +338,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;">
           <center>
             Edit details of <input style="border: none;background:#222d32" type="text" id="oldname" value="" readonly="readonly" />
-
           </center>
         </h4>
       </div>
@@ -453,8 +447,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
   </div>
 </div>
 
-
-
 <div id="Depadd" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -471,8 +463,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
       <div class="modal-body">
         <center>
           <form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">
-
-
             <!-- <p style="margin-bottom:10px;">  
         	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
         	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
@@ -481,14 +471,14 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
         		</p> -->
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Male Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="FDepNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Female Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="MDepNo"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the oldest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeOldDep"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo" required></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName" required></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Male Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="FDepNo" required></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Number of Female Dependants<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="MDepNo" required></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the oldest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeOldDep" required></span></p>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the youngest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeYoungDep"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Home address <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Address"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Age of the youngest Dependant <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="AgeYoungDep" required></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Home address <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Address" required></span></p>
 
 
             <input type="hidden" name="page" value="admin.php" />
