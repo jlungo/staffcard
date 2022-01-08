@@ -13,7 +13,7 @@
       EmpNo varchar(300) NOT NULL,
       EmpName varchar(300) NOT NULL,
       PosTitle varchar(300) NOT NULL,
-      DateAss date NOT NULL,
+      DateAssigned date NOT NULL,
       DateDis date NOT NULL,
       Descript varchar(300),
       ActionTaken varchar(300),
