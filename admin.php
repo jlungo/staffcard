@@ -83,81 +83,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
 
 
-  <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
-  <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
-  <script src='https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js'></script>
-  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js'></script>
-  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js'></script>
-  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js'></script>
 
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable({
-
-
-      });
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).on("click", ".open-Delete", function() {
-      var myValue = $(this).data('id');
-      swal({
-          title: "Are you sure?",
-          text: "You want to remove this staff from the database!",
-          type: "warning",
-          showCancelButton: true,
-          cancelButtonColor: "red",
-          confirmButtonColor: "green",
-          confirmButtonText: "Yes, remove!",
-          cancelButtonText: "No, cancel!",
-          closeOnConfirm: false,
-          closeOnCancel: false,
-          buttonsStyling: false
-        },
-        function(isConfirm) {
-          if (isConfirm) {
-            var vals = myValue;
-            $.ajax({
-              type: 'POST',
-              url: "upload.php",
-              data: {
-                Valuedel: vals
-              },
-              success: function(result) {
-                if (result == "ok") {
-                  swal({
-                      title: "Deleted!",
-                      text: "Staff has been deleted from the database.",
-                      type: "success"
-                    },
-                    function() {
-                      location.reload();
-                    }
-                  );
-                }
-
-              }
-            });
-          } else {
-            swal("Cancelled", "This user is safe :)", "error");
-          }
-        });
-
-    });
-  </script>
-
-  <script type="text/javascript">
-    $(document).on("click", ".open-Updatepicture", function() {
-      var myTitle = $(this).data('id');
-      $(".modal-body #bookId").val(myTitle);
-
-    });
-  </script>
-  <!-- requried-jsfiles-for owl -->
-  <!-- //requried-jsfiles-for owl -->
 </head>
 <script type="text/javascript">
   $(document).on("click", ".open-Passwords", function() {
@@ -834,12 +760,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     <div id="page-wrapper">
       <div class="main-page">
 
-
-
-
-
-
-
         <div class="charts">
           <div class="mid-content-top charts-grids">
             <div class="middle-content">
@@ -929,6 +849,82 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
   <script src="admin/js/Chart.bundle.js"></script>
   <script src="admin/js/utils.js"></script>
+
+  <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+  <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js'></script>
+  <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js'></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable({
+
+
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).on("click", ".open-Delete", function() {
+      var myValue = $(this).data('id');
+      swal({
+          title: "Are you sure?",
+          text: "You want to remove this staff from the database!",
+          type: "warning",
+          showCancelButton: true,
+          cancelButtonColor: "red",
+          confirmButtonColor: "green",
+          confirmButtonText: "Yes, remove!",
+          cancelButtonText: "No, cancel!",
+          closeOnConfirm: false,
+          closeOnCancel: false,
+          buttonsStyling: false
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+            var vals = myValue;
+            $.ajax({
+              type: 'POST',
+              url: "upload.php",
+              data: {
+                Valuedel: vals
+              },
+              success: function(result) {
+                if (result == "ok") {
+                  swal({
+                      title: "Deleted!",
+                      text: "Staff has been deleted from the database.",
+                      type: "success"
+                    },
+                    function() {
+                      location.reload();
+                    }
+                  );
+                }
+
+              }
+            });
+          } else {
+            swal("Cancelled", "This user is safe :)", "error");
+          }
+        });
+
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).on("click", ".open-Updatepicture", function() {
+      var myTitle = $(this).data('id');
+      $(".modal-body #bookId").val(myTitle);
+
+    });
+  </script>
+  <!-- requried-jsfiles-for owl -->
+  <!-- //requried-jsfiles-for owl -->
 
 
   <!-- Classie -->
