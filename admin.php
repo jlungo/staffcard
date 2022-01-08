@@ -726,12 +726,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
 
-              <li class="treeview">
-                <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-sign-out" aria-hidden="true"></i>Staff Leave Info</a>
-
-                
-              </li>
-
 
               <li class="treeview">
                 <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
