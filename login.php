@@ -1,4 +1,3 @@
-
 <?php
 session_start();   
 include("db_connect.php"); 
@@ -26,3 +25,6 @@ if(isset($_POST['login_button'])) {
 	       }		
 }
 
+
+ 	
+?>

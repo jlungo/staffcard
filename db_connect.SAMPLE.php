@@ -1,6 +1,6 @@
 <?php
  
- $db = new mysqli("localhost","root","localpassword");
+ $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
      
@@ -28,6 +28,7 @@
                                  Type varchar(30)NOT NULL,Size decimal(10) NULL,
                                    content longblob NOT NULL,PRIMARY KEY(id) )";
                                  $db->query( $stable1);
+
                
                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(200)NOT NULL, 
