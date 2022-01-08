@@ -43,16 +43,14 @@ $stable56 = "CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_incremen
 $query1 = $db->query($stable56);
 
 
-
-
 $stable175 = "CREATE TABLE IF NOT EXISTS StaffDep (id int(11) NOT NULL auto_increment,
-                EmployeeNo varchar(300)NOT NULL, 
-                EmployeeName varchar(300)NOT NULL,
+                EmployeeNo varchar(20)NOT NULL, 
+                EmployeeName varchar(255)NOT NULL,
                 FDepNo int(3)NOT NULL DEFAULT 0,                                 
                 MDepNo int(3)NOT NULL DEFAULT 0,                               
                 AgeOldDep int(3)NOT NULL DEFAULT 0,
                 AgeYoungDep int(3)NOT NULL DEFAULT 0,
-                `Address` varchar(300)NOT NULL,
+                `Address` varchar(255)NOT NULL,
                 PRIMARY KEY(id) )";
 $db->query($stable175);
 // print_r($db->error);

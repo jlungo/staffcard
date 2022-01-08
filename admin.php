@@ -78,11 +78,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   <link href="css/animate.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/bootstrap-dropdownhover.css">
 
-
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
-
-
 
 </head>
 <script type="text/javascript">
@@ -158,7 +155,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   session_destroy();
 }
 ?>
-
 
 <?php if (isset($_SESSION['emptytextboxes'])) { ?>
   <script type="text/javascript">
@@ -265,9 +261,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 }
 ?>
 
-
-
-
 <?php if (isset($_SESSION['pass'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -332,8 +325,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
             <span class="input-group-addon">Employee id starts @</span>
             <input id="msg" type="text" class="form-control" name="receiptrange" placeholder="" value="<?php echo $idsx; ?>" readonly="readonly">
           </div>
-
-
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp;
@@ -342,8 +333,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     </div>
   </div>
 </div>
-
-
 
 <div id="Passwords" class="modal fade" role="dialog">
   <div class="modal-dialog">
