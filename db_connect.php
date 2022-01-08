@@ -1,6 +1,6 @@
 <?php
 
-$db = new mysqli("localhost", "root", "crdb1234");
+$db = new mysqli("localhost", "root", "");
 if ($db->connect_errno > 0) {
   die('Unable to connect to database [' . $db->connect_error . ']');
 }
@@ -57,17 +57,7 @@ $stable4 = "CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_i
                                   Phone varchar(30)NOT NULL,Password varchar(30)NOT NULL,Email varchar(30)NOT NULL,PRIMARY KEY(id) )";
 $db->query($stable4);
 
-$stable01 = "CREATE TABLE IF NOT EXISTS StaffLeave (
-  id int(11) NOT NULL auto_increment,
-  emp_no varchar(300)NOT NULL, 
-  emp_name varchar(300)NOT NULL,
-  leave_start_date date NOT NULL,                                 
-  leave_end_date date NOT NULL,                                 
-  total_days int(10) NOT NULL,
-  home_address varchar(300) NOT NULL,
-  names_of_dependents varchar(300) NOT NULL,
-  PRIMARY KEY(id) )";
-$db->query($stable01);
+
 
 $sql = "SELECT * FROM Administrator ";
 $result = mysqli_query($db, $sql);
