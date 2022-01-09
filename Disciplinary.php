@@ -559,7 +559,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
 
 
-
+<!--Disciplinary Information System Data Edit Form-->
 
 <div id="disciplinary_edit" class="modal fade" role="dialog">
   <div class="modal-dialog">
