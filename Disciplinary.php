@@ -521,7 +521,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
 
 
-<!--Disciplinary Information System Data Entry Form-->
+
 
   <div id="Disciplinary_data_entry" class="modal fade" role="dialog">
   <div class="modal-dialog">
