@@ -198,7 +198,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
- 
+ <!-- Add disciplinary record js-->
 <?php if(isset($_SESSION['disciplinaryadded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
