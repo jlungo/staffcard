@@ -674,7 +674,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education Info</a></li>
+                <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education History</a></li>
                   <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff & Education Info</a></li>
                 </ul>
               </li>

@@ -520,7 +520,7 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div>
 
-  <div id="add_education_history" class="modal fade" role="dialog">
+  <div id="add_promotion" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
@@ -542,19 +542,19 @@ $retrieve = mysqli_query($db,$sqluse);
               <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
-            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
                <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
-               <input style="width:270px;" type="text" name="current_rank" ></span></p><br>
+               <input style="width:270px;" type="text" name="institution" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Institution <address></address>:*</label><br>
-               <input style="width:270px;" type="text" name="new_rank" ></span></p><br>
+               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
+               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Year stated education:*</label><br>
-               <input style="width:270px;" type="date" name="date_promoted" ></span></p><br>
+               <label for="date_promoted" style="color: red;font-size:20px;">Year started Education:*</label><br>
+               <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Graduated year:*</label><br>
-               <input style="width:270px;" type="text" name="high_ed" ></span></p><br>
+               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
+               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
@@ -683,12 +683,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Education History</span>
+                <span>Staff Education history</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education Info</a></li>
-                  <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff & Education Info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education History</a></li>
+                  <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & education info</a></li>
                 </ul>
               </li>
 
@@ -778,7 +778,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Education History</h4>
+						<h4 class="title">promotion information</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -786,16 +786,17 @@ $retrieve = mysqli_query($db,$sqluse);
 					
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
-        <tr>
-            
-            <th> Emp No </th>
-            <th> Emp Name </th>
-            <th> certificate Obtained </th>
-            <th> institution </th>
-            <th> institution Address </th>
-            <th> Year stated Education </th>
-            <th> Graduated Year </th> 
-           </tr>
+            <tr>
+               	
+            <th>Emp No</th>
+                <th>Emp Name</th>
+                <th>Job Desc</th>              
+                <th>Current Rank</th>
+                <th>New Promotion Rank</th>           
+                <th>Date Promoted</th>
+                <th>Highest Education Level</th>
+                
+            </tr>
         </thead>
         <tbody>
         	 <?php   $sqlmember ="SELECT * FROM Users ";
