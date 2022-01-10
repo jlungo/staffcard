@@ -1,7 +1,6 @@
 <?php 
 session_start();
-include_once "db_connect.php";
-$result = mysqli_query($db, "SELECT * FROM Pension");
+include("db_connect.php");
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	
@@ -29,6 +28,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
+
 <title>Pension Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -518,40 +518,7 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-  <!--created a modal for add pension  -->
-  <div id="add_pension" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
-      <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	ADD PENSION INFORMATION
-        	</center></h4>
-      </div>
-      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
-
-      <div class="modal-body" >       	
-      	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ptype"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pnumber"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="regdate"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mon_contribution"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="curr_balance"></span></p>
-                                   	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-         </center>
-      </div>
-      <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="orginitial"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-       </form>
-  </div>
-  </div>
- 
+  
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -664,7 +631,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     <!--menu for pension informartion -->
+                     
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -672,8 +639,8 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_pension' class='open-Initial'><i class="fa fa-plus"></i>Add Pension</a></li>
-                  <li><a href='pension_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Pension Report</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add Pension</a></li>
+                  <li><a href='admin.php' class='open-Initial2'><i class="fa fa-minus"></i>Pension Report</a></li>
                 </ul>
               </li>
 
@@ -763,7 +730,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Users</h4>
+						<h4 class="title">PENSION REPORT</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -772,36 +739,51 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	
-              <th> Employee Number </th>
-              <th> Employee Name </th>
-              <th> Pension Type </th>
-              <th> Pensioner Number </th>
-               <th> Registered date </th>
-               <th> monthly contribution </th>
-             <th> current balance </th>
+            	<th>ID</th>
+                <th>Name</th>
+                <th>STAFF ID</th>
+                <th>RANK</th>              
+                <th>DEPARTMENT</th>
+                <th>CONTACTS</th>           
+                <th>PRINT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
             </tr>
         </thead>
         <tbody>
-        <?php
-      $i=0;
-      while ($rows = mysqli_fetch_assoc($result))
-
-      {
-?>
-  <tr>
-    <th><?php echo $rows["Emp_No"]; ?></th>
-    <th><?php echo $rows["Emp_Name"]; ?></th>
-    <th><?php echo $rows["Pension_Type"]; ?></th>
-    <th><?php echo $rows["Pension_Number"]; ?></th>
-    <th><?php echo $rows["Registered_Date"]; ?></th>
-    <th><?php echo $rows["Monthly_Contribution"]; ?></th>
-    <th><?php echo $rows["Current_Balance"]; ?></th>
-  </tr>
-<?php
-    $i++;  
-    }
-?>
+        	 <?php   $sqlmember ="SELECT * FROM Users ";
+			       $retrieve = mysqli_query($db,$sqlmember);
+				                    $count=0;
+                     while($found = mysqli_fetch_array($retrieve))
+	                 {
+                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
+                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
+			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
+			              $names=$firstname." ".$sirname;
+					    	 
+			      echo"<tr>    <td>$id</td>                                       
+                             <td>$title $firstname $sirname</td>        	
+                             <td>$pass</td>
+                             <td>$contact</td>
+                             
+			                 <td>$dept</td>
+			                 <td>$rank</td>
+			                 <td>
+			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                              </td>
+			                 <td>
+			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+							 
+			                 </td>				                 
+			                 <td>
+			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+							 
+			                 </td>			 
+                             </tr>"; 
+					 
+					 } 
+		
+		           	?>
             </tbody>
         
     </table>
