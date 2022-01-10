@@ -1,9 +1,4 @@
 <?php 
-<<<<<<< HEAD
-// database connection
-=======
-// database successfull
->>>>>>> d0109868c51e544e005ecef389334324aaff0fe8
 include_once 'db_connect.php';
 if(isset($_POST['save']))
 {
