@@ -782,11 +782,19 @@ $retrieve = mysqli_query($db,$sqluse);
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
                          </div>
-					
+				
 					     <table id="example" class="display nowrap" style="width:100%">
                <thead>
             <tr>
-            
+             <th> Emp No </th>
+             <th> Emp Name </th>
+             <th> certificate Obtained </th>
+             <th> institution </th>
+             <th> institution Address </th>
+             <th> Year stated Education </th>
+             <th> Graduated Year </th> 
+            </tr>
+            <tr>
              <th> Emp No </th>
              <th> Emp Name </th>
              <th> certificate Obtained </th>
@@ -820,7 +828,7 @@ $retrieve = mysqli_query($db,$sqluse);
         
     </table>
 
-             <button id="clear-all-button">Clear All Filters</button>
+             <button id="clear-all-button">Clear All List</button>
                            
 				        </div>
 		
