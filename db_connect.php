@@ -24,7 +24,7 @@ $db->query($stableZ);
 $stable1 = "CREATE TABLE IF NOT EXISTS Files (id int(11) NOT NULL auto_increment,
                                   Title varchar(300)NOT NULL,Name varchar(1000)NOT NULL,
                                  Type varchar(30)NOT NULL,Size decimal(10) NULL,
-                                   content longblob NOT NULL,PRIMARY KEY(id) )";
+                                content longblob NOT NULL,PRIMARY KEY(id) )";
 $db->query($stable1);
 
 $stable56 = "CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
@@ -41,7 +41,22 @@ $stable56 = "CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_incremen
                                   PRIMARY KEY(id) )";
 $db->query($stable56);
 
+$table_deduction = "CREATE TABLE IF NOT EXISTS deduction (id int(11) NOT NULL auto_increment,
+                                  title varchar(300) NOT NULL,
+                                  description text NOT NULL,
+                                  amount float NULL,         
+                                  percentage float NULL,        
+                                  PRIMARY KEY(id) )";
+$db->query($table_deduction);
 
+$table_staff_deduction = "CREATE TABLE IF NOT EXISTS staff_deduction (id int(11) NOT NULL auto_increment,
+                                  staff_id int NOT NULL,
+                                  deduction_id int NOT NULL,
+                                  total_repayment float NOT NULL,
+                                  deducted_amount float NOT NULL,         
+                                  date_time datetime NOT NULL,
+                                  PRIMARY KEY(id) )";
+$db->query($table_staff_deduction);
 
 $stable4 = "CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,Mtitle Varchar(30)NOT NULL,
@@ -57,8 +72,6 @@ $rowcount = mysqli_num_rows($result);
 if ($rowcount == 0) {
   $enter = "INSERT INTO Administrator (Password,Email,Firstname,Sirname,Mtitle,Phone) VALUES('admin','admin@gmail.com','Patrick','Mvuma','Mr','265999107724')";
   $db->query($enter);
-
-
   $querydy = "INSERT INTO Files (Title,Name,Size,Type) " .
     "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";
   $db->query($querydy) or die('Errorr, query failed to upload');
