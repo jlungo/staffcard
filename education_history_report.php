@@ -31,7 +31,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Promotion Report</title>
+<title>Education History</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -670,12 +670,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Promotion Information</span>
+                <span>Education History</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Promotion</a></li>
-                  <li><a href='promotion_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Promotion Report</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education Info</a></li>
+                  <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff & Education Info</a></li>
                 </ul>
               </li>
 
@@ -777,11 +777,11 @@ $retrieve = mysqli_query($db,$sqluse);
             
              <th> Emp No </th>
              <th> Emp Name </th>
-             <th> Job desc </th>
-             <th> Current Rank </th>
-             <th> New promotion rank </th>
-             <th> Date promoted </th>
-             <th> Highest education level </th> 
+             <th> certificate Obtained </th>
+             <th> institution </th>
+             <th> institution Address </th>
+             <th> Year stated Education </th>
+             <th> Graduated Year </th> 
             </tr>
         </thead>
         <tbody>
@@ -794,11 +794,11 @@ $retrieve = mysqli_query($db,$sqluse);
   <tr>
     <th><?php echo $rows["emp_no"]; ?></th>
     <th><?php echo $rows["emp_name"]; ?></th>
-    <th><?php echo $rows["job_desc"]; ?></th>
-    <th><?php echo $rows["current_rank"]; ?></th>
-    <th><?php echo $rows["new_rank"]; ?></th>
-    <th><?php echo $rows["date_promoted"]; ?></th>
-    <th><?php echo $rows["high_ed"]; ?></th>
+    <th><?php echo $rows["cert_obtained"]; ?></th>
+    <th><?php echo $rows["institution"]; ?></th>
+    <th><?php echo $rows["institution_add"]; ?></th>
+    <th><?php echo $rows["year_stated_edu"]; ?></th>
+    <th><?php echo $rows["year_graduated"]; ?></th>
   </tr>
 <?php
     $i++;  
