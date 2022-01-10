@@ -660,21 +660,20 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       	<center> 
-        		
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp_Name:<label style="color: red;font-size:20px;">*</label>
-        	    	<input style="width:270px;" type="text" placeholder="Enter Emp_Name" name="Emp_Name" value="<?php if(isset($phone)){echo$phone;} ?>"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Objective:<label style="color: red;font-size:20px;">*</label>
-        			<input style="width:270px;" type="text" placeholder="Objective" name="Objective"  value="<?php if(isset($mail)){echo$mail;} ?>"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Apraisee_score:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text"  placeholder="Apraisee score" name="Apraisee_score" value="<?php if(isset($website)){echo$website;} ?>"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
-				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Performance_score:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" placeholder="Performance score" name="Performance_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
-				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Recommendations:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" placeholder="Recommendations" name="Recommendations" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
-				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
-        	     	<input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+        		 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp_Name:<label style="color: red;font-size:20px;">*</label>
+                        	    	<input style="width:270px;" type="text" placeholder="Enter Emp_Name" name="Emp_Name" input onkeypress="return /[a-z]/i.test(event.key)"  value="<?php if(isset($phone)){echo$phone;} ?>" required></span></p>
+                        		 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Objective:<label style="color: red;font-size:20px;">*</label>
+                        			<input style="width:270px;" type="text" placeholder="Objective" name="Objective"  value="<?php if(isset($mail)){echo$mail;} ?>" required</span></p>
+                        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Apraisee_score:<label style="color: red;font-size:20px;">*</label>
+                        	     	<input style="width:270px;" type="text"  placeholder="Apraisee score" name="Apraisee_score" value="<?php if(isset($website)){echo$website;} ?>" required></span></p>
+                        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
+                        	     	<input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>" required></span></p>
+                                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Performance_score:<label style="color: red;font-size:20px;">*</label>
+        	     	             <input style="width:270px;" type="text" placeholder="Performance score" name="Performance_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Recommendations:<label style="color: red;font-size:20px;">*</label>
+        	     	             <input style="width:270px;" type="text" placeholder="Recommendations" name="Recommendations" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
+        	     	             <input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
 
                                           	      	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
                           	      	<input type="hidden" name="pageid" value="<?php echo$idz; ?>"/> 	
