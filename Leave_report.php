@@ -579,7 +579,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <h4 class="title">Leave Report</h4>
               <!-- start content_slider -->
               <div class="alert alert-info">
-                <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                <i class="fa fa-envelope"></i>&nbsp;Leave report of all staff's who are on valid Leave
               </div>
 
               <table id="example" class="display nowrap" style="width:100%">
@@ -592,9 +592,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                     <th>End date</th>
                     <th>Total Days</th>
                     <th>Home address</th>
-                    <th>Print</th>
-                    <th>EDIT</th>
-                    <th>DELETE</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
