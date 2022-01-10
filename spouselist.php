@@ -182,10 +182,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	   session_destroy();		
 		    }?>
 
-<?php if(isset($_SESSION['spouseAdded'])){?>
+<?php if(isset($_SESSION['dependantAdded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Staff Spouse added successfully!!.", type: "success"});
+ 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!!.", type: "success"});
                                   });
               </script>
             
@@ -203,10 +203,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
        	   session_destroy();}  
            ?>
 
-<?php if(isset($_SESSION['spouseExists'])){?>
+<?php if(isset($_SESSION['dependantExists'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff spouse with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is arleady a staff dependant with those details in the database", "error");     				              
                                });
                 </script>
            <?php 
@@ -511,12 +511,10 @@ $retrieve = mysqli_query($db,$sqluse);
  </div>
 
 
-<!-- CREATING SPOUSE FORM
+
   <div id="Spouse" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    -->
     <!-- Modal content-->
-    <!--
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -527,9 +525,8 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       	<center> 
-        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
-    -->
-<!-- 
+        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">   
+
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Marital Status<label style="color: red;font-size:20px;">*</label><select class="form-select" aria-label="Default select example" name="MaritalStatus">
@@ -560,7 +557,6 @@ $retrieve = mysqli_query($db,$sqluse);
 
 
   </div> 
-   -->
   
   <div id="Initialisation" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -703,16 +699,15 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-user"></i>
-                <!-- ADDING SPOUSE LINK LIST-->
-                <!-- <span>Spouse</span>
+                <span>Spouse</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#Spouse' class='open-Initial'><i class="fa fa-plus"></i>Add Spouse Info</a></li>
-                  <li><a data-toggle='modal' data-id='' href='/staffcard/spouselist.php' class='open-Initial2'><i class="fa fa-minus"></i>Spouse List info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#Spouse2' class='open-Initial2'><i class="fa fa-minus"></i>View spouse info</a></li>
                 </ul>
          
-              </li> -->
+              </li>
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
@@ -794,6 +789,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
+
 		<div id="page-wrapper"  >
 			<div class="main-page" >
 	
@@ -806,9 +802,10 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Users</h4>
+						<h4 class="title">Spouse information</h4>
 					<!-- start content_slider -->
-				<div class="alert alert-info">
+          <!-- CREATING SPOUSE TABLE -->
+				<!-- <div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
                          </div>
 					
@@ -816,44 +813,44 @@ $retrieve = mysqli_query($db,$sqluse);
         <thead>
             <tr>
             	<th>ID</th>
-                <th>Name</th>
-                <th>STAFF ID</th>
-                <th>RANK</th>              
-                <th>DEPARTMENT</th>
-                <th>CONTACTS</th>           
-                <th>PRINT</th>
-                <th>EDIT</th>
-                <th>DELETE</th>
+                
+                <th>EMPLOYEE NO</th>
+                <th>EMPLOYEE NANME</th>
+
+                <th>MARITAL STATUS</th> 
+                <th>SEX</th>  
+                <th>DATE MARRIED</th>  
+                <th>SPOUSE NAME</th>                                       
+                <th>DISTRICT MARRIED</th>
+                        
+                
             </tr>
-        </thead>
+        </thead> -->
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
+        	  <?php   $sqlmember ="SELECT * FROM spouse ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+                       $EmployeeNo=$found['Emp_No'];$EmployeeName=$found['Emp_Name'];$MaritalStatus=$found['Marital_status'];$Sex=$found['Sex'];
+                       $id=$found['id'];$DateMarried=$found['Date_married'];$SpouseName=$found['Spouse_name']; $DistrictMarried=$found['District_married']; 
+			                $count=$count+1; 
+                  
 					    	 
 			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
+                             <td>$EmployeeNo</td>        	
+                             <td>$EmployeeName</td>
+                             <td>$MaritalStatus</td>
                              
-			                 <td>$dept</td>
-			                 <td>$rank</td>
+			                 <td>$Sex</td>
+			                 <td>$DateMarried</td>
+			                 
 			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                             $SpouseName
 							 
 			                 </td>				                 
 			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
+			                 $DistrictMarried
 			                 </td>			 
                              </tr>"; 
 					 
@@ -923,7 +920,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	

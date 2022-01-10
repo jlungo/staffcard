@@ -1,6 +1,6 @@
 <?php
  
- $db = new mysqli("localhost","root","localpassword");
+ $db = new mysqli("localhost","root");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
      
@@ -46,17 +46,19 @@
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
 
-                         //Next of kin information table
-                         $stable97="CREATE TABLE IF NOT EXISTS Next_Of_Kin_Information (id int(11) NOT NULL auto_increment,
+                         //spouse information table
+                         $stable90="CREATE TABLE IF NOT EXISTS Spouse (id int(11) NOT NULL auto_increment,
                                   Emp_No varchar(300)NOT NULL, 
                                   Emp_Name varchar(300)NOT NULL,
-                                  Next_Of_Kin_Name Varchar(300)NOT NULL,                                 
-                                  Next_Of_kin_Relationship varchar(30)NOT NULL,                                 
-                                  Next_Of_kin_Sex varchar(300)NOT NULL,
-                                  Next_Of_Kin_Address varchar(300)NOT NULL,
-                                  Next_Of_Kin_Mobile_Number varchar(300)NOT NULL,                        
+                                  Marital_status Varchar(300)NOT NULL,                                 
+                                  Sex varchar(30)NOT NULL,                                 
+                                  Date_married date NOT NULL,
+                                  Spouse_name varchar(300)NOT NULL,
+                                  District_married varchar(300)NOT NULL,                        
                                   PRIMARY KEY(id) )";
-                         $db->query($stable97); 
+                         $db->query($stable90); 
+
+                         print_r($db->error);
                    
                         
 			   
