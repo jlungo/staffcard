@@ -678,7 +678,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     <!--menu for pension informartion -->
+                     <!--menu for Staff education history -->
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -784,16 +784,16 @@ $retrieve = mysqli_query($db,$sqluse);
                          </div>
 					
 					     <table id="example" class="display nowrap" style="width:100%">
-        <thead>
+               <thead>
             <tr>
-            	
-              <th> Employee Number </th>
-              <th> Employee Name </th>
-              <th> Pension Type </th>
-              <th> Pensioner Number </th>
-               <th> Registered date </th>
-               <th> monthly contribution </th>
-             <th> current balance </th>
+            
+             <th> Emp No </th>
+             <th> Emp Name </th>
+             <th> certificate Obtained </th>
+             <th> institution </th>
+             <th> institution Address </th>
+             <th> Year stated Education </th>
+             <th> Graduated Year </th> 
             </tr>
         </thead>
         <tbody>
@@ -804,13 +804,13 @@ $retrieve = mysqli_query($db,$sqluse);
       {
 ?>
   <tr>
-    <th><?php echo $rows["Emp_No"]; ?></th>
-    <th><?php echo $rows["Emp_Name"]; ?></th>
-    <th><?php echo $rows["Pension_Type"]; ?></th>
-    <th><?php echo $rows["Pension_Number"]; ?></th>
-    <th><?php echo $rows["Registered_Date"]; ?></th>
-    <th><?php echo $rows["Monthly_Contribution"]; ?></th>
-    <th><?php echo $rows["Current_Balance"]; ?></th>
+    <th><?php echo $rows["emp_no"]; ?></th>
+    <th><?php echo $rows["emp_name"]; ?></th>
+    <th><?php echo $rows["cert_obtained"]; ?></th>
+    <th><?php echo $rows["institution"]; ?></th>
+    <th><?php echo $rows["institution_add"]; ?></th>
+    <th><?php echo $rows["year_stated_edu"]; ?></th>
+    <th><?php echo $rows["year_graduated"]; ?></th>
   </tr>
 <?php
     $i++;  
@@ -819,6 +819,7 @@ $retrieve = mysqli_query($db,$sqluse);
             </tbody>
         
     </table>
+
              <button id="clear-all-button">Clear All Filters</button>
                            
 				        </div>
