@@ -770,7 +770,7 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>EMP NO</th>
+              	<th>EMP NO</th>
                 <th>EMP NAME</th>
                 <th>SAFARI START DATE</th>
                 <th> SAFARI RETURN DATE</th>              
