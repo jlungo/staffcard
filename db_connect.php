@@ -61,7 +61,7 @@ if(!$conn){
                                   emp_name varchar(350)NOT NULL,
                                   job_desc Varchar(30)NOT NULL,                                 
                                   current_rank varchar(30)NOT NULL,  
-                                  new_rank varchar(300)NOT NULL,                               
+                                  new_rank varchar(310)NOT NULL,                               
                                   date_promoted date NOT NULL,
                                   
                                   high_ed varchar(300)NOT NULL,
