@@ -64,8 +64,8 @@
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
                                      $db->query($querydy) or die('Errorr, query failed to upload');	
                                   
-                          }
-                     
+                      }
+            //this is our table  "pension information system         
           $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
                           Emp_No varchar(300)NOT NULL, 
                           Emp_Name varchar(300)NOT NULL,
