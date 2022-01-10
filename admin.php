@@ -892,7 +892,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                               </td>
 			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$employeename'   data-if='$employeeno' data-ig='$rank' data-ih='$nokname' data-ij='$nokrelationship' data-ik='$noksex' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+			                   <a data-toggle='modal' data-id=  '$id' data-ie='$employeename'   data-if='$employeeno' data-ih='$nokname' data-ij='$nokrelationship' data-ik='$noksex' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
 							 
 			                 </td>				                 
 			                 <td>
