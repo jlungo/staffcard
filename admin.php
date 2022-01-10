@@ -357,6 +357,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
           <center>
             PRINT IDs IN BULK
+          </center>
         </h4>
       </div>
 
@@ -649,6 +650,10 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
               <li class="treeview">
                 <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
+
+              </li>
+              <li class="treeview">
+                <a data-toggle='modal' data-id='' href='#spouselist.php'><i class="fa fa-user"></i>Spouse List</a>
 
               </li>
               <li class="treeview">
