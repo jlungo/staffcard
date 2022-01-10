@@ -13,7 +13,7 @@ $dbname ="staff_db";
 //create connection
 $conn = mysqli_connect($servername,$username,$password,"$dbname");
 if(!$conn){
-    die('could not connect my Sql:' .mysql_error());
+    die('could not connect my Sql:' .mysqli_error());
 }
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
@@ -54,16 +54,14 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-
-                         $stable03="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
-                
-                                  emp_name varchar(300)NOT NULL,
-                                  job_desc Varchar(30)NOT NULL,                                 
-                                  current_rank varchar(30)NOT NULL,  
-                                  new_rank varchar(300)NOT NULL,                               
-                                  date_promoted date NOT NULL,
-                                  
-                                  high_ed varchar(300)NOT NULL,
+//table
+                         $stable03="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
+                                 emp_name varchar(300)NOT NULL,
+                                  safari_start_date date NOT NULL,                                 
+                                  return_date date NOT NULL,  
+                                  purpose_safari varchar(400)NOT NULL,                               
+                                  authorisation_status varchar(200) NOT NULL,
+                                source_fund varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
                          $db->query($stable03); 
                          
