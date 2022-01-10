@@ -1,5 +1,5 @@
 <?php 
-// database successfull
+
 include_once 'db_connect.php';
 if(isset($_POST['save']))
 {
