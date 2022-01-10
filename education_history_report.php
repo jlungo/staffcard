@@ -794,15 +794,7 @@ $retrieve = mysqli_query($db,$sqluse);
              <th> Year stated Education </th>
              <th> Graduated Year </th> 
             </tr>
-            <tr>
-             <th> Emp No </th>
-             <th> Emp Name </th>
-             <th> certificate Obtained </th>
-             <th> institution </th>
-             <th> institution Address </th>
-             <th> Year stated Education </th>
-             <th> Graduated Year </th> 
-            </tr>
+  
         </thead>
         <tbody>
         <?php
