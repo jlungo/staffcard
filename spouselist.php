@@ -805,7 +805,7 @@ $retrieve = mysqli_query($db,$sqluse);
 						<h4 class="title">Spouse information</h4>
 					<!-- start content_slider -->
           <!-- CREATING SPOUSE TABLE -->
-				<!-- <div class="alert alert-info">
+				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
                          </div>
 					
@@ -825,7 +825,7 @@ $retrieve = mysqli_query($db,$sqluse);
                         
                 
             </tr>
-        </thead> -->
+        </thead>
         <tbody>
         	  <?php   $sqlmember ="SELECT * FROM spouse ";
 			       $retrieve = mysqli_query($db,$sqlmember);
