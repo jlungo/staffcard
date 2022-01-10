@@ -1,4 +1,5 @@
 <?php 
+// database connection
 include_once 'db_connect.php';
 if(isset($_POST['save']))
 {
