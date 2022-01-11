@@ -849,13 +849,13 @@ $retrieve = mysqli_query($db,$sqluse);
                          <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>id  </th>
-                <th>EmployeeNo</th>
-                <th>EmployeeName</th>
-                <th>SDate</th>
-                <th>TimeIn</th>              
-                <th>TimeOuty</th> 
-                <th>ActivitiesList</th>					
+                <th>ID  </th>
+                <th>Staff Number</th>
+                <th>Staff Name</th>
+                <th>Date</th>
+                <th>Time In</th>              
+                <th>Time Out</th> 
+                <th>Activities Performed</th>					
                 <th>Supervisor</th>           
             </tr>
         </thead>
