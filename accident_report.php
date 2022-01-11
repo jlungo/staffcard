@@ -541,20 +541,25 @@ $retrieve = mysqli_query($db,$sqluse);
               <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
               <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
-            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
+            <label for="job_desc" style="color: red;font-size:20px;">Job Description:*</label><br>
+            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
-               <input style="width:270px;" type="text" name="institution" ></span></p><br>
+               <label for ="current_rank" style="color: red;font-size:20px;">Accident Type:*</label><br>
+
+               <input style="width:270px;" type="text" name="acc_type" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
-               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
+               <label for="new_rank" style="color: red;font-size:20px;">Accident Description:*</label><br>
+               <input style="width:270px;" type="text" name="acc_desc" ></span></p><br>
+
+               
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Year started ACCIDENT:*</label><br>
+               <label for="date_promoted" style="color: red;font-size:20px;">Accident Date:*</label><br>
                <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
-               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
+
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label for="new_rank" style="color: red;font-size:20px;">Any Description:*</label><br>
+              <textarea> </textarea>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
@@ -605,7 +610,6 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div> 
-  
 
 
 <body class="cbp-spmenu-push">
@@ -684,12 +688,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Work ACCIDENT History</span>
+                <span>Work Accident Report</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add ACCIDENT History</a></li>
-                  <li><a href='ACCIDENT_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & ACCIDENT info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Accident History</a></li>
+                  <li><a href='accident_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & Accident info</a></li>
                 </ul>
               </li>
 
@@ -779,7 +783,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">USERS</h4>
+						<h4 class="title">List of Staff & Accident Info</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -788,51 +792,55 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
+
+            
                	
             <th>Emp No</th>
                 <th>Emp Name</th>
-                <th>Job Desc</th>              
-                <th>Current Rank</th>
-                <th>New Promotion Rank</th>           
-                <th>Date Promoted</th>
-                <th>Highest ACCIDENT Level</th>
-                
+                <th>Job Description</th>              
+                <th>Accident Type</th>
+                <th>Accident Desciption</th>           
+                <th>Accident Date</th>
+                <th>Any Description</th>
+
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
+
+        <?php   $sqlmember ="SELECT * FROM pension ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+                        $emp_no=$found['Emp_No'];
+                        $emp_name=$found['Emp_Name'];
+                        $job_desc=$found['job_desc'];
+                        $acc_type=$found['acc_type'];
+                        $acc_desc=$found['acc_desc'];
+                        $acc_date=$found['acc_date'];
+                        $any_desc=$found['any_desc'];
 					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>"; 
+			      echo"<tr>    
+                    <td>$emp_no</td>                                       
+                    <td>$emp_name</td>        	
+                    <td>$job_desc</td>
+                    <td>$acc_type</td>
+                    <td>$acc_desc</td>
+                    <td>$acc_date</td>
+                    <td>$any_desc</td>
+                    <td>
+                    
+                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    </td>
+			              <td>
+			                <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			              </td>			 
+                </tr>"; 
 					 
 					 } 
 		
 		           	?>
+
             </tbody>
         
     </table>
