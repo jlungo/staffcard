@@ -4,7 +4,7 @@
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
 
-//connection to  push promotion info
+//connection to  push Education history
 $servername ='localhost';
 $username='root';
 $password='';
@@ -54,18 +54,18 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-
-                         $stable03="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
+// group 13 work table
+                         $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment,
                 
                                   emp_name varchar(300)NOT NULL,
-                                  job_desc Varchar(30)NOT NULL,                                 
-                                  current_rank varchar(30)NOT NULL,  
-                                  new_rank varchar(300)NOT NULL,                               
-                                  date_promoted date NOT NULL,
+                                  cert_obtained Varchar(30)NOT NULL,                                 
+                                  institution varchar(30)NOT NULL,  
+                                  institution_add varchar(300)NOT NULL,                               
+                                  year_stated_edu date NOT NULL,
                                   
-                                  high_ed varchar(300)NOT NULL,
+                                 year_graduated varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
-                         $db->query($stable03); 
+                         $db->query($stable13); 
                          
                         
 			   
