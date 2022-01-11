@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../db_connect.php");
+include("db_connect.php");
 
 if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 
@@ -41,22 +41,22 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 		</script>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="../admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 		<!-- Custom CSS -->
-		<link href="../admin/css/style.css" rel='stylesheet' type='text/css' />
+		<link href="admin/css/style.css" rel='stylesheet' type='text/css' />
 
 		<!-- font-awesome icons CSS -->
-		<link href="../admin/css/font-awesome.css" rel="stylesheet">
+		<link href="admin/css/font-awesome.css" rel="stylesheet">
 		<!-- //font-awesome icons CSS-->
 
 		<!-- side nav css file -->
-		<link href='../admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+		<link href='admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
 		<!-- //side nav css file -->
 
 		<!-- js-->
-		<script src="../admin/js/jquery-1.11.1.min.js"></script>
-		<script src="../admin/js/modernizr.custom.js"></script>
+		<script src="admin/js/jquery-1.11.1.min.js"></script>
+		<script src="admin/js/modernizr.custom.js"></script>
 
 		<!--webfonts-->
 		<link
@@ -65,20 +65,20 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 		<!--//webfonts-->
 
 		<!-- chart -->
-		<script src="../admin/js/Chart.js"></script>
+		<script src="admin/js/Chart.js"></script>
 		<!-- //chart -->
 
 		<!-- Metis Menu -->
-		<script src="../admin/js/metisMenu.min.js"></script>
-		<script src="../admin/js/custom.js"></script>
-		<link href="../admin/css/custom.css" rel="stylesheet">
+		<script src="admin/js/metisMenu.min.js"></script>
+		<script src="admin/js/custom.js"></script>
+		<link href="admin/css/custom.css" rel="stylesheet">
 		<!--//Metis Menu -->
-		<script src="../script/sweetalert.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../script/sweetalert.css">
+		<script src="script/sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="script/sweetalert.css">
 
 		<!-- <script src="jquery.js"></script> -->
-		<link href="../css/animate.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../css/bootstrap-dropdownhover.css">
+		<link href="css/animate.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/bootstrap-dropdownhover.css">
 
 
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
@@ -733,12 +733,12 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 										<i class="fa fa-angle-left pull-right"></i>
 									</a>
 									<ul class="treeview-menu">
-										<li><a href='./deduction/deductions.php' class='open-Initial'>
+										<li><a href='deductions.php' class='open-Initial'>
 												<i class="fa fa-plus"></i>Deductions</a>
 										</li>
 										<li>
 											<a data-toggle='modal' data-id='' href='#Initialisation2'
-												class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a>
+												class='open-Initial2'><i class="fa fa-minus"></i>Staff Information</a>
 										</li>
 									</ul>
 								</li>
@@ -831,13 +831,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 					<div class="charts">
 						<div class="mid-content-top charts-grids">
 							<div class="middle-content">
-								<h4 class="title">Users</h4>
-								<!-- start content_slider -->
-								<div class="alert alert-info">
-									<i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search
-									box to spool more records
-								</div>
-
+								<h4 class="title">Deductions</h4>
+								<hr>
 								<table id="example" class="display nowrap" style="width:100%">
 									<thead>
 										<tr>
@@ -906,13 +901,13 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 		<!-- new added graphs chart js-->
 
-		<script src="../admin/js/Chart.bundle.js"></script>
-		<script src="../admin/js/utils.js"></script>
+		<script src="admin/js/Chart.bundle.js"></script>
+		<script src="admin/js/utils.js"></script>
 
 
 		<!-- Classie -->
 		<!-- for toggle left push menu script -->
-		<script src="../admin/js/classie.js"></script>
+		<script src="admin/js/classie.js"></script>
 		<script>
 		var menuLeft = document.getElementById('cbp-spmenu-s1'),
 			showLeftPush = document.getElementById('showLeftPush'),
@@ -936,8 +931,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 		<!-- //for toggle left push menu script -->
 
 		<!--scrolling js-->
-		<script src="../admin/js/jquery.nicescroll.js"></script>
-		<script src="../admin/js/scripts.js"></script>
+		<script src="admin/js/jquery.nicescroll.js"></script>
+		<script src="admin/js/scripts.js"></script>
 		<!--//scrolling js-->
 
 		<!-- side nav js -->
@@ -947,9 +942,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 		</script>
 
 		<!-- Bootstrap Core JavaScript -->
-		<script src="../admin/js/bootstrap.js"> </script>
+		<script src="admin/js/bootstrap.js"> </script>
 		<!-- //Bootstrap Core JavaScript -->
-		<script src=" ../css/bootstrap-dropdownhover.js"></script>
+		<script src="css/bootstrap-dropdownhover.js"></script>
 
 	</body>
 
