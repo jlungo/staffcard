@@ -671,7 +671,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='add_safari.php' class='open-Initial'><i class="fa fa-plus"></i>Add Safari</a></li>
-                  <li><a href='safari.php' class='open-Initial2'><i class="fa fa-minus"></i>Staff Safari report</a></li>
+                  <li><a href='safari_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Staff Safari report</a></li>
                 </ul>
               </li>
 
