@@ -773,7 +773,7 @@ $retrieve = mysqli_query($db,$sqluse);
               	<th>EMP NO</th>
                 <th>EMP NAME</th>
                 <th>SAFARI START DATE</th>
-                <th> SAFARI RETURN DATE</th>              
+                <th>SAFARI RETURN DATE</th>              
                 <th>PURPOSE OF SAFARI</th>
                 <th>AUTHORISATION STATUS</th>           
                 <th>SAFARI SOURCE OF FUND</th>
