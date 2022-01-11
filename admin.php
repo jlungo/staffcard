@@ -594,7 +594,7 @@ $retrieve = mysqli_query($db,$sqluse);
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
-      
+
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Finish" id="addmember" name="orginitial"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -721,14 +721,14 @@ $retrieve = mysqli_query($db,$sqluse);
 														     	
 								
 										
-           ?>
-            <h1>
-            	<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
-            		
-            	</span>MAIN MENU<span class="dashboard_text"></span>
-            	</a>
-           </h1>
-           <?php } ?> 
+                ?>
+                <h1>
+                  <a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
+                    
+                  </span>MAIN MENU<span class="dashboard_text"></span>
+                  </a>
+               </h1>
+               <?php } ?> 
 
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
