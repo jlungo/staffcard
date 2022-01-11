@@ -284,23 +284,23 @@ if (isset($_POST['add_deduction'])) {
 
 		$pagex = mysqli_real_escape_string($db, $_POST['page']);
 
-		$check = "SELECT * FROM deduction WHERE name='$deduction_name'";
+		$check = "SELECT * FROM deduction WHERE title='$deduction_name'";
 		$checks = mysqli_query($db, $check);
 		$found = mysqli_num_rows($checks);
 		if ($found == 0) {
 			$query = "INSERT INTO deduction (title, description, amount, percentage) 
-				VALUES ('$deduction_name','$deduction_description', '$deduction_amount','$deduction_percentage','$mpassword')";
+				VALUES ('$deduction_name','$deduction_description', '$deduction_amount', '$deduction_percentage')";
 			$db->query($query) or die('Error1, query failed');
 
 			$memberadd = "tyy";
 			$_SESSION['memberadded'] = $memberadd;
-			header("Location:$pagex");  //member added successfully
+			header("Location: deductions.php");  //member added successfully
 		} else {
 			$_SESSION['memberexist'] = "member already exist";
-			header("Location:$pagex");
+			header("Location: deductions.php");
 		}
 	} else {
 		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
-		header("Location:$pagex");
+		header("Location: deductions.php");
 	}
 }

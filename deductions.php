@@ -896,21 +896,21 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 										$description = $found['description'];
 										$amount = $found['amount'];
 										$percentage = $found['percentage'];
-										$count++;
 
 										echo "<tr>
 											<td>$count</td><td>$title</td>
 											<td>$description</td><td>$amount</td>
 											<td>$percentage</td>
 											<td>
-												<a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+												
 											</td>
 											<td>
-												<a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+												
 											</td>
 											<td>
-												<a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+												
 											</td></tr>";
+										$count++;
 									}
 									?>
 									</tbody>
