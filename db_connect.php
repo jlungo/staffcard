@@ -1,5 +1,6 @@
 <?php
- 
+ //Connection file
+
  $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
@@ -55,19 +56,18 @@ if(!$conn){
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
 
+                        //  Table for group 03
                          $stable03="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
                 
-                                  emp_name varchar(300)NOT NULL,
+                                  emp_name varchar(350)NOT NULL,
                                   job_desc Varchar(30)NOT NULL,                                 
                                   current_rank varchar(30)NOT NULL,  
-                                  new_rank varchar(300)NOT NULL,                               
+                                  new_rank varchar(310)NOT NULL,                               
                                   date_promoted date NOT NULL,
                                   
                                   high_ed varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
-                         $db->query($stable03); 
-                         
-                        
+                         $db->query($stable03);               
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,Mtitle Varchar(30)NOT NULL,
