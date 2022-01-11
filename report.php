@@ -3,7 +3,7 @@
 session_start();
 include("db_connect.php");
 
-<!-- //database connection -->
+ /*database connection */
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 $adminid = $_COOKIE['adminid'];
 $adminemail = $_COOKIE['adminemail'];
@@ -42,7 +42,7 @@ if(isset($_GET['ids']))
      ob_clean();
        flush();
 	       readfile('media/'.$name);	
-                mysqli_close();
+                mysqli_close($name);
                 exit;      
 	}
 ?>
