@@ -794,13 +794,13 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
+                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$surname=$found['Surname'];$rank=$found['Rank'];
                        $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
 			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+			              $names=$firstname." ".$surname;
 					    	 
 			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
+                             <td>$title $firstname $surname</td>        	
                              <td>$pass</td>
                              <td>$contact</td>
                              
@@ -838,7 +838,7 @@ $retrieve = mysqli_query($db,$sqluse);
     
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>© 2022 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
 	
 			</p>		
 	</div>
