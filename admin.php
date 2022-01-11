@@ -184,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "This staff already exists", "error");     				              
                                });
                 </script>
            <?php 
@@ -193,7 +193,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <?php if(isset($_SESSION['emptytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form", "error");     				              
+    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form or recheck if the filled details are correct", "error");     				              
                                });
                 </script>
            <?php 
@@ -203,8 +203,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
                                     swal({
-                                         title: "User removed successfully",
-                                         text: "Do you want to remove another one?",
+                                         title: "User successfully removed",
+                                         text: "Do you want to remove another user?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -230,7 +230,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    				              sweetAlert("Oops...", "This category is already in the system", "error");     				              
                                });
                 </script>
            <?php 
@@ -241,7 +241,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             $(document).ready(function(){ 
                                     swal({
                                          title: "Category added successfully",
-                                         text: "Do you want to add another one?",
+                                         text: "Do you want to add another category?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -270,7 +270,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             $(document).ready(function(){ 
                                     swal({
                                          title: "Category Deleted",
-                                         text: "Do you want to delete another one?",
+                                         text: "Do you want to delete another category?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -298,7 +298,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
  
- <?php if(isset($_SESSION['pass'])) {?>
+ <?php if(isset($_SESSION['pass']))
+  {?>
 <script type="text/javascript"> 
 
 $(document).ready(function(){  
@@ -340,7 +341,8 @@ $retrieve = mysqli_query($db,$sqluse);
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
+        <center>
         	 PRINT IDs IN BULK
         	</center></h4>
       </div>
@@ -363,7 +365,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
       </div>
       <div class="modal-footer">
-      	<input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp;
+      	<input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp; &nbsp;
       </div>
       </form> 
       </div>       
@@ -466,14 +468,22 @@ $retrieve = mysqli_query($db,$sqluse);
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+            <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="prof">&nbsp;Prof</span>
         		</p>
         		                                                           	      		
                  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:
+               <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
+        	     
+               
+               <p >
+                 <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;
+                  &nbsp;&nbsp;Staff ID: 
+                  <label style="color: red;font-size:20px;">*</label>
+                  <input style="width:270px;" type="text" name="mpassword"></span></p>
         		Add profile picture:<input name='filed' type='file' id='filed' >
                     
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
@@ -631,7 +641,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	                                     {
                                               $profile= $foundl['pname'];
 		                                  }
-										echo"<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";	   
+										echo"<center><img src='media/$profile'  width='80%' height='160px' alt=''></center>";	   
                                }
 							else{
 														     	
@@ -739,9 +749,13 @@ $retrieve = mysqli_query($db,$sqluse);
 										
 										?>
 										 </span> 
+
+
+
 									<div class="user-name" >
 										<p style="color:#1D809F;"><?php if(isset($sirname))
-                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
+                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";}
+                                             ?>
 				                         </p>
 										<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
 										</span>
@@ -771,11 +785,12 @@ $retrieve = mysqli_query($db,$sqluse);
 	
 		
 		
-				
-				
-				
-	
-			<div class="charts">		
+    
+    
+    
+    
+    
+      <div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
 						<h4 class="title">promotion information</h4>
@@ -847,7 +862,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>© 2022 Attainment . Design and developed by group_9
 	
 			</p>		
 	</div>
