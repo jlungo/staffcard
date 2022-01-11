@@ -296,7 +296,7 @@ if (isset($_POST['add_deduction'])) {
 			$_SESSION['memberadded'] = $memberadd;
 			header("Location: deductions.php");  //member added successfully
 		} else {
-			$_SESSION['memberexist'] = "member already exist";
+			$_SESSION['memberexist'] = "Deduction already exist";
 			header("Location: deductions.php");
 		}
 	} else {

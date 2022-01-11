@@ -737,8 +737,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 												<i class="fa fa-plus"></i>Deductions</a>
 										</li>
 										<li>
-											<a data-toggle='modal' data-id='' href='#Initialisation2'
-												class='open-Initial2'><i class="fa fa-minus"></i>Staff Information</a>
+											<a href='deductions_staff.php' class='open-Initial2'><i
+													class="fa fa-minus"></i>Staff Information</a>
 										</li>
 									</ul>
 								</li>

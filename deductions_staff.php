@@ -730,7 +730,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 						?>
 							<h1>
 								<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
-
 									</span>MAIN MENU<span class="dashboard_text"></span>
 								</a>
 							</h1>
@@ -872,23 +871,25 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 					<div class="charts">
 						<div class="mid-content-top charts-grids">
 							<div class="middle-content">
-								<h4 class="title">Deductions</h4>
-								<a class="btn btn-primary" data-toggle='modal' href="#new_deduction">New Deduction</a>
+								<h4 class="title">Employee Deductions</h4>
+								<a class="btn btn-primary" data-toggle='modal' href="#new_deduction">New Record</a>
 								<hr>
-								<table id="example" class="display nowrap" style="width:100%">
+								<table id="example" class="display" style="width:100%">
 									<thead>
 										<tr>
 											<th>S/N</th>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Amount</th>
-											<th>Precentage</th>
-											<th>EDIT</th>
-											<th>DELETE</th>
+											<th>Emp No</th>
+											<th>Emp Name</th>
+											<th>Deduction Type</th>
+											<th>Deduction Title</th>
+											<th>Total Repayment</th>
+											<th>Start Date</th>
+											<th>End Date</th>
+											<th>Deduction Amount</th>
 										</tr>
 									</thead>
 									<tbody>
-										<?php $sqlmember = "SELECT * FROM deduction";
+										<?php $sqlmember = "SELECT * FROM staff_deduction";
 									$retrieve = mysqli_query($db, $sqlmember);
 									$count = 1;
 									while ($found = mysqli_fetch_array($retrieve)) {
