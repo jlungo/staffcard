@@ -391,6 +391,47 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 		</div>
 	</div>
 
+	<div id="new_deduction" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+				<div class="modal-header" style="background:#222d32">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
+						<center>
+							New Deduction
+						</center>
+					</h4>
+				</div>
+				<form action="upload.php" method="POST">
+					<input type="hidden" name="page" />
+					<div class="modal-body">
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Deduction Name</span>
+							<input id="deduction_name" type="text" class="form-control" name="deduction_name">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Description</span>
+							<textarea class="form-control" name="deduction_description"></textarea>
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Amount</span>
+							<input id="deduction_amount" type="number" class="form-control" name="deduction_amount">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Percentage</span>
+							<input id="deduction_percentage" type="number" class="form-control"
+								name="deduction_percentage">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Submit" name="add_deduction"> &nbsp;
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 
 
 	<div id="Passwords" class="modal fade" role="dialog">
@@ -832,13 +873,16 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 						<div class="mid-content-top charts-grids">
 							<div class="middle-content">
 								<h4 class="title">Deductions</h4>
+								<a class="btn btn-primary" data-toggle='modal' href="#new_deduction">New Deduction</a>
 								<hr>
 								<table id="example" class="display nowrap" style="width:100%">
 									<thead>
 										<tr>
-											<th>ID</th>
+											<th>S/N</th>
 											<th>Name</th>
+											<th>Description</th>
 											<th>Amount</th>
+											<th>Precentage</th>
 											<th>EDIT</th>
 											<th>DELETE</th>
 										</tr>
@@ -846,46 +890,33 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 									<tbody>
 										<?php $sqlmember = "SELECT * FROM deduction";
 									$retrieve = mysqli_query($db, $sqlmember);
-									$count = 0;
+									$count = 1;
 									while ($found = mysqli_fetch_array($retrieve)) {
 										$title = $found['title'];
-										$firstname = $found['amount'];
-										$sirname = $found['Sirname'];
-										$rank = $found['Rank'];
-										$count = $count + 1;
-										$get_time = $found['Time'];
-										$time = time();
-										$pass = $found['Staffid'];
-										$names = $firstname . " " . $sirname;
+										$description = $found['description'];
+										$amount = $found['amount'];
+										$percentage = $found['percentage'];
+										$count++;
 
-										echo "<tr>    <td>$id</td>                                       
-                            <td>$title $firstname $sirname</td>
-			                 <td>$dept</td>
-			                 <td>$rank</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>";
+										echo "<tr>
+											<td>$count</td><td>$title</td>
+											<td>$description</td><td>$amount</td>
+											<td>$percentage</td>
+											<td>
+												<a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+											</td>
+											<td>
+												<a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+											</td>
+											<td>
+												<a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+											</td></tr>";
 									}
-
 									?>
 									</tbody>
-
 								</table>
-								<button id="clear-all-button">Clear All Filters</button>
-
 							</div>
-
 						</div>
-
 						<!--//sreen-gallery-cursual---->
 					</div>
 				</div>
@@ -893,7 +924,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 			<!--footer-->
 			<div class="footer">
 				<p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
-
 				</p>
 			</div>
 			<!--//footer-->

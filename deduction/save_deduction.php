@@ -1,118 +1,11 @@
 <?php
 session_start();
-include("db_connect.php");
+include("../db_connect.php");
 
 if (isset($_COOKIE['adminid'])) {
 	$adminid = $_COOKIE['adminid'];
 }
 
-
-if (isset($_POST['resetpass'])) {
-
-	$mfname = mysqli_real_escape_string($db, $_POST['mfname']);
-	$msname = mysqli_real_escape_string($db, $_POST['msname']);
-	$memail = mysqli_real_escape_string($db, $_POST['memail']);
-	$mid = mysqli_real_escape_string($db, $_POST['mid']);
-	$minstititution = mysqli_real_escape_string($db, $_POST['minstitution']);
-	$rank = mysqli_real_escape_string($db, $_POST['mrank']);
-	$id = mysqli_real_escape_string($db, $_POST['page']);
-	$orgName = $_FILES['filed']['name'];
-	$orgtmpName = $_FILES['filed']['tmp_name'];
-	$orgSize = $_FILES['filed']['size'];
-	$orgType = $_FILES['filed']['type'];
-
-
-
-	if (isset($_POST["mr"])) {
-		$mtitle = "Mr";
-	} elseif (isset($_POST["miss"])) {
-		$mtitle = "Miss";
-	} elseif (isset($_POST["mrs"])) {
-		$mtitle = "Mrs";
-	} elseif (isset($_POST["dr"])) {
-
-		$mtitle = "Dr";
-	} elseif (isset($_POST["pro"])) {
-		$mtitle = "Pro";
-	} else {
-		$mtitle = "";
-	}
-	$check = "SELECT * FROM Users WHERE id='$id' ";
-	$checks = mysqli_query($db, $check);
-	$found = mysqli_num_rows($checks);
-	if ($found != 0) {
-		$f = move_uploaded_file($orgtmpName, 'images/' . $orgName);
-		if (isset($f)) { //image is a folder in which you will save documents
-			$queryz = "UPDATE Users SET Picname='$orgName' WHERE id='$id' ";
-			$db->query($queryz) or die('Errorr, query failed to upload picture');
-		}
-
-		$quer = "UPDATE Users SET Firstname='$mfname',Sirname='$msname',Mtitle='$mtitle',Email='$memail',Staffid='$mid',Rank='$rank',Department='$minstititution' WHERE id='$id' ";
-		$db->query($quer) or die('Errorr, query failed to update');
-
-		$_SESSION['pass'] = "okjs";
-		header("Location:admin.php");
-	}
-}
-
-
-if (isset($_POST['addmember'])) {
-	if ($_POST['memail'] != '' && $_POST['mfname'] != '' && $_POST['msname'] != '' && $_POST['mphone'] != '' && $_POST['minstitution'] != '' && $_POST['mpassword'] != '') {
-
-		$mfname = mysqli_real_escape_string($db, $_POST['mfname']);
-		$msname = mysqli_real_escape_string($db, $_POST['msname']);
-		$memail = mysqli_real_escape_string($db, $_POST['memail']);
-		$mphone = mysqli_real_escape_string($db, $_POST['mphone']);
-		$minstititution = mysqli_real_escape_string($db, $_POST['minstitution']);
-		$mpassword = mysqli_real_escape_string($db, $_POST['mpassword']);
-		$pagex = mysqli_real_escape_string($db, $_POST['page']);
-		$orgName = $_FILES['filed']['name'];
-		$orgtmpName = $_FILES['filed']['tmp_name'];
-		$orgSize = $_FILES['filed']['size'];
-		$orgType = $_FILES['filed']['type'];
-
-
-
-		if (isset($_POST["mr"])) {
-			$mtitle = "Mr";
-		} elseif (isset($_POST["miss"])) {
-			$mtitle = "Miss";
-		} elseif (isset($_POST["mrs"])) {
-			$mtitle = "Mrs";
-		} elseif (isset($_POST["dr"])) {
-
-			$mtitle = "Dr";
-		} elseif (isset($_POST["pro"])) {
-			$mtitle = "Pro";
-		} else {
-			$mtitle = "";
-		}
-
-		$check = "SELECT * FROM Users WHERE Firstname='$mfname' && Sirname='$msname'";
-		$checks = mysqli_query($db, $check);
-		$found = mysqli_num_rows($checks);
-		if ($found == 0) {
-			move_uploaded_file($orgtmpName, 'images/' . $orgName);
-
-			$query = "INSERT INTO Users (Firstname,Sirname,Mtitle,Email,Staffid,Rank,Department,Online,Picname) " .
-				"VALUES ('$mfname','$msname', '$mtitle','$mphone','$mpassword','$memail','$minstititution','Offline','$orgName')";
-			$db->query($query) or die('Error1, query failed');
-
-			$memberadd = "tyy";
-			$_SESSION['memberadded'] = $memberadd;
-			header("Location:$pagex");  //member added successfully
-
-
-
-		} else {
-			$_SESSION['memberexist'] = "member already exist";
-			header("Location:$pagex");
-		}
-	} else {
-		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
-		header("Location:$pagex");
-	}
-}
 
 if (isset($_POST['Valuedel'])) {
 
@@ -270,37 +163,5 @@ if (isset($_POST["bulk"])) {
 		header("Location:bulk.php");
 	} else {
 		echo "Sorry! There is some problem.";
-	}
-}
-
-
-if (isset($_POST['add_deduction'])) {
-	if ($_POST['deduction_name'] != '' && $_POST['deduction_description'] != '' && $_POST['deduction_amount'] != '' && $_POST['deduction_percentage'] != '') {
-
-		$deduction_name = mysqli_real_escape_string($db, $_POST['deduction_name']);
-		$deduction_description = mysqli_real_escape_string($db, $_POST['deduction_description']);
-		$deduction_amount = mysqli_real_escape_string($db, $_POST['deduction_amount']);
-		$deduction_percentage = mysqli_real_escape_string($db, $_POST['deduction_percentage']);
-
-		$pagex = mysqli_real_escape_string($db, $_POST['page']);
-
-		$check = "SELECT * FROM deduction WHERE name='$deduction_name'";
-		$checks = mysqli_query($db, $check);
-		$found = mysqli_num_rows($checks);
-		if ($found == 0) {
-			$query = "INSERT INTO deduction (title, description, amount, percentage) 
-				VALUES ('$deduction_name','$deduction_description', '$deduction_amount','$deduction_percentage','$mpassword')";
-			$db->query($query) or die('Error1, query failed');
-
-			$memberadd = "tyy";
-			$_SESSION['memberadded'] = $memberadd;
-			header("Location:$pagex");  //member added successfully
-		} else {
-			$_SESSION['memberexist'] = "member already exist";
-			header("Location:$pagex");
-		}
-	} else {
-		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
-		header("Location:$pagex");
 	}
 }
