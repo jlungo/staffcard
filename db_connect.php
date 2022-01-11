@@ -11,9 +11,9 @@
    
           // workplace table
             
-              $stable02="CREATE TABLE IF NOT EXISTS Workplace ( Emp_No int(11) NOT NULL auto_increment,
+              $stable02="CREATE TABLE IF NOT EXISTS Workplace ( emp_No int(11) NOT NULL auto_increment,
              emp_Name varchar(300)NOT NULL,job_desc varchar(300)NOT NULL,acc_type varchar(100)NOT NULL,
-             acc_desc varchar(300)NOT NULL, acc_date varchar(10)NOT NULL,any_desc varchar(1000)NOT NULL,PRIMARY KEY(Emp_No) )";
+             acc_desc varchar(300)NOT NULL, acc_date varchar(10)NOT NULL,any_desc varchar(1000)NOT NULL,PRIMARY KEY(emp_No) )";
             $db->query($stable02);
        
 		    

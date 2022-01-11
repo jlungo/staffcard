@@ -792,6 +792,8 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
+
+            
                	
             <th>Emp No</th>
                 <th>Emp Name</th>
@@ -804,39 +806,41 @@ $retrieve = mysqli_query($db,$sqluse);
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
+
+        <?php   $sqlmember ="SELECT * FROM pension ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+                        $emp_no=$found['Emp_No'];
+                        $emp_name=$found['Emp_Name'];
+                        $job_desc=$found['job_desc'];
+                        $acc_type=$found['acc_type'];
+                        $acc_desc=$found['acc_desc'];
+                        $acc_date=$found['acc_date'];
+                        $any_desc=$found['any_desc'];
 					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>"; 
+			      echo"<tr>    
+                    <td>$emp_no</td>                                       
+                    <td>$emp_name</td>        	
+                    <td>$job_desc</td>
+                    <td>$acc_type</td>
+                    <td>$acc_desc</td>
+                    <td>$acc_date</td>
+                    <td>$any_desc</td>
+                    <td>
+                    
+                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    </td>
+			              <td>
+			                <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			              </td>			 
+                </tr>"; 
 					 
 					 } 
 		
 		           	?>
+
             </tbody>
         
     </table>
