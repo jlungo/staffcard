@@ -541,20 +541,25 @@ $retrieve = mysqli_query($db,$sqluse);
               <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
               <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
-            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
+            <label for="job_desc" style="color: red;font-size:20px;">Job Description:*</label><br>
+            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
-               <input style="width:270px;" type="text" name="institution" ></span></p><br>
+               <label for ="current_rank" style="color: red;font-size:20px;">Accident Type:*</label><br>
+
+               <input style="width:270px;" type="text" name="acc_type" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
-               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
+               <label for="new_rank" style="color: red;font-size:20px;">Accident Description:*</label><br>
+               <input style="width:270px;" type="text" name="acc_desc" ></span></p><br>
+
+               
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Year started ACCIDENT:*</label><br>
+               <label for="date_promoted" style="color: red;font-size:20px;">Accident Date:*</label><br>
                <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
-               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
+
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label for="new_rank" style="color: red;font-size:20px;">Any Description:*</label><br>
+              <textarea> </textarea>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
@@ -683,12 +688,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Work ACCIDENT History</span>
+                <span>Work Accident Report</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add ACCIDENT History</a></li>
-                  <li><a href='ACCIDENT_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & ACCIDENT info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Accident History</a></li>
+                  <li><a href='accident_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & Accident info</a></li>
                 </ul>
               </li>
 
@@ -778,7 +783,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">USERS</h4>
+						<h4 class="title">List of Staff & Accident Info</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -790,12 +795,12 @@ $retrieve = mysqli_query($db,$sqluse);
                	
             <th>Emp No</th>
                 <th>Emp Name</th>
-                <th>Job Desc</th>              
-                <th>Current Rank</th>
-                <th>New Promotion Rank</th>           
-                <th>Date Promoted</th>
-                <th>Highest ACCIDENT Level</th>
-                
+                <th>Job Description</th>              
+                <th>Accident Type</th>
+                <th>Accident Desciption</th>           
+                <th>Accident Date</th>
+                <th>Any Description</th>
+
             </tr>
         </thead>
         <tbody>
