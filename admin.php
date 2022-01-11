@@ -557,6 +557,7 @@ $retrieve = mysqli_query($db,$sqluse);
                <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
+         
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
