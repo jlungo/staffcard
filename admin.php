@@ -308,7 +308,9 @@ $(document).ready(function(){
                                });
        
                     </script>
-      <?php  session_destroy(); }?>
+      <?php  session_destroy(); }
+      
+      ?>
       
       
       <?php   $sqlid ="SELECT * FROM Users Order BY id DESC";
@@ -337,14 +339,15 @@ $retrieve = mysqli_query($db,$sqluse);
 
  <div id="Taxreceipted" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
+    
+  <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
         <center>
         	 PRINT IDs IN BULK
-        	</center></h4>
+        </center></h4>
       </div>
 
       <div class="modal-body" >       	
@@ -365,7 +368,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
       </div>
       <div class="modal-footer">
-      	<input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp; &nbsp;
+      <input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp; &nbsp;
       </div>
       </form> 
       </div>       
@@ -380,10 +383,11 @@ $retrieve = mysqli_query($db,$sqluse);
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;"><center>
+        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;">
+        <center>
                    Edit details of <input style="border: none;background:#222d32" type="text" id="oldname" value="" readonly="readonly" />
 	    	
-        	</center></h4>
+        </center></h4>
       </div>
       <div class="modal-body" >
         <center>
@@ -391,8 +395,10 @@ $retrieve = mysqli_query($db,$sqluse);
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
         	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;
-                Firstname:<label style="color: red;font-size:20px;">*</label>
-                <input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+                Firstname:
+                <label style="color: red;font-size:20px;">*</label>
+                <input style="width:270px;" type="text" name="mfname" id='oldname'>
+              </span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
@@ -404,6 +410,7 @@ $retrieve = mysqli_query($db,$sqluse);
         </center>
         
       </div>
+
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -412,15 +419,20 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
+
 <div id="Updatepicture" class="modal fade" role="dialog">
   <div class="modal-dialog" style="float:right;width:20%">
-    <!-- Modal content-->
+    
+  <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+
         <h4 class="modal-title">        	        	
         	</h4>
       </div>
+
       <div class="modal-body" >
         <center><p></p>
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
@@ -437,6 +449,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	                
         </center>
       </div>
+
       <div class="modal-footer">
                 <input type="submit" class="btn btn-success" value="Change" id="btns1" name="Change"> &nbsp;
                   
@@ -448,6 +461,7 @@ $retrieve = mysqli_query($db,$sqluse);
  
  <div id="Useradd" class="modal fade" role="dialog">
   <div class="modal-dialog">
+
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
@@ -463,20 +477,54 @@ $retrieve = mysqli_query($db,$sqluse);
 
             	
       	        <p style="margin-bottom:10px;">  
-        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
-        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
-            <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="prof">&nbsp;Prof</span>
+        	      <span style="font-size: 15px; font-weight: bold;">
+                <input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
+
+        	    <span style="font-size: 15px; font-weight: bold;">
+              <input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="miss">&nbsp;Miss</span>
+
+            <span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="prof">&nbsp;Prof</span>
         		</p>
         		                                                           	      		
-                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:
-               <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
+                 <p style="margin-bottom:10px;">
+                 <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:
+                 <label style="color: red;font-size:20px;">*</label>
+                 <input style="width:270px;" type="text" name="mfname"></span>
+                </p>
+
+        	    <p style="margin-bottom:10px;">
+              <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:
+              <label style="color: red;font-size:20px;">*</label>
+              <input style="width:270px;" type="text" name="msname"></span>
+            </p>
+
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">Department:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="minstitution"></span>
+          </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="memail"></span>
+              </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp;Email:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="mphone"></span>
+              </p>
         	     
                
                <p >
@@ -512,15 +560,41 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgname"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active Year:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgyear"></span></p>
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="orgname"></span>
+          </p>
+
+        	    <p style="margin-bottom:10px;">
+              <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:
+              <label style="color: red;font-size:20px;">*</label>
+              <input style="width:270px;" type="text" name="orgphone"></span>
+            </p>
+
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="orgemail"></span>
+          </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="orgwebsite"></span>
+              </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">Active Year:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="orgyear"></span>
+              </p>
+
         	        Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>)<input name='filed' type='file' id='filed' >
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
+      
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Finish" id="addmember" name="orginitial"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
