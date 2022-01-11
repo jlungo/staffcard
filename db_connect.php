@@ -9,15 +9,14 @@
              mysqli_select_db($db,"staff_db");
     
     $tablestaffposition="CREATE TABLE IF NOT EXISTS staff_position (
-      id int(11) NOT NULL auto_increment,
-      EmpNo varchar(300) NOT NULL,
+      EmpNo int(11) NOT NULL auto_increment,
       EmpName varchar(300) NOT NULL,
-      PosTitle varchar(300) NOT NULL,
+      PositionTitle varchar(300) NOT NULL,
       DateAssigned date NOT NULL,
-      DateDis date NOT NULL,
-      Descript varchar(300),
-      ActionTaken varchar(300),
-      PRIMARY KEY (id)
+      JobDesc varchar(400)NOT NULL,                                 
+      SalaryScale varchar(300)NOT NULL,
+      Department varchar(300)NOT NULL,
+      PRIMARY KEY (EmpNo)
       )";
       $db->query($tablestaffposition);         
    
