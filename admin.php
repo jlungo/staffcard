@@ -777,7 +777,7 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>ID</th>
+            	  <th>ID</th>
                 <th>Name</th>
                 <th>STAFF ID</th>
                 <th>RANK</th>              
