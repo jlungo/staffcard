@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+//To include connection
 include("db_connect.php");
 
 if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {

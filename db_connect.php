@@ -1,5 +1,5 @@
 <?php
-
+//Database Connection
 $db = new mysqli("localhost", "root", "");
 if ($db->connect_errno > 0) {
   die('Unable to connect to database [' . $db->connect_error . ']');
@@ -8,7 +8,6 @@ if ($db->connect_errno > 0) {
 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 
 mysqli_select_db($db, "staff_db");
-
 
 $tableleaves = "CREATE TABLE IF NOT EXISTS leaves (id int(11) NOT NULL auto_increment,
 Empno varchar(300)NOT NULL,Empname varchar(100)NOT NULL ,
