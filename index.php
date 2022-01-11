@@ -42,7 +42,9 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="container">
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">	<?php if(isset($name)){echo$name;}?></a></li>           
+            <li class="active">
+		    <a href="#"> <?php if(isset($name)){echo$name;}?>  </a>
+            </li>           
           </ul>
          
         </div><!--/.nav-collapse -->
@@ -50,8 +52,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </div>
 	
 	<div class="container" style="min-height:500px;">
-	<div class=''>
-	</div>
+	
            <div class="container">
 	<h2></h2>		
 	
