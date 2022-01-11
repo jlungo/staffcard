@@ -2,6 +2,7 @@
 session_start();
 include("db_connect.php");
 
+ /*database connection */
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	
 	$userid=$_COOKIE['adminid'];
@@ -24,6 +25,31 @@ $retrieved = mysqli_query($db,$sqluser);
 	 header('location:index.php');
       exit;
 }
+
+
+
+if(isset($_GET['ids'])) 
+          {	           
+			  $id=$_GET['ids'];
+              $query = "SELECT Name,Type,Size,content FROM Files WHERE id='$id' ";         
+         $result = mysqli_query($db,$query) or die('Error, query failed');		 
+     list($name, $type, $content) = mysqli_fetch_array($result);
+	       $path = 'media/'.$name;
+		   $size = filesize($path);
+	     header('Content-Description: File Transfer');
+         header('Content-Type: application/octet-stream');
+         header("Content-length:". $size);
+         header("Content-type:". $type);
+         header("Content-Disposition: attachment; filename=\"" . basename($name) . "\";");
+		 header('Content-Transfer-Encoding: binary');
+         header('Expires: 0');
+         header('Cache-Control: must-revalidate');
+     ob_clean();
+       flush();
+	       readfile('media/'.$name);	
+                mysqli_close($name);
+                exit;      
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -812,6 +838,13 @@ $retrieve = mysqli_query($db,$sqluse);
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
                          </div>
+					          
+                                     
+                                   
+            				      
+            				      		<div class="middle-content">
+
+                              <!-- table starts here -->
 					
                          <table id="example" class="display nowrap" style="width:100%">
         <thead>
