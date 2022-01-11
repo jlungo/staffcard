@@ -3,6 +3,7 @@
 session_start();
 include("db_connect.php");
 
+<!-- //database connection -->
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 $adminid = $_COOKIE['adminid'];
 $adminemail = $_COOKIE['adminemail'];
@@ -408,6 +409,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                    
             				      
             				      		<div class="middle-content">
+
+                              <!-- table starts here -->
 					
                                           <table id="example" class="display nowrap" style="width:100%">
         <thead>
