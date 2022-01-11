@@ -13,7 +13,7 @@ $retrieved = mysqli_query($db,$sqluser);
     while($found = mysqli_fetch_array($retrieved))
 	     {
               $firstname = $found['Firstname'];
-		      $sirname= $found['Sirname'];
+		      $sirname= $found['Surname'];
 			  $emails = $found['Email'];
 			  	   $id= $found['id'];			  
    
