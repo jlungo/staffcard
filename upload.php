@@ -140,6 +140,67 @@ if(isset($_POST['addmember']))
                
           }
 
+
+
+
+
+//Staff position
+ //staff position
+if(isset($_POST['addstaffposition']))
+     {
+     	 if($_POST['empno']!=''&&$_POST['empname']!=''&&$_POST['position']!=''&&$_POST['dateass']!=''&&$_POST['jobdesc']!=''&&$_POST['salary']!=''&&$_POST['dept']!='')
+           {              
+            
+   		$empno = mysqli_real_escape_string($db,$_POST['empno']);
+		$empname = mysqli_real_escape_string($db,$_POST['empname']);		
+	  $position=mysqli_real_escape_string($db,$_POST['position']);
+	    $dateass =mysqli_real_escape_string($db,$_POST['dateass']);
+	     $jobdesc = mysqli_real_escape_string($db,$_POST['jobdesc']);
+		   $salary = mysqli_real_escape_string($db,$_POST['salary']);
+		   $dept = mysqli_real_escape_string($db,$_POST['dept']);
+		      		$pagex = mysqli_real_escape_string($db,$_POST['page']);
+
+			
+							   
+							   $check="SELECT * FROM staff_position";
+						       $checks=mysqli_query($db,$check);
+						  $found=mysqli_num_rows($checks);
+							  if($found==0)
+							  {
+							  	                                  move_uploaded_file ($orgtmpName,'images/'.$orgName);
+								
+							  	$query = "INSERT INTO staff_position (EmpNo,EmpName,PositionTitle,DateAssigned,JobDesc,SalaryScale,Department) ".
+                            "VALUES ('$empno','$empname', '$position','$dateass','$jobdesc','$salary','$dept')";
+                                 $db->query($query) or die('Error1, query failed');	
+								 
+							     $memberadd="tyy";					  
+			                     $_SESSION['memberadded']=$memberadd;
+                                    header("Location:$pagex");  //member added successfully
+				 
+			  
+			  
+							  }else{
+							  	$_SESSION['memberexist']="member already exist";
+                                 header("Location:$pagex");  
+				 
+							  }
+				}else{
+					$_SESSION['emptytextboxes']="Not all text boxes were completed";
+                                 header("Location:$pagex");  
+				 
+				    }
+               
+          }
+
+
+
+
+
+
+
+
+
+
  if(isset($_POST['Valuedel'])){ 	
 	
 	 $tutor=$_POST['Valuedel'];

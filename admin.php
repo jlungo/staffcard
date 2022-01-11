@@ -486,6 +486,50 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div> 
   
+
+
+<!-- Add staff position -->
+<div id="Addposition" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+          ADD STAFF POSITION
+          </center></h4>
+      </div>
+
+      <div class="modal-body" >         
+        <center> 
+            <form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">            
+
+                                                                                  
+                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+              <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Position Title:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="position"></span></p>
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Assigned:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateass"></span></p>
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Job desc:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="jobdesc"></span></p>
+               <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Salary scale:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="salary"></span></p>
+               <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dept"></span></p>
+            
+                    
+               <input type="hidden" name="page" value="admin.php"/>                                                                
+         </center>
+      </div>
+      <div class="modal-footer">
+       <input type="submit" class="btn btn-success" value="Submit" id="addstaffposition" name="addstaffposition"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div> 
+
+
+
+
+
   <div id="Initialisation" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -630,7 +674,10 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                          
+              <li class="treeview">
+                  <a data-toggle='modal' data-id=''href="#Addposition" class='open-adduser'><i class='fa fa-user'></i>Staff position</a>
+               </li>
+
                 </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -782,8 +829,84 @@ $retrieve = mysqli_query($db,$sqluse);
 
 					<!--//sreen-gallery-cursual---->
 			</div>
-		 </div>
-		</div>
+
+
+ <!-- display staff position-->
+ <div class="charts">   
+      <div class="mid-content-top charts-grids">
+        <div class="middle-content">
+            <h4 class="title">Staff position</h4>
+          <!-- start content_slider -->
+        <div class="alert alert-info">
+                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                         </div>
+          
+               <table id="example" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+              <th>EMP NO</th>
+                <th>EMP NAME</th>
+                <th>POSITION</th>            
+                <th>JOB DESC<th>
+                <th>DEPARTMENT</th>           
+                <th>PRINT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+           <?php   $sqlmember ="SELECT * FROM staff_position ";
+             $retrieve = mysqli_query($db,$sqlmember);
+                            $count=0;
+                     while($found = mysqli_fetch_array($retrieve))
+                   {
+                       $empno=$found['EmpNo'];$empname=$found['EmpName'];$position=$found['PositionTitle'];$jobdesc=$found['JobDesc'];
+                       $dept=$found['Department'];
+                      $count=$count+1;  
+                 
+            echo"<tr>    <td>$empno</td>                                       
+                             <td>$empname</td>          
+                             <td>$position</td>
+                             <td>$jobdesc</td>
+                             
+                       <td></td>
+                       <td>$dept</td>
+                       <td>
+                         <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                              </td>
+                       <td>
+                         <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+               
+                       </td>                         
+                       <td>
+                         <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+               
+                       </td>       
+                             </tr>"; 
+           
+           } 
+    
+                ?>
+            </tbody>
+        
+    </table>
+             <button id="clear-all-button">Clear All Filters</button>
+                           
+                </div>
+    
+        </div>
+
+          <!--//sreen-gallery-cursual---->
+      </div>
+     </div>
+    </div>
+
+
+
+
+
+
+
 	<!--footer-->
 	<div class="footer">
 	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
