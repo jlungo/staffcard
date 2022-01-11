@@ -635,7 +635,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id=''  href="#lungo" class='open-Initial'><i class="fa fa-plus"></i>Add OPRAS DETAIL</a></li>
-                  <li><a data-toggle='modal' data-id='' href="lungo/report.php" class='open-Initial2'><i class="fa fa-minus"></i>VIEW OPRAS REPORT</a></li>
+                  <li><a data-toggle='modal' data-id='' href="admin2.php" class='open-Initial2'><i class="fa fa-minus"></i>VIEW OPRAS REPORT</a></li>
                 </ul>
               </li>
              
@@ -656,7 +656,7 @@ $retrieve = mysqli_query($db,$sqluse);
         	ADD OPRAS DETAIL
         	</center></h4>
       </div>
-      	<form action="lungo/insert.php" method="POST" enctype='multipart/form-data'>        		
+      	<form action="upload.php" method="POST" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
       	<center> 
@@ -682,7 +682,7 @@ $retrieve = mysqli_query($db,$sqluse);
          </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Update" id="addmember" name="orgupdate"> &nbsp;
+        <input type="submit" class="btn btn-success" value="INSERT" id="addmember" name="INSERT"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -836,6 +836,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			</div>
 		 </div>
 		</div>
+    
 	<!--footer-->
 	<div class="footer">
 	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com

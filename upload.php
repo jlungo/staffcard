@@ -139,6 +139,32 @@ if(isset($_POST['addmember']))
 				    }
                
           }
+ if(isset($_POST['INSERT']))
+     {
+		include "lungo/Conn.php";	
+		if(isset($_POST['submit']))
+		
+		  $Emp_No = $_POST['Emp_No'];
+		   $Emp_Name = $_POST['Emp_Name'];
+		  $Objective = $_POST['Objective'];
+		  $Apraisee_score = $_POST['Apraisee_score'];
+		  $Supervisor_score = $_POST['Supervisor_score'];
+		  $Performance_score = $_POST['Performance_score'];
+		  $Recommendations = $_POST['Recommendations'];
+		  $pagex = mysqli_real_escape_string($db,$_POST['page']);
+		  
+		 $sql = "INSERT INTO opras (Emp_No,Emp_Name,Objective,Apraisee_score,Supervisor_score,Performance_score,Recommendations) VALUES ('$Emp_No','$Emp_Name','$Objective','$Apraisee_score','$Supervisor_score','$Performance_score','$Recommendations')";
+		 if (mysqli_query($conn, $sql)) {
+			$memberadd="tyy";
+			$_SESSION['memberadded']=$memberadd;
+			header("Location:admin2.php");   
+		  
+		 } else {
+			echo "Error: " . $sql . ":-" . mysqli_error($conn);
+		 }
+		 mysqli_close($conn);
+               
+          }
 
  if(isset($_POST['Valuedel'])){ 	
 	
