@@ -1,7 +1,6 @@
 <?php 
 session_start();
-include_once "db_connect.php";
-$result = mysqli_query($db, "SELECT * FROM Pension");
+include("db_connect.php");
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	
@@ -519,7 +518,7 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-  <!--created a modal for add pension  -->
+  
   <div id="add_pension" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -530,29 +529,28 @@ $retrieve = mysqli_query($db,$sqluse);
         	ADD PENSION INFORMATION
         	</center></h4>
       </div>
-      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
+      	<form method="post" action="insert_pension.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
-      	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ptype"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pnumber"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="regdate"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mon_contribution"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="curr_balance"></span></p>
-               <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-         </center>
+      <center> 
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="Emp_No"></span></p>
+        	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="Emp_Name"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Type"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Number"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="Registered_Date"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Monthly_Contribution"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Current_Balance"></span></p>
+      </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="pension" name="orginitial"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
        </form>
   </div>
   </div>
- 
+
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -665,7 +663,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     <!--menu for pension informartion -->
+                     
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -764,7 +762,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Employees' Pensions</h4>
+						<h4 class="title">pension report</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -773,36 +771,50 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	
-              <th> Employee Number </th>
-              <th> Employee Name </th>
-              <th> Pension Type </th>
-              <th> Pensioner Number </th>
-               <th> Registered date </th>
-               <th> monthly contribution </th>
-             <th> current balance </th>
+            	<th>EMP NO.</th>
+              <th>EMP NAME</th>
+              <th>PENSION TYPE</th>
+              <th>PENSION NO.</th>              
+              <th>REGISTRATION DATE</th>
+              <th>MONTHLY CONTRIBUTION</th>           
+              <th>CURR BALANCE</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
             </tr>
         </thead>
         <tbody>
-        <?php
-      $i=0;
-      while ($rows = mysqli_fetch_assoc($result))
-
-      {
-?>
-  <tr>
-    <th><?php echo $rows["Employee_No"]; ?></th>
-    <th><?php echo $rows["Employee_Name"]; ?></th>
-    <th><?php echo $rows["Pension_Type"]; ?></th>
-    <th><?php echo $rows["Pension_Number"]; ?></th>
-    <th><?php echo $rows["Registered_Date"]; ?></th>
-    <th><?php echo $rows["Monthly_Contribution"]; ?></th>
-    <th><?php echo $rows["Current_Balance"]; ?></th>
-  </tr>
-<?php
-    $i++;  
-    }
-?>
+        	 <?php   $sqlmember ="SELECT * FROM pension ";
+			       $retrieve = mysqli_query($db,$sqlmember);
+				                    $count=0;
+                     while($found = mysqli_fetch_array($retrieve))
+	                 {
+                        $Emp_No=$found['Emp_No'];
+                        $Emp_Name=$found['Emp_Name'];
+                        $Pension_Number=$found['Pension_Number'];
+                        $Pension_Type=$found['Pension_Type'];
+                        $Registered_Date=$found['Registered_Date'];
+                        $Monthly_Contribution=$found['Monthly_Contribution'];
+                        $Current_Balance=$found['Current_Balance'];
+					    	 
+			      echo"<tr>    
+                    <td>$Emp_No</td>                                       
+                    <td>$Emp_Name</td>        	
+                    <td>$Pension_Type</td>
+                    <td>$Pension_Number</td>
+                    <td>$Registered_Date</td>
+                    <td>$Monthly_Contribution</td>
+                    <td>$Current_Balance</td>
+                    <td>
+                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    </td>
+			              <td>
+			                <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			              </td>			 
+                </tr>"; 
+					 
+					 } 
+		
+		           	?>
             </tbody>
         
     </table>
