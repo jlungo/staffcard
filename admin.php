@@ -40,7 +40,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 <!-- Custom CSS -->
 <link href="admin/css/style.css" rel='stylesheet' type='text/css' />
-
 <!-- font-awesome icons CSS -->
 <link href="admin/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons CSS-->
@@ -454,7 +453,6 @@ $retrieve = mysqli_query($db,$sqluse);
       	<center> 
         		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
 
-            	
       	        <p style="margin-bottom:10px;">  
         	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
         	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
