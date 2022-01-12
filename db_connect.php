@@ -87,11 +87,11 @@ if ($rowcount == 0) {
                          $db->query($stable03); 
                          
                          $stable05="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
-                                  emp_name varchar(300)NOT NULL,
-                                  num_female int(10)NOT NULL,                                 
+                                  emp_name varchar(300)NOT NULL,                             
                                   num_male int(10)NOT NULL,  
-                                  age_of_oldest int(10)NOT NULL,                               
+                                  num_female int(10)NOT NULL,    
                                   age_of_youngest int(10) NOT NULL,
+                                  age_of_oldest int(10)NOT NULL, 
                                   home_address varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
                          $db->query($stable05); 
@@ -121,5 +121,5 @@ if ($rowcount == 0) {
                           }
                      
 					 		
-
+                        }
 ?>
