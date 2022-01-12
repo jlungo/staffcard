@@ -3,7 +3,7 @@
  */
 .dropdown .dropdown-menu .caret {
 	border: 4px solid transparent;
-	border-left-color: #FFFFFF;
+	border-left-color: #000;
 	float: right;
 	margin-top: 6px;
 } 

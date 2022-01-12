@@ -315,4 +315,10 @@ if (isset($_POST['addDependant'])) {
 		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
 		header("Location:admin.php");
 	}
+<<<<<<< HEAD
+?>
+ 	
+?>
+=======
 }
+>>>>>>> e968e58bd9aac4c04618860266cdf28ecef8811b
