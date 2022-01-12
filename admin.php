@@ -536,11 +536,11 @@ $retrieve = mysqli_query($db,$sqluse);
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
         		</p> -->
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="number" name="EmployeeNo"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName" placeholder="eg. Stephen Mhuli"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="SDate" placeholder="eg. 23.12.2022"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="TimeIn" placeholder="eg. 1400"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="TimeOuty" placeholder="eg. 1900"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="SDate" placeholder="eg. 23.12.2022"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time in<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="time" name="TimeIn" placeholder="eg. 1400"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Time out <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="time" name="TimeOuty" placeholder="eg. 1900"></span></p>
 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Main activities <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ActivitiesList"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Supervisor <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Supervisor"></span></p>
