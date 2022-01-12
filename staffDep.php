@@ -174,7 +174,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <?php if(isset($_SESSION['memberadded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Staff added successfully!!.", type: "success"});
+ 	          	                             swal({title: "Successful!", text: "Staff added successfully!.", type: "success"});
                                   });
               </script>
             
@@ -185,7 +185,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <?php if(isset($_SESSION['dependantAdded'])){?>
  <script type="text/javascript"> 
  	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!!.", type: "success"});
+ 	          	                             swal({title: "Successful!", text: "Staff Dependant added successfully!.", type: "success"});
                                   });
               </script>
             
@@ -206,7 +206,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <?php if(isset($_SESSION['dependantExists'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff dependant with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is arleady a staff dependant with the same details in the database", "error");     				              
                                });
                 </script>
            <?php 
@@ -217,7 +217,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <?php if(isset($_SESSION['emptytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form", "error");     				              
+    				              sweetAlert("Oops...", "You didn't fill all the textboxes on the form", "error");     				              
                                });
                 </script>
            <?php 
