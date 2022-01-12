@@ -42,7 +42,7 @@
                                   Time bigint(30)NOT NULL,
                                   PRIMARY KEY(id) )";
                          $db->query($stable56);
-                         //pension table
+                         
                          $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
                                   Emp_No char(255)NOT NULL,
                                   Emp_Name varchar(300)NOT NULL,
