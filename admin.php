@@ -24,6 +24,7 @@ $retrieved = mysqli_query($db,$sqluser);
 	 header('location:index.php');
       exit;
 }
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -344,6 +345,8 @@ $retrieve = mysqli_query($db,$sqluse);
         	 PRINT IDs IN BULK
         	</center></h4>
       </div>
+
+      
 
       <div class="modal-body" >       	
       	     <form action="printbulk.php" method="post">

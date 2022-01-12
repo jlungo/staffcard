@@ -3,6 +3,7 @@
 include_once 'db_connect.php';
 if(isset($_POST['save']))
 {
+
     $emp_no =$_POST['emp_no'];
     $emp_name =$_POST['emp_name'];
     $job_desc =$_POST['job_desc'];
@@ -18,6 +19,7 @@ if(isset($_POST['save']))
         echo "Error: " . $sql . " ".mysqli_error($conn);
     }
     mysqli_close($conn);
+    
 }
 ?>
 
