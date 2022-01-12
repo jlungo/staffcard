@@ -67,6 +67,15 @@ if(!$conn){
                                   PRIMARY KEY(emp_no) )";
                          $db->query($stable03); 
                          
+                         $stable05="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
+                                  emp_name varchar(300)NOT NULL,
+                                  num_female int(10)NOT NULL,                                 
+                                  num_male int(10)NOT NULL,  
+                                  age_of_oldest int(10)NOT NULL,                               
+                                  age_of_youngest int(10) NOT NULL,
+                                  home_address varchar(300)NOT NULL,
+                                  PRIMARY KEY(emp_no) )";
+                         $db->query($stable05); 
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
