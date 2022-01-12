@@ -657,8 +657,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#Depadd' class='open-Initial'><i class="fa fa-plus"></i>Add Dependant</a></li>
-                  <li><a data-id='' href='staffDep.php' class='open-Initial2'><i class="fa fa-minus"></i>View Dependants</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#Depadd' class='open-Initial'><i class="fa fa-plus"></i>Register Dependant</a></li>
+                  <li><a data-id='' href='staffDep.php' class='open-Initial2'><i class="fa fa-minus"></i>Show Dependants</a></li>
                 </ul>
               </li>
 
