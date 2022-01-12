@@ -3,10 +3,6 @@ session_start();
 include("db_connect.php"); 
  
   if(isset($_COOKIE['adminid'])){$adminid = $_COOKIE['adminid'];}
-
-
-
-
  
   if(isset($_POST['resetpass'])){
 	 	                  
@@ -17,7 +13,7 @@ include("db_connect.php");
 	     $minstititution = mysqli_real_escape_string($db,$_POST['minstitution']);
 		   $rank = mysqli_real_escape_string($db,$_POST['mrank']);
 		      		$id = mysqli_real_escape_string($db,$_POST['page']);
-					$orgName = $_FILES['filed']['name'];
+			     $orgName = $_FILES['filed']['name'];
                  $orgtmpName = $_FILES['filed']['tmp_name'];
                  $orgSize = $_FILES['filed']['size'];
                  $orgType = $_FILES['filed']['type'];
@@ -66,7 +62,7 @@ include("db_connect.php");
 					       }
  
  		   
-if(isset($_POST['addmember']))
+    if(isset($_POST['addmember']))
      {
      	 if($_POST['memail']!=''&&$_POST['mfname']!=''&&$_POST['msname']!=''&&$_POST['mphone']!=''&&$_POST['minstitution']!=''&&$_POST['mpassword']!='')
            {              
@@ -320,6 +316,4 @@ if(isset($_POST['addmember']))
 			            }
 
 	}
-?>
- 	
 ?>

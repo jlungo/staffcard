@@ -39,7 +39,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <link href="admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom CSS -->
-<link href="admin/css/style.css" rel='stylesheet' type='text/css' />
+<link href="admin/css/style.css" rel='stylesheet'
+ type='text/css' />
 
 <!-- font-awesome icons CSS -->
 <link href="admin/css/font-awesome.css" rel="stylesheet">
@@ -736,9 +737,9 @@ $retrieve = mysqli_query($db,$sqluse);
 								</div>
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								 <li>
-                                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
-                                 </li>
+								<li>
+                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
+                </li>
 								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
