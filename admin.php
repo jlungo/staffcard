@@ -559,8 +559,8 @@ $retrieve = mysqli_query($db,$sqluse);
          </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="submit" id="addmember" name="save"> &nbsp;
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
       </div>
        </form>
