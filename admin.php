@@ -1,5 +1,5 @@
 <?php 
-session_start();
+ session_start();
 include("db_connect.php");
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
@@ -234,7 +234,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                });
                 </script>
            <?php 
-       	   session_destroy();}  
+       	   session_destroy();
+		}  
            ?>
            <?php if(isset($_SESSION['category'])){?>
                 <script type="text/javascript"> 
@@ -919,8 +920,7 @@ $retrieve = mysqli_query($db,$sqluse);
                              </tr>"; 
 					 
 					 } 
-		
-		           	?>
+				?>
             </tbody>
         
     </table>
