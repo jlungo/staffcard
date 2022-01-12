@@ -44,7 +44,7 @@
                          $db->query($stable56); 
 
                          $stable17="CREATE TABLE IF NOT EXISTS Pension (id int(11) NOT NULL auto_increment,
-                                  Emp_No varchar(300)NOT NULL, 
+                                  Emp_No char(255)NOT NULL, 
                                   Emp_Name varchar(300)NOT NULL,
                                   Pension_Type Varchar(30)NOT NULL,                                 
                                   Pension_Number varchar(30)NOT NULL,                                 

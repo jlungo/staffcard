@@ -772,10 +772,10 @@ $retrieve = mysqli_query($db,$sqluse);
             <tr>
             	<th>EMP NO.</th>
               <th>EMP NAME</th>
-              <th>P TYPE</th>
-              <th>P NO.</th>              
-              <th>REG DATE</th>
-              <th>MON. DATE</th>           
+              <th>PENSION TYPE</th>
+              <th>PENSION NO.</th>              
+              <th>REGISTRATION DATE</th>
+              <th>MONTHLY CONTRIBUTION</th>           
               <th>CURR BALANCE</th>
               <th>EDIT</th>
               <th>DELETE</th>
