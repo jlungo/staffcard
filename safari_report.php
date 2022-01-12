@@ -768,15 +768,15 @@ $retrieve = mysqli_query($db,$sqluse);
 						<h4 class="title">safari report</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
-                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                             <i class="fa fa-envelope"></i>&nbsp;This screen displays  staff safari records, use the search box to spool more records
                          </div>
 					
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
             
-             <th> Emp No </th>
-             <th> Emp Name </th>
+             <th> Employee No </th>
+             <th> Employee Name </th>
              <th> Safari start date </th>
              <th> Safari return date </th>
              <th> Purpose of safari </th>
