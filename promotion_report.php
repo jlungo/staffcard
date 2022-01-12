@@ -2,8 +2,6 @@
 
 session_start();
 
-//To connect with db
-
 include_once('db_connect.php');
    
    $result = mysqli_query($db, "select * from ProIS" );
