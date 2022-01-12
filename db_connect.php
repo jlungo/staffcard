@@ -44,13 +44,13 @@
                          $db->query($stable56); 
                          
                          $stable237="CREATE TABLE IF NOT EXISTS StaffAttend (id int(11) NOT NULL auto_increment,
-                         EmployeeNo varchar(300)NOT NULL, 
-                         EmployeeName varchar(300)NOT NULL,
-                         SDate date NOT NULL ,                                 
-                         TimeIn int(7)NOT NULL DEFAULT 0,                               
-                         TimeOuty int(7)NOT NULL DEFAULT 0,
-                         ActivitiesList varchar(300)NOT NULL DEFAULT 0,
-                         Supervisor varchar(300)NOT NULL,
+                         EmployeeNo varchar(300) NOT NULL, 
+                         EmployeeName varchar(300) NOT NULL,
+                         SDate varchar(11) NOT NULL ,                                 
+                         TimeIn int(7) NOT NULL DEFAULT 0,                               
+                         TimeOuty int(7) NOT NULL DEFAULT 0,
+                         ActivitiesList varchar(300) NOT NULL DEFAULT 0,
+                         Supervisor varchar(300) NOT NULL,
                          
                          PRIMARY KEY(id) )";
                          $db->query($stable237); 
