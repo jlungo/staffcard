@@ -685,8 +685,10 @@ $retrieve = mysqli_query($db,$sqluse);
         	     	             <input style="width:270px;" type="date" placeholder="Issue Date" name="IssueDate" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
 				                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Expire Date:<label style="color: red;font-size:20px;">*</label>
         	     	             <input style="width:270px;" type="date" placeholder="Exp Date" name="Expdate" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
-				                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Place of Issue:<label style="color: red;font-size:20px;">*</label>
-        	     	             <input style="width:270px;" type="text" placeholder="Place Of Issue" name="POI" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
+				                
+                              <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Place of Issue:<label style="color: red;font-size:20px;">*</label>
+        	     	           
+                         <input style="width:270px;" type="text" placeholder="Place Of Issue" name="POI" value="<?php if(isset($year)){echo$year;} ?>"></span></p>
 
                                           	      	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
                           	      	<input type="hidden" name="pageid" value="<?php echo$idz; ?>"/> 	
