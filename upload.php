@@ -238,7 +238,8 @@ if(isset($_POST['edit_disciplinary'])){
 										{
 													$querr="DELETE FROM disciplinary WHERE id='$tutor'";
 												 $results=mysqli_query($db,$querr);
-												  echo"yes"; 
+												 $var = 1 ;
+												 echo $var; 
 												
 
 										 }
