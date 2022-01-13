@@ -1,7 +1,7 @@
 <?php
 //Db Connections
  
- $db = new mysqli("host","username","password");
+ $db = new mysqli("localhost","admin","salum608");
  
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
