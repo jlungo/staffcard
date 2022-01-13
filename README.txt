@@ -2,4 +2,3 @@ A Pen created at CodePen.io. You can find this one at http://codepen.io/mauricec
 
  Pure CSS news cards with revealing content on hover. Please feel free to drop a comment with some suggestion for improvement. 
 
- Staff bennefit project made with love by group 5
