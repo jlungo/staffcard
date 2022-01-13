@@ -60,13 +60,13 @@
                          EmpNo varchar(300)NOT NULL, 
                          EmpName varchar(300)NOT NULL,
                          Idtyp Varchar(30)NOT NULL,                                 
-                                                     
                          IdNo int(50)NOT NULL,
                          IssueDate date NOT NULL,
+                         
                          Expdate date NOT NULL,
                          POI varchar(300)NOT NULL,
                          PRIMARY KEY(id) )";
-                                        
+
                         
                 $db->query($stable56);
 
