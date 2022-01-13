@@ -786,7 +786,12 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>
+          <?php
+          echo "<p id=\"standardFooter\" > Copyright &copy;
+         2021-" . date("Y") . " Staff Benefit Information System <br>
+         All Rights Reserved | Design and developed by Group5 </p>";
+          ?>
 	
 			</p>		
 	</div>
