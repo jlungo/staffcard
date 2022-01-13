@@ -31,7 +31,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>List of Staff Bank Accounts</title>
+<title>List of Bank Accounts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
