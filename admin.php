@@ -40,6 +40,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 <!-- Custom CSS -->
 <link href="admin/css/style.css" rel='stylesheet' type='text/css' />
+
 <!-- font-awesome icons CSS -->
 <link href="admin/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons CSS-->
@@ -453,6 +454,7 @@ $retrieve = mysqli_query($db,$sqluse);
       	<center> 
         		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
 
+            	
       	        <p style="margin-bottom:10px;">  
         	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
         	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
@@ -481,6 +483,51 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div> 
   
+
+  <div id="staffAdd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD STAFF DETAILS
+        	</center></h4>
+      </div>
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
+
+            	
+      	        <p style="margin-bottom:10px;">  
+        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
+        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+        		</p>
+        		                                                           	      		
+				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empNo" id='oldname'></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empName" id='ss'></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Benefit Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benType"  id='cc'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><textarea type name="benDesc" id='dd' cols="30" rows="5" style="width:270px;"></textarea></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Benefit Amount:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" min="0" max=" " step="any" type="number" name="benAmount" id='bb'></span></p>
+        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateStart" id='oldpass'></span></p>
+				 <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateEnd" id='oldpass'></span></p>
+                    
+        		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+       <input type="submit" class="btn btn-success" value="Submit" id="addStaffBen" name="addStaffBen"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div> 
+
   <div id="Initialisation" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -512,6 +559,7 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
+
   
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -625,12 +673,23 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
                </li>
-               <li class="treeview">
+               <!-- <li class="treeview">
               	  <a  href="staffBen.php" ><i class='fa fa-print'></i>Staff Benefit Information</a>
-               </li>
+               </li> -->
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
+               <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cog"></i>
+                <span>Staff Benefit Information</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#staffAdd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff Benefit</a></li>
+                  <li><a  data-id='' href='staffBen.php' class='open-Initial2'><i class="fa fa-minus"></i>Staff Benefit Report</a></li>
+                </ul>
+              </li>
                           
                 </ul>
           </div>
