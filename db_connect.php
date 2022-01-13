@@ -30,8 +30,8 @@
                                  $db->query( $stable1);
                
                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
-                                  Firstname varchar(300)NOT NULL, 
-                                  Sirname varchar(300)NOT NULL,
+                                  Firstname varchar(100)NOT NULL, 
+                                  Sirname varchar(100)NOT NULL,
                                   Mtitle Varchar(30)NOT NULL,                                 
                                   Rank varchar(30)NOT NULL,                                 
                                   Department varchar(300)NOT NULL,
