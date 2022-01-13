@@ -28,7 +28,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>admin</title>
+<title> Staff Benefit Admin </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -184,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "There is already a staff with those details in the database", "error");
                                });
                 </script>
            <?php 
@@ -464,13 +464,13 @@ $retrieve = mysqli_query($db,$sqluse);
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
         		</p>
         		                                                           	      		
-				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;muhenga No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Employee_numb" id='oldname'></span></p>
+				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Employee_numb" id='oldname'></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empName" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Benefit Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benType"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benDesc" id='dd'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Benefit Amount:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benAmount" id='bb'></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateStart" id='oldpass'></span></p>
-				 <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateEnd" id='oldpass'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateStart" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
+				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateEnd" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
                     
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
@@ -786,7 +786,12 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>
+          <?php
+          echo "<p id=\"standardFooter\" > Copyright &copy;
+         2021-" . date("Y") . " Staff Benefit Information System <br>
+         All Rights Reserved | Design and developed by Group5 </p>";
+          ?>
 	
 			</p>		
 	</div>

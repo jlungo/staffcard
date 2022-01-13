@@ -1,6 +1,6 @@
 <?php
  
- $db = new mysqli("localhost:3307","root","");
+ $db = new mysqli("localhost","admin","salum608");
  
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
@@ -8,9 +8,7 @@
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 	 
              mysqli_select_db($db,"staff_db");
-             
-   
-        		                       
+                                
 		    
 		$stableYZ="CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
                  name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
@@ -79,7 +77,7 @@
 						   
                                                     $querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
-                                     $db->query($querydy) or die('Errorr, query failed to upload');	
+                                     $db->query($querydy) or die('Error, query failed to upload');
                                   
                           }
                      
