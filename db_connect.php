@@ -77,7 +77,7 @@
 						   
                                                     $querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
-                                     $db->query($querydy) or die('Errorr, query failed to upload');	
+                                     $db->query($querydy) or die('Error, query failed to upload');
                                   
                           }
                      
