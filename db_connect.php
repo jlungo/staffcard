@@ -1,7 +1,6 @@
 <?php
-//Db Connections
  
- $db = new mysqli("localhost","admin","salum608");
+ $db = new mysqli("localhost","root","");
  
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
@@ -9,9 +8,10 @@
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 	 
              mysqli_select_db($db,"staff_db");
-                                
-		    //Creating tables for staff_benefit database
-
+             
+   
+        		                       
+		    
 		$stableYZ="CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
                  name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
                  website varchar(300)NOT NULL,year varchar(10)NOT NULL,pname varchar(1000)NOT NULL,type varchar(30)NOT NULL,
@@ -45,7 +45,7 @@
                          $db->query($stable56); 
 
                          
-                  $createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(10) NOT NULL auto_increment,
+                  $createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(11) NOT NULL auto_increment,
                                   Employee_numb varchar(300)NOT NULL, 
                                   Employee_name varchar(300)NOT NULL,
                                   Benefit_type Varchar(30)NOT NULL,                               
@@ -79,10 +79,10 @@
 						   
                                                     $querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
-                                     $db->query($querydy) or die('Error, query failed to upload');
+                                     $db->query($querydy) or die('Errorr, query failed to upload');	
                                   
                           }
                      
-					 		//End of tables
+					 		
 
 ?>
