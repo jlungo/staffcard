@@ -152,7 +152,7 @@ if(isset($_POST['addmember']))
     $Performance_score = $_POST['Expdate'];
     $Recommendations = $_POST['POI'];
     
-    $sql = "INSERT INTO idinfo (EmpNo,EmpName,Idtyp,IdNo,IssueDate,Expdate,POI) VALUES ('$Emp_No','$Emp_Name','$Objective','$Apraisee_score','$Supervisor_score','$Performance_score','$Recommendations')";
+    $sql = "INSERT INTO idinfo (EmpNo,EmpName,Idtyp,IdNo,IssueDate,Expdate,POI) VALUES ('Emp_No','$Emp_Name','$Objective','$Apraisee_score','$Supervisor_score','$Performance_score','$Recommendations')";
    
     
     
@@ -160,6 +160,7 @@ if(isset($_POST['addmember']))
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully!!";
 	  
+		
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }}
