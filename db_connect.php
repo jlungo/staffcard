@@ -1,13 +1,22 @@
 <?php
  
- $db = new mysqli("localhost","root","localpassword");
+ $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
+
+//connection to  push promotion info
+$servername ='localhost';
+$username='root';
+$password='';
+$dbname ="staff_db";
+
+//create connection
+$conn = mysqli_connect($servername,$username,$password,"$dbname");
+if(!$conn){
+    die('could not connect my Sql:' .mysql_error());
+}
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
-   
-
-
 	 
              mysqli_select_db($db,"staff_db");
              
@@ -46,18 +55,29 @@
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
 
-                         //Next of kin information table
-                         $stable97="CREATE TABLE IF NOT EXISTS Next_Of_Kin_Information (id int(11) NOT NULL auto_increment,
-                                  Emp_No varchar(300)NOT NULL, 
-                                  Emp_Name varchar(300)NOT NULL,
-                                  Next_Of_Kin_Name Varchar(300)NOT NULL,                                 
-                                  Next_Of_kin_Relationship varchar(30)NOT NULL,                                 
-                                  Next_Of_kin_Sex varchar(300)NOT NULL,
-                                  Next_Of_Kin_Address varchar(300)NOT NULL,
-                                  Next_Of_Kin_Mobile_Number varchar(300)NOT NULL,                        
-                                  PRIMARY KEY(id) )";
-                         $db->query($stable97); 
-                   
+                         $stable03="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
+                
+                                  emp_name varchar(300)NOT NULL,
+                                  job_desc Varchar(30)NOT NULL,                                 
+                                  current_rank varchar(30)NOT NULL,  
+                                  new_rank varchar(300)NOT NULL,                               
+                                  date_promoted date NOT NULL,
+                                  
+                                  high_ed varchar(300)NOT NULL,
+                                  PRIMARY KEY(emp_no) )";
+                         $db->query($stable03); 
+                         
+                         $stable100="CREATE TABLE IF NOT EXISTS Impreset_Information (
+                          id int(11) NOT NULL auto_increment,
+                        Emp_No varchar(300)NOT NULL, 
+                        Emp_Name varchar(300)NOT NULL,
+                        Impreset_purpose Varchar(300)NOT NULL,                                 
+                        Impreset_amount int(50)NOT NULL,                                 
+                        Impreset_date varchar(11)NOT NULL,
+                        Expected_date_of_retirement varchar(11)NOT NULL,
+                        Retirement_amount int(11)NOT NULL,                        
+                        PRIMARY KEY(id))";
+               $db->query($stable100); 
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
