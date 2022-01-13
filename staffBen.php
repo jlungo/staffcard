@@ -464,7 +464,7 @@ $retrieve = mysqli_query($db,$sqluse);
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
         		</p>
         		                                                           	      		
-				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;muhenga No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Employee_numb" id='oldname'></span></p>
+				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Employee_numb" id='oldname'></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empName" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Benefit Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benType"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benDesc" id='dd'></span></p>
