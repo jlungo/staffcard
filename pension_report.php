@@ -100,7 +100,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
       </script>
 <script type="text/javascript">
-            $(document).on("click", ".open-Delete", function () {
+            $(document).on("click", ".open-Delete-pension", function () {
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
@@ -121,7 +121,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { Valuedel: vals},
+                                                      data: { pension: vals},
                                                       success: function(result) {
                                                       if(result=="ok"){
                                                                     swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
@@ -789,6 +789,7 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
+                      $id = $found['id'];
                         $Emp_No=$found['Emp_No'];
                         $Emp_Name=$found['Emp_Name'];
                         $Pension_Number=$found['Pension_Number'];
@@ -809,7 +810,7 @@ $retrieve = mysqli_query($db,$sqluse);
                     <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
-			                <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                <a data-id='$id'  class='open-Delete-pension btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 			              </td>
                 </tr>";
 
