@@ -140,6 +140,87 @@ if(isset($_POST['addmember']))
                
           }
 
+
+
+		  if(isset($_POST['addStaffBen']))
+		  {
+			   if($_POST['empNo']!=''&&$_POST['empName']!=''&&$_POST['benType']!=''&&$_POST['benDesc']!=''&&$_POST['benAmount']!=''&&$_POST['dateStart']!=''&&$_POST['dateEnd']!='')
+				{              
+				 
+				$empNo = mysqli_real_escape_string($db,$_POST['empNo']);
+			 $empName = mysqli_real_escape_string($db,$_POST['empName']);		
+		   $benType=mysqli_real_escape_string($db,$_POST['benType']);
+			 $benDesc =mysqli_real_escape_string($db,$_POST['benDesc']);
+			  $benAmount = mysqli_real_escape_string($db,$_POST['benAmount']);
+				$dateStart = mysqli_real_escape_string($db,$_POST['dateStart']);
+				$dateEnd = mysqli_real_escape_string($db,$_POST['dateEnd']);
+						   $pagex = mysqli_real_escape_string($db,$_POST['page']);
+					// 	 $orgName = $_FILES['filed']['name'];
+					//   $orgtmpName = $_FILES['filed']['tmp_name'];
+					//   $orgSize = $_FILES['filed']['size'];
+					//   $orgType = $_FILES['filed']['type'];
+				 
+				
+			  
+				 if (isset($_POST["mr"]))
+									  {
+										 $mtitle="Mr";
+									  }
+					  elseif(isset($_POST["miss"]))
+									  {     	
+										$mtitle="Miss";
+									   }
+					  elseif(isset($_POST["mrs"]))
+										{     	
+								   $mtitle="Mrs";
+										}	 
+					  elseif (isset($_POST["dr"]))
+									   {
+			  
+										$mtitle="Dr";
+									   }
+					 elseif (isset($_POST["pro"]))
+									{   $mtitle="Pro";
+									   }
+									else	
+									{
+										$mtitle="";
+									}
+									
+									$check="SELECT * FROM staff_ben WHERE Employee_numb='$empNo' && Employee_name='$empName'";
+									$checks=mysqli_query($db,$check);
+							   $found=mysqli_num_rows($checks);
+								   if($found==0)
+								   {
+																		//  move_uploaded_file ($orgtmpName,'images/'.$orgName);
+									 
+									   $query = "INSERT INTO staff_ben (Employee_numb,Employee_name,Benefit_type,Benefit_desc,Benefit_amount,date_start,date_end) ".
+								 "VALUES ('$empNo','$empName','$benType','$benDesc','$benAmount','$dateStart','$dateEnd')";
+									  $db->query($query) or die('Error1, query failed');	
+									  
+									  $memberadd="tyy";					  
+									  $_SESSION['memberadded']=$memberadd;
+										 header("Location:$pagex");  //member added successfully
+					  
+				   
+				   
+								   }else{
+									   $_SESSION['memberexist']="member already exist";
+									  header("Location:$pagex");  
+					  
+								   }
+					 }else{
+						   $_SESSION['emptytextboxes']="Not all text boxes were completed";
+						 
+									  header("Location:$pagex");  
+					  
+						 }
+					
+			   }
+
+
+
+
  if(isset($_POST['Valuedel'])){ 	
 	
 	 $tutor=$_POST['Valuedel'];
@@ -149,6 +230,21 @@ if(isset($_POST['addmember']))
                      if($checks!=0)
                      {
       	 	                  $querry="DELETE FROM Users WHERE id='$tutor'";
+                              $results=mysqli_query($db,$querry);
+                               echo"ok"; 
+				      }
+				       
+	
+ }
+ if(isset($_POST['deleteStaff'])){ 	
+	
+	 $tutor=$_POST['deleteStaff'];
+ 	 $querry="SELECT * FROM staff_ben WHERE emp_id='$tutor'";
+                     $results=mysqli_query($db,$querry);
+                    $checks=mysqli_num_rows($results);
+                     if($checks!=0)
+                     {
+      	 	                  $querry="DELETE FROM staff_ben WHERE emp_id='$tutor'";
                               $results=mysqli_query($db,$querry);
                                echo"ok"; 
 				      }
@@ -283,40 +379,7 @@ if(isset($_POST['addmember']))
                       	     	 	echo"Contents arleady exists"; 
 						        //exit;  
 					      }                
-                     } 
-					 if(isset($_POST['staff_ben'])){         
-	           
-						$Employee_numb = mysqli_real_escape_string($db,$_POST["Employee_numb"]);	//Email variable
-						$orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-						$orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-						$orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-						$year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
-						 $pagez= mysqli_real_escape_string($db,$_POST["page"]);
-						   $Employee_name = $_FILES['filed']['name'];
-						   $orgtmpName = $_FILES['filed']['tmp_name'];
-						   $orgSize = $_FILES['filed']['size'];
-						   $orgType = $_FILES['filed']['type'];
-					  
-					  
-					$sqln="SELECT * FROM Inorg  WHERE name='$orgname' && website='$orgwebsite'";
-							 $resultn=mysqli_query($db,$sqln);                    
-								   if($rowcount=mysqli_num_rows($resultn)==0)
-								   {                 //$date= date("d.m.y");
-								   
-											move_uploaded_file ($orgtmpName, 'media/'.$orgName);
-											$enter="INSERT INTO staff_ben (,Employee_numb,year,email,Phone,pname,size,content,type) 
-												  VALUES('$Employee_numb','$orgwebsite','$year','$orgmail','$orgphone','$orgName','$orgSize','$orgName','$orgType')";
-											$db->query($enter);
-											
-											$_SESSION['regk']="Pamzey";
-											
-										   header("Location:admin.php");
-																	   
-								   }
-								else{
-												  echo"Contents arleady exists"; 
-										  //exit;  
-									}                               
+                     }                
                  
  if(isset($_POST["bulk"]))
 	{
@@ -354,3 +417,5 @@ if(isset($_POST['addmember']))
 
 	}
 ?>
+ 	
+
