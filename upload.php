@@ -129,6 +129,68 @@ else{
 
 
 
+//disciplinary action information system data entry validation 2
+
+if(isset($_POST['disciplinary_entry2'])){
+
+	if($_POST['empno']!=''&& $_POST['empname']!=''&&$_POST['disciplinarytype']!=''&&$_POST['datecommited']!=''&&$_POST['datediscussed']!=''
+	&&$_POST['description']!=''&&$_POST['actiontaken']!=''){
+	
+		
+	$empno = mysqli_real_escape_string($db,$_POST['empno']);
+	$empname = mysqli_real_escape_string($db,$_POST['empname']);
+	$disciplinarytype = mysqli_real_escape_string($db,$_POST['disciplinarytype']);
+	$datecommited = mysqli_real_escape_string($db,$_POST['datecommited']);
+	$datediscussed = mysqli_real_escape_string($db,$_POST['datediscussed']);
+	$description = mysqli_real_escape_string($db,$_POST['description']);
+	$actiontaken = mysqli_real_escape_string($db,$_POST['actiontaken']);
+	// $pagex = mysqli_real_escape_string($db,$_POST['entry']);
+	
+	
+	$sqln="SELECT * FROM disciplinary  WHERE Emp_No='$empno' && Emp_Name='$empname' && Disciplinary_Type='$disciplinarytype' &&   Date_commited= '$datecommited'
+		&& Date_discussed='$datediscussed' && Description = '$description' && Action_Taken = '$actiontaken'  ";
+		$resultn=mysqli_query($db,$sqln);                    
+			  if($rowcount=mysqli_num_rows($resultn)==0)
+			  {  
+	
+	$sql = "INSERT INTO disciplinary (Emp_No, Emp_Name, Disciplinary_Type, Date_commited,Date_discussed,Description,Action_Taken)
+	VALUES ('$empno', '$empname', '$disciplinarytype','$datecommited','$datediscussed','$description','$actiontaken')";
+	
+	if ($db->query($sql) === TRUE) {
+	
+	//  echo "New record created successfully";
+					  
+	$_SESSION['disciplinaryadded']="new disciplinary record created successfully";
+	   header("Location:Disciplinary.php ");  
+	
+	} else {
+	  echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+	
+			  }
+			  else{
+				//    echo "disciplinary record already exists";
+				$_SESSION['disciplinaryexist']="disciplinary record already exist";
+				header("Location:Disciplinary.php ");  
+			  }
+	}
+	else{
+		//   echo " make sure all fields are filled";
+		$_SESSION['emptydisciplinarytextboxes']="make sure all fields are filled";
+		header("Location:Disciplinary.php ");  
+	}
+	
+		
+	}
+
+
+
+
+
+
+
+
+
 
 //disciplinary action information system data edit
 
@@ -176,7 +238,7 @@ if(isset($_POST['edit_disciplinary'])){
 										{
 													$querr="DELETE FROM disciplinary WHERE id='$tutor'";
 												 $results=mysqli_query($db,$querr);
-												  echo"ok"; 
+												  echo"yes"; 
 												
 
 										 }
@@ -246,7 +308,8 @@ if(isset($_POST['addmember']))
 								 
 							     $memberadd="tyy";					  
 			                     $_SESSION['memberadded']=$memberadd;
-                                    header("Location:$pagex");  //member added successfully
+								 //member added successfully
+                                    header("Location:$pagex");  
 				 
 			  
 			  
@@ -307,7 +370,8 @@ if(isset($_POST['addmember']))
                     $checks=mysqli_num_rows($resul);
                      if($checks!=0)
                      {
-                     	if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){//image is a folder in which you will save documents
+                     	if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){
+							 //image is a folder in which you will save documents
                             $queryz = "UPDATE Profilepictures SET name='$receiptName',size='$receiptSize',type='$receiptType',content='$receiptName',Category='$protocol' WHERE ids='$id' ";
                                   $db->query($queryz) or die('Errorr, query failed to upload');	
 									    //$_SESSION['update']="yes";
@@ -322,7 +386,8 @@ if(isset($_POST['addmember']))
                      }
                      else{
 							  
-                             if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){//image is a folder in which you will save documents
+                             if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){
+								 //image is a folder in which you will save documents
                                  $queryz = "INSERT INTO Profilepictures (name,size,type,content,Category,ids) ".
                                  "VALUES ('$receiptName','$receiptSize',' $receiptType', '$receiptName','$protocol','$id')";                                 
                                      $db->query($queryz) or die('Errorr, query failed to upload');	
@@ -339,12 +404,16 @@ if(isset($_POST['addmember']))
 			 }
 
  if(isset($_POST['orginitial'])){         
-	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+	          //Email variable 
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	
+			   //password variable
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	     
+			  //institution variable  
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);      
+			  //phone variable 
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);
+			  //Firstname variable      
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 	           $pagez= mysqli_real_escape_string($db,$_POST["page"]);
 	             $orgName = $_FILES['filed']['name'];
                  $orgtmpName = $_FILES['filed']['tmp_name'];
@@ -355,7 +424,7 @@ if(isset($_POST['addmember']))
 		  $sqln="SELECT * FROM Inorg  WHERE name='$orgname' && website='$orgwebsite'";
                    $resultn=mysqli_query($db,$sqln);                    
                          if($rowcount=mysqli_num_rows($resultn)==0)
-                         {                 //$date= date("d.m.y");
+                         {           //$date= date("d.m.y");
                          
                                   move_uploaded_file ($orgtmpName, 'media/'.$orgName);
                              	 $enter="INSERT INTO Inorg (name,website,year,email,Phone,pname,size,content,type) 
@@ -375,12 +444,16 @@ if(isset($_POST['addmember']))
                  
  
  if(isset($_POST['orgupdate'])){         
-	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+	           	//Email variable
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);
+			     //password variable
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	     
+			  //institution variable
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);      
+			    //phone variable 
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);    
+			  //Firstname variable
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 			$pagez= mysqli_real_escape_string($db,$_POST["page"]);   
 		    $idz= mysqli_real_escape_string($db,$_POST["pageid"]);   
 				  

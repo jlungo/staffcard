@@ -23,5 +23,9 @@ include("db_connect.php");
 					   
                                         //  <a href='disciplinarydelete.php?id=$id'  class=' btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>		
                                        // <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                    
+                  
+								// 	    <li class="treeview">
+								// 	   <a  href="Disciplinary.php" ><i class='fa fa-print'></i>Disciplinary Information</a>
+								//   </li>  
+
                     ?>

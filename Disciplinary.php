@@ -124,7 +124,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                       url: "upload.php",
                                                       data: { disciplinary_delete: vals},
                                                       success: function(result) {
-                                                      if(result=="ok"){
+                                                      if(result=="yes"){
                                                                     swal({title: "Deleted!", text: "disciplinary record has been deleted from the database.", type: "success"},
                                                           function(){ 
                                                                           location.reload();
