@@ -469,8 +469,8 @@ $retrieve = mysqli_query($db,$sqluse);
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Benefit Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benType"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benDesc" id='dd'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Benefit Amount:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benAmount" id='bb'></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateStart" id='oldpass'></span></p>
-				 <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateEnd" id='oldpass'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateStart" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
+				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateEnd" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
                     
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
