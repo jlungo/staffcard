@@ -1,8 +1,6 @@
 <?php
 session_start();
 include("db_connect.php"); 
-
-
  
   if(isset($_COOKIE['adminid'])){$adminid = $_COOKIE['adminid'];}
 
@@ -141,6 +139,47 @@ if(isset($_POST['addmember']))
 				    }
                
           }
+ if(isset($_POST['INSERT']))
+     {
+		include "lungo/Conn.php";	
+		if(isset($_POST['submit']))
+
+     $Emp_No = $_POST['Emp_No'];
+      $Emp_Name = $_POST['EmpName'];
+     $Objective = $_POST['Idtyp'];
+    $Apraisee_score = $_POST['IdNo'];
+    $Supervisor_score = $_POST['IssueDate'];
+    $Performance_score = $_POST['Expdate'];
+    $Recommendations = $_POST['POI'];
+    
+    $sql = "INSERT INTO idinfo (EmpNo,EmpName,Idtyp,IdNo,IssueDate,Expdate,POI) VALUES ('$Emp_No','$Emp_Name','$Objective','$Apraisee_score','$Supervisor_score','$Performance_score','$Recommendations')";
+   
+    
+    
+
+    
+    
+     if (mysqli_query($conn, $sql)) {
+        echo "New record has been added successfully !";
+	  
+     } else {
+        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+     }}
+    //  mysqli_close($conn);
+	// 	  $pagex = mysqli_real_escape_string($db,$_POST['page']);
+		  
+	// 	 $sql = "INSERT INTO opras (Emp_No,Emp_Name,Objective,Apraisee_score,Supervisor_score,Performance_score,Recommendations) VALUES ('$Emp_No','$Emp_Name','$Objective','$Apraisee_score','$Supervisor_score','$Performance_score','$Recommendations')";
+	// 	 if (mysqli_query($conn, $sql)) {
+	// 		$memberadd="tyy";
+	// 		$_SESSION['memberadded']=$memberadd;
+	// 		header("Location:$pagex");   
+		  
+	// 	 } else {
+	// 		echo "Error: " . $sql . ":-" . mysqli_error($conn);
+	// 	 }
+	// 	 mysqli_close($conn);
+               
+    //       }
 
  if(isset($_POST['Valuedel'])){ 	
 	

@@ -3,18 +3,6 @@
  $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
-
-//connection to  push Education history
-$servername ='localhost';
-$username='root';
-$password='';
-$dbname ="staff_db";
-
-//create connection
-$conn = mysqli_connect($servername,$username,$password,"$dbname");
-if(!$conn){
-    die('could not connect my Sql:' .mysql_error());
-}
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 	 
@@ -54,18 +42,46 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-// group 13 work table
-                         $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment,
-                
-                                  emp_name varchar(300)NOT NULL,
-                                  cert_obtained Varchar(30)NOT NULL,                                 
-                                  institution varchar(30)NOT NULL,  
-                                  institution_add varchar(300)NOT NULL,                               
-                                  year_stated_edu date NOT NULL,
-                                  
-                                 year_graduated varchar(300)NOT NULL,
-                                  PRIMARY KEY(emp_no) )";
-                         $db->query($stable13); 
+                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
+                                  Firstname varchar(300)NOT NULL, 
+                                  Sirname varchar(300)NOT NULL,
+                                  Mtitle Varchar(30)NOT NULL,                                 
+                                  Rank varchar(30)NOT NULL,                                 
+                                  Department varchar(300)NOT NULL,
+                                  Email varchar(300)NOT NULL,
+                                  Staffid varchar(300)NOT NULL,
+                                  Online varchar(300)NOT NULL,
+                                  Picname varchar(1000)NOT NULL,
+                                  Time bigint(30)NOT NULL,                         
+                                  PRIMARY KEY(id) )";
+                         $db->query($stable56); 
+
+                         $stable56="CREATE TABLE IF NOT EXISTS IdInfo (id int(11) NOT NULL auto_increment,
+                         EmpNo varchar(300)NOT NULL, 
+                         EmpName varchar(300)NOT NULL,
+                         Idtyp Varchar(30)NOT NULL,                                 
+                                                     
+                         IdNo int(50)NOT NULL,
+                         IssueDate date NOT NULL,
+                         Expdate date NOT NULL,
+                         POI varchar(300)NOT NULL,
+                                            
+                         PRIMARY KEY(id) )";
+                $db->query($stable56);
+
+
+
+
+        $stable56="CREATE TABLE IF NOT EXISTS opras (Emp_No int(11) NOT NULL auto_increment,
+                        
+                         Emp_Name varchar(300)NOT NULL,
+                         Objective Varchar(30)NOT NULL,                                 
+                         Apraisee_score varchar(30)NOT NULL,                                 
+                         Supervisor_score varchar(300)NOT NULL,
+                         Performance_score varchar(300)NOT NULL,
+                         Recommendations varchar(300)NOT NULL,                        
+                         PRIMARY KEY(Emp_No) )";
+                $db->query($stable56); 
                          
                         
 			   
