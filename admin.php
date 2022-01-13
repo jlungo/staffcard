@@ -728,7 +728,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 								</li>
 								<li class="treeview">
 									<a href="#">
-										<i class="fa fa-cod"></i>
+										<i class="fa fa-money"></i>
 										<span>Deductions</span>
 										<i class="fa fa-angle-left pull-right"></i>
 									</a>
