@@ -28,7 +28,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title> Staff Benefit Admin </title>
+<title>admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -99,11 +99,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       
       </script>
 <script type="text/javascript"> 
-            $(document).on("click", ".open-Delete", function () {
+            $(document).on("click", ".deleteStaff", function () {
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
-                                         text: "You want to remove this staff from the database!",
+                                         text: "You want to remove this staff from the database!!!",
                                          type: "warning",
                                          showCancelButton: true,
                                         cancelButtonColor: "red",
@@ -115,12 +115,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                           buttonsStyling: false
                                         },
                      function(isConfirm){
-                                      if (isConfirm) {                                      	
+                                      if (isConfirm) {       
                                                   	var vals=myValue;
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { Valuedel: vals},
+                                                      data: { deleteStaff: vals},
                                                       success: function(result) {
                                                       if(result=="ok"){
                                                                     swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
@@ -132,7 +132,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                                        }
                                                   }); } else {
-	                                                           swal("Cancelled", "This user is safe :)", "error");
+	                                                           swal("Cancelled", "This user is safe", "error");
                                                           }
                                          });
                                        
@@ -184,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is already a staff with those details in the database", "error");
+    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
                                });
                 </script>
            <?php 
@@ -440,7 +440,7 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div>
  
- <div id="Useradd" class="modal fade" role="dialog">
+ <div id="staffAdd" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
@@ -464,19 +464,19 @@ $retrieve = mysqli_query($db,$sqluse);
         		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
         		</p>
         		                                                           	      		
-				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Employee_numb" id='oldname'></span></p>
+				<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empNo" id='oldname'></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empName" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Benefit Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benType"  id='cc'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benDesc" id='dd'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Benefit Amount:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="benAmount" id='bb'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateStart" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
-				 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateEnd" id='oldpass' min="2022-01-01" max="2100-12-31"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benefit Description:<label style="color: red;font-size:20px;">*</label><textarea type name="benDesc" id='dd' cols="30" rows="5" style="width:270px;"></textarea></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Benefit Amount:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" min="0" max=" " step="any" type="number" name="benAmount" id='bb'></span></p>
+        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Started:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateStart" id='oldpass'></span></p>
+				 <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Date Ended:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="dateEnd" id='oldpass'></span></p>
                     
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
       <div class="modal-footer">
-       <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="staff_ben"> &nbsp;
+       <input type="submit" class="btn btn-success" value="Submit" id="addStaffBen" name="addStaffBen"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -606,7 +606,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-tv"></i> <span>Control Panel</span>
                 </a>
               </li>
-               <!-- <li class="treeview">
+               <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
                 <span>Initialisation</span>
@@ -616,20 +616,35 @@ $retrieve = mysqli_query($db,$sqluse);
                   <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add System Info</a></li>
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
                 </ul>
-              </li> -->
+              </li>
                             
               <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Benefit</a>
+                  <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
          
               </li>
-             
-               <!-- <li class="treeview">
+              <li class="treeview">
+              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
+               </li>
+               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Sample form</a>
+               </li>
+               <!-- <li class="treeview">
+              	  <a  href="staffBen.php" ><i class='fa fa-print'></i>Staff Benefit Information</a>
                </li> -->
-              
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
+               <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cog"></i>
+                <span>Staff Benefit Information</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#staffAdd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff Benefit</a></li>
+                  <li><a  data-id='' href='staffBen.php' class='open-Initial2'><i class="fa fa-minus"></i>Staff Benefit Report</a></li>
+                </ul>
+              </li>
                           
                 </ul>
           </div>
@@ -704,7 +719,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="clearfix"> </div>	
 		</div>
 		<!-- //header-ends -->
-		<!-- main content start report-->
+		<!-- main content start-->
 		<div id="page-wrapper"  >
 			<div class="main-page" >
 	
@@ -713,11 +728,11 @@ $retrieve = mysqli_query($db,$sqluse);
 				
 				
 				
-	
-			<div class="charts">		
-			<div class="mid-content-top charts-grids">
+                                     
+			<div class="row">		
+			<div class="card-body mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Users</h4>
+						<h4 class="title">Staffs</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -727,43 +742,51 @@ $retrieve = mysqli_query($db,$sqluse);
         <thead>
             <tr>
             	<th>ID</th>
-                <th>Name</th>
-                <th>STAFF ID</th>
-                <th>RANK</th>              
-                <th>DEPARTMENT</th>
-                <th>CONTACTS</th>           
+                <th>Employee Number</th>
+                <th>Employee Name</th>
+                <th>Benefit Type</th>              
+                <th>Benefit Description</th>
+                <th>Benefit Amount</th>
+                <th>Start Date</th>
+                <th>End Date</th>           
                 <th>PRINT</th>
                 <th>EDIT</th>
                 <th>DELETE</th>
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
+        	 <?php   $sqlmember ="SELECT * FROM staff_ben ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
+                       $id=$found['emp_id'];$EmplNumber=$found['Employee_numb'];$EmplName=$found['Employee_name'];$BenefitType=$found['Benefit_type'];
+                       $BenefitDesc=$found['Benefit_desc'];$BenefitAmount=$found['Benefit_amount'];$startDate=$found['date_start'];$endDate=$found['date_end'];
+			                $count=$count+1;  
+                    //   $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
+			              // $names=$firstname." ".$sirname;
+                    if (strlen($BenefitDesc)) {
+                      # code...
+                      $newString = substr($BenefitDesc, 0, 10). "...";
+                    }
 					    	 
 			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
+                          <td>$EmplNumber</td>        	
+                          <td>$EmplName</td>
+                          <td>$BenefitType</td>  
+			                 <td>$newString</td>
+			                 <td>$BenefitAmount</td>
+			                 <td>$startDate</td>
+			                 <td>$endDate</td>
 			                 <td>
 			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                               </td>
 			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+			                   <a data-toggle='modal' data-id='$id' data-ie='$EmplNumber'   data-if='$EmplName' data-ig='$BenefitType' data-ih='$BenefitDesc' data-ij='$BenefitAmount' data-ik='$startDate' data-ik='$endDate' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
 							 
 			                 </td>				                 
 			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                   <a data-id='$id'  class='deleteStaff btn btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 							 
 			                 </td>			 
                              </tr>"; 
@@ -780,18 +803,13 @@ $retrieve = mysqli_query($db,$sqluse);
 		
 				</div>
 
-				
+					<!--//sreen-gallery-cursual---->
 			</div>
 		 </div>
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>
-          <?php
-          echo "<p id=\"standardFooter\" > Copyright &copy;
-         2021-" . date("Y") . " Staff Benefit Information System <br>
-         All Rights Reserved | Design and developed by Group5 </p>";
-          ?>
+	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
 	
 			</p>		
 	</div>
@@ -826,20 +844,19 @@ $retrieve = mysqli_query($db,$sqluse);
 			}
 		</script>
 	<!-- //Classie --><!-- //for toggle left push menu script -->
-		
 	<!--scrolling js-->
 	<script src="admin/js/jquery.nicescroll.js"></script>
 	<script src="admin/js/scripts.js"></script>
 	<!--//scrolling js-->
 	
-	<!-- side nav js -->x
+	<!-- side nav js -->
 	<script src='admin/js/SidebarNav.min.js' type='text/javascript'></script>
 	<script>
       $('.sidebar-menu').SidebarNav()
     </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
