@@ -728,7 +728,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#Disciplinary_data_entry2' class='open-Initial'><i class="fa fa-plus"></i>Add Disciplinary Info</a></li>
-                  <li><a  data-id='' href='Disciplinary.php' class='open-Initial2'><i class="fa fa-minus"></i>Display Disciplinary Report</a></li>
+                  <li><a  data-id='' href='Disciplinary.php' class='open-Initial2'><i class="fa fa-user"></i>Display Disciplinary Report</a></li>
                 </ul>
               </li>
 
