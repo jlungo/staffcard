@@ -555,6 +555,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
       <div class="modal-body">
         <center>
+          <!--form for adding spouse information -->
           <form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">
 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p>
