@@ -388,9 +388,7 @@ $retrieve = mysqli_query($db,$sqluse);
              
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
-        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;
-                Firstname:<label style="color: red;font-size:20px;">*</label>
-                <input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
@@ -520,46 +518,29 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div>
 
-  <div id="add_promotion" class="modal fade" role="dialog">
+  <div id="add_bank" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	ADD EDUCATION HISTORY
+        	ADD BANK INFORMATION
         	</center></h4>
       </div>
-      	<form method="post" action="process.php" enctype='multipart/form-data'>        		
+      	<form method="post" action="insert_bank.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
-      	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;
-            <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
-            <input style="width:270px;" type="text" name="emp_no" ></span></p><br>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
-              <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
-            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
-               <input style="width:270px;" type="text" name="institution" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
-               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Year started Education:*</label><br>
-               <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
-               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
-                                   	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-         </center>
+      <center> 
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee No.:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_no"></span></p>
+        	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_name"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Bank Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_name"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Bank Branch Address:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_branch_address"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Bank Account Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_account_number"></span></p>
+      </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -683,12 +664,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Staff Education history</span>
+                <span>Bank Information</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education History</a></li>
-                  <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & education info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_bankinfo' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
+                  <li><a href='bank_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Bank Information Report</a></li>
                 </ul>
               </li>
 
@@ -778,7 +759,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">promotion information</h4>
+						<h4 class="title">Users</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -787,15 +768,15 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-               	
-            <th>Emp No</th>
-                <th>Emp Name</th>
-                <th>Job Desc</th>              
-                <th>Current Rank</th>
-                <th>New Promotion Rank</th>           
-                <th>Date Promoted</th>
-                <th>Highest Education Level</th>
-                
+            	<th>ID</th>
+                <th>Name</th>
+                <th>STAFF ID</th>
+                <th>RANK</th>              
+                <th>DEPARTMENT</th>
+                <th>CONTACTS</th>           
+                <th>PRINT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
             </tr>
         </thead>
         <tbody>
