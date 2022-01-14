@@ -217,11 +217,11 @@ if(isset($_POST['addmember']))
 
  if(isset($_POST['orginitial'])){         
 	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	       
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);     
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 	           $pagez= mysqli_real_escape_string($db,$_POST["page"]);
 	             $orgName = $_FILES['filed']['name'];
                  $orgtmpName = $_FILES['filed']['tmp_name'];
@@ -325,64 +325,63 @@ if(isset($_POST['addmember']))
 
 
 
-//******ADD SPOUSE TO THE DATABASE */
 
 
-	// if(isset($_POST['addSpouse']))
-    //  {
-    //  	 if($_POST['EmployeeNo']!=''&&$_POST['EmployeeName']!=''&&$_POST['MaritalStatus']!=''&&$_POST['Sex']!=''&&$_POST['DateMarried']!='' &&$_POST['SpouseName']!=''&&$_POST['DistrictMarried']!='')
-    //        {              
+	if(isset($_POST['addSpouse']))
+     {
+     	 if($_POST['EmployeeNo']!=''&&$_POST['EmployeeName']!=''&&$_POST['MaritalStatus']!=''&&$_POST['Sex']!=''&&$_POST['DateMarried']!='' &&$_POST['SpouseName']!=''&&$_POST['DistrictMarried']!='')
+           {              
             
-   	// 	$EmployeeNo = mysqli_real_escape_string($db,$_POST['EmployeeNo']);
-	// 	$EmployeeName = mysqli_real_escape_string($db,$_POST['EmployeeName']);		
+   		$EmployeeNo = mysqli_real_escape_string($db,$_POST['EmployeeNo']);
+		$EmployeeName = mysqli_real_escape_string($db,$_POST['EmployeeName']);		
 
-	//   	$MaritalStatus=mysqli_real_escape_string($db,$_POST['MaritalStatus']);
-	//     $Sex =mysqli_real_escape_string($db,$_POST['Sex']);
+	  	$MaritalStatus=mysqli_real_escape_string($db,$_POST['MaritalStatus']);
+	    $Sex =mysqli_real_escape_string($db,$_POST['Sex']);
 
-	// 	$DateMarried = mysqli_real_escape_string($db,$_POST['DateMarried']);
-	// 	$SpouseName = mysqli_real_escape_string($db,$_POST['SpouseName']);
+		$DateMarried = mysqli_real_escape_string($db,$_POST['DateMarried']);
+		$SpouseName = mysqli_real_escape_string($db,$_POST['SpouseName']);
 	
-	// 	$DistrictMarried=mysqli_real_escape_string($db,$_POST['DistrictMarried']);
-	// 	// echo $EmployeeName;
-	// 	// echo $Sex;
-	// 	// echo $MaritalStatus;
-	// 	// echo $DateMarried;
+		$DistrictMarried=mysqli_real_escape_string($db,$_POST['DistrictMarried']);
+		// echo $EmployeeName;
+		// echo $Sex;
+		// echo $MaritalStatus;
+		// echo $DateMarried;
 
 
-	// 						   $check="SELECT * FROM Spouse WHERE Emp_No='$EmployeeNo' && Emp_Name='$EmployeeName'";
+							   $check="SELECT * FROM Spouse WHERE Emp_No='$EmployeeNo' && Emp_Name='$EmployeeName'";
 
-	// 					       $checks=mysqli_query($db,$check);
-	// 					       $found=mysqli_num_rows($checks);
+						       $checks=mysqli_query($db,$check);
+						       $found=mysqli_num_rows($checks);
 
-	// 						  if($found==0)
-	// 						  {
+							  if($found==0)
+							  {
 								
-	// 						  	$query = "INSERT INTO Spouse (Emp_No,Emp_Name,Marital_Status,Sex,Date_married,`Spouse_name`,`District_married`) ".
-    //                         "VALUES ('$EmployeeNo','$EmployeeName', '$MaritalStatus','$Sex ','$DateMarried','$SpouseName','$DistrictMarried')";
-    //                              $db->query($query) or die('Error1, query failed '. $db->error);	
+							  	$query = "INSERT INTO Spouse (Emp_No,Emp_Name,Marital_Status,Sex,Date_married,`Spouse_name`,`District_married`) ".
+                            "VALUES ('$EmployeeNo','$EmployeeName', '$MaritalStatus','$Sex ','$DateMarried','$SpouseName','$DistrictMarried')";
+                                 $db->query($query) or die('Error1, query failed '. $db->error);	
 								 
-	// 						     $memberadd="tyy";	
+							     $memberadd="tyy";	
 
-	// 		                     $_SESSION['spouseAdded']=$memberadd;
+			                     $_SESSION['spouseAdded']=$memberadd;
 								
-    //                                 header("Location:spouselist.php");  //member added successfully
+                                    header("Location:spouselist.php");  //member added successfully
 				 
 			  
 			  
-	// 						   }else{
-	// 						   	$_SESSION['spouseExists']="member already exist";
-    //                               header("Location:admin.php");  
+							   }else{
+							   	$_SESSION['spouseExists']="member already exist";
+                                  header("Location:admin.php");  
 				 
-	// 						   }
-	// 			 }
-	// 			 else{
-	// 			 	$_SESSION['emptytextboxes']="Not all text boxes were completed";
-    //                               header("Location:admin.php");  
+							   }
+				 }
+				 else{
+				 	$_SESSION['emptytextboxes']="Not all text boxes were completed";
+                                  header("Location:admin.php");  
 				 
-	// 			     }
+				     }
                     
                
-    //       }
+          }
 
 
 
