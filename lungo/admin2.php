@@ -804,11 +804,7 @@ $retrieve = mysqli_query($db,$sqluse);
                              <td>$rank</td>
                              
 			                 <td>$dept</td>
-                       <td>$contact</td>
-                       <td>
-                       <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-             
-                     </td>
+			                 <td>$contact</td>
 			                			 
                              </tr>"; 
 					 

@@ -635,7 +635,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id=''  href="#lungo" class='open-Initial'><i class="fa fa-plus"></i>Add OPRAS DETAIL</a></li>
-                  <li><a data-toggle='modal' data-id='' href="admin2.php" class='open-Initial2'><i class="fa fa-minus"></i>VIEW OPRAS REPORT</a></li>
+                  <li><a href='admin2.php' class='open-Initial2'><i class="fa fa-minus"></i>View OPRAS REPORT</a></li>
                 </ul>
               </li>
              
