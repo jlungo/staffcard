@@ -188,7 +188,7 @@ if(isset($_POST['addmember']))
                      {
                      	if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){//image is a folder in which you will save documents
                             $queryz = "UPDATE Profilepictures SET name='$receiptName',size='$receiptSize',type='$receiptType',content='$receiptName',Category='$protocol' WHERE ids='$id' ";
-                                  $db->query($queryz) or die('Errorr, query failed to upload');	
+                                  $db->query($queryz) or die('Error, query failed to upload!');	
 									    //$_SESSION['update']="yes";
 										if($protocol=="Administrator"){
 									                                     header("Location:$pages");
