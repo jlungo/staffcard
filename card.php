@@ -150,7 +150,7 @@ $retrieve = mysqli_query($db,$sqluse);
                      	 <center><img src="images/malawi.png" alt="Avatar" width="200px" height="175px" >        
        <div class="container" align="center">
       <p style="margin:auto">The bearer whose photograph appears overleaf is a staff of</p>
-      	<h2 style="color:#00BFFF;margin-left:2%">THE STATE GOVERNMENT OF MALAWI </h2>
+      	<h2 style="color:#00BFFF;margin-left:2%">THE STATE GOVERNMENT OF TANZANIA </h2>
       <p style="margin:auto">If lost and found please return to the nearest police station</p>
         <hr align="center" style="border: 1px solid black;width:80%;margin-top:13%"></hr> 
 
