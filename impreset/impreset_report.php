@@ -890,10 +890,10 @@ $retrieve = mysqli_query($db,$sqluse);
              <th> Emp No </th>
              <th> Emp Name </th>
              <th> Impreset Purpose </th>
-             <th> Impreset Amount </th>
+             <th> Impreset Amount (TZS) </th>
              <th> Impreset Date </th>
              <th> Date of Retirement </th>
-             <th> Retirement Amount </th> 
+             <th> Retirement Amount (TZS) </th> 
             </tr>
         </thead>
         <tbody>
