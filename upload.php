@@ -234,7 +234,7 @@ if(isset($_POST['addmember']))
 		  $sqln="SELECT * FROM Inorg  WHERE name='$orgname' && website='$orgwebsite'";
                    $resultn=mysqli_query($db,$sqln);                    
                          if($rowcount=mysqli_num_rows($resultn)==0)
-                         {                 //$date= date("d.m.y");
+                         {                 
                          
                                   move_uploaded_file ($orgtmpName, 'media/'.$orgName);
                              	 $enter="INSERT INTO Inorg (name,website,year,email,Phone,pname,size,content,type) 
@@ -247,7 +247,7 @@ if(isset($_POST['addmember']))
 								                             
                          }
                       else{
-                      	     	 	echo"Contents arleady exists"; 
+                      	     	 	echo"Contents arleady exists, please fill another!"; 
 						        //exit;  
 					      }                
                      }                
