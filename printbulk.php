@@ -137,7 +137,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			?>
         	<img src="images/love.png" alt="Avatar"  width="70px" height="70px"> <?php }?>
         	</td>
-        <td><h3><b>THE STATE GOVERNMENT OF MALAWI</b></h3></td>
+        <td><h3><b>THE STATE GOVERNMENT OF TANZANIA</b></h3></td>
        </tr>        
     </table>    
 				<center>
@@ -155,15 +155,15 @@ $retrieve = mysqli_query($db,$sqluse);
              	 	 ?>   </center> 
              	 	  <div class="container" align="center">
       
-      	<p style="margin-top:2%">Name</p>
+      	<p style="margin-top:2%">NAME:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($names)){ $namez=$title.' '.$names;echo$namez;} ?></p>
-      	<p style="margin-top:-4%">Rank</p>
+      	<p style="margin-top:-4%">RANK:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($rank)){ echo$rank;} ?></p>
        <p style="margin-top:-4%">STAFF ID:</p>
         <p style="font-weight: bold;margin-top:-4%"><?php if(isset($pass)){ echo$pass;} ?></p>
-      	<p style="margin-top:-4%">MINISTRY/DEARTMENT:</p>
+      	<p style="margin-top:-4%">MINISTRY/DEPARTMENT:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($dept)){ echo$dept;} ?></p>      	
-      	<p style="margin-top:-4%">HOLDER SIGNATURE</p>
+      	<p style="margin-top:-4%">HOLDER SIGNATURE:</p>
             
       </div>
             </div>
@@ -172,7 +172,7 @@ $retrieve = mysqli_query($db,$sqluse);
                      	 <center><img src="images/malawi.png" alt="Avatar" width="200px" height="175px" >        
        <div class="container" align="center">
       <p style="margin:auto">The bearer whose photograph appears overleaf is a staff of</p>
-      	<h2 style="color:#00BFFF;margin-left:2%">THE STATE GOVERNMENT OF MALAWI </h2>
+      	<h2 style="color:#00BFFF;margin-left:2%">THE STATE GOVERNMENT OF TANZANIA </h2>
       <p style="margin:auto">If lost and found please return to the nearest police station</p>
         <hr align="center" style="border: 1px solid black;width:80%;margin-top:13%"></hr> 
 
