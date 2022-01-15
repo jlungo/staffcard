@@ -496,7 +496,7 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	SYSTEM INFORMATION INITIALISATION
+        	SYSTEM INFORMATION INITIALIZATION
         	</center></h4>
       </div>
       	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
