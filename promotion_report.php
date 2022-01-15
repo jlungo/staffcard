@@ -233,7 +233,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    				              sweetAlert("Oops...", "This category arleady exists in the system!", "error");     				              
                                });
                 </script>
            <?php 
