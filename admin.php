@@ -960,7 +960,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
