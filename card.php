@@ -14,7 +14,7 @@ $code = $Bar->getBarcode($serial, $Bar::TYPE_CODE_128);
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<title>card</title>
+		<title>Card</title>
 <style>
   body{
 		  	background:#008080;
@@ -45,7 +45,7 @@ font-family: sans-serif;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('images/malawi.png');   /*if you want to change the background image replace logo.png*/
+  background: url('images/malawi.png');
   background-repeat:repeat-x;
   background-size: 250px 450px;
   opacity: 0.2;
@@ -106,7 +106,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			?>
         	<img src="images/love.png" alt="Avatar"  width="70px" height="70px"> <?php }?>
         	</td>
-        <td><h3><b>THE STATE GOVERNMENT OF MALAWI</b></h3></td>
+        <td><h3><b>THE STATE GOVERNMENT OF TANZANIA</b></h3></td>
        </tr>        
     </table><center>
         <?php  
@@ -133,13 +133,13 @@ $retrieve = mysqli_query($db,$sqluse);
 									} 
              	 	 ?>   </center>              <div class="container" align="center">
       
-      	<p style="margin-top:2%">Name</p>
+      	<p style="margin-top:2%">NAME:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($names)){ $namez=$title.' '.$names;echo$namez;} ?></p>
-      	<p style="margin-top:-4%">Rank</p>
+      	<p style="margin-top:-4%">RANK:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($rank)){ echo$rank;} ?></p>
        <p style="margin-top:-4%">STAFF ID:</p>
         <p style="font-weight: bold;margin-top:-4%"><?php if(isset($pass)){ echo$pass;} ?></p>
-      	<p style="margin-top:-4%">MINISTRY/DEARTMENT:</p>
+      	<p style="margin-top:-4%">MINISTRY/DEPARTMENT:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($dept)){ echo$dept;} ?></p>      	
       	<p style="margin-top:-4%">HOLDER SIGNATURE</p>
               
