@@ -317,7 +317,7 @@ if(isset($_POST['addmember']))
                           header("Location:bulk.php");
 			            }				    
 					else{
-				          echo "Sorry! There is some problem.";
+				          echo "Sorry! There is some problem, please try again!";
 			            }
 
 	}
