@@ -594,7 +594,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <input style="width:270px;" type="text" name="Impreset_purpose" ></span></p><br>
 
         	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Impreset Amount:*</label><br>
+               <label for ="current_rank" style="color: red;font-size:20px;">Impreset Amount (TZS):*</label><br>
                <input style="width:270px;" type="text" name="Impreset_amount" ></span></p><br>
 
         	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
@@ -606,7 +606,7 @@ $retrieve = mysqli_query($db,$sqluse);
                <input style="width:270px;" type="date" name="Expected_date_of_retirement" ></span></p><br>
 
         	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Retirement Amount:*</label><br>
+               <label style="color: red;font-size:20px;">Retirement Amount (TZS):*</label><br>
                <input style="width:270px;" type="text" name="Retirement_amount" ></span></p><br>
               
               <input type="hidden" name="page" value="admin.php"/>                                                        	      		
