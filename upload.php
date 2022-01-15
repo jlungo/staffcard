@@ -255,11 +255,11 @@ if(isset($_POST['addmember']))
  
  if(isset($_POST['orgupdate'])){         
 	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 			$pagez= mysqli_real_escape_string($db,$_POST["page"]);   
 		    $idz= mysqli_real_escape_string($db,$_POST["pageid"]);   
 				  
@@ -282,8 +282,7 @@ if(isset($_POST['addmember']))
 								                             
                          }
                       else{
-                      	     	 	echo"Contents arleady exists"; 
-						        //exit;  
+                      	     	 	echo"Contents arleady exists, please fill another!"; 
 					      }                
                      }                
                  
