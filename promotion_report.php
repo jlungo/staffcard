@@ -272,15 +272,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
                                     swal({
-                                         title: "Category Deleted",
-                                         text: "Do you want to delete another one?",
-                                         type: "success",
-                                         showCancelButton: true,
+                                        title: "Category Deleted",
+                                        text: "Do you want to delete another category?",
+                                        type: "success",
+                                        showCancelButton: true,
                                         confirmButtonColor: "green",
                                         confirmButtonText: "OK!",
                                         closeOnConfirm: true,
                                         closeOnCancel: true,
-                                          buttonsStyling: false
+                                        buttonsStyling: false
                                         },
                      function(isConfirm){
                                       if (isConfirm) {                                      	
