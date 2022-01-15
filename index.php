@@ -69,7 +69,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		<hr />
 		<div class="form-group">
 			<button type="submit" class="btn btn-default" name="login_button" id="login_button">
-			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Log In
 			</button> 
 		</div> 
 	</form>	
