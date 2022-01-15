@@ -425,7 +425,7 @@ $retrieve = mysqli_query($db,$sqluse);
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
         	<p style="margin-bottom:10px;">
-        			Select picture<input name='file2' type='file' id='file2' >
+        			Select Picture<input name='file2' type='file' id='file2' >
            </p>  
            <p>
         	<input name='id' type='hidden' value='' id='bookId'>
