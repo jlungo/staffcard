@@ -819,7 +819,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>© 2022 Copyrights . All Rights Reserved
 	
 			</p>		
 	</div>
