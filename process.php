@@ -11,7 +11,7 @@ if(isset($_POST['save']))
     $sql = "INSERT INTO prois (emp_no,emp_name,job_desc,current_rank,new_rank,date_promoted,high_ed) 
     VALUES('$emp_no','$emp_name',' $job_desc','$current_rank', '$new_rank',' $date_promoted',' $high_ed')";
     if(mysqli_query($conn,$sql)){
-        echo "New record created successfully!";
+        echo "New promotion record created successfully!";
     } else {
         echo "Error: " . $sql . " ".mysqli_error($conn);
     }
