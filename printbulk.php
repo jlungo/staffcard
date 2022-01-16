@@ -161,7 +161,7 @@ $retrieve = mysqli_query($db,$sqluse);
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($rank)){ echo$rank;} ?></p>
        <p style="margin-top:-4%">STAFF ID:</p>
         <p style="font-weight: bold;margin-top:-4%"><?php if(isset($pass)){ echo$pass;} ?></p>
-      	<p style="margin-top:-4%">MINISTRY/DEARTMENT:</p>
+      	<p style="margin-top:-4%">MINISTRY/DEPARTMENT:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($dept)){ echo$dept;} ?></p>      	
       	<p style="margin-top:-4%">HOLDER SIGNATURE</p>
             
