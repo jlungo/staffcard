@@ -45,7 +45,8 @@ $retrieve = mysqli_query($db,$sqluse);
             <li class="active"><a href="#">	<?php if(isset($name)){echo$name;}?></a></li>           
           </ul>
          
-        </div><!--/.nav-collapse -->
+        </div>
+		<!--/.nav-collapse -->
       </div>
     </div>
 	

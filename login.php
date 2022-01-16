@@ -21,7 +21,8 @@ if(isset($_POST['login_button'])) {
 	
 	
 	else {				
-		echo "email or password does not exist."; // wrong details 
+		 // wrong details 
+		echo "email or password does not exist.";
 	       }		
 }
 
