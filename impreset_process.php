@@ -12,7 +12,7 @@ if(isset($_POST['save']))
     $sql = "INSERT INTO Impreset_Information (Emp_No,Emp_Name,Impreset_purpose,Impreset_amount,Impreset_date,Expected_date_of_retirement,Retirement_amount) 
     VALUES('$Emp_No','$Emp_Name',' $Impreset_purpose','$Impreset_amount', '$Impreset_date',' $Expected_date_of_retirement',' $Retirement_amount')";
     if(mysqli_query($conn,$sql)){
-        echo "New impreset record created successfully";
+        echo "New impreset record created successfully!";
     } else{
         echo "Error: " . $sql . " ".mysqli_error($conn);
     }
