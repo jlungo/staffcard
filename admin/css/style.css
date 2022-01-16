@@ -66,7 +66,7 @@ span.dashboard_text {
 /* ----STICKY HEADER----*/
 .sticky-header{
     position: fixed;
-    top: 0;
+    top: 0px;
     left:0px;
     width: 100%;
     z-index: 100;
