@@ -9,8 +9,7 @@
              mysqli_select_db($db,"staff_db");
              
    
-        		                       
-		    
+        		   
 		$stableYZ="CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
                  name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
                  website varchar(300)NOT NULL,year varchar(10)NOT NULL,pname varchar(1000)NOT NULL,type varchar(30)NOT NULL,
@@ -28,6 +27,7 @@
                                  Type varchar(30)NOT NULL,Size decimal(10) NULL,
                                    content longblob NOT NULL,PRIMARY KEY(id) )";
                                  $db->query( $stable1);
+
                
                   $stable56="CREATE TABLE IF NOT EXISTS Users (id int(11) NOT NULL auto_increment,
                                   Firstname varchar(200)NOT NULL, 
@@ -56,7 +56,6 @@ $db->query($stable56);
                                       $db->query($stable4);
 						
 			 	 	
-		
 					$sql="SELECT * FROM Administrator ";					
                    $result=mysqli_query($db,$sql);
                    $rowcount=mysqli_num_rows($result);
@@ -70,7 +69,7 @@ $db->query($stable56);
                                                     $querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
                                  "VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
                                      $db->query($querydy) or die('Errorr, query failed to upload');	
-                                  
+                                   
                           }
                      
 					 		
