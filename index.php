@@ -75,7 +75,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
 			</button> 
 		</div> 
-	</form>	
+	</form>   	
 	              				                                   				                                         				                          				        		
 </div>
 <div class="insert-post-ads1" style="margin-top:20px;">
