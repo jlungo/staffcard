@@ -149,7 +149,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     });
   </script>
 
-  
+
   <!-- requried-jsfiles-for owl -->
   <!-- //requried-jsfiles-for owl -->
 </head>
@@ -469,27 +469,10 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
               <li class="treeview">
                 <a href="admin.php">
-                  <i class="fa fa-tv"></i> <span>Return Home</span>
+                  <i class="fa fa-angle-left"></i> <span>Return Home</span>
                 </a>
               </li>
 
-
-              
-
-              <li class="treeview">
-                <a href="#">
-                  <i class="fa fa-sign-out"></i>
-                  <span>Staff Leave</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#Leaveadd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff On Leave</a></li>
-                  <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit Staff On Leave</a></li>
-                  <li><a data-toggle='modal' data-id='' href='leavereport.php' class='open-Initial2'><i class="fa fa-tv"></i>View Leave report</a></li>
-                </ul>
-              </li>
-
-              
 
 
             </ul>
@@ -579,47 +562,48 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <h4 class="title">Leave Report</h4>
               <!-- start content_slider -->
               <div class="alert alert-info">
-                <i class="fa fa-envelope"></i>&nbsp;Leave report of all staff's who are on valid Leave
+                <i class="fa fa-envelope"></i>&nbsp;Leave report of all staff members on valid Leave
               </div>
 
               <table id="example" class="display nowrap" style="width:100%">
                 <thead>
                   <tr>
-                  <th>#</th>
+                    <th>#</th>
                     <th>Emp no</th>
                     <th>Emp Name</th>
                     <th>Start date</th>
                     <th>End date</th>
                     <th>Total Days</th>
                     <th>Home address</th>
-                    
+                    <th>Names of Dependents</th>
+
                   </tr>
                 </thead>
                 <tbody>
                   <?php $leaves = "SELECT * FROM leaves WHERE leaveend  >= Date(now())";
                   $retrieve = mysqli_query($db, $leaves);
-                  $count = 0;
+                  $count = 1;
                   while ($found = mysqli_fetch_array($retrieve)) {
-                                        $Empno = $found['Empno'];
-                                      $name = $found['Empname'];
-                                  $leavestart = $found['leavestart']; 
-                                 $leaveend=  $found['leaveend'];
-                                  $totaldays =$found['totaldays']; 
-                                  $homeaddress= $found['homeaddress'];
-                                   $found['nameofdependant']; 
-                
-                    echo "<tr>    <td>$id</td> 
-                              <td>$Empno</td>                                       
-                             <td>$name</td>        	
-                             <td>$leavestart</td>
-                             <td>$leaveend</td>
-                             
-			                 <td>$totaldays</td>
-			                 <td>$homeaddress</td>
-			                git 	 
-                             </tr>";
-                  }
+                    $Empno = $found['Empno'];
+                    $name = $found['Empname'];
+                    $leavestart = $found['leavestart'];
+                    $leaveend =  $found['leaveend'];
+                    $totaldays = $found['totaldays'];
+                    $homeaddress = $found['homeaddress'];
+                    $dependents = $found['nameofdependant'];
 
+                    echo "<tr>
+                            <td>$count</td> 
+                            <td>$Empno</td>                                       
+                            <td>$name</td>        	
+                            <td>$leavestart</td>
+                            <td>$leaveend</td>
+                            <td>$totaldays</td>
+			                      <td>$homeaddress</td>
+			                      <td>$dependents</td>
+                          </tr>";
+                    $count++;
+                  }
                   ?>
                 </tbody>
 
@@ -643,7 +627,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     <!--//footer-->
   </div>
 
-  
+
 
   <!-- new added graphs chart js-->
 
