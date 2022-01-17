@@ -7,6 +7,7 @@ include("db_connect.php");
 if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 
   $userid = $_COOKIE['adminid'];
+
   $useremail = $_COOKIE['adminemail'];
 
   $sqluser = "SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
@@ -183,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $(".modal-body #staffid").val(myT);
   });
 </script>
-<?php if (isset($_SESSION['memberadded'])) { ?>
+<?php if(isset($_SESSION['memberadded'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
       swal({
