@@ -54,7 +54,8 @@ $table_staff_deduction = "CREATE TABLE IF NOT EXISTS staff_deduction (id int(11)
                                   deduction_id int NOT NULL,
                                   total_repayment float NOT NULL,
                                   deducted_amount float NOT NULL,         
-                                  date_time datetime NOT NULL,
+                                  start_date datetime NOT NULL,
+                                  end_date datetime NOT NULL,
                                   PRIMARY KEY(id) )";
 $db->query($table_staff_deduction);
 
