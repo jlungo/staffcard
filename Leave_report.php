@@ -105,14 +105,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $(document).on("click", ".open-Delete", function() {
       var myValue = $(this).data('id');
       swal({
-          title: "Are you sure?",
-          text: "You want to remove this Leave report from the database!",
+          title: "Confirm deleting Leave Report",
+          text: "Are you sure you want to delete this leave report?",
           type: "warning",
           showCancelButton: true,
           cancelButtonColor: "red",
           confirmButtonColor: "green",
-          confirmButtonText: "Yes, remove!",
-          cancelButtonText: "No, cancel!",
+          confirmButtonText: "Remove",
+          cancelButtonText: "Cancel",
           closeOnConfirm: false,
           closeOnCancel: false,
           buttonsStyling: false
