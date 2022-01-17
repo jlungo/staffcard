@@ -6,8 +6,8 @@
 
 //connection to  push promotion info
 $servername ='localhost';
-$username='root';
-$password='';
+$username="root";
+$password="";
 $dbname ="staff_db";
 
 //create connection
@@ -56,11 +56,11 @@ if(!$conn){
                          $db->query($stable56); 
 //table
                          $stable03="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
-                                 emp_name varchar(300)NOT NULL,
+                                 emp_name varchar(100)NOT NULL,
                                   safari_start_date date NOT NULL,                                 
                                   return_date date NOT NULL,  
-                                  purpose_safari varchar(400)NOT NULL,                               
-                                  authorisation_status varchar(200) NOT NULL,
+                                  purpose_safari varchar(100)NOT NULL,                               
+                                  authorisation_status varchar(100) NOT NULL,
                                 source_fund varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
                          $db->query($stable03); 
