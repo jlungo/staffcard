@@ -52,7 +52,9 @@ $retrieve = mysqli_query($db,$sqluse);
 	<div class="container" style="min-height:500px;">
 	<div class=''>
 	</div>
+
            <div class="container">
+
 	<h2></h2>		
 	
 	<form class="form-login" method="post" id="login-form">
@@ -69,11 +71,11 @@ $retrieve = mysqli_query($db,$sqluse);
 		<hr />
 		<div class="form-group">
 			<button type="submit" class="btn btn-default" name="login_button" id="login_button">
-			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			<span class="glyphicon glyphicon-log-in"></span> &nbsp; Log In
 			</button> 
 		</div> 
 	</form>	
-	              				                                   				                                         				                          				        		
+                                                                                                                                                                                        
 </div>
 <div class="insert-post-ads1" style="margin-top:20px;">
 

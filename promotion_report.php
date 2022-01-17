@@ -233,7 +233,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    				              sweetAlert("Oops...", "This category arleady exists in the system!", "error");     				              
                                });
                 </script>
            <?php 
@@ -272,15 +272,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
                                     swal({
-                                         title: "Category Deleted",
-                                         text: "Do you want to delete another one?",
-                                         type: "success",
-                                         showCancelButton: true,
+                                        title: "Category Deleted",
+                                        text: "Do you want to delete another category?",
+                                        type: "success",
+                                        showCancelButton: true,
                                         confirmButtonColor: "green",
                                         confirmButtonText: "OK!",
                                         closeOnConfirm: true,
                                         closeOnCancel: true,
-                                          buttonsStyling: false
+                                        buttonsStyling: false
                                         },
                      function(isConfirm){
                                       if (isConfirm) {                                      	
@@ -359,7 +359,7 @@ $retrieve = mysqli_query($db,$sqluse);
    <input type="number" class="form-control" name="endpoint" >
   </div>
   <div class="input-group">
-    <span class="input-group-addon">Employee id starts @</span>
+    <span class="input-group-addon">Employee Id Starts At</span>
     <input id="msg" type="text" class="form-control" name="receiptrange" placeholder="" value="<?php echo$idsx; ?>" readonly="readonly">
   </div>
   
@@ -425,7 +425,7 @@ $retrieve = mysqli_query($db,$sqluse);
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
         	<p style="margin-bottom:10px;">
-        			Select picture<input name='file2' type='file' id='file2' >
+        			Select Picture<input name='file2' type='file' id='file2' >
            </p>  
            <p>
         	<input name='id' type='hidden' value='' id='bookId'>
@@ -496,7 +496,7 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	SYSTEM INFORMATION INITIALISATION
+        	SYSTEM INFORMATION INITIALIZATION
         	</center></h4>
       </div>
       	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
@@ -819,7 +819,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>© 2022 Copyrights . All Rights Reserved
 	
 			</p>		
 	</div>
@@ -867,7 +867,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 	
