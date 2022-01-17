@@ -140,15 +140,15 @@ if(isset($_POST['addmember']))
                
           }
 
- if(isset($_POST['Valuedel'])){ 	
+ if(isset($_POST['pensions'])){ 	
 	
-	 $tutor=$_POST['Valuedel'];
- 	 $querry="SELECT * FROM Users WHERE id='$tutor' ";
+	 $tutor=$_POST['pensions'];
+ 	 $querry="SELECT * FROM pensions WHERE id='$tutor' ";
                      $results=mysqli_query($db,$querry);
                     $checks=mysqli_num_rows($results);
                      if($checks!=0)
                      {
-      	 	                  $querry="DELETE FROM Users WHERE id='$tutor'";
+      	 	                  $querry="DELETE FROM pensions WHERE id='$tutor'";
                               $results=mysqli_query($db,$querry);
                                echo"ok"; 
 				      }

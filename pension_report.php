@@ -100,7 +100,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       
       </script>
 <script type="text/javascript"> 
-            $(document).on("click", ".open-Delete", function () {
+            $(document).on("click", ".open-Delete-pension", function () {
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
@@ -110,10 +110,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         cancelButtonColor: "red",
                                         confirmButtonColor: "green",
                                         confirmButtonText: "Yes, remove!",
-                                         cancelButtonText: "No, cancel!",
+                                        cancelButtonText: "No, cancel!",
                                         closeOnConfirm: false,
                                         closeOnCancel: false,
-                                          buttonsStyling: false
+                                        buttonsStyling: false
                                         },
                      function(isConfirm){
                                       if (isConfirm) {                                      	
@@ -121,7 +121,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { Valuedel: vals},
+                                                      data: {pensions: vals},
                                                       success: function(result) {
                                                       if(result=="ok"){
                                                                     swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
@@ -768,11 +768,11 @@ $retrieve = mysqli_query($db,$sqluse);
             <tr>
             	<th>EMP NO.</th>
               <th>EMP NAME</th>
-              <th>P TYPE</th>
-              <th>P NO.</th>              
+              <th>PENS. TYPE</th>
+              <th>PENS. NO.</th>              
               <th>REG DATE</th>
               <th>MON. DATE</th>           
-              <th>CURR BALANCE</th>
+              <th>CURRENT BALANCE</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -783,6 +783,7 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
+                        $id = $found['emp_no'];
                         $emp_no=$found['emp_no'];
                         $emp_name=$found['emp_name'];
                         $pension_number=$found['pension_number'];
@@ -803,7 +804,7 @@ $retrieve = mysqli_query($db,$sqluse);
                     <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
-			                <a data-id='$emp_no'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                <a data-id='$id'  class='open-Delete-pension btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 			              </td>			 
                 </tr>"; 
 					 
