@@ -6,14 +6,14 @@
 
 //connection to  push Education history
 $servername ='localhost';
-$username='root';
-$password='';
+$username="root";
+$password="";
 $dbname ="staff_db";
 
 //create connection to database
 $conn = mysqli_connect($servername,$username,$password,"$dbname");
 if(!$conn){
-    die('could not connect my Sql:' .mysql_error());
+    die('could not connect my Sql:' .mysqli_error());
 }
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
@@ -22,7 +22,7 @@ if(!$conn){
              
    
         		                       
-		    
+		  //table
 		$stableYZ="CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
                  name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
                  website varchar(300)NOT NULL,year varchar(10)NOT NULL,pname varchar(1000)NOT NULL,type varchar(30)NOT NULL,
@@ -54,6 +54,7 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
+<<<<<<< HEAD
 // group 13 work table
                          $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment,
                 
@@ -64,6 +65,16 @@ if(!$conn){
                                   year_stated_edu date NOT NULL,
                                   
                                  year_graduated varchar(300)NOT NULL,
+=======
+//table
+                         $stable03="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
+                                 emp_name varchar(100)NOT NULL,
+                                  safari_start_date date NOT NULL,                                 
+                                  return_date date NOT NULL,  
+                                  purpose_safari varchar(100)NOT NULL,                               
+                                  authorisation_status varchar(100) NOT NULL,
+                                source_fund varchar(300)NOT NULL,
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
                                   PRIMARY KEY(emp_no) )";
                          $db->query($stable13); 
                          
