@@ -10,7 +10,7 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 
   $useremail = $_COOKIE['adminemail'];
 
-  $sqluser = "SELECT * FROM  WHERE Password='$userid' && Email='$useremail'";
+  $sqluser = "SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
 
   $retrieved = mysqli_query($db, $sqluser);
   while ($found = mysqli_fetch_array($retrieved)) {
