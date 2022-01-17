@@ -672,11 +672,23 @@ $retrieve = mysqli_query($db,$sqluse);
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
                 </ul>
               </li>
-                            
+
               <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
-         
+                <a href="#">
+                <i class="fa fa-group"></i>
+                <span>Next of Kin Information</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user-plus"></i>Add Employee</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#Nextofkinadd' class='open-adduser'><i class='fa fa-user-plus'></i> Add Next of Kin</a> <!--php page goes at href--></li>
+                  <li><a  href='Viewreport.php' ><i class="fa fa-inbox"></i>View Report</a></li>
+                 
+                </ul>
               </li>
+
+
+              
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
@@ -684,11 +696,7 @@ $retrieve = mysqli_query($db,$sqluse);
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
 
-               <!--Added menu for  of kin-->
-               <li class="treeview">
-              	  <a data-toggle='modal' data-id='' href='#Nextofkinadd' class='open-adduser'><i class='fa fa-group'></i> Next of Kin</a> <!--php page goes at href-->
-               </li>
-                          
+               
                 </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -842,81 +850,6 @@ $retrieve = mysqli_query($db,$sqluse);
 			</div>
 
 
-
-<!-- Displaying Next of kin results -->
-<!-- Displaying Next of kin results -->
-<!-- Displaying Next of kin results -->
-
-
-			<div class="charts">		
-			<div class="mid-content-top charts-grids">
-				<div class="middle-content">
-						<h4 class="title">Next of Kin </h4>
-					<!-- start content_slider -->
-          <div class="alert alert-info">
-                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
-                         </div>
-					
-					     <table id="example" class="display nowrap" style="width:100%">
-        <thead>
-            <tr>
-          	<th>ID</th>
-                <th>EmployeeNo</th>
-                <th>EmployeeName</th>
-                <th>Name</th>              
-                <th>Relationship</th>
-                <th>Sex</th>            
-                <th>PRINT</th>
-                <th>EDIT</th>
-                <th>DELETE</th>       
-            </tr>
-        </thead>
-        <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Next_Of_Kin_Information ";
-			       $retrieve = mysqli_query($db,$sqlmember);
-				                    $count=0;
-                     while($found = mysqli_fetch_array($retrieve))
-	                 {
-                       $employeeno=$found['Emp_No'];$employeename=$found['Emp_Name'];$nokname=$found['Next_Of_Kin_Name'];
-                       $id=$found['id'];$nokrelationship=$found['Next_Of_kin_Relationship'];$noksex=$found['Next_Of_kin_Sex'];
-			                $count=$count+1;  
-					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$employeeno</td>        	
-                             <td>$employeename</td>
-                             <td>$nokname</td>
-                             
-			                 <td>$nokrelationship</td>
-			                 <td>$noksex</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id=  '$id' data-ie='$employeename'   data-if='$employeeno' data-ih='$nokname' data-ij='$nokrelationship' data-ik='$noksex' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>"; 
-					 
-					 } 
-		
-		           	?>
-            </tbody>
-        
-    </table>
-             <button id="clear-all-button">Clear All Filters</button>
-                           
-				        </div>
-		
-				</div>
-
-					<!--//sreen-gallery-cursual---->
-			</div>
-		 </div>
-		</div>
 
 
 
