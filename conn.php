@@ -7,12 +7,12 @@
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
         }
-        $Emp_No = "";
-        $Emp_Name = "";
-        $Pension_Type = "";
-        $Pension_Number = "";
-        $Registered_Date = "";
-        $Monthly_Contribution = "";
-        $Current_Balance = "";
+        $emp_no = "";
+        $emp_name = "";
+        $pension_type = "";
+        $pension_number = "";
+        $registered_date = "";
+        $monthly_contribution = "";
+        $current_balance = "";
 
 ?>
