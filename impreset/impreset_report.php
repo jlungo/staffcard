@@ -877,7 +877,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Users</h4>
+						<h4 class="title">staffs</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
