@@ -59,9 +59,9 @@
                         
                          Emp_Name varchar(300)NOT NULL,
                          Objective Varchar(30)NOT NULL,                                 
-                         Apraisee_score varchar(30)NOT NULL,                                 
-                         Supervisor_score varchar(300)NOT NULL,
-                         Performance_score varchar(300)NOT NULL,
+                         Apraisee_score varchar(50)NOT NULL,                                 
+                         Supervisor_score varchar(250)NOT NULL,
+                         Performance_score varchar(200)NOT NULL,
                          Recommendations varchar(300)NOT NULL,                        
                          PRIMARY KEY(Emp_No) )";
                 $db->query($stable56); 
