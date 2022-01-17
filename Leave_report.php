@@ -616,17 +616,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                              
 			                 <td>$totaldays</td>
 			                 <td>$homeaddress</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$name'   data-if='$leavestart' data-ig='$leaveend' data-ih='$totaldays' data-ij='$homeaddress'  class='open-Passwords btn  btn-info' title='edit leave details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
+			                git 	 
                              </tr>";
                   }
 
