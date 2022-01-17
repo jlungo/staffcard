@@ -2,18 +2,18 @@
  
  $db = new mysqli("localhost","root","");
    if($db->connect_errno > 0){
-         die('Unable to connect to database [' . $db->connect_error . ']');  } 
+         die('Unable to connect to database [' . $db->connect_error . ']. Please check the database connection!');  } 
 
-//connection to  push Education history
+//connection to  push promotion info
 $servername ='localhost';
-$username="root";
-$password="";
+$username='root';
+$password='';
 $dbname ="staff_db";
 
-//create connection to database
+//create connection
 $conn = mysqli_connect($servername,$username,$password,"$dbname");
 if(!$conn){
-    die('could not connect my Sql:' .mysqli_error());
+    die('could not connect my Sql:' .mysql_error());
 }
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
@@ -22,7 +22,7 @@ if(!$conn){
              
    
         		                       
-		  //table
+		    
 		$stableYZ="CREATE TABLE IF NOT EXISTS Inorg (id int(11) NOT NULL auto_increment,
                  name varchar(300)NOT NULL,Phone varchar(300)NOT NULL,email varchar(100)NOT NULL,
                  website varchar(300)NOT NULL,year varchar(10)NOT NULL,pname varchar(1000)NOT NULL,type varchar(30)NOT NULL,
@@ -54,30 +54,30 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-<<<<<<< HEAD
-// group 13 work table
-                         $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment,
+
+                         $stable03="CREATE TABLE IF NOT EXISTS ProIS (emp_no int(11) NOT NULL auto_increment,
                 
                                   emp_name varchar(300)NOT NULL,
-                                  cert_obtained Varchar(30)NOT NULL,                                 
-                                  institution varchar(30)NOT NULL,  
-                                  institution_add varchar(300)NOT NULL,                               
-                                  year_stated_edu date NOT NULL,
+                                  job_desc Varchar(30)NOT NULL,                                 
+                                  current_rank varchar(30)NOT NULL,  
+                                  new_rank varchar(300)NOT NULL,                               
+                                  date_promoted date NOT NULL,
                                   
-                                 year_graduated varchar(300)NOT NULL,
-=======
-//table
-                         $stable03="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
-                                 emp_name varchar(100)NOT NULL,
-                                  safari_start_date date NOT NULL,                                 
-                                  return_date date NOT NULL,  
-                                  purpose_safari varchar(100)NOT NULL,                               
-                                  authorisation_status varchar(100) NOT NULL,
-                                source_fund varchar(300)NOT NULL,
->>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
+                                  high_ed varchar(300)NOT NULL,
                                   PRIMARY KEY(emp_no) )";
-                         $db->query($stable13); 
+                         $db->query($stable03); 
                          
+                         $stable100="CREATE TABLE IF NOT EXISTS Impreset_Information (
+                          id int(11) NOT NULL auto_increment,
+                        Emp_No varchar(300)NOT NULL, 
+                        Emp_Name varchar(300)NOT NULL,
+                        Impreset_purpose Varchar(300)NOT NULL,                                 
+                        Impreset_amount int(50)NOT NULL,                                 
+                        Impreset_date varchar(11)NOT NULL,
+                        Expected_date_of_retirement varchar(11)NOT NULL,
+                        Retirement_amount int(11)NOT NULL,                        
+                        PRIMARY KEY(id))";
+               $db->query($stable100); 
                         
 			   
 			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
