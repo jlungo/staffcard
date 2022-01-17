@@ -184,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $(".modal-body #staffid").val(myT);
   });
 </script>
-<?php if (isset($_SESSION['memberadded'])) { ?>
+<?php if(isset($_SESSION['memberadded'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
       swal({
