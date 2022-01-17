@@ -155,15 +155,15 @@ $retrieve = mysqli_query($db,$sqluse);
              	 	 ?>   </center> 
              	 	  <div class="container" align="center">
       
-      	<p style="margin-top:2%">Name</p>
+      	<p style="margin-top:2%">NAME:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($names)){ $namez=$title.' '.$names;echo$namez;} ?></p>
-      	<p style="margin-top:-4%">Rank</p>
+      	<p style="margin-top:-4%">RANK:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($rank)){ echo$rank;} ?></p>
        <p style="margin-top:-4%">STAFF ID:</p>
         <p style="font-weight: bold;margin-top:-4%"><?php if(isset($pass)){ echo$pass;} ?></p>
-      	<p style="margin-top:-4%">MINISTRY/DEARTMENT:</p>
+      	<p style="margin-top:-4%">MINISTRY/DEPARTMENT:</p>
       	<p style="font-weight: bold;margin-top:-4%"><?php if(isset($dept)){ echo$dept;} ?></p>      	
-      	<p style="margin-top:-4%">HOLDER SIGNATURE</p>
+      	<p style="margin-top:-4%">HOLDER SIGNATURE:</p>
             
       </div>
             </div>
