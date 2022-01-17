@@ -134,7 +134,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                                        }
                                                   }); } else {
-	                                                           swal("Cancelled", "This user is safe :)", "error");
+	                                                           swal("Cancelled", "This disciplinary record is safe :)", "error");
                                                           }
                                          });
                                        
