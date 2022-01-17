@@ -668,7 +668,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_bankinfo' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_bank' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
                   <li><a href='bank_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Bank Information Report</a></li>
                 </ul>
               </li>

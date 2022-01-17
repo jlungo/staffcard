@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include("db_connect.php"); 
  
@@ -247,6 +246,72 @@ include("db_connect.php");
 					      }                
                      }                
                  
+
+
+
+
+
+//bank data edit
+
+
+
+if(isset($_POST['edit_bank'])){
+	 	                  
+	
+	$empno = mysqli_real_escape_string($db,$_POST['emp_no']);
+	$empname = mysqli_real_escape_string($db,$_POST['emp_name']);
+	$bank_name = mysqli_real_escape_string($db,$_POST['bank_name']);
+	$bank_branch_address = mysqli_real_escape_string($db,$_POST['bank_branch_address']);
+	$bank_account_number = mysqli_real_escape_string($db,$_POST['bank_account_number']);
+	$id = mysqli_real_escape_string($db,$_POST['id']);
+	   
+	  
+	
+
+	  $check="SELECT * FROM bank WHERE id='$id' ";
+						  $checks=mysqli_query($db,$check);
+					 $found=mysqli_num_rows($checks);
+						 if($found!=0)
+						 {            
+						
+								 $query = "UPDATE bank SET emp_no='$empno',emp_name='$empname',bank_name='$bank_name',bank_branch_address='$bank_branch_address',bank_account_number='$bank_account_number' WHERE id='$id' ";
+								   $db->query($query) or die('Errorr, query failed to update');	
+								   
+								   $_SESSION['pass_bank_edit']="okjs";				
+							   header("Location:bank_report.php");
+}
+					  }
+
+
+//bank data delete
+
+					  if(isset($_POST['bank_delete'])){ 	
+	
+						$tutor=$_POST['bank_delete'];
+						 $querry="SELECT * FROM bank WHERE id='$tutor' ";
+										$results=mysqli_query($db,$querry);
+									   $checks=mysqli_num_rows($results);
+										if($checks!=0)
+										{
+													$querr="DELETE FROM bank WHERE id='$tutor'";
+												 $results=mysqli_query($db,$querr);
+												 $var = 1 ;
+												 echo $var; 
+												
+
+										 }
+										  
+					   
+					}
+
+    
+
+
+
+
+
+
+
  
  if(isset($_POST['orgupdate'])){         
 	           
@@ -317,5 +382,4 @@ include("db_connect.php");
 			            }
 
 	}
-
 ?>

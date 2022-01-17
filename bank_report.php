@@ -105,7 +105,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
-                                         text: "You want to remove this staff from the database!",
+                                         text: "You want to remove this bank detail from the database!",
                                          type: "warning",
                                          showCancelButton: true,
                                         cancelButtonColor: "red",
@@ -122,10 +122,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { bank: vals},
+                                                      data: { bank_delete: vals},
                                                       success: function(result) {
-                                                      if(result=="ok"){
-                                                                    swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
+                                                      if(result== 1 ){
+                                                                    swal({title: "Deleted!", text: "bank detail has been deleted from the database.", type: "success"},
                                                           function(){
                                                                           location.reload();
                                                                           }
@@ -134,7 +134,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                                        }
                                                   }); } else {
-	                                                           swal("Cancelled", "This user is safe :)", "error");
+	                                                           swal("Cancelled", "This bank detail is safe :)", "error");
                                                           }
                                          });
 
@@ -152,25 +152,28 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<!-- //requried-jsfiles-for owl -->
 </head>
 <script type="text/javascript">
- $(document).on("click", ".open-Passwords", function () {
+ $(document).on("click", ".open-bank_edit", function () {
 
-       var myT = $(this).data('id');
-     var myTitle = $(this).data('ie');
-       var myp = $(this).data('if');
-       var mym = $(this).data('ig');
-       var myn = $(this).data('ih');
-       var myk = $(this).data('ij');
-       var mykm = $(this).data('ik');
+       var id = $(this).data('id');
+       var empno = $(this).data('ie');
+       var empname = $(this).data('if');
+       var bank_name = $(this).data('ig');
+       var bank_branch_address = $(this).data('ih');
+       var bank_account_number = $(this).data('ij');
+       //var date_uploaded = $(this).data('ik');
+       //var attachement_name= $(this).data('il');
 
 
-     $(".modal-title #oldname").val(myTitle);
-       $(".modal-body #oldname").val(myTitle);
-       $(".modal-body #oldpass").val(mykm);
-     $(".modal-body #ss").val(myp);
-     $(".modal-body #bb").val(mym);
-     $(".modal-body #cc").val(myn);
-     $(".modal-body #dd").val(myk);
-      $(".modal-body #staffid").val(myT);
+     $(".modal-title #oldname").val(empname);
+       $(".modal-body #oldname").val(empname);
+       $(".modal-body #oldpass").val(empno);
+     $(".modal-body #ss").val(bank_name);
+     $(".modal-body #bb").val(bank_branch_address);
+     $(".modal-body #cc").val(bank_account_number);
+     //$(".modal-body #dd").val(date_uploaded);
+     //$(".modal-body #ee").val(attachement_name);
+
+       $(".modal-body #oldbankid").val(id);
 });
  </script>
 <?php if(isset($_SESSION['memberadded'])){?>
@@ -232,7 +235,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript">
             $(document).ready(function(){
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");
+    				              sweetAlert("Oops...", "This category already in the system", "error");
                                });
                 </script>
            <?php
@@ -300,11 +303,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
- <?php if(isset($_SESSION['pass'])) {?>
+ <?php if(isset($_SESSION['pass_bank_edit'])) {?>
 <script type="text/javascript">
 
 $(document).ready(function(){
- 		                           swal({title: "Successful!", text: "Staff details edited!!.", type: "success"});
+ 		                           swal({title: "Successful!", text: "bank details edited!!.", type: "success"});
 
                                });
 
@@ -381,7 +384,7 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        EDIT BANK INFORMATION
+        EDIT BANK INFORMATION <input style="border: none;background:#222d32" type="text" id="emp_name" value="" readonly="readonly" />
         	</center></h4>
       </div>
       <div class="modal-body" >
@@ -389,16 +392,17 @@ $retrieve = mysqli_query($db,$sqluse);
              
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
-        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldname'></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='ss'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bank Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_name" id='dd'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Bank Branch Address:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_branch_address" id='bb'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Bank Account Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_account_number" id='bb'></span></p>
-        </center>
+        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldpass'></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='oldname'></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Bank Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_name"  id='ss'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bank Branch Address:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_branch_address" id='bb'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Bank Account Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_account_number" id='cc'></span></p>
+               <input type="hidden" name="id" id="oldbankid" /> 
+              </center>
 
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="edit_bank"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -665,8 +669,8 @@ $retrieve = mysqli_query($db,$sqluse);
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_bank' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
-                  <li><a href='bank_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Bank Information Report</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_bank' class='open-Initial'><i class="fa fa-plus"></i>Add Bank</a></li>
+                  <li><a href='bank_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Bank Report</a></li>
                 </ul>
               </li>
 
@@ -770,6 +774,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <th>BANK NAME</th>
               <th>BANK BRANCH ADDRESS</th>
               <th>BANK ACCOUNT NUMBER</th>
+              <th>PRINT</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -780,11 +785,13 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
+                        $id = $found['id'];
                         $emp_no=$found['emp_no'];
                         $emp_name=$found['emp_name'];
                         $bank_name=$found['bank_name'];
                         $bank_branch_address=$found['bank_branch_address'];
                         $bank_account_number=$found['bank_account_number'];
+                  
 					    	 
 			      echo"<tr>    
                     <td>$emp_no</td>                                       
@@ -793,10 +800,13 @@ $retrieve = mysqli_query($db,$sqluse);
                     <td>$bank_branch_address</td>
                     <td>$bank_account_number</td>
                     <td>
-                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                         </td>
+                    <td>
+                    <a data-toggle='modal' data-id='$id' data-ie='$emp_no' data-if='$emp_name' data-ig='$bank_name' data-ih='$bank_branch_address' data-ij='$bank_account_number' class='open-bank_edit btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
-			                <a data-id='$emp_no'  class='open-Delete-bank btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                <a data-id='$id'  class='open-Delete-bank btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 			              </td>			 
                 </tr>"; 
 					 

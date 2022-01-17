@@ -66,12 +66,14 @@
                                   
                       }
             //this is our table  "Bank information"         
-          $stable17="CREATE TABLE IF NOT EXISTS bank (emp_no varchar(30) NOT NULL,
+          $stable17="CREATE TABLE IF NOT EXISTS bank (
+                          id int(11) NOT NULL auto_increment,
+                          emp_no varchar(30) NOT NULL,
                           emp_name varchar(300)NOT NULL,
                           bank_name Varchar(300)NOT NULL,                                 
                           bank_branch_address varchar(30)NOT NULL,                                 
                           bank_account_number varchar(30)NOT NULL,
-                          PRIMARY KEY(emp_no) )";
+                          PRIMARY KEY(id) )";
             $db->query($stable17); 
                       
 
