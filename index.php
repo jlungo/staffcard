@@ -1,4 +1,5 @@
 <?php 
+// database connection
 include_once("db_connect.php");
 
 $sqluse ="SELECT * FROM Inorg WHERE id=1 ";
