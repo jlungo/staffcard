@@ -197,10 +197,34 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <?php
   session_destroy();
 } ?>
+<?php if (isset($_SESSION['leaveadd'])) { ?>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      swal({
+        title: "All is done!",
+        text: "Staff has registered leave!!.",
+        type: "success"
+      });
+    });
+  </script>
+
+<?php
+  session_destroy();
+} ?>
 <?php if (isset($_SESSION['memberexist'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
       sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");
+    });
+  </script>
+<?php
+  session_destroy();
+}
+?>
+<?php if (isset($_SESSION['leaveused'])) { ?>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      sweetAlert("Oops...", "This staff has already registered for leave", "error");
     });
   </script>
 <?php
@@ -410,8 +434,10 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
           <form method="post" action="upload.php" enctype='multipart/form-data'>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
+                &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;
+                &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution" id='cc'></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail" id='bb'></span></p>
@@ -470,43 +496,51 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	ADD STAFF DETAILS
-        	</center></h4>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
+          <center>
+            ADD STAFF DETAILS
+          </center>
+        </h4>
       </div>
 
-      <div class="modal-body" >       	
-      	<center> 
-        		<form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">        		
+      <div class="modal-body">
+        <center>
+          <form method="post" action="upload.php" enctype='multipart/form-data' style="width: 98%;">
 
-            	
-      	        <p style="margin-bottom:10px;">  
-        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
-        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
-        		</p>
-        		                                                           	      		
-                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
-        		Add profile picture:<input name='filed' type='file' id='filed' >
-                    
-        		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-         </center>
+
+            <p style="margin-bottom:10px;">
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp;
+                &nbsp; &nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp;
+                &nbsp;&nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp;
+                &nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+            </p>
+
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
+                &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;
+                &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
+            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
+            Add profile picture:<input name='filed' type='file' id='filed'>
+
+            <input type="hidden" name="page" value="admin.php" />
+        </center>
       </div>
       <div class="modal-footer">
-       <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addmember"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addmember"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
-      </div>
-       </form>
+    </div>
+    </form>
   </div>
-  </div>
+</div>
 
 <div id="Leaveadd" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -527,26 +561,35 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
             <p style="margin-bottom:10px;">
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Prof&nbsp;&nbsp;
+                &nbsp; &nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp;
+                &nbsp;&nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp;
+                &nbsp;&nbsp;</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp;</span>
               <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
             </p>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff ID No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;First Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Last Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave start date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Leave end date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
-            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Home Addrss:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
-            <!-- Add profile picture:<input name='filed' type='file' id='filed'>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Staff ID
+                No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_id"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;
+                &nbsp;First Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_fname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Last Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_sname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave Start
+                Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="emp_sdate"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Leave End Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="emp_edate">
+              </span></p>
+            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Home Address:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_addr"></span></p>
+            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Names of Dependents:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_dep"></span></p>
+            <!-- Add profile picture:<input name='filed' type='file' id='filed'>-->
 
-            <input type="hidden" name="page" value="admin.php" /> -->
+            <input type="hidden" name="page" value="admin.php" />
         </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addmember"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="addleave" name="addleave"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -571,9 +614,12 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         <div class="modal-body">
           <center>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
+                &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active Year:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgyear"></span></p>
             Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>)<input name='filed' type='file' id='filed'>
             <input type="hidden" name="page" value="admin.php" />
@@ -608,15 +654,18 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                 <input style="width:270px;" type="text" name="orgname" value="<?php if (isset($name)) {
                                                                                 echo $name;
                                                                               } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgphone" value="<?php if (isset($phone)) {
                                                                                   echo $phone;
                                                                                 } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgemail" value="<?php if (isset($mail)) {
                                                                                   echo $mail;
                                                                                 } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;
+                &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgwebsite" value="<?php if (isset($website)) {
                                                                                     echo $website;
                                                                                   } ?>"></span></p>
@@ -719,7 +768,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               </li>
 
               <li class="treeview">
-                <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
+                <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add
+                  Employee</a>
 
               </li>
               <li class="treeview">
@@ -730,7 +780,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
               <li class="treeview">
-                <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
+                <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk
+                  printing</a>
               </li>
 
             </ul>
@@ -820,7 +871,8 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <h4 class="title">Users</h4>
               <!-- start content_slider -->
               <div class="alert alert-info">
-                <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more
+                records
               </div>
 
               <table id="example" class="display nowrap" style="width:100%">
@@ -899,7 +951,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     <!--//footer-->
   </div>
 
-  
+
 
   <!-- new added graphs chart js-->
 
