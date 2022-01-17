@@ -184,7 +184,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $(".modal-body #staffid").val(myT);
   });
 </script>
-<?php if(isset($_SESSION['memberadded'])) { ?>
+<?php if (isset($_SESSION['memberadded'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
       swal({
@@ -763,7 +763,6 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#Leaveadd' class='open-Initial'><i class="fa fa-plus"></i>Add Staff On Leave</a></li>
-                  <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit Staff On Leave</a></li>
                   <li><a href="Leave_report.php"><i class="fa fa-tv"></i>View Leave report </a></li>
                 </ul>
               </li>
