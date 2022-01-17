@@ -10,7 +10,7 @@ $username='root';
 $password='';
 $dbname ="staff_db";
 
-//create connection
+//create connection to database
 $conn = mysqli_connect($servername,$username,$password,"$dbname");
 if(!$conn){
     die('could not connect my Sql:' .mysql_error());

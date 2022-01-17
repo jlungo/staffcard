@@ -1,6 +1,7 @@
 <?php
 	session_start();
 include("db_connect.php"); 
+//logout page
 
 	if(isset($_COOKIE['userid']))
 	   {
