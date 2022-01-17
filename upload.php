@@ -246,6 +246,74 @@ include("db_connect.php");
 					      }                
                      }                
                  
+
+
+
+
+
+//certificate data edit
+
+
+
+if(isset($_POST['edit_certificate'])){
+	 	                  
+	
+	$empno = mysqli_real_escape_string($db,$_POST['emp_no']);
+	$empname = mysqli_real_escape_string($db,$_POST['emp_name']);
+	$certificate_type = mysqli_real_escape_string($db,$_POST['certificate_type']);
+	$issued_by = mysqli_real_escape_string($db,$_POST['issued_by']);
+	$year_issued = mysqli_real_escape_string($db,$_POST['year_issued']);
+	$date_uploaded = mysqli_real_escape_string($db,$_POST['date_uploaded']);
+	$attachment_name = mysqli_real_escape_string($db,$_POST['attachment_name']);
+	$id = mysqli_real_escape_string($db,$_POST['id']);
+	   
+	  
+	
+
+	  $check="SELECT * FROM certificates WHERE id='$id' ";
+						  $checks=mysqli_query($db,$check);
+					 $found=mysqli_num_rows($checks);
+						 if($found!=0)
+						 {            
+						
+								 $query = "UPDATE certificates SET emp_no='$empno',emp_name='$empname',certificate_type='$certificate_type',issued_by='$issued_by',year_issued='$year_issued',date_uploaded='$date_uploaded',attachment_name='$attachment_name' WHERE id='$id' ";
+								   $db->query($query) or die('Errorr, query failed to update');	
+								   
+								   $_SESSION['pass_certificate_edit']="okjs";				
+							   header("Location:certificate_report.php");
+}
+					  }
+
+
+//certificate data delete
+
+					  if(isset($_POST['certificate_delete'])){ 	
+	
+						$tutor=$_POST['certificate_delete'];
+						 $querry="SELECT * FROM certificates WHERE id='$tutor' ";
+										$results=mysqli_query($db,$querry);
+									   $checks=mysqli_num_rows($results);
+										if($checks!=0)
+										{
+													$querr="DELETE FROM certificates WHERE id='$tutor'";
+												 $results=mysqli_query($db,$querr);
+												 $var = 1 ;
+												 echo $var; 
+												
+
+										 }
+										  
+					   
+					}
+
+    
+
+
+
+
+
+
+
  
  if(isset($_POST['orgupdate'])){         
 	           

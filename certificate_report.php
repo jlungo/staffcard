@@ -105,7 +105,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                   var myValue = $(this).data('id');
                                         swal({
                                          title: "Are you sure?",
-                                         text: "You want to remove this staff from the database!",
+                                         text: "You want to remove this certificate detail from the database!",
                                          type: "warning",
                                          showCancelButton: true,
                                         cancelButtonColor: "red",
@@ -122,10 +122,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                $.ajax ({
                                                       type : 'POST',
                                                       url: "upload.php",
-                                                      data: { certificate: vals},
+                                                      data: { certificate_delete: vals},
                                                       success: function(result) {
-                                                      if(result=="ok"){
-                                                                    swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
+                                                      if(result== 1 ){
+                                                                    swal({title: "Deleted!", text: "certificate detail has been deleted from the database.", type: "success"},
                                                           function(){
                                                                           location.reload();
                                                                           }
@@ -134,7 +134,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                                        }
                                                   }); } else {
-	                                                           swal("Cancelled", "This user is safe :)", "error");
+	                                                           swal("Cancelled", "This certificate detail is safe :)", "error");
                                                           }
                                          });
 
@@ -152,25 +152,28 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<!-- //requried-jsfiles-for owl -->
 </head>
 <script type="text/javascript">
- $(document).on("click", ".open-Passwords", function () {
+ $(document).on("click", ".open-certificate_edit", function () {
 
-       var myT = $(this).data('id');
-     var myTitle = $(this).data('ie');
-       var myp = $(this).data('if');
-       var mym = $(this).data('ig');
-       var myn = $(this).data('ih');
-       var myk = $(this).data('ij');
-       var mykm = $(this).data('ik');
+       var id = $(this).data('id');
+     var empno = $(this).data('ie');
+       var empname = $(this).data('if');
+       var certificate_type = $(this).data('ig');
+       var issued_by = $(this).data('ih');
+       var year_issued = $(this).data('ij');
+       var date_uploaded = $(this).data('ik');
+       var attachement_name= $(this).data('il');
 
 
-     $(".modal-title #oldname").val(myTitle);
-       $(".modal-body #oldname").val(myTitle);
-       $(".modal-body #oldpass").val(mykm);
-     $(".modal-body #ss").val(myp);
-     $(".modal-body #bb").val(mym);
-     $(".modal-body #cc").val(myn);
-     $(".modal-body #dd").val(myk);
-      $(".modal-body #staffid").val(myT);
+     $(".modal-title #oldname").val(empname);
+       $(".modal-body #oldname").val(empname);
+       $(".modal-body #oldpass").val(empno);
+     $(".modal-body #ss").val(certificate_type);
+     $(".modal-body #bb").val(issued_by);
+     $(".modal-body #cc").val(year_issued);
+     $(".modal-body #dd").val(date_uploaded);
+     $(".modal-body #ee").val(attachement_name);
+
+       $(".modal-body #oldcertid").val(id);
 });
  </script>
 <?php if(isset($_SESSION['memberadded'])){?>
@@ -300,11 +303,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
- <?php if(isset($_SESSION['pass'])) {?>
+ <?php if(isset($_SESSION['pass_certificate_edit'])) {?>
 <script type="text/javascript">
 
 $(document).ready(function(){
- 		                           swal({title: "Successful!", text: "Staff details edited!!.", type: "success"});
+ 		                           swal({title: "Successful!", text: "certitficate details edited!!.", type: "success"});
 
                                });
 
@@ -381,7 +384,7 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        EDIT CERTIFICATE INFORMATION
+        EDIT CERTIFICATE INFORMATION <input style="border: none;background:#222d32" type="text" id="emp_name" value="" readonly="readonly" />
         	</center></h4>
       </div>
       <div class="modal-body" >
@@ -389,18 +392,25 @@ $retrieve = mysqli_query($db,$sqluse);
              
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
-        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldname'></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='ss'></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Certificate Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="certificate_type"  id='cc'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issued By:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="issued_by" id='dd'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Year Issued:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="int" name="year_issued" id='bb'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Date Uploaded:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="date_uploaded" id='bb'></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Attachment Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="attachment_name" id='bb'></span></p>
-        </center>
+        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldpass'></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='oldname'></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Certificate Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="certificate_type"  id='ss'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issued By:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="issued_by" id='bb'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Year Issued:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="int" name="year_issued" id='cc'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Date Uploaded:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="date_uploaded" id='dd'></span></p>
+        	     <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Attachment Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="attachment_name" id='ee'></span></p> -->
+
+
+               Add certificate:<input style="width:270px;" name='attachment_name' type='file' accept=".pdf" id='ee' >
+
+
+
+               <input type="hidden" name="id" id="oldcertid" /> 
+              </center>
 
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="edit_certificate"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -537,7 +547,9 @@ $retrieve = mysqli_query($db,$sqluse);
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Issued By:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="issued_by"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Year Issued:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="int" name="year_issued"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Date Uploaded:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="date_uploaded"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Attachment Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="attachment_name"></span></p>
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Attachment Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="attachment_name"></span></p> -->
+
+            Add certificate:<input style="width:270px;" name='attachment_name' type='file' accept=".pdf" id='ee' >
       </center>
       </div>
       <div class="modal-footer">
@@ -775,6 +787,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <th>ISSUED BY</th>
               <th>YEAR ISSUED</th>
               <th>DATE UPLOADED</th>
+              <th>PRINT</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -785,12 +798,14 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
+                        $id = $found['id'];
                         $emp_no=$found['emp_no'];
                         $emp_name=$found['emp_name'];
                         $certificate_type=$found['certificate_type'];
                         $issued_by=$found['issued_by'];
                         $year_issued=$found['year_issued'];
                         $date_uploaded=$found['date_uploaded'];
+                        $attachement_name = $found['attachment_name'];
 					    	 
 			      echo"<tr>    
                     <td>$emp_no</td>                                       
@@ -800,10 +815,13 @@ $retrieve = mysqli_query($db,$sqluse);
                     <td>$year_issued</td>
                     <td>$date_uploaded</td>
                     <td>
-                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                         </td>
+                    <td>
+                    <a data-toggle='modal' data-id='$id' data-ie='$emp_no' data-if='$emp_name' data-ig='$certificate_type' data-ih='$issued_by' data-ij='$year_issued' data-ik='$date_uploaded' data-il='$attachement_name' class='open-certificate_edit btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
-			                <a data-id='$emp_no'  class='open-Delete-certificate btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                <a data-id='$id'  class='open-Delete-certificate btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 			              </td>			 
                 </tr>"; 
 					 
