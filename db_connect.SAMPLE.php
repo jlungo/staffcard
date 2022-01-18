@@ -61,6 +61,7 @@ $db->query($stable56);
                    $result=mysqli_query($db,$sql);
                    $rowcount=mysqli_num_rows($result);
                      
+                     
                        if($rowcount==0)
                          {
                            $enter="INSERT INTO Administrator (Password,Email,Firstname,Sirname,Mtitle,Phone) VALUES('admin','admin@gmail.com','Patrick','Mvuma','Mr','265999107724')";
