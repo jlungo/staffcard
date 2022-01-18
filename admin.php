@@ -241,7 +241,7 @@ NN   <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.
             $(document).ready(function(){ 
                                     swal({
                                          title: "Category added successfully",
-                                         text: "Do you want to add another one?",
+                                         text: "this is added by kengo?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
