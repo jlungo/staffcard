@@ -407,21 +407,36 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 					<input type="hidden" name="page" />
 					<div class="modal-body">
 						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Deduction Name</span>
-							<input id="deduction_name" type="text" class="form-control" name="deduction_name">
+							<span class="input-group-addon">Employee Number</span>
+							<input id="employee_number" type="number" class="form-control" name="employee_number">
 						</div>
 						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Description</span>
-							<textarea class="form-control" name="deduction_description"></textarea>
+							<span class="input-group-addon">Employee Name</span>
+							<input id="employee_name" type="text" class="form-control" name="employee_name">
 						</div>
 						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Amount</span>
+							<span class="input-group-addon">Deduction Type</span>
+							<input id="deduction_type" type="text" class="form-control" name="deduction_type">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Deduction Title</span>
+							<input id="deduction_title" type="text" class="form-control" name="deduction_title">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Total Repayment</span>
+							<input id="total_repayment" type="number" class="form-control" name="total_repayment">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Start Date</span>
+							<input id="start_date" type="date" class="form-control" name="start_date">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">End Date</span>
+							<input id="end_date" type="date" class="form-control" name="end_date">
+						</div>
+						<div class="input-group" style="margin-bottom:10px">
+							<span class="input-group-addon">Deduction Amount</span>
 							<input id="deduction_amount" type="number" class="form-control" name="deduction_amount">
-						</div>
-						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Percentage</span>
-							<input id="deduction_percentage" type="number" class="form-control"
-								name="deduction_percentage">
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -872,7 +887,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 						<div class="mid-content-top charts-grids">
 							<div class="middle-content">
 								<h4 class="title">Employee Deductions</h4>
-								<a class="btn btn-primary" data-toggle='modal' href="#new_deduction">New Record</a>
+								<a class="btn btn-primary" data-toggle='modal' href="#new_deduction">New Deduction</a>
 								<hr>
 								<table id="example" class="display" style="width:100%">
 									<thead>
