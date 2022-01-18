@@ -681,7 +681,8 @@ $retrieve = mysqli_query($db,$sqluse);
 
                 </ul>
           </div>
-          <!-- /.navbar-collapse -->
+          <!-- /.navigationbar-collapse -->
+
       </nav>
     </aside>
 	</div>
