@@ -4,7 +4,11 @@ if(isset($_POST['save']))
 {  
     $Emp_No =$_POST['Emp_No'];
     $Emp_Name =$_POST['Emp_Name'];
+
     $Impreset_purpose =$_POST['Impreset_Purpose'];
+
+    $Impreset_purpose =$_POST['Impreset_purpose'];
+
     $Impreset_amount =$_POST['Impreset_amount'];
     $Impreset_date =$_POST['Impreset_date'];
     $Expected_date_of_retirement =$_POST['Expected_date_of_retirement'];
