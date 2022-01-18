@@ -506,11 +506,12 @@ $retrieve = mysqli_query($db,$sqluse);
 
                                                                                   
                  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
-              <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+              <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Position Title:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="position"></span></p>
                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Assigned:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dateass"></span></p>
-               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Job desc:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="jobdesc"></span></p>
-               <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Salary scale:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="salary"></span></p>
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Job Desc:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="jobdesc"></span></p>
+               <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Salary scale:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="salary"></span></p> 
+               <br>
                <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="dept"></span></p>
             
                     
