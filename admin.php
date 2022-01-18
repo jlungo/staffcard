@@ -110,7 +110,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
           type: "warning",
           showCancelButton: true,
           cancelButtonColor: "red",
-          confirmButtonColor: "green",
+          confirmButtonColor: "blue",
           confirmButtonText: "Yes, remove!",
           cancelButtonText: "No, cancel!",
           closeOnConfirm: false,
