@@ -158,6 +158,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   </script>
   <!-- requried-jsfiles-for owl -->
   <!-- //requried-jsfiles-for owl -->
+
+  <style>
+    #spouseTable td {
+
+      padding: 8px;
+    }
+
+
+
+    #spouseTable tr input:hover {
+      background-color: #ddd;
+    }
+  </style>
 </head>
 <script type="text/javascript">
   $(document).on("click", ".open-Passwords", function() {
@@ -388,6 +401,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
 
+
 <div id="Passwords" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -503,6 +517,89 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
     </form>
   </div>
 </div>
+
+
+<div id="Spouse" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
+          <center>
+            ADD STAFF SPOUSE DETAILS
+          </center>
+        </h4>
+      </div>
+
+      <div class="modal-body">
+        <center>
+          <!--form for adding spouse information -->
+          <form method="post" action="upload.php" enctype='multipart/form-data' style="width: 100%;">
+            <table id="spouseTable">
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Employee No: <label style="color: red;font-size:20px;">*</label></td>
+                <td><input style="width:270px;" type="text" name="EmployeeNo"></td>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Employee Name: <label style="color: red;font-size:20px;">*</label></td>
+                <td><input style="width:270px;" type="text" name="EmployeeName"></td>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Marital Status: <label style="color: red;font-size:20px;">*</label></td>
+                <td><select class="form-select" aria-label="Default select example" name="MaritalStatus" style="font-size: 18px; font-weight: bold;">
+                    <option value="Single" style="font-size: 18px; ">Single</option>
+                    <option value="Married" style="font-size: 18px; ">Married</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Sex: <label style="color: red;font-size:20px;">*</label></td>
+                <td><select class="form-select" aria-label="Default select example" name="Sex" style="font-size: 18px; font-weight: bold;">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                  </select>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Date married: <label style="color: red;font-size:20px;">*</label></td>
+                <td><input style="width:270px;font-size: 18px; font-weight: bold;" type="date" name="DateMarried"></td>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">Spouse name: <label style="color: red;font-size:20px;">*</label></td>
+                <td><input style="width:270px;" type="text" name="SpouseName"></td>
+              </tr>
+              <tr>
+                <td style="font-size: 18px; font-weight: bold;">District married: <label style="color: red;font-size:20px;">*</label></td>
+                <td><input style="width:270px;" type="text" name="DistrictMarried"></td>
+              </tr>
+            </table>
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeNo"></span></p> -->
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Name<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="EmployeeName"></span></p> -->
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Marital Status<label style="color: red;font-size:20px;">*</label><select class="form-select" aria-label="Default select example" name="MaritalStatus">
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                </select></span></p> -->
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Sex<label style="color: red;font-size:20px;">*</label><select class="form-select" aria-label="Default select example" name="Sex">
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select></span></p> -->
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Date married <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="DateMarried"></span></p> -->
+
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Spouse name <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="SpouseName"></span></p> -->
+            <!-- <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;District married <label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="DistrictMarried"></span></p> -->
+
+
+            <input type="hidden" name="page" value="admin.php" />
+        </center>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addSpouse"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
 
 <div id="Initialisation" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -653,7 +750,15 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
               </li>
               <li class="treeview">
-                <a data-toggle='modal' data-id='' href='#spouselist.php'><i class="fa fa-user"></i>Spouse List</a>
+                <a href="#">
+                  <i class="fa fa-user"></i>
+                  <span>Spouse</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='#Spouse' class='open-Initial'><i class="fa fa-plus"></i>Add Spouse Info</a></li>
+                  <li><a href='spouselist.php'><i class="fa fa-minus"></i>View spouse info</a></li>
+                </ul>
 
               </li>
               <li class="treeview">
