@@ -686,7 +686,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </aside>
 	</div>
 		<!--left-fixed -navigation-->
-		
+	
 		<!-- header-starts -->
 		<div class="sticky-header header-section">
 			<div class="header-left">
@@ -901,7 +901,7 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
      </div>
     </div>
-    
+
 	<!--footer-->
 	<div class="footer">
 	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
