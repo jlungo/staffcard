@@ -7,11 +7,11 @@
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
    
 
-// connected to the database
-// $db = new mysqli("localhost", "root", "", "staff_attendance");
-// if ($db->connect_errno > 0) {
-//   die('Unable to connect to database [' . $db->connect_error . ']');
-// }
+//connected to the database
+$db = new mysqli("localhost", "root", "", "staff_attendance");
+if ($db->connect_errno > 0) {
+  die('Unable to connect to database [' . $db->connect_error . ']');
+}
 
 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 

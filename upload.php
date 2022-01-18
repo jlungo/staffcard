@@ -342,10 +342,10 @@ if(isset($_POST['addmember']))
 		$SpouseName = mysqli_real_escape_string($db,$_POST['SpouseName']);
 	
 		$DistrictMarried=mysqli_real_escape_string($db,$_POST['DistrictMarried']);
-		// echo $EmployeeName;
-		// echo $Sex;
-		// echo $MaritalStatus;
-		// echo $DateMarried;
+		 echo $EmployeeName;
+		 echo $Sex;
+		 echo $MaritalStatus;
+		 echo $DateMarried;
 
 
 							   $check="SELECT * FROM Spouse WHERE Emp_No='$EmployeeNo' && Emp_Name='$EmployeeName'";
