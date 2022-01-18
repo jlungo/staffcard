@@ -1,5 +1,5 @@
 <?php 
-session_start();
+ session_start();
 include("db_connect.php");
 
 if(isset($_POST['save']))
@@ -203,7 +203,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a staff with those details in the database", "error");     				              
+    				              sweetAlert("Oops...", "This staff already exists", "error");     				              
                                });
                 </script>
            <?php 
@@ -212,7 +212,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <?php if(isset($_SESSION['emptytextboxes'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form", "error");     				              
+    				              sweetAlert("Oops...", "You did not fill all the textboxes on the form or recheck if the filled details are correct", "error");     				              
                                });
                 </script>
            <?php 
@@ -222,8 +222,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
                                     swal({
-                                         title: "User removed successfully",
-                                         text: "Do you want to remove another one?",
+                                         title: "User successfully removed",
+                                         text: "Do you want to remove another user?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -249,18 +249,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php if(isset($_SESSION['cat'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    				              sweetAlert("Oops...", "This category is already in the system", "error");     				              
                                });
                 </script>
            <?php 
-       	   session_destroy();}  
+       	   session_destroy();
+		}  
            ?>
            <?php if(isset($_SESSION['category'])){?>
                 <script type="text/javascript"> 
             $(document).ready(function(){ 
                                     swal({
                                          title: "Category added successfully",
-                                         text: "Do you want to add another one?",
+                                         text: "Do you want to add another category?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -289,7 +290,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             $(document).ready(function(){ 
                                     swal({
                                          title: "Category Deleted",
-                                         text: "Do you want to delete another one?",
+                                         text: "Do you want to delete another category?",
                                          type: "success",
                                          showCancelButton: true,
                                         confirmButtonColor: "green",
@@ -317,7 +318,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
  
- <?php if(isset($_SESSION['pass'])) {?>
+ <?php if(isset($_SESSION['pass']))
+  {?>
 <script type="text/javascript"> 
 
 $(document).ready(function(){  
@@ -326,7 +328,9 @@ $(document).ready(function(){
                                });
        
                     </script>
-      <?php  session_destroy(); }?>
+      <?php  session_destroy(); }
+      
+      ?>
       
       
       <?php   $sqlid ="SELECT * FROM Users Order BY id DESC";
@@ -355,13 +359,15 @@ $retrieve = mysqli_query($db,$sqluse);
 
  <div id="Taxreceipted" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
+    
+  <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0">
+        <center>
         	 PRINT IDs IN BULK
-        	</center></h4>
+        </center></h4>
       </div>
 
       <div class="modal-body" >       	
@@ -382,7 +388,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
       </div>
       <div class="modal-footer">
-      	<input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp;
+      <input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp; &nbsp;
       </div>
       </form> 
       </div>       
@@ -397,17 +403,26 @@ $retrieve = mysqli_query($db,$sqluse);
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;"><center>
+        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;">
+        <center>
                    Edit details of <input style="border: none;background:#222d32" type="text" id="oldname" value="" readonly="readonly" />
 	    	
-        	</center></h4>
+        </center></h4>
       </div>
       <div class="modal-body" >
         <center>
              
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
+<<<<<<< HEAD
+        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;
+                Firstname:
+                <label style="color: red;font-size:20px;">*</label>
+                <input style="width:270px;" type="text" name="mfname" id='oldname'>
+              </span></p>
+=======
         	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
@@ -419,6 +434,7 @@ $retrieve = mysqli_query($db,$sqluse);
         </center>
         
       </div>
+
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -427,15 +443,20 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
+
 <div id="Updatepicture" class="modal fade" role="dialog">
   <div class="modal-dialog" style="float:right;width:20%">
-    <!-- Modal content-->
+    
+  <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+
         <h4 class="modal-title">        	        	
         	</h4>
       </div>
+
       <div class="modal-body" >
         <center><p></p>
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
@@ -452,6 +473,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	                
         </center>
       </div>
+
       <div class="modal-footer">
                 <input type="submit" class="btn btn-success" value="Change" id="btns1" name="Change"> &nbsp;
                   
@@ -463,6 +485,7 @@ $retrieve = mysqli_query($db,$sqluse);
  
  <div id="Useradd" class="modal fade" role="dialog">
   <div class="modal-dialog">
+
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
@@ -478,19 +501,61 @@ $retrieve = mysqli_query($db,$sqluse);
 
             	
       	        <p style="margin-bottom:10px;">  
-        	      <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
-        	    <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>        		
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-        		<span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+        	      <span style="font-size: 15px; font-weight: bold;">
+                <input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
+
+        	    <span style="font-size: 15px; font-weight: bold;">
+              <input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+
+        		<span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="miss">&nbsp;Miss</span>
+
+            <span style="font-size: 15px; font-weight: bold;">
+            <input type="checkbox" name="prof">&nbsp;Prof</span>
         		</p>
         		                                                           	      		
-                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
-        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
+                 <p style="margin-bottom:10px;">
+                 <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:
+                 <label style="color: red;font-size:20px;">*</label>
+                 <input style="width:270px;" type="text" name="mfname"></span>
+                </p>
+
+        	    <p style="margin-bottom:10px;">
+              <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:
+              <label style="color: red;font-size:20px;">*</label>
+              <input style="width:270px;" type="text" name="msname"></span>
+            </p>
+
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">Department:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="minstitution"></span>
+          </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="memail"></span>
+              </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp;Email:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="mphone"></span>
+              </p>
+        	     
+               
+               <p >
+                 <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;
+                  &nbsp;&nbsp;Staff ID: 
+                  <label style="color: red;font-size:20px;">*</label>
+                  <input style="width:270px;" type="text" name="mpassword"></span></p>
         		Add profile picture:<input name='filed' type='file' id='filed' >
                     
         		   <input type="hidden" name="page" value="admin.php"/>                                                        	      		
@@ -519,15 +584,41 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgname"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active Year:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgyear"></span></p>
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="orgname"></span>
+          </p>
+
+        	    <p style="margin-bottom:10px;">
+              <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:
+              <label style="color: red;font-size:20px;">*</label>
+              <input style="width:270px;" type="text" name="orgphone"></span>
+            </p>
+
+        		<p style="margin-bottom:10px;">
+            <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:
+            <label style="color: red;font-size:20px;">*</label>
+            <input style="width:270px;" type="text" name="orgemail"></span>
+          </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="orgwebsite"></span>
+              </p>
+
+        	     <p style="margin-bottom:10px;">
+               <span style="font-size: 18px; font-weight: bold;">Active Year:
+               <label style="color: red;font-size:20px;">*</label>
+               <input style="width:270px;" type="text" name="orgyear"></span>
+              </p>
+
         	        Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>)<input name='filed' type='file' id='filed' >
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
+
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Finish" id="addmember" name="orginitial"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -544,13 +635,40 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+<<<<<<< HEAD
+        	ADD EDUCATION HISTORY
+=======
         	ADD SAFARI INFORMATION
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
         	</center></h4>
       </div>
       	<form method="post" action="safari_report.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
       	<center> 
+<<<<<<< HEAD
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;
+            <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
+            <input style="width:270px;" type="text" name="emp_no" ></span></p><br>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
+              <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
+            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+               <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
+               <input style="width:270px;" type="text" name="institution" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
+               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label for="date_promoted" style="color: red;font-size:20px;">Year started Education:*</label><br>
+               <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
+               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
+=======
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no"></span></p><br>
         	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name"></span></p><br>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Safari start date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="safari_start_date"></span></p><br>
@@ -558,6 +676,7 @@ $retrieve = mysqli_query($db,$sqluse);
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Purpose of safari:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="purpose_safari"></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Authorisation status:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="authorisation_status"></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Safari source of fund:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="source_fund"></span></p><br>
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
@@ -634,20 +753,20 @@ $retrieve = mysqli_query($db,$sqluse);
 	                                     {
                                               $profile= $foundl['pname'];
 		                                  }
-										echo"<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";	   
+										echo"<center><img src='media/$profile'  width='80%' height='160px' alt=''></center>";	   
                                }
 							else{
 														     	
 								
 										
-           ?>
-            <h1>
-            	<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
-            		
-            	</span>MAIN MENU<span class="dashboard_text"></span>
-            	</a>
-           </h1>
-           <?php } ?> 
+                ?>
+                <h1>
+                  <a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
+                    
+                  </span>MAIN MENU<span class="dashboard_text"></span>
+                  </a>
+               </h1>
+               <?php } ?> 
 
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -685,12 +804,21 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Staff safari Information</span>
+<<<<<<< HEAD
+                <span>Staff Education history</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_safari' class='open-Initial'><i class="fa fa-plus"></i>Add Safari</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Education History</a></li>
+                  <li><a href='education_history_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & education info</a></li>
+=======
+                <span>Staff safari information</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a data-toggle='modal' data-id='' href='add_safari.php' class='open-Initial'><i class="fa fa-plus"></i>Add Safari</a></li>
                   <li><a href='safari_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Safari Report</a></li>
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
                 </ul>
               </li>
 
@@ -741,9 +869,13 @@ $retrieve = mysqli_query($db,$sqluse);
 										
 										?>
 										 </span> 
+
+
+
 									<div class="user-name" >
 										<p style="color:#1D809F;"><?php if(isset($sirname))
-                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
+                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";}
+                                             ?>
 				                         </p>
 										<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
 										</span>
@@ -773,11 +905,12 @@ $retrieve = mysqli_query($db,$sqluse);
 	
 		
 		
-				
-				
-				
-	
-			<div class="charts">		
+    
+    
+    
+    
+    
+      <div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
 						<h4 class="title">Safari Information System</h4>
@@ -789,14 +922,25 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>EMP NO</th>
+<<<<<<< HEAD
+               	
+            <th>Emp No</th>
+                <th>Emp Name</th>
+                <th>Job Desc</th>              
+                <th>Current Rank</th>
+                <th>New Promotion Rank</th>           
+                <th>Date Promoted</th>
+                <th>Highest Education Level</th>
+=======
+              	<th>EMP NO</th>
                 <th>EMP NAME</th>
                 <th>SAFARI START DATE</th>
-                <th> SAFARI RETURN DATE</th>              
+                <th>SAFARI RETURN DATE</th>              
                 <th>PURPOSE OF SAFARI</th>
                 <th>AUTHORISATION STATUS</th>           
                 <th>SAFARI SOURCE OF FUND</th>
                 
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
                 
             </tr>
         </thead>
@@ -832,8 +976,12 @@ $retrieve = mysqli_query($db,$sqluse);
                              </tr>"; 
 					 
 					 } 
+<<<<<<< HEAD
+				?>
+=======
 		
-		           	?>
+		          ?>
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
             </tbody>
         
     </table>
@@ -849,7 +997,11 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+<<<<<<< HEAD
+	  <p>© 2022 Attainment . Design and developed by group_9
+=======
+	  <p>© 2022 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+>>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
 	
 			</p>		
 	</div>

@@ -4,6 +4,13 @@ if(isset($_POST['save']))
 {
     $emp_no =$_POST['emp_no'];
     $emp_name =$_POST['emp_name'];
+
+    $bank_name =$_POST['bank_name'];
+    $bank_branchname =$_POST['bank_branchname'];
+    $bank_accountnumber =$_POST['bank_accountnumber'];
+    $sql = "INSERT INTO bankinfo (emp_no,emp_name,bank_name,bank_branchname,bank_accountnumber) 
+    VALUES('$emp_no','$emp_name',' $bank_name,'$bank_branchname', '$bank_accountnumber')";
+
     $safari_start_date =$_POST['safari_start_date'];
     $return_date =$_POST['return_date'];
     $purpose_safari =$_POST['purpose_safari'];
@@ -11,6 +18,7 @@ if(isset($_POST['save']))
     $source_fund =$_POST['source_fund'];
     $sql = "INSERT INTO StaffIS (emp_no,emp_name,safari_start_date,return_date,purpose_safari,authorisation_status,source_fund) 
     VALUES('$emp_no','$emp_name',' $safari_start_date','$return_date', '$purpose_safari',' $authorisation_status',' $source_fund')";
+
     if(mysqli_query($conn,$sql)){
         echo "New record created successfully!";
     } else{

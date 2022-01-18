@@ -1,27 +1,8 @@
 <?php 
 session_start();
 include_once('db_connect.php');
-
-if(isset($_POST['save']))
-{
-    $emp_no =$_POST['emp_no'];
-    $emp_name =$_POST['emp_name'];
-    $safari_start_date =$_POST['safari_start_date'];
-    $return_date =$_POST['return_date'];
-    $purpose_safari =$_POST['purpose_safari'];
-    $authorisation_status =$_POST['authorisation_status'];
-    $source_fund =$_POST['source_fund'];
-    $sql = "INSERT INTO StaffIS (emp_no,emp_name,safari_start_date,return_date,purpose_safari,authorisation_status,source_fund) 
-    VALUES('$emp_no','$emp_name',' $safari_start_date','$return_date', '$purpose_safari',' $authorisation_status',' $source_fund')";
-    if(mysqli_query($conn,$sql)){
-        echo "New record created successfully!";
-    } else{
-        echo "Error: " . $sql . " ".mysqli_error($conn);
-    }
-    mysqli_close($conn);
-}
    
-   $result = mysqli_query($db, "select * from staffis" );
+   $result = mysqli_query($db, "select * from bankinfo" );
 
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
@@ -50,7 +31,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>admin</title>
+<title>List of Staff Bank Accounts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -539,28 +520,26 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-
-  <div id="add_safari" class="modal fade" role="dialog">
+  <!--created a modal for add pension  -->
+  <div id="add_bankinfo" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	ADD SAFARI INFORMATION
+        	Add Bank Information
         	</center></h4>
       </div>
-      	<form method="post" action="safari_report.php" enctype='multipart/form-data'>        		
+      	<form method="post" action="process.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no"></span></p><br>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name"></span></p><br>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Safari start date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="safari_start_date"></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Safari return date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="return_date"></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Purpose of safari:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="purpose_safari"></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Authorisation status:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="authorisation_status"></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Safari source of fund:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="source_fund"></span></p><br>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no"></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Bank Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_name"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Bank Branch Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_branchname"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Bank Account Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_accountnumber"></span></p>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
@@ -572,7 +551,7 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-  
+ 
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -685,15 +664,16 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
+                     <!--menu for pension informartion -->
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Staff safari Information</span>
+                <span>Bank Information</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_safari' class='open-Initial'><i class="fa fa-plus"></i>Add Safari</a></li>
-                  <li><a href='safari_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Safari Report</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_bankinfo' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
+                  <li><a href='bankinformation_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff Bank Accounts</a></li>
                 </ul>
               </li>
 
@@ -783,23 +763,21 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Safari Information System</h4>
+						<h4 class="title">Bank Information</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
-                             <i class="fa fa-envelope"></i>&nbsp;This screen displays  staff safari records, use the search box to spool more records
+                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
                          </div>
 					
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
             
-             <th> Employee No </th>
-             <th> Employee Name </th>
-             <th> Safari start date </th>
-             <th> Safari return date </th>
-             <th> Purpose of safari </th>
-             <th> Authorisation status </th>
-             <th> Safari source of fund </th> 
+             <th> Emp No </th>
+             <th> Emp Name </th>
+             <th> Bank Name </th>
+             <th> Bank Branch Name </th>
+             <th> Bank Account Number </th>
             </tr>
         </thead>
         <tbody>
@@ -812,11 +790,9 @@ $retrieve = mysqli_query($db,$sqluse);
   <tr>
     <th><?php echo $rows["emp_no"]; ?></th>
     <th><?php echo $rows["emp_name"]; ?></th>
-    <th><?php echo $rows["safari_start_date"]; ?></th>
-    <th><?php echo $rows["return_date"]; ?></th>
-    <th><?php echo $rows["purpose_safari"]; ?></th>
-    <th><?php echo $rows["authorisation_status"]; ?></th>
-    <th><?php echo $rows["source_fund"]; ?></th>
+    <th><?php echo $rows["bank_name"]; ?></th>
+    <th><?php echo $rows["bank_branchname"]; ?></th>
+    <th><?php echo $rows["bank_accountnumber"]; ?></th>
   </tr>
 <?php
     $i++;  
