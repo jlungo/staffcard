@@ -350,6 +350,14 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 	$idz = $foundk['id'];
 }
 
+$sqluse = "SELECT * FROM deduction ORDER BY id DESC";
+$retrieve = mysqli_query($db, $sqluse);
+while ($foundk = mysqli_fetch_array($retrieve)) {
+	$id = $foundk['id'];
+	$title = $foundk['title'];
+	$select_deduction .= "<option value='$id'>$title</option>";
+}
+
 ?>
 
 	<div id="Taxreceipted" class="modal fade" role="dialog">
@@ -411,16 +419,11 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 							<input id="employee_number" type="number" class="form-control" name="employee_number">
 						</div>
 						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Employee Name</span>
-							<input id="employee_name" type="text" class="form-control" name="employee_name">
-						</div>
-						<div class="input-group" style="margin-bottom:10px">
 							<span class="input-group-addon">Deduction Type</span>
-							<input id="deduction_type" type="text" class="form-control" name="deduction_type">
-						</div>
-						<div class="input-group" style="margin-bottom:10px">
-							<span class="input-group-addon">Deduction Title</span>
-							<input id="deduction_title" type="text" class="form-control" name="deduction_title">
+							<select class="form-control" name="deduction_type">
+								<option value="">-- Select Deduction Type--</option>
+								<?php echo $select_deduction; ?>
+							</select>
 						</div>
 						<div class="input-group" style="margin-bottom:10px">
 							<span class="input-group-addon">Total Repayment</span>
@@ -440,7 +443,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" class="btn btn-success" value="Submit" name="add_deduction"> &nbsp;
+						<input type="submit" class="btn btn-success" value="Submit" name="add_staff_deduction"> &nbsp;
 					</div>
 				</form>
 			</div>
@@ -904,18 +907,21 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 										</tr>
 									</thead>
 									<tbody>
-										<?php $sqlmember = "SELECT * FROM staff_deduction";
+										<?php
+									$sqlmember = "SELECT * FROM staff_deduction";
 									$retrieve = mysqli_query($db, $sqlmember);
 									$count = 1;
 									while ($found = mysqli_fetch_array($retrieve)) {
-										$title = $found['title'];
-										$description = $found['description'];
-										$amount = $found['amount'];
-										$percentage = $found['percentage'];
+										$staff_id = $found['staff_id'];
+										$title = $found['deduction_id'];
+										$total_repayment = $found['total_repayment'];
+										$deducted_amount = $found['deducted_amount'];
+										$start_date = $found['start_date'];
+										$end_date = $found['end_date'];
 
 										echo "<tr>
-											<td>$count</td><td>$title</td>
-											<td>$description</td><td>$amount</td>
+											<td>$count</td><td>$staff_id</td>
+											<td>Employee</td><td>$amount</td>
 											<td>$percentage</td>
 											<td>
 												

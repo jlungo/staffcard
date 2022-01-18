@@ -304,3 +304,37 @@ if (isset($_POST['add_deduction'])) {
 		header("Location: deductions.php");
 	}
 }
+
+
+if (isset($_POST['add_staff_deduction'])) {
+	if ($_POST['employee_number'] != '' && $_POST['deduction_type'] != '' && $_POST['total_repayment']) {
+
+		$employee_number = mysqli_real_escape_string($db, $_POST['employee_number']);
+		$deduction_type = mysqli_real_escape_string($db, $_POST['deduction_type']);
+		$total_repayment = mysqli_real_escape_string($db, $_POST['total_repayment']);
+		$start_date = mysqli_real_escape_string($db, $_POST['start_date']);
+		$end_date = mysqli_real_escape_string($db, $_POST['end_date']);
+		$deduction_amount = mysqli_real_escape_string($db, $_POST['deduction_amount']);
+
+		$pagex = mysqli_real_escape_string($db, $_POST['page']);
+
+		$check = "SELECT * FROM staff_deduction WHERE staff_id='$employee_number' AND deduction_type='$deduction_type' AND start_date='$start_date' AND end_date='$end_date'";
+		$checks = mysqli_query($db, $check);
+		$found = mysqli_num_rows($checks);
+		if ($found == 0) {
+			$query = "INSERT INTO staff_deduction (staff_id, deduction_id, total_repayment, deducted_amount, start_date, end_date) 
+				VALUES ('$employee_number', '$deduction_type', '$total_repayment', '$deduction_amount', '$start_date', '$end_date')";
+			$db->query($query) or die('Error1, query failed');
+
+			$memberadd = "Deduction Successfull Added";
+			$_SESSION['memberadded'] = $memberadd;
+			header("Location: deductions_staff.php");  //member added successfully
+		} else {
+			$_SESSION['memberexist'] = "Deduction already exist";
+			header("Location: deductions_staff.php");
+		}
+	} else {
+		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
+		header("Location: deductions_staff.php");
+	}
+}
