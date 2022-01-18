@@ -54,9 +54,9 @@ if(!$conn){
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
-<<<<<<< HEAD
+                         s
 // group 13 work table
-                         $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment,
+                         $stable13="CREATE TABLE IF NOT EXISTS Staff_Education (emp_no int(11) NOT NULL auto_increment;
                 
                                   emp_name varchar(300)NOT NULL,
                                   cert_obtained Varchar(30)NOT NULL,                                 
@@ -65,7 +65,11 @@ if(!$conn){
                                   year_stated_edu date NOT NULL,
                                   
                                  year_graduated varchar(300)NOT NULL,
-=======
+
+                                 PRIMARY KEY(emp_no) )";
+                         $db->query($stable13); 
+                         
+
 //table
                          $stable03="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
                                  emp_name varchar(100)NOT NULL,
@@ -74,9 +78,8 @@ if(!$conn){
                                   purpose_safari varchar(100)NOT NULL,                               
                                   authorisation_status varchar(100) NOT NULL,
                                 source_fund varchar(300)NOT NULL,
->>>>>>> 71a4609b1b0f7a52cbf953e4ea15a77446ef5163
                                   PRIMARY KEY(emp_no) )";
-                         $db->query($stable13); 
+                         $db->query($stable03); 
                          
                         
 			   
