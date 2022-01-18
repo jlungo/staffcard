@@ -855,7 +855,6 @@ $retrieve = mysqli_query($db,$sqluse);
             	
 
                 <th>Employee Number</th>
-                <th>Emp No</th>
                 <th>Emp Name</th>
                 <th>Job Desc</th>              
                 <th>Current Rank</th>
