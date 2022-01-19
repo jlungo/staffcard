@@ -50,10 +50,8 @@ $retrieve = mysqli_query($db,$sqluse);
     </div>
 	
 	<div class="container" style="min-height:500px;">
-	<div class=''>
-	</div>
+	
            <div class="container">
-	<h2></h2>		
 	
 	<form class="form-login" method="post" id="login-form">
 		<h2 class="form-login-heading">Login Here</h2><hr />
@@ -75,9 +73,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	</form>	
 	              				                                   				                                         				                          				        		
 </div>
-<div class="insert-post-ads1" style="margin-top:20px;">
 
-</div>
 </div>
 </body>
 </html>
