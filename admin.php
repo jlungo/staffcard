@@ -381,7 +381,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="btns1" name="Change"> 
       </div>
       </form>
     </div>
@@ -408,12 +408,12 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
           <form method="post" action="upload.php" enctype='multipart/form-data'>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;"> Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution" id='cc'></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail" id='bb'></span></p>
-            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mid" id='oldpass'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail" id='bb'></span></p>
+            <p><span style="font-size: 18px; font-weight: bold;"> Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mid" id='oldpass'></span></p>
             Add profile picture:<input name='filed' type='file' id='filed'>
             <input type="hidden" name="page" id="staffid" />
 
@@ -421,7 +421,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> 
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -455,7 +455,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
         </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Change" id="btns1" name="Change"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Change" id="btns1" name="Change"> 
 
       </div>
     </div>
@@ -482,26 +482,26 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
             <p style="margin-bottom:10px;">
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">&nbsp;Pro&nbsp;&nbsp; &nbsp; &nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">&nbsp;Dr &nbsp; &nbsp;&nbsp;&nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">&nbsp;Mr &nbsp; &nbsp; &nbsp;&nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">&nbsp;Mrs &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">&nbsp;Miss</span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="pro">Pro  </span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="dr">Dr  </span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mr">Mr   </span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="mrs">Mrs    </span>
+              <span style="font-size: 15px; font-weight: bold;"><input type="checkbox" name="miss">Miss</span>
             </p>
 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;"> Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
-            <p><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="memail"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mphone"></span></p>
+            <p><span style="font-size: 18px; font-weight: bold;"> Staff ID:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mpassword"></span></p>
             Add profile picture:<input name='filed' type='file' id='filed'>
 
             <input type="hidden" name="page" value="admin.php" />
         </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addmember"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="addmember"> 
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -525,17 +525,17 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
         <div class="modal-body">
           <center>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Org Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgname"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Phone:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgphone"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Email:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgemail"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;"> Website:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgwebsite"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Active Year:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="orgyear"></span></p>
             Attach Organisation Logo:(<h7 style="color:red">Make sure it is a transparent image</h7>)<input name='filed' type='file' id='filed'>
             <input type="hidden" name="page" value="admin.php" />
           </center>
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn btn-success" value="Finish" id="addmember" name="orginitial"> &nbsp;
+          <input type="submit" class="btn btn-success" value="Finish" id="addmember" name="orginitial"> 
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
         </div>
     </div>
@@ -559,19 +559,19 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
         <div class="modal-body">
           <center>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Org Name:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Org Name:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgname" value="<?php if (isset($name)) {
                                                                                 echo $name;
                                                                               } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Phone:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Phone:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgphone" value="<?php if (isset($phone)) {
                                                                                   echo $phone;
                                                                                 } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Email:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Email:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgemail" value="<?php if (isset($mail)) {
                                                                                   echo $mail;
                                                                                 } ?>"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Website:<label style="color: red;font-size:20px;">*</label>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;"> Website:<label style="color: red;font-size:20px;">*</label>
                 <input style="width:270px;" type="text" name="orgwebsite" value="<?php if (isset($website)) {
                                                                                     echo $website;
                                                                                   } ?>"></span></p>
@@ -586,7 +586,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
           </center>
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn btn-success" value="Update" id="addmember" name="orgupdate"> &nbsp;
+          <input type="submit" class="btn btn-success" value="Update" id="addmember" name="orgupdate"> 
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
         </div>
     </div>
@@ -696,44 +696,44 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
           <form action="upload.php" method="POST" enctype='multipart/form-data'>
 
             <div class="modal-body">
-              <center>
+              
 
-                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp_Name:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Enter Emp_Name" name="Emp_Name" value="<?php if (isset($phone)) {
+                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Emp_Name:<label style="color: red;font-size:20px;">*</label>
+                    <input style="width:100%; float:right;" type="text" placeholder="Enter Emp_Name" name="Emp_Name" value="<?php if (isset($phone)) {
                                                                                                                   echo $phone;
-                                                                                                                } ?>"></span></p>
-                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Objective:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Objective" name="Objective" value="<?php if (isset($mail)) {
+                                                                                                                } ?>"></span></p> <br> <br>
+                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">  Objective:<label style="color: red;font-size:20px;">*</label>
+                    <input style="width:100%; float:right;" type="text" placeholder="Objective" name="Objective" value="<?php if (isset($mail)) {
                                                                                                               echo $mail;
-                                                                                                            } ?>"></span></p>
-                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Apraisee_score:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Apraisee score" name="Apraisee_score" value="<?php if (isset($website)) {
+                                                                                                            } ?>"></span></p> <br> <br>
+                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;"> Apraisee_score:<label style="color: red;font-size:20px;">*</label>
+                    <input style="width:100%; float:right;" type="text" placeholder="Apraisee score" name="Apraisee_score" value="<?php if (isset($website)) {
                                                                                                                         echo $website;
-                                                                                                                      } ?>"></span></p>
+                                                                                                                      } ?>"></span></p> <br> <br>
                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if (isset($year)) {
+                    <input style="width:100%; float:right;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if (isset($year)) {
                                                                                                                             echo $year;
-                                                                                                                          } ?>"></span></p>
+                                                                                                                          } ?>"></span></p> <br> <br>
                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Performance_score:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Performance score" name="Performance_score" value="<?php if (isset($year)) {
+                    <input style="width:100%; float:right;" type="text" placeholder="Performance score" name="Performance_score" value="<?php if (isset($year)) {
                                                                                                                               echo $year;
-                                                                                                                            } ?>"></span></p>
+                                                                                                                            } ?>"></span></p> <br> <br>
                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Recommendations:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Recommendations" name="Recommendations" value="<?php if (isset($year)) {
+                    <input style="width:100%; float:right;" type="text" placeholder="Recommendations" name="Recommendations" value="<?php if (isset($year)) {
                                                                                                                           echo $year;
-                                                                                                                        } ?>"></span></p>
+                                                                                                                        } ?>"></span></p> <br> <br>
                 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Supervisor_score:<label style="color: red;font-size:20px;">*</label>
-                    <input style="width:270px;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if (isset($year)) {
+                    <input style="width:100%; float:right;" type="text" placeholder="Supervisorscore" name="Supervisor_score" value="<?php if (isset($year)) {
                                                                                                                             echo $year;
-                                                                                                                          } ?>"></span></p>
+                                                                                                                          } ?>"></span></p> <br> <br>
 
                 <input type="hidden" name="page" value="admin.php" />
                 <input type="hidden" name="pageid" value="<?php echo $idz; ?>" />
 
-              </center>
+              
             </div>
             <div class="modal-footer">
-              <input type="submit" class="btn btn-success" value="INSERT" id="addmember" name="INSERT"> &nbsp;
+              <input type="submit" class="btn btn-success" value="INSERT" id="addmember" name="INSERT"> 
               <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -747,9 +747,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
       <div class="header-left">
         <!--toggle button start-->
         <button id="showLeftPush"><i class="fa fa-bars"></i></button>
-        <!--toggle button end-->
+        <!--toggle button right-->
 
-        <!--notification menu end -->
+        <!--notification menu right -->
         <div class="clearfix"> </div>
       </div>
       <div class="header-right">
@@ -783,7 +783,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                                                 echo "<strong>" . $firstname . " " . $sirname . "! </strong>";
                                               } ?>
                     </p>
-                    <span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
+                    <span>Administrator<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
                     </span>
                   </div>
                   <i class="fa fa-angle-down lnr"></i>
@@ -821,7 +821,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
               <h4 class="title">Users</h4>
               <!-- start content_slider -->
               <div class="alert alert-info">
-                <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                <i class="fa fa-envelope"></i>This screen displays 50 records use the search box to spool more records
               </div>
 
               <table id="example" class="display nowrap" style="width:100%">
