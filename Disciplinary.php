@@ -1,28 +1,20 @@
 <?php 
 session_start();
 include("db_connect.php");
-
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
-	
 	$userid=$_COOKIE['adminid'];
-$useremail=$_COOKIE['adminemail'];
-
-$sqluser ="SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
-
-$retrieved = mysqli_query($db,$sqluser);
-    while($found = mysqli_fetch_array($retrieved))
-	     {
-              $firstname = $found['Firstname'];
-		      $sirname= $found['Sirname'];
-			  $emails = $found['Email'];
-			  	    $id= $found['id'];			  
-   
-  	     
-}		 
-		 
+  $useremail=$_COOKIE['adminemail'];
+  $sqluser ="SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
+  $retrieved = mysqli_query($db,$sqluser);
+    while($found = mysqli_fetch_array($retrieved)) {
+      $firstname = $found['Firstname'];
+		  $sirname= $found['Sirname'];
+			$emails = $found['Email'];
+			$id= $found['id'];			  
+    }		 
 }else{
-	 header('location:index.php');
-      exit;
+	header('location:index.php');
+  exit;
 }
 ?>
 <!DOCTYPE HTML>
@@ -91,282 +83,268 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       <script>
       
       $(document).ready(function() {
-    $('#example').DataTable( {
-        
-        
-    } );
-        } );
+        $('#example').DataTable( {
+ 
+        });
+      });
       
       </script>
 
 	  <!-- Delete disciplinary record js-->
 <script type="text/javascript"> 
-            $(document).on("click", ".open-Delete_disciplinary", function () {
-                                  var myValue = $(this).data('id');
-                                        swal({
-                                         title: "Are you sure?",
-                                         text: "You want to remove this disciplinary record from the database!",
-                                         type: "warning",
-                                         showCancelButton: true,
-                                        cancelButtonColor: "red",
-                                        confirmButtonColor: "green",
-                                        confirmButtonText: "Yes, remove!",
-                                         cancelButtonText: "No, cancel!",
-                                        closeOnConfirm: false,
-                                        closeOnCancel: false,
-                                          buttonsStyling: false
-                                        },
-                     function(isConfirm){
-                                      if (isConfirm) {                                      	
-                                                  	var vals=myValue;
-                                               $.ajax ({
-                                                      type : 'POST',
-                                                      url: "upload.php",
-                                                      data: { disciplinary_delete: vals},
-                                                      success: function(result) {
-                                                      if(result == 1){
-                                                                    swal({title: "Deleted!", text: "disciplinary record has been deleted from the database.", type: "success"},
-                                                          function(){ 
-                                                                          location.reload();
-                                                                          }
-                                                                      );                               	                        
-                                                                 }
-
-                                                       }
-                                                  }); } else {
-	                                                           swal("Cancelled", "This disciplinary record is safe :)", "error");
-                                                          }
-                                         });
-                                       
-                                       });
+    $(document).on("click", ".open-Delete_disciplinary", function () {
+      var myValue = $(this).data('id');
+      swal({
+        title: "Are you sure?",
+        text: "You want to remove this disciplinary record from the database!",
+        type: "warning",
+        showCancelButton: true,
+        cancelButtonColor: "red",
+        confirmButtonColor: "green",
+        confirmButtonText: "Yes, remove!",
+        cancelButtonText: "No, cancel!",
+        closeOnConfirm: false,
+        closeOnCancel: false,
+        buttonsStyling: false
+      },
+      function(isConfirm){
+        if (isConfirm) {                                      	
+          var vals=myValue;
+          $.ajax ({
+            type : 'POST',
+            url: "upload.php",
+            data: { disciplinary_delete: vals},
+            success: function(result) {
+              if(result == 1){
+                swal({
+                  title: "Deleted!", 
+                  text: "disciplinary record has been deleted from the database.", 
+                  type: "success"
+                },
+                function() { 
+                  location.reload();
+                });                               	                        
+              }
+            }
+          }); 
+        } else {
+          swal("Cancelled", "This disciplinary record is safe :)", "error");
+        }
+      });
+    });
                 </script>
 
 
 <!-- Delete disciplinary record js-->
 <?php if(isset($_SESSION['disciplinarydeleted'])){?>
- <script type="text/javascript"> 
- 	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Disciplinary record deleted successful.", type: "success"});
-                                  });
-              </script>
+<script type="text/javascript"> 
+  $(document).ready(function(){
+    swal({title: "Successful!", text: "Disciplinary record deleted successful.", type: "success"});
+  });
+</script>
             
-           <?php 
-	   session_destroy();		
-		    }?>
+<?php 
+	session_destroy();		
+}?>
 
 <script type="text/javascript">
- $(document).on("click", ".open-Updatepicture", function () {
-     var myTitle = $(this).data('id');
-     $(".modal-body #bookId").val(myTitle);
-     
-}); 
- </script>
+  $(document).on("click", ".open-Updatepicture", function () {
+    var myTitle = $(this).data('id');
+    $(".modal-body #bookId").val(myTitle);
+  }); 
+</script>
  	<!-- requried-jsfiles-for owl -->
 									<!-- //requried-jsfiles-for owl -->
 </head> 
 
-
-
 <!-- Edit disciplinary record js-->
 <script type="text/javascript">
- $(document).on("click", ".open-disciplinary_edit", function () {
-     
-       var discid = $(this).data('id');
-     var empno = $(this).data('ie');
-       var empname = $(this).data('if');
-       var disctype = $(this).data('ig');
-       var datecommited = $(this).data('ih');
-       var datediscussed = $(this).data('ij');
-       var description = $(this).data('ik');
-	   var actiontaken = $(this).data('il');
-       
-       
-     $(".modal-title #oldempno").val(empno);
-       $(".modal-body #oldempno").val(empno);
-       $(".modal-body #oldempname").val(empname);
-     $(".modal-body #olddisctype").val(disctype);     
-     $(".modal-body #olddatecommited").val(datecommited);
-     $(".modal-body #olddatediscussed").val(datediscussed);
-     $(".modal-body #olddescription").val(description);
-      $(".modal-body #oldactiontaken").val(actiontaken); 
-	  $(".modal-body #olddiscid").val(discid); 
+$(document).on("click", ".open-disciplinary_edit", function () {
+  var discid = $(this).data('id');
+  var empno = $(this).data('ie');
+  var empname = $(this).data('if');
+  var disctype = $(this).data('ig');
+  var datecommited = $(this).data('ih');
+  var datediscussed = $(this).data('ij');
+  var description = $(this).data('ik');
+  var actiontaken = $(this).data('il');
+      
+  $(".modal-title #oldempno").val(empno);
+  $(".modal-body #oldempno").val(empno);
+  $(".modal-body #oldempname").val(empname);
+  $(".modal-body #olddisctype").val(disctype);     
+  $(".modal-body #olddatecommited").val(datecommited);
+  $(".modal-body #olddatediscussed").val(datediscussed);
+  $(".modal-body #olddescription").val(description);
+  $(".modal-body #oldactiontaken").val(actiontaken); 
+  $(".modal-body #olddiscid").val(discid); 
 }); 
- </script>
-
-
-
-
-
+</script>
 
  <!-- Add disciplinary record js-->
-<?php if(isset($_SESSION['disciplinaryadded'])){?>
- <script type="text/javascript"> 
- 	          $(document).ready(function(){
- 	          	                             swal({title: "Successful!", text: "Disciplinary record added successful.", type: "success"});
-                                  });
-              </script>
-            
-           <?php 
-	   session_destroy();		
-		    }?>
-		    <?php if(isset($_SESSION['disciplinaryexist'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "There is arleady a disciplinary record in the database", "error");     				              
-                               });
-                </script>
-           <?php 
-       	   session_destroy();}  
-           ?>
-            <?php if(isset($_SESSION['emptydisciplinarytextboxes'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "You have unfilled textboxes on the form", "error");     				              
-                               });
-                </script>
-           <?php 
-       	   session_destroy();}  
-           ?>
-
-
-
-
-
-
-           <?php if(isset($_SESSION['tutor'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){ 
-                                    swal({
-                                         title: "User removed successfully",
-                                         text: "Do you want to remove another one?",
-                                         type: "success",
-                                         showCancelButton: true,
-                                        confirmButtonColor: "green",
-                                        confirmButtonText: "OK!",
-                                        closeOnConfirm: true,
-                                        closeOnCancel: true,
-                                          buttonsStyling: false
-                                        },
-                     function(isConfirm){
-                                      if (isConfirm) {                                      	
-                                                         window.location ="administrator.php?id=2";
-                                                     } 
-                                           else {
-                                                        window.location ="administrator.php";
-                                                 }
-                                         });
-                                         
-                                                    });
-                </script>
-           <?php 
-       	   session_destroy();}  
-           ?>
-           <?php if(isset($_SESSION['cat'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){    	
-    				              sweetAlert("Oops...", "This category arleady in the system", "error");     				              
-                               });
-                </script>
-           <?php 
-       	   session_destroy();}  
-           ?>
-           <?php if(isset($_SESSION['category'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){ 
-                                    swal({
-                                         title: "Category added successfully",
-                                         text: "Do you want to add another one?",
-                                         type: "success",
-                                         showCancelButton: true,
-                                        confirmButtonColor: "green",
-                                        confirmButtonText: "OK!",
-                                        closeOnConfirm: true,
-                                        closeOnCancel: true,
-                                          buttonsStyling: false
-                                        },
-                     function(isConfirm){
-                                      if (isConfirm) {                                      	
-                                                         window.location ="administrator.php?id=3";
-                                                     } 
-                                           else {
-                                                        window.location ="administrator.php";
-                                                 }
-                                         });
-                                         
-                                                    });
-       
-                    </script>             
-           <?php 
-       	   session_destroy();}  
-           ?>
-           <?php if(isset($_SESSION['del'])){?>
-                <script type="text/javascript"> 
-            $(document).ready(function(){ 
-                                    swal({
-                                         title: "Category Deleted",
-                                         text: "Do you want to delete another one?",
-                                         type: "success",
-                                         showCancelButton: true,
-                                        confirmButtonColor: "green",
-                                        confirmButtonText: "OK!",
-                                        closeOnConfirm: true,
-                                        closeOnCancel: true,
-                                          buttonsStyling: false
-                                        },
-                     function(isConfirm){
-                                      if (isConfirm) {                                      	
-                                                         window.location ="administrator.php?id=4";
-                                                     } 
-                                           else {
-                                                        window.location ="administrator.php";
-                                                 }
-                                         });
-                                         
-                                                    });
-       
-                </script>
-           <?php 
-       	   session_destroy();}  
-           ?>
- 
-
-
- 
- <?php if(isset($_SESSION['pass_disciplinary_edit'])) {?>
-<script type="text/javascript"> 
-
-$(document).ready(function(){  
- 		                           swal({title: "Successful!", text: "disciplinary record edited!!.", type: "success"});
-
-                               });
-       
-                    </script>
-      <?php  session_destroy(); }?>
-      
-      
-      <?php   $sqlid ="SELECT * FROM Users Order BY id DESC";
-			       $ret = mysqli_query($db,$sqlid);				                
-                     while($found = mysqli_fetch_array($ret))
-	                 {
-                       $idsx=$found['id'];
-                     }
-      
-	  
-	    
-
-$sqluse ="SELECT * FROM Inorg ORDER BY id DESC ";
-$retrieve = mysqli_query($db,$sqluse);
-    while($foundk = mysqli_fetch_array($retrieve))
-	     {
-              $name = $foundk['name'];
-		      $website= $foundk['website'];
-              $phone= $foundk['Phone'];
-              $year= $foundk['year'];
-			  $mail= $foundk['email'];
-			  $idz= $foundk['id'];
-		 }	 
-
-  ?>
+<?php 
+  if(isset($_SESSION['disciplinaryadded'])) {
+?>
+  <script type="text/javascript"> 
+ 	  $(document).ready(function() {
+ 	    swal({title: "Successful!", text: "Disciplinary record added successful.", type: "success"});
+    });
+  </script>
+<?php 
+    session_destroy();		
+  }
+?>
+<?php 
+  if(isset($_SESSION['disciplinaryexist'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function(){    	
+      sweetAlert("Oops...", "There is arleady a disciplinary record in the database", "error");     				              
+    });
+  </script>
+<?php 
+    session_destroy();
+  }  
+?>
+<?php 
+  if(isset($_SESSION['emptydisciplinarytextboxes'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function(){    	
+      sweetAlert("Oops...", "You have unfilled textboxes on the form", "error");     				              
+    });
+  </script>
+<?php 
+  session_destroy();}  
+?>
+<?php 
+  if(isset($_SESSION['tutor'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function(){ 
+      swal({
+        title: "User removed successfully",
+        text: "Do you want to remove another one?",
+        type: "success",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        confirmButtonText: "OK!",
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        buttonsStyling: false
+      },
+      function(isConfirm) {
+        if (isConfirm) {                                      	
+          window.location ="administrator.php?id=2";
+        } else {
+          window.location ="administrator.php";
+        }
+      });
+    });
+  </script>
+<?php 
+    session_destroy();
+  }  
+?>
+<?php 
+  if(isset($_SESSION['cat'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function(){    	
+      sweetAlert("Oops...", "This category arleady in the system", "error");     				              
+    });
+  </script>
+<?php 
+  session_destroy();}  
+?>
+<?php
+  if(isset($_SESSION['category'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function() { 
+      swal({
+        title: "Category added successfully",
+        text: "Do you want to add another one?",
+        type: "success",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        confirmButtonText: "OK!",
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        buttonsStyling: false
+      },
+      function(isConfirm){
+        if (isConfirm) {                                      	
+          window.location ="administrator.php?id=3";
+        } else {
+          window.location ="administrator.php";
+        }
+      });
+    });
+  </script>             
+<?php 
+    session_destroy();
+  }  
+?>
+<?php 
+  if(isset($_SESSION['del'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function() { 
+      swal({
+        title: "Category Deleted",
+        text: "Do you want to delete another one?",
+        type: "success",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        confirmButtonText: "OK!",
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        buttonsStyling: false
+      },
+      function(isConfirm){
+        if (isConfirm) {                                      	
+          window.location ="administrator.php?id=4";
+        } else {
+          window.location ="administrator.php";
+        }
+      });
+    });
+  </script>
+<?php 
+    session_destroy();
+  }  
+?>
+<?php
+  if(isset($_SESSION['pass_disciplinary_edit'])) {
+?>
+  <script type="text/javascript"> 
+    $(document).ready(function() {  
+      swal({title: "Successful!", text: "disciplinary record edited!!.", type: "success"});
+    });
+  </script>
+<?php
+    session_destroy();
+  }
+?>
+     
+<?php 
+  $sqlid ="SELECT * FROM Users Order BY id DESC";
+  $ret = mysqli_query($db,$sqlid);				                
+  while($found = mysqli_fetch_array($ret)) {
+    $idsx=$found['id'];
+  }
+  $sqluse ="SELECT * FROM Inorg ORDER BY id DESC ";
+  $retrieve = mysqli_query($db,$sqluse);
+  while($foundk = mysqli_fetch_array($retrieve)) {
+    $name = $foundk['name'];
+    $website= $foundk['website'];
+    $phone= $foundk['Phone'];
+    $year= $foundk['year'];
+    $mail= $foundk['email'];
+    $idz= $foundk['id'];
+  }	 
+?>
 
  <div id="Taxreceipted" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -620,31 +598,25 @@ $retrieve = mysqli_query($db,$sqluse);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-                           
+                    
 
-<?php   
+      <?php   
 				$sqln ="SELECT * FROM Inorg ";
-                     $rgetb = mysqli_query($db,$sqln);
-	                   $numb=mysqli_num_rows($rgetb);
-                   if($numb!=0){
-                            while($foundl = mysqli_fetch_array($rgetb))
-	                                     {
-                                              $profile= $foundl['pname'];
-		                                  }
-										echo"<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";	   
-                               }
-							else{
-														     	
-								
-										
-           ?>
-            <h1>
-            	<a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
-            		
-            	</span>MAIN MENU<span class="dashboard_text"></span>
-            	</a>
-           </h1>
-           <?php } ?> 
+        $rgetb = mysqli_query($db,$sqln);
+        $numb=mysqli_num_rows($rgetb);
+        if ($numb!=0) {
+          while($foundl = mysqli_fetch_array($rgetb)) {
+            $profile= $foundl['pname'];
+		      }
+					echo"<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";	   
+        } else {
+			?>
+        <h1>
+          <a class="navbar-brand" href="index.html"><span class="fa fa-area-chart">
+            </span>MAIN MENU<span class="dashboard_text"></span>
+          </a>
+        </h1>
+      <?php } ?> 
 
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -698,27 +670,25 @@ $retrieve = mysqli_query($db,$sqluse);
 								<div class="profile_img">	
 									<span class="prfil-img">
 										<?php   
-										$sql ="SELECT * FROM Profilepictures WHERE ids='$id' && Category='User'";
-                                                $rget = mysqli_query($db,$sql);
-												$num=mysqli_num_rows($rget);
-                                                if($num!=0){
-												                   while($found = mysqli_fetch_array($rget))
-	                                                                {
-                                                                       $profile= $found['name'];
-		                                                            }
-																	echo"<img src='admin/images/$profile' height='50px' width='50px' alt=''>";	   
-												             }
-												        else{
-												           	echo"<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";	   
-														     	
-												             }
-										
+										  $sql ="SELECT * FROM Profilepictures WHERE ids='$id' && Category='User'";
+                      $rget = mysqli_query($db,$sql);
+											$num=mysqli_num_rows($rget);
+                      if($num!=0){
+												while($found = mysqli_fetch_array($rget)) {
+                          $profile= $found['name'];
+		                    }
+                        echo"<img src='admin/images/$profile' height='50px' width='50px' alt=''>";	   
+                      } else {
+                        echo"<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";	   
+                      }
 										?>
-										 </span> 
+                  </span> 
 									<div class="user-name" >
-										<p style="color:#1D809F;"><?php if(isset($sirname))
-                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
-				                         </p>
+										<p style="color:#1D809F;">
+                      <?php if(isset($sirname)) {
+                        echo"<strong>".$firstname." ".$sirname."! </strong>";
+                      } ?>
+				            </p>
 										<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
 										</span>
 									</div>
@@ -728,9 +698,9 @@ $retrieve = mysqli_query($db,$sqluse);
 								</div>	
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								 <li>
-                                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
-                                 </li>
+								<li>
+                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
+                </li>
 								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
@@ -758,62 +728,53 @@ $retrieve = mysqli_query($db,$sqluse);
 					
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
-            <tr>
-				
-            	<th>EMP NO</th>
-                <th>EMP NAME</th>
-                <th>DISCIPLINARY TYPE</th>
-                <th>DATE COMMITED</th>              
-                <th>DATE DISCUSSED</th>
-                <th>DESCRIPTION</th>
-				<th>ACTION TAKEN</th>          
-                <th>PRINT</th>
-                <th>EDIT</th>
-                <th>DELETE</th>
-            </tr>
+          <tr>
+            <th>EMP NO</th>
+            <th>EMP NAME</th>
+            <th>DISCIPLINARY TYPE</th>
+            <th>DATE COMMITED</th>              
+            <th>DATE DISCUSSED</th>
+            <th>DESCRIPTION</th>
+            <th>ACTION TAKEN</th>          
+            <th>PRINT</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM disciplinary ";
-			       $retrieve = mysqli_query($db,$sqlmember);
-				                    $count=0;
-                     while($found = mysqli_fetch_array($retrieve))
-	                 {
-                   
-
-						  $empno = $found['Emp_No']; $empname = $found['Emp_Name']; $disciplinary_type = $found['Disciplinary_Type'];
+        	<?php   
+            $sqlmember ="SELECT * FROM disciplinary ";
+			      $retrieve = mysqli_query($db,$sqlmember);
+				    $count=0;
+            while($found = mysqli_fetch_array($retrieve)) {
+              $empno = $found['Emp_No']; $empname = $found['Emp_Name']; $disciplinary_type = $found['Disciplinary_Type'];
 						  $date_commited = $found['Date_commited']; $date_discussed = $found['Date_discussed']; $description = $found['Description'];
-						  $action_taken = $found['Action_taken'];$id=$found['id'];
-					    	 
-			      echo"<tr> 
-				           <td>$empno</td>                                       
-                             <td>$empname</td>        	
-                             <td>$disciplinary_type</td>
-                             <td>$date_commited</td>
-							 <td>$date_discussed</td>
-							 <td>$description</td>
-                             <td>$action_taken</td>
-			                   
-			               
-			                 <td>
-			                   <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$empno'   data-if='$empname' data-ig='$disciplinary_type' data-ih='$date_commited' data-ij='$date_discussed' data-ik='$description'  data-il='$action_taken' class='open-disciplinary_edit btn  btn-info' title='edit user details' href='#disciplinary_edit'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                  <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-						
-			                 </td>			 
-                             </tr>"; 
-					 
-					 } 
-		
-		           	?>
-            </tbody>
+						  $action_taken = $found['Action_taken'];$id=$found['id'];	 
+			        
+              echo"<tr> 
+				        <td>$empno</td>                                       
+                <td>$empname</td>        	
+                <td>$disciplinary_type</td>
+                <td>$date_commited</td>
+							  <td>$date_discussed</td>
+							  <td>$description</td>
+                <td>$action_taken</td>
+			          <td>
+                  <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                </td>
+			          <td>
+			            <a data-toggle='modal' data-id='$id' data-ie='$empno'   data-if='$empname' data-ig='$disciplinary_type' data-ih='$date_commited' data-ij='$date_discussed' data-ik='$description'  data-il='$action_taken' class='open-disciplinary_edit btn  btn-info' title='edit user details' href='#disciplinary_edit'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+							  </td>				                 
+			          <td>
+			            <a data-id='$id'  class='open-Delete_disciplinary btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+                </td>			 
+              </tr>";
+					  } 
+          ?>
+        </tbody>
         
     </table>
-             <button id="clear-all-button">Clear All Filters</button>
+      <button id="clear-all-button">Clear All Filters</button>
                            
 				        </div>
 		
@@ -829,25 +790,21 @@ $retrieve = mysqli_query($db,$sqluse);
 	<!--footer-->
 
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
-	
-			</p>		
+	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com </p>		
 	</div>
     <!--//footer-->
 	</div>
 		
 	<!-- new added graphs chart js-->
+  <script src="admin/js/Chart.bundle.js"></script>
+  <script src="admin/js/utils.js"></script>
 	
-    <script src="admin/js/Chart.bundle.js"></script>
-    <script src="admin/js/utils.js"></script>
-	
-		
 	<!-- Classie --><!-- for toggle left push menu script -->
 		<script src="admin/js/classie.js"></script>
 		<script>
 			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				showLeftPush = document.getElementById( 'showLeftPush' ),
-				body = document.body;
+      showLeftPush = document.getElementById( 'showLeftPush' ),
+      body = document.body;
 				
 			showLeftPush.onclick = function() {
 				classie.toggle( this, 'active' );
@@ -856,7 +813,6 @@ $retrieve = mysqli_query($db,$sqluse);
 				disableOther( 'showLeftPush' );
 			};
 			
-
 			function disableOther( button ) {
 				if( button !== 'showLeftPush' ) {
 					classie.toggle( showLeftPush, 'disabled' );
@@ -873,13 +829,13 @@ $retrieve = mysqli_query($db,$sqluse);
 	<!-- side nav js -->
 	<script src='admin/js/SidebarNav.min.js' type='text/javascript'></script>
 	<script>
-      $('.sidebar-menu').SidebarNav()
-    </script>
+    $('.sidebar-menu').SidebarNav()
+  </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+  <script src="admin/js/bootstrap.js""> </script>
 	<!-- //Bootstrap Core JavaScript -->
-	 	<script src="css/bootstrap-dropdownhover.js"></script>
+	<script src="css/bootstrap-dropdownhover.js"></script>
 	
 </body>
 </html>
