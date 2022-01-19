@@ -565,12 +565,13 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
       </div>
       </div>
        </form>
   </div>
   </div>
+
   
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -657,17 +658,20 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="header">
               	 <h4>Administrator</h4>
               </li>
+
               <li class="treeview">
                 <a href="admin.php">
                 <i class="fa fa-tv"></i> <span>Control Panel</span>
                 </a>
               </li>
+
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
                 <span>Initialisation</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
+
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#Initialisation' class='open-Initial'><i class="fa fa-plus"></i>Add System Info</a></li>
                   <li><a data-toggle='modal' data-id='' href='#Initialisation2' class='open-Initial2'><i class="fa fa-minus"></i>Edit System Info</a></li>
@@ -679,7 +683,7 @@ $retrieve = mysqli_query($db,$sqluse);
          
               </li>
               <li class="treeview">
-              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
+              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk Registration</a>
                </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
@@ -693,7 +697,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Accident History</a></li>
-                  <li><a href='accident_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & Accident info</a></li>
+                  <li><a href='accident_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff & Accident Info.</a></li>
                 </ul>
               </li>
 
