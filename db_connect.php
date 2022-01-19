@@ -55,6 +55,10 @@
                                   Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(id) )";
                          $db->query($stable56); 
+
+
+
+                         //group tables
         $stable56="CREATE TABLE IF NOT EXISTS opras (Emp_No int(11) NOT NULL auto_increment,
                         
                          Emp_Name varchar(300)NOT NULL,
