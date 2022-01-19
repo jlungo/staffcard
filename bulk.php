@@ -387,7 +387,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Bulk registration upload from Excel</th>
+                <th>Bulk registration (Upload from Excel)</th>
                              
                 <th>&nbsp;</th>
                  

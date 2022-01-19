@@ -1,6 +1,9 @@
 <?php 
 session_start();
-include("db_connect.php");
+include_once('../db_connect.php');
+   
+   $result = mysqli_query($db, "select * from Impreset_Information" );
+
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	
@@ -28,7 +31,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>admin</title>
+<title>Impreset Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -36,42 +39,42 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <!-- Bootstrap Core CSS -->
-<link href="admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom CSS -->
-<link href="admin/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../admin/css/style.css" rel='stylesheet' type='text/css' />
 
 <!-- font-awesome icons CSS -->
-<link href="admin/css/font-awesome.css" rel="stylesheet"> 
+<link href="../admin/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons CSS-->
 
 <!-- side nav css file -->
-<link href='admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
+<link href='../admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
 <!-- //side nav css file -->
  
  <!-- js-->
-<script src="admin/js/jquery-1.11.1.min.js"></script>
-<script src="admin/js/modernizr.custom.js"></script>
+<script src="../admin/js/jquery-1.11.1.min.js"></script>
+<script src="../admin/js/modernizr.custom.js"></script>
 
 <!--webfonts-->
 <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 <!--//webfonts--> 
 
 <!-- chart -->
-<script src="admin/js/Chart.js"></script>
+<script src="../admin/js/Chart.js"></script>
 <!-- //chart -->
 
 <!-- Metis Menu -->
-<script src="admin/js/metisMenu.min.js"></script>
-<script src="admin/js/custom.js"></script>
-<link href="admin/css/custom.css" rel="stylesheet">
+<script src="../admin/js/metisMenu.min.js"></script>
+<script src="../admin/js/custom.js"></script>
+<link href="../admin/css/custom.css" rel="stylesheet">
 <!--//Metis Menu -->
- <script src="script/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="script/sweetalert.css">
+ <script src="../script/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../script/sweetalert.css">
  
- <!-- <script src="jquery.js"></script> -->    
-<link href="css/animate.min.css" rel="stylesheet"/>   
-      <link rel="stylesheet" href="css/bootstrap-dropdownhover.css">
+ <!-- <script src="../jquery.js"></script> -->    
+<link href="../css/animate.min.css" rel="stylesheet"/>   
+      <link rel="stylesheet" href="../css/bootstrap-dropdownhover.css">
 
    
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
@@ -162,8 +165,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
        
        
      $(".modal-title #oldname").val(myTitle);
-       $(".modal-body #oldname").val(myTitle);
-       $(".modal-body #oldpass").val(mykm);
+     $(".modal-body #oldname").val(myTitle);
+     $(".modal-body #oldpass").val(mykm);
      $(".modal-body #ss").val(myp);     
      $(".modal-body #bb").val(mym);
      $(".modal-body #cc").val(myn);
@@ -388,9 +391,7 @@ $retrieve = mysqli_query($db,$sqluse);
              
         	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
             
-        	      <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;
-                Firstname:<label style="color: red;font-size:20px;">*</label>
-                <input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
+        	      <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;Firstname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mfname" id='oldname'></span></p>
         	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Sirname:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="msname" id='ss'></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">Department:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="minstitution"  id='cc'></span></p>
         	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mrank" id='dd'></span></p>
@@ -486,6 +487,107 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
        </form>
   </div>
+  </div>
+
+  <div id="add_promotion" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD PROMOTION INFORMATION
+        	</center></h4>
+      </div>
+      	<form method="post" action="../process.php" enctype='multipart/form-data'>        		
+
+      <div class="modal-body" >       	
+      	<center> 
+        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;
+            <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
+            <input style="width:270px;" type="text" name="emp_no" ></span></p><br>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
+              <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
+        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <label for="job_desc" style="color: red;font-size:20px;">Job description:*</label><br>
+            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+               <label for ="current_rank" style="color: red;font-size:20px;">Current rank:*</label><br>
+               <input style="width:270px;" type="text" name="current_rank" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label for="new_rank" style="color: red;font-size:20px;">New promotion rank:*</label><br>
+               <input style="width:270px;" type="text" name="new_rank" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label for="date_promoted" style="color: red;font-size:20px;">Date promoted:*</label><br>
+               <input style="width:270px;" type="date" name="date_promoted" ></span></p><br>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label style="color: red;font-size:20px;">Highest education Level:*</label><br>
+               <input style="width:270px;" type="text" name="high_ed" ></span></p><br>
+                                   	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div>
+
+  <div id="add_impreset" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        	ADD IMPRESET INFORMATION
+        	</center></h4>
+      </div>
+      	<form method="post" action="../impreset_process.php" enctype='multipart/form-data'>        		
+
+      <div class="modal-body" >       	
+      	<center> 
+              <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;
+              <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
+              <input style="width:270px;" type="text" name="Emp_No" ></span></p><br>
+
+        	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
+              <input style="width:270px;" type="text" name="Emp_Name" ></span></p><br>
+
+              <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              <label for="job_desc" style="color: red;font-size:20px;">Impreset Purpose:*</label><br>
+              <input style="width:270px;" type="text" name="Impreset_purpose" ></span></p><br>
+
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
+               <label for ="current_rank" style="color: red;font-size:20px;">Impreset Amount:*</label><br>
+               <input style="width:270px;" type="text" name="Impreset_amount" ></span></p><br>
+
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label for="date_promoted" style="color: red;font-size:20px;">Date of Impreset:*</label><br>
+               <input style="width:270px;" type="date" name="Impreset_date" ></span></p><br>
+
+               <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label for="date_promoted" style="color: red;font-size:20px;">Date of Retirement:*</label><br>
+               <input style="width:270px;" type="date" name="Expected_date_of_retirement" ></span></p><br>
+
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
+               <label style="color: red;font-size:20px;">Retirement Amount:*</label><br>
+               <input style="width:270px;" type="text" name="Retirement_amount" ></span></p><br>
+              
+              <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+         </center>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
   </div> 
   
   <div id="Initialisation" class="modal fade" role="dialog">
@@ -519,8 +621,8 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
-
-  <div id="add_promotion" class="modal fade" role="dialog">
+  <!--created a modal for add pension  -->
+  <div id="add_pension" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
@@ -530,97 +632,29 @@ $retrieve = mysqli_query($db,$sqluse);
         	ADD PROMOTION INFORMATION
         	</center></h4>
       </div>
-      	<form method="post" action="process.php" enctype='multipart/form-data'>        		
+      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;
-            <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
-            <input style="width:270px;" type="text" name="emp_no" ></span></p><br>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
-              <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
-        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Job description:*</label><br>
-            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Current rank:*</label><br>
-               <input style="width:270px;" type="text" name="current_rank" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">New promotion rank:*</label><br>
-               <input style="width:270px;" type="text" name="new_rank" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Date promoted:*</label><br>
-               <input style="width:270px;" type="date" name="date_promoted" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Highest education Level:*</label><br>
-               <input style="width:270px;" type="text" name="high_ed" ></span></p><br>
+        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ptype"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pnumber"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="regdate"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mon_contribution"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="curr_balance"></span></p>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="save"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="orginitial"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
        </form>
   </div>
   </div>
-
-  <div id="add_impreset" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
-      <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	ADD IMPRESET INFORMATION
-        	</center></h4>
-      </div>
-      	<form method="post" action="impreset_process.php" enctype='multipart/form-data'>        		
-
-      <div class="modal-body" >       	
-      	<center> 
-              <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;
-              <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
-              <input style="width:270px;" type="text" name="Emp_No" ></span></p><br>
-
-        	    <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
-              <input style="width:270px;" type="text" name="Emp_Name" ></span></p><br>
-
-              <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <label for="job_desc" style="color: red;font-size:20px;">Impreset Purpose:*</label><br>
-              <input style="width:270px;" type="text" name="Impreset_purpose" ></span></p><br>
-
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Impreset Amount (TZS):*</label><br>
-               <input style="width:270px;" type="text" name="Impreset_amount" ></span></p><br>
-
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Date of Impreset:*</label><br>
-               <input style="width:270px;" type="date" name="Impreset_date" ></span></p><br>
-
-               <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Date of Retirement:*</label><br>
-               <input style="width:270px;" type="date" name="Expected_date_of_retirement" ></span></p><br>
-
-        	     <p style="margin-bottom:10px;"><span style="font-size: 20px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Retirement Amount (TZS):*</label><br>
-               <input style="width:270px;" type="text" name="Retirement_amount" ></span></p><br>
-              
-              <input type="hidden" name="page" value="admin.php"/>                                                        	      		
-         </center>
-      </div>
-      <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-       </form>
-  </div>
-  </div>
-  
+ 
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -714,7 +748,7 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Initialization</span>
+                <span>Initialisation</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -733,7 +767,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     
+                     <!--menu for pension informartion -->
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -742,7 +776,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Promotion</a></li>
-                  <li><a href='promotion_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Promotion Report</a></li>
+                  <li><a href='../promotion_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Promotion Report</a></li>
                 </ul>
               </li>
 
@@ -753,7 +787,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 </a>
                 <ul class="treeview-menu">
                   <li><a data-toggle='modal' data-id='' href='#add_impreset' class='open-Initial'><i class="fa fa-plus"></i>Add Impreset</a></li>
-                  <li><a href='impreset/impreset_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Impreset Report</a></li>
+                  <li><a href='impreset_report.php' class='open-Initial2'><i class="fa fa-minus"></i>Impreset Report</a></li>
                 </ul>
               </li>
 
@@ -795,10 +829,10 @@ $retrieve = mysqli_query($db,$sqluse);
 	                                                                {
                                                                        $profile= $found['name'];
 		                                                            }
-																	echo"<img src='admin/images/$profile' height='50px' width='50px' alt=''>";	   
+																	echo"<img src='../admin/images/$profile' height='50px' width='50px' alt=''>";	   
 												             }
 												        else{
-												           	echo"<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";	   
+												           	echo"<img src='../admin/images/profile.png' height='50px' width='50px' alt=''>";	   
 														     	
 												             }
 										
@@ -808,7 +842,7 @@ $retrieve = mysqli_query($db,$sqluse);
 										<p style="color:#1D809F;"><?php if(isset($sirname))
                                             {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
 				                         </p>
-										<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
+										<span>Administrator&nbsp;<img src='../admin/images/dot.png' height='15px' width='15px' alt=''>
 										</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
@@ -820,7 +854,7 @@ $retrieve = mysqli_query($db,$sqluse);
 								 <li>
                                   <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
                                  </li>
-								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Log Out</a> </li>
+								<li> <a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
 					</ul>
@@ -843,7 +877,7 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Promotion Information</h4>
+						<h4 class="title">Users</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
                              <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
@@ -852,52 +886,36 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	
-
-                <th>Employee Number</th>
-                <th>Employee Name</th>
-                <th>Job Description</th>              
-                <th>Current Rank</th>
-                <th>New Promotion Rank</th>           
-                <th>Date Promoted</th>
-                <th>Highest Education Level</th>
-                
+            
+             <th> Emp No </th>
+             <th> Emp Name </th>
+             <th> Impreset Purpose </th>
+             <th> Impreset Amount (TZS) </th>
+             <th> Impreset Date </th>
+             <th> Date of Retirement </th>
+             <th> Retirement Amount (TZS) </th> 
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ";
-			       $retrieve = mysqli_query($db,$sqlmember);
-				                    $count=0;
-                     while($found = mysqli_fetch_array($retrieve))
-	                 {
-                       $title=$found['Mtitle'];$firstname=$found['Firstname'];$sirname=$found['Sirname'];$rank=$found['Rank'];
-                       $id=$found['id'];$dept=$found['Department'];$contact=$found['Email'];
-			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
-			              $names=$firstname." ".$sirname;
-					    	 
-			      echo"<tr>    <td>$id</td>                                       
-                             <td>$title $firstname $sirname</td>        	
-                             <td>$pass</td>
-                             <td>$contact</td>
-                             
-			                 <td>$dept</td>
-			                 <td>$rank</td>
-			                 <td>
-			                   <a  href='card.php?id=$id' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
-                              </td>
-			                 <td>
-			                   <a data-toggle='modal' data-id='$id' data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$contact' data-ik='$pass' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
-							 
-			                 </td>				                 
-			                 <td>
-			                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-							 
-			                 </td>			 
-                             </tr>"; 
-					 
-					 } 
-		
-		           	?>
+        <?php
+      $i=0;
+      while ($rows = mysqli_fetch_assoc($result))
+
+      {
+?>
+  <tr>
+    <th><?php echo $rows["Emp_No"]; ?></th>
+    <th><?php echo $rows["Emp_Name"]; ?></th>
+    <th><?php echo $rows["Impreset_purpose"]; ?></th>
+    <th><?php echo $rows["Impreset_amount"]; ?></th>
+    <th><?php echo $rows["Impreset_date"]; ?></th>
+    <th><?php echo $rows["Expected_date_of_retirement"]; ?></th>
+    <th><?php echo $rows["Retirement_amount"]; ?></th>
+  </tr>
+<?php
+    $i++;  
+    }
+?>
             </tbody>
         
     </table>
@@ -913,7 +931,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2022 Copyrights . All Rights Reserved
+	  <p>© 2020 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
 	
 			</p>		
 	</div>
@@ -922,12 +940,12 @@ $retrieve = mysqli_query($db,$sqluse);
 		
 	<!-- new added graphs chart js-->
 	
-    <script src="admin/js/Chart.bundle.js"></script>
-    <script src="admin/js/utils.js"></script>
+    <script src="../admin/js/Chart.bundle.js"></script>
+    <script src="../admin/js/utils.js"></script>
 	
 		
 	<!-- Classie --><!-- for toggle left push menu script -->
-		<script src="admin/js/classie.js"></script>
+		<script src="../admin/js/classie.js"></script>
 		<script>
 			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				showLeftPush = document.getElementById( 'showLeftPush' ),
@@ -950,20 +968,20 @@ $retrieve = mysqli_query($db,$sqluse);
 	<!-- //Classie --><!-- //for toggle left push menu script -->
 		
 	<!--scrolling js-->
-	<script src="admin/js/jquery.nicescroll.js"></script>
-	<script src="admin/js/scripts.js"></script>
+	<script src="../admin/js/jquery.nicescroll.js"></script>
+	<script src="../admin/js/scripts.js"></script>
 	<!--//scrolling js-->
 	
 	<!-- side nav js -->
-	<script src='admin/js/SidebarNav.min.js' type='text/javascript'></script>
+	<script src='../admin/js/SidebarNav.min.js' type='text/javascript'></script>
 	<script>
       $('.sidebar-menu').SidebarNav()
     </script>
 		
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js"> </script>
+   <script src="../admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
-	 	<script src="css/bootstrap-dropdownhover.js"></script>
+	 	<script src="../css/bootstrap-dropdownhover.js"></script>
 	
 </body>
 </html>

@@ -2,7 +2,7 @@
 session_start();
 include_once('db_connect.php');
    
-   $result = mysqli_query($db, "select * from bankinfo" );
+   $result = mysqli_query($db, "select * from staffis" );
 
 
 if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
@@ -31,7 +31,7 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>List of Staff Bank Accounts</title>
+<title>Safari Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -521,30 +521,32 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div>
   <!--created a modal for add pension  -->
-  <div id="add_bankinfo" class="modal fade" role="dialog">
+  <div id="add_pension" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	Add Bank Information
+        	ADD SAFARI INFORMATION
         	</center></h4>
       </div>
-      	<form method="post" action="process.php" enctype='multipart/form-data'>        		
+      	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no"></span></p>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Bank Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_name"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Bank Branch Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_branchname"></span></p>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Bank Account Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="bank_accountnumber"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="ptype"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pnumber"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="regdate"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="mon_contribution"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="curr_balance"></span></p>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Submit" id="addmember" name="orginitial"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -668,12 +670,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Bank Information</span>
+                <span>safari Information</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_bankinfo' class='open-Initial'><i class="fa fa-plus"></i>Add Bank Information</a></li>
-                  <li><a href='bankinformation_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of Staff Bank Accounts</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_safari' class='open-Initial'><i class="fa fa-plus"></i>Add safari</a></li>
+                  <li><a href='safari_report.php' class='open-Initial2'><i class="fa fa-minus"></i>safari Report</a></li>
                 </ul>
               </li>
 
@@ -763,21 +765,23 @@ $retrieve = mysqli_query($db,$sqluse);
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
-						<h4 class="title">Bank Information</h4>
+						<h4 class="title">safari report</h4>
 					<!-- start content_slider -->
 				<div class="alert alert-info">
-                             <i class="fa fa-envelope"></i>&nbsp;This screen displays 50 records use the search box to spool more records
+                             <i class="fa fa-envelope"></i>&nbsp;This screen displays  staff safari records, use the search box to spool more records
                          </div>
 					
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
             
-             <th> Emp No </th>
-             <th> Emp Name </th>
-             <th> Bank Name </th>
-             <th> Bank Branch Name </th>
-             <th> Bank Account Number </th>
+             <th> Employee No </th>
+             <th> Employee Name </th>
+             <th> Safari start date </th>
+             <th> Safari return date </th>
+             <th> Purpose of safari </th>
+             <th> Authorisation status </th>
+             <th> Safari source of fund </th> 
             </tr>
         </thead>
         <tbody>
@@ -790,9 +794,11 @@ $retrieve = mysqli_query($db,$sqluse);
   <tr>
     <th><?php echo $rows["emp_no"]; ?></th>
     <th><?php echo $rows["emp_name"]; ?></th>
-    <th><?php echo $rows["bank_name"]; ?></th>
-    <th><?php echo $rows["bank_branchname"]; ?></th>
-    <th><?php echo $rows["bank_accountnumber"]; ?></th>
+    <th><?php echo $rows["safari_start_date"]; ?></th>
+    <th><?php echo $rows["return_date"]; ?></th>
+    <th><?php echo $rows["purpose_safari"]; ?></th>
+    <th><?php echo $rows["authorisation_status"]; ?></th>
+    <th><?php echo $rows["source_fund"]; ?></th>
   </tr>
 <?php
     $i++;  

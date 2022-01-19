@@ -188,7 +188,7 @@ if(isset($_POST['addmember']))
                      {
                      	if( move_uploaded_file ($receipttmpName, 'admin/images/'.$receiptName)){//image is a folder in which you will save documents
                             $queryz = "UPDATE Profilepictures SET name='$receiptName',size='$receiptSize',type='$receiptType',content='$receiptName',Category='$protocol' WHERE ids='$id' ";
-                                  $db->query($queryz) or die('Errorr, query failed to upload');	
+                                  $db->query($queryz) or die('Error, query failed to upload!');	
 									    //$_SESSION['update']="yes";
 										if($protocol=="Administrator"){
 									                                     header("Location:$pages");
@@ -219,11 +219,11 @@ if(isset($_POST['addmember']))
 
  if(isset($_POST['orginitial'])){         
 	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 	           $pagez= mysqli_real_escape_string($db,$_POST["page"]);
 	             $orgName = $_FILES['filed']['name'];
                  $orgtmpName = $_FILES['filed']['tmp_name'];
@@ -234,7 +234,7 @@ if(isset($_POST['addmember']))
 		  $sqln="SELECT * FROM Inorg  WHERE name='$orgname' && website='$orgwebsite'";
                    $resultn=mysqli_query($db,$sqln);                    
                          if($rowcount=mysqli_num_rows($resultn)==0)
-                         {                 //$date= date("d.m.y");
+                         {                 
                          
                                   move_uploaded_file ($orgtmpName, 'media/'.$orgName);
                              	 $enter="INSERT INTO Inorg (name,website,year,email,Phone,pname,size,content,type) 
@@ -247,7 +247,7 @@ if(isset($_POST['addmember']))
 								                             
                          }
                       else{
-                      	     	 	echo"Contents arleady exists"; 
+                      	     	 	echo"Contents arleady exists, please fill another!"; 
 						        //exit;  
 					      }                
                      }                
@@ -255,11 +255,11 @@ if(isset($_POST['addmember']))
  
  if(isset($_POST['orgupdate'])){         
 	           
-			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);	//Email variable
-			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);	        //password variable
-              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);       //institution variable
-			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);      //phone variable
-	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);//Firstname variable
+			  $orgname = mysqli_real_escape_string($db,$_POST["orgname"]);
+			  $orgphone =mysqli_real_escape_string($db,$_POST["orgphone"]);
+              $orgmail = mysqli_real_escape_string($db,$_POST["orgemail"]);
+			  $orgwebsite = mysqli_real_escape_string($db,$_POST["orgwebsite"]);
+	          $year= mysqli_real_escape_string($db,$_POST["orgyear"]);
 			$pagez= mysqli_real_escape_string($db,$_POST["page"]);   
 		    $idz= mysqli_real_escape_string($db,$_POST["pageid"]);   
 				  
@@ -282,8 +282,7 @@ if(isset($_POST['addmember']))
 								                             
                          }
                       else{
-                      	     	 	echo"Contents arleady exists"; 
-						        //exit;  
+                      	     	 	echo"Contents arleady exists, please fill another!"; 
 					      }                
                      }                
                  
@@ -318,7 +317,7 @@ if(isset($_POST['addmember']))
                           header("Location:bulk.php");
 			            }				    
 					else{
-				          echo "Sorry! There is some problem.";
+				          echo "Sorry! There is some problem, please try again!";
 			            }
 
 	}
