@@ -688,7 +688,7 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
-                     
+                    <!-- workplace accident info system menu in the side panel -->
                <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
