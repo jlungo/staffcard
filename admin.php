@@ -49,7 +49,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <link href='admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
 <!-- //side nav css file -->
  
- <!-- js-->
+ <!-- javascript-->
 <script src="admin/js/jquery-1.11.1.min.js"></script>
 <script src="admin/js/modernizr.custom.js"></script>
 
