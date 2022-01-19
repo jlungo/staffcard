@@ -305,6 +305,41 @@ if (isset($_POST['add_deduction'])) {
 	}
 }
 
+if (isset($_POST['edit_deduction'])) {
+	if ($_POST['deduction_namex'] != '' && $_POST['deduction_descriptionx'] != '' && $_POST['deduction_amountx'] != '' && $_POST['deduction_percentagex'] != '') {
+		$deduction_name = mysqli_real_escape_string($db, $_POST['deduction_namex']);
+		$deduction_description = mysqli_real_escape_string($db, $_POST['deduction_descriptionx']);
+		$deduction_amount = mysqli_real_escape_string($db, $_POST['deduction_amountx']);
+		$deduction_percentage = mysqli_real_escape_string($db, $_POST['deduction_percentagex']);
+		$deduction_id = mysqli_real_escape_string($db, $_POST['deduction_id']);
+
+		$query = "UPDATE deduction SET title='$deduction_name', description='$deduction_description', amount='$deduction_amount', percentage='$deduction_percentage' WHERE id='$deduction_id'";
+		$db->query($query) or die('Error1, query failed');
+
+		$memberadd = "tyy";
+		$_SESSION['memberadded'] = $memberadd;
+		header("Location: deductions.php");  //member added successfully
+	} else {
+		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
+		header("Location: deductions.php");
+	}
+}
+
+if (isset($_POST['delete_deduction'])) {
+	if ($_POST['deduction_idxx'] != '') {
+		$deduction_id = mysqli_real_escape_string($db, $_POST['deduction_idxx']);
+		$query = "DELETE FROM deduction WHERE id='$deduction_id'";
+		$db->query($query) or die('Error1, query failed');
+
+		$memberadd = "tyy";
+		$_SESSION['memberadded'] = $memberadd;
+		header("Location: deductions.php");  //member added successfully
+	} else {
+		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";
+		header("Location: deductions.php");
+	}
+}
+
 
 if (isset($_POST['add_staff_deduction'])) {
 	if ($_POST['employee_number'] != '' && $_POST['deduction_type'] != '' && $_POST['total_repayment']) {

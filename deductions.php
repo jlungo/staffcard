@@ -892,6 +892,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 									$retrieve = mysqli_query($db, $sqlmember);
 									$count = 1;
 									while ($found = mysqli_fetch_array($retrieve)) {
+										$id = $found['id'];
 										$title = $found['title'];
 										$description = $found['description'];
 										$amount = $found['amount'];
@@ -902,17 +903,72 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 											<td>$description</td><td>$amount</td>
 											<td>$percentage</td>
 											<td>
-												
+												<button class='btn btn-primary' data-toggle='modal' data-target='#edit_deduction_$id'>
+												<i class='fa fa-edit'></i></button>
 											</td>
 											<td>
-												
-											</td>
-											<td>
-												
-											</td></tr>";
-										$count++;
-									}
-									?>
+												<form action='upload.php' onsubmit='delete_deduction()' method='post'>
+													<input type='hidden' name='deduction_idxx' value='$id' />
+													<button class='btn btn-danger' type='submit' name='delete_deduction'><i class='fa fa-trash'></i></button>
+												</form>
+										</td>
+										</tr>";
+										$count++; ?>
+										<div id="edit_deduction_<?php echo $id; ?>" class="modal fade" role="dialog">
+											<div class="modal-dialog">
+												<!-- Modal content-->
+												<div class="modal-content"
+													style="font-size: 14px; font-family: Times New Roman;color:black;">
+													<div class="modal-header" style="background:#222d32">
+														<button type="button" class="close"
+															data-dismiss="modal">&times;</button>
+														<h4 class="modal-title"
+															style="font-weight: bold;color: #F0F0F0">
+															<center>
+																Edit Deduction
+															</center>
+														</h4>
+													</div>
+													<form action="upload.php" method="POST">
+														<input type="hidden" name="deduction_id"
+															value='<?php echo $id; ?>' />
+														<div class="modal-body">
+															<div class="input-group" style="margin-bottom:10px">
+																<span class="input-group-addon">Deduction Name</span>
+																<input type="text" class="form-control"
+																	value="<?php echo $title; ?>"
+																	name="deduction_namex">
+															</div>
+															<div class="input-group" style="margin-bottom:10px">
+																<span class="input-group-addon">Description</span>
+																<textarea class="form-control"
+																	name="deduction_descriptionx">
+																<?php echo $description; ?>
+																</textarea>
+															</div>
+															<div class="input-group" style="margin-bottom:10px">
+																<span class="input-group-addon">Amount</span>
+																<input type="number" class="form-control"
+																	value="<?php echo $amount; ?>"
+																	name="deduction_amountx">
+															</div>
+															<div class="input-group" style="margin-bottom:10px">
+																<span class="input-group-addon">Percentage</span>
+																<input type="number" class="form-control"
+																	value="<?php echo $percentage; ?>"
+																	name="deduction_percentagex">
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="submit" class="btn btn-success" value="Submit"
+																name="edit_deduction">
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<?php
+									} ?>
 									</tbody>
 								</table>
 							</div>
