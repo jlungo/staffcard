@@ -663,7 +663,9 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 	<body class="cbp-spmenu-push">
 		<div class="main-content">
 			<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+
 				<!--left-fixed -navigation-->
+        
 				<aside class="sidebar-left">
 					<nav class="navbar navbar-inverse">
 						<div class="navbar-header">
