@@ -685,12 +685,12 @@ $retrieve = mysqli_query($db,$sqluse);
                <li class="treeview"> 
                 <a href="#">
                 <i class="fa fa-cog"></i>
-                <span>Work ACCIDENT History</span>
+                <span>Work Accident History</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add ACCIDENT History</a></li>
-                  <li><a href='ACCIDENT_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & ACCIDENT info</a></li>
+                  <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i class="fa fa-plus"></i>Add Accident History</a></li>
+                  <li><a href='ACCIDENT_report.php' class='open-Initial2'><i class="fa fa-minus"></i>List of staff & Accident info</a></li>
                 </ul>
               </li>
 
