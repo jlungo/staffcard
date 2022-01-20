@@ -136,15 +136,15 @@ include("db_connect.php");
                
           }
 
- if(isset($_POST['pensions'])){ 	
+ if(isset($_POST['pension'])){ 	
 	
-	 $tutor=$_POST['pensions'];
- 	 $querry="SELECT * FROM pensions WHERE id='$tutor' ";
+	 $tutor=$_POST['pension'];
+ 	 $querry="SELECT * FROM pension WHERE id='$tutor' ";
                      $results=mysqli_query($db,$querry);
                     $checks=mysqli_num_rows($results);
                      if($checks!=0)
                      {
-      	 	                  $querry="DELETE FROM pensions WHERE id='$tutor'";
+      	 	                  $querry="DELETE FROM pension WHERE id='$tutor'";
                               $results=mysqli_query($db,$querry);
                                echo"ok"; 
 				      }

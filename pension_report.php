@@ -28,7 +28,6 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-
 <title>Pension Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -100,7 +99,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         } );
 
       </script>
-<script type="text/javascript"> 
+<script type="text/javascript">
             $(document).on("click", ".open-Delete-pension", function () {
                                   var myValue = $(this).data('id');
                                         swal({
@@ -111,10 +110,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         cancelButtonColor: "red",
                                         confirmButtonColor: "green",
                                         confirmButtonText: "Yes, remove!",
-                                        cancelButtonText: "No, cancel!",
+                                         cancelButtonText: "No, cancel!",
                                         closeOnConfirm: false,
                                         closeOnCancel: false,
-                                        buttonsStyling: false
+                                          buttonsStyling: false
                                         },
                      function(isConfirm){
                                       if (isConfirm) {
@@ -380,20 +379,26 @@ $retrieve = mysqli_query($db,$sqluse);
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        EDIT PENSION INFORMATION
+        <h4 class="modal-title" style="font-family: Times New Roman;color:#F0F0F0;"><center>
+                   Edit details of <input style="border: none;background:#222d32" type="text" id="oldname" value="" readonly="readonly" />
+
         	</center></h4>
       </div>
-      <form method="post" action="upload.php" enctype='multipart/form-data'>        		
       <div class="modal-body" >
         <center>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldname'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='ss'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_number"  id='cc'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_type" id='dd'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="registered_date" id='bb'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="monthly_contribution" id='bb'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="current_balance" id='bb'></span></p>
+
+        	<form method="post" action="insert_pension.php" enctype='multipart/form-data'>
+
+        	      <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Emp NO:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Emp_No" id='oldname'></span></p>
+        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Emp_Name" id='ss'></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Type"  id='cc'></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Number" id='dd'></span></p>
+							 <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="Registered_Date"></span></p>
+        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Monthly_Contribution" id='bb'></span></p>
+        	     <p ><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp; &nbsp;&nbsp;Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Current_Balance" id='oldpass'></span></p>
+
+                <input type="hidden" name="page" id="staffid"/>
+
         </center>
 
       </div>
@@ -527,15 +532,15 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       	<form method="post" action="insert_pension.php" enctype='multipart/form-data'>
 
-      <div class="modal-body" >       	
-      <center> 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee No.:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_no"></span></p>
-        	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_name"></span></p>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_type"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_number"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="registered_date"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="monthly_contribution"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="current_balance"></span></p>
+      <div class="modal-body" >
+      <center>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="Emp_No"></span></p>
+        	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="Emp_Name"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Type"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Pension_Number"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="Registered_Date"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Monthly_Contribution"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="Current_Balance"></span></p>
       </center>
       </div>
       <div class="modal-footer">
@@ -765,7 +770,7 @@ $retrieve = mysqli_query($db,$sqluse);
                          </div>
 
 					     <table id="example" class="display nowrap" style="width:100%">
-        <thead>
+               <thead>
             <tr>
             	<th>EMP NO.</th>
               <th>EMP NAME</th>
@@ -779,38 +784,38 @@ $retrieve = mysqli_query($db,$sqluse);
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM pensions ";
+        	 <?php   $sqlmember ="SELECT * FROM pension ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                        $id = $found['emp_no'];
-                        $emp_no=$found['emp_no'];
-                        $emp_name=$found['emp_name'];
-                        $pension_number=$found['pension_number'];
-                        $pension_type=$found['pension_type'];
-                        $registered_date=$found['registered_date'];
-                        $monthly_contribution=$found['monthly_contribution'];
-                        $current_balance=$found['current_balance'];
-					    	 
-			      echo"<tr>    
-                    <td>$emp_no</td>                                       
-                    <td>$emp_name</td>        	
-                    <td>$pension_type</td>
-                    <td>$pension_number</td>
-                    <td>$registered_date</td>
-                    <td>$monthly_contribution</td>
-                    <td>$current_balance</td>
+                      $id = $found['id'];
+                        $Emp_No=$found['Emp_No'];
+                        $Emp_Name=$found['Emp_Name'];
+                        $Pension_Number=$found['Pension_Number'];
+                        $Pension_Type=$found['Pension_Type'];
+                        $Registered_Date=$found['Registered_Date'];
+                        $Monthly_Contribution=$found['Monthly_Contribution'];
+                        $Current_Balance=$found['Current_Balance'];
+
+			      echo"<tr>
+                    <td>$Emp_No</td>
+                    <td>$Emp_Name</td>
+                    <td>$Pension_Type</td>
+                    <td>$Pension_Number</td>
+                    <td>$Registered_Date</td>
+                    <td>$Monthly_Contribution</td>
+                    <td>$Current_Balance</td>
                     <td>
                     <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
 			                <a data-id='$id'  class='open-Delete-pension btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-			              </td>			 
-                </tr>"; 
-					 
-					 } 
-		
+			              </td>
+                </tr>";
+
+					 }
+
 		           	?>
             </tbody>
 
@@ -875,7 +880,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </script>
 
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 
