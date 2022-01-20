@@ -1,8 +1,8 @@
 <?php
  
- $db = new mysqli("localhost","root","localpassword");
+ $db = new mysqli("localhost","root","root");
    if($db->connect_errno > 0){
-         die('Unable to connect to database [' . $db->connect_error . ']');  } 
+         die('U-nable to connect to database [' . $db->connect_error . ']');  } 
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");
 	 
