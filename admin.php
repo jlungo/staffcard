@@ -1,7 +1,7 @@
 <?php 
  session_start();
 include("db_connect.php");
-
+//connection  to database
 if(isset($_POST['save']))
 {
     $emp_no =$_POST['emp_no'];
