@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once('db_connect.php');
+include_once('db_connect.php');//fetching db connect
 
 if(isset($_POST['save']))
 {
