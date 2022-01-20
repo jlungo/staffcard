@@ -521,6 +521,8 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
 
   <div id="add_promotion" class="modal fade" role="dialog">
+
+  
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
@@ -811,7 +813,7 @@ $retrieve = mysqli_query($db,$sqluse);
         </thead>
         <tbody>
 
-        <?php   $sqlmember ="SELECT * FROM pension ";
+        <?php   $sqlmember ="SELECT * FROM workplace "; //name of database
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
