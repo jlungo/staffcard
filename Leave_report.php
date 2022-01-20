@@ -557,7 +557,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 
 
         <div class="charts">
-          <div class="mid-content-top charts-grids">
+          <div class="mid-content-top charts-grids table-responsive">
             <div class="middle-content">
               <h4 class="title">Leave Report</h4>
               <!-- start content_slider -->
