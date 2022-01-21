@@ -68,14 +68,14 @@ if(!$conn){
                          $db->query($stable03); 
                          
                          $stable100="CREATE TABLE IF NOT EXISTS Impreset_Information (
-                          id int(11) NOT NULL auto_increment,
+                          id int(11)NOT NULL auto_increment,
                         Emp_No bigint(200)NOT NULL, 
                         Emp_Name varchar(60)NOT NULL,
                         Impreset_purpose Varchar(300)NOT NULL,                                 
                         Impreset_amount int(50)NOT NULL,                                 
                         Impreset_date varchar(11)NOT NULL,
                         Expected_date_of_retirement varchar(11)NOT NULL,
-                        Retirement_amount int(11)NOT NULL,                        
+                        Retirement_amount int(50)NOT NULL,                        
                         PRIMARY KEY(id))";
                $db->query($stable100); 
                         
