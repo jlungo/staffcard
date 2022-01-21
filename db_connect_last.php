@@ -106,6 +106,24 @@ $db->query($stable17);
                                   -- Time bigint(30)NOT NULL,                         
                                   PRIMARY KEY(emp_id) )";
                          $db->query($createStaffBen); 
+
+
+	$tableStaffDep="CREATE TABLE IF NOT EXISTS StaffDep (
+		id int(11) NOT NULL auto_increment,
+		EmployeeNo varchar(20)NOT NULL, 
+		EmployeeName varchar(255)NOT NULL,
+		FDepNo int(3)NOT NULL DEFAULT 0,                                 
+		MDepNo int(3)NOT NULL DEFAULT 0,                               
+		AgeOldDep int(3)NOT NULL DEFAULT 0,
+		AgeYoungDep int(3)NOT NULL DEFAULT 0,
+		`Address` varchar(255)NOT NULL,
+		PRIMARY KEY(id) )";
+		$db->query($tableStaffDep);
+
+
+							 
+
+
 									 	 	
 /// End of Creating Tables SQL Scripts \\\
 
