@@ -13,7 +13,7 @@ $dbname ="staff_db";
 //create connection
 $conn = mysqli_connect($servername,$username,$password,"$dbname");
 if(!$conn){
-    die('could not connect my Sql:' .mysql_error());
+    die('could not connect my Sql:' .mysqli_error($db));
 }
      
 	 $db->query("CREATE DATABASE IF NOT EXISTS `staff_db`");

@@ -40,7 +40,7 @@ if(isset($_GET['ids']))
      ob_clean();
        flush();
 	       readfile('media/'.$name);	
-                mysqli_close();
+                mysqli_close($db);
                 exit;      
 	}
 ?>
