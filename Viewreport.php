@@ -674,24 +674,28 @@ $retrieve = mysqli_query($db,$sqluse);
               </li>
 
               <li class="treeview">
+                <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'>
+                <i class="fa fa-user"></i>
+                <span>Add Employee</span>
+                </a>
+              </li>
+
+
+              <li class="treeview">
                 <a href="#">
                 <i class="fa fa-group"></i>
                 <span>Next of Kin Information</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user-plus"></i>Add Employee</a></li>
                   <li><a data-toggle='modal' data-id='' href='#Nextofkinadd' class='open-adduser'><i class='fa fa-user-plus'></i> Add Next of Kin</a> <!--php page goes at href--></li>
-                  <li><a data-toggle='modal' data-id='' href='#Viewreport' class='open-adduser'><i class="fa fa-address-card-o"></i>View Report</a></li>
+                  <li><a  href='Viewreport.php' ><i class="fa fa-inbox"></i>View Report</a></li>
                  
                 </ul>
               </li>
 
 
-              <!-- <li class="treeview">
-                  <a data-toggle='modal' data-id='' href='#Useradd' class='open-adduser'><i class="fa fa-user"></i>Add Employee</a>
-         
-              </li> -->
+              
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
                </li>
@@ -699,10 +703,7 @@ $retrieve = mysqli_query($db,$sqluse);
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
                </li>
 
-               <!-- Added menu for  of kin
-               <li class="treeview">
-              	  <a data-toggle='modal' data-id='' href='#Nextofkinadd' class='open-adduser'><i class='fa fa-group'></i> Next of Kin</a> <!--php page goes at href-->
-               <!-- </li> --> -->
+              
                           
                 </ul>
           </div>
