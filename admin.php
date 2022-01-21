@@ -537,15 +537,15 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       	<form method="post" action="upload.php" enctype='multipart/form-data'>        		
 
-      <div class="modal-body" >       	
+      <div class="modal-body" ali>
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Disciplinary Type<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="disciplinarytype"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Commited:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datecommited"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
+        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Disciplinary Type<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="disciplinarytype"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;Date Commited:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datecommited"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
   
                                            	      		
          </center>
@@ -581,13 +581,13 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Disciplinary Type<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="disciplinarytype"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Commited:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datecommited"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
+        <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emp No:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empno"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emp Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="empname"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Disciplinary Type<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="disciplinarytype"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;Date Commited:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datecommited"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;Date Discussed:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="datediscussed"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="description"></span></p>
+		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action Taken:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="actiontaken"></span></p>
 			<!-- <input type="hidden" name="entry" value="Disciplinary.php"/>   -->
                                            	      		
          </center>
