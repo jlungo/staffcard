@@ -854,7 +854,7 @@ $retrieve = mysqli_query($db,$sqluse);
 								 <li>
                                   <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
                                  </li>
-								<li> <a href="../logout.php"><i class="fa fa-sign-out"></i> Log Out</a> </li>
+								<li> <a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut</a> </li>
 							</ul>
 						</li>
 					</ul>
