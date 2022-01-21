@@ -79,34 +79,40 @@ mysqli_select_db($db,"staff_db");
 	Expected_date_of_retirement varchar(11)NOT NULL,
 	Retirement_amount int(11)NOT NULL,                        
 	PRIMARY KEY(id))";
-	$db->query($table8); 	
-
-	$table9="CREATE TABLE IF NOT EXISTS StaffIS (emp_no int(11) NOT NULL auto_increment,
-	emp_name varchar(100)NOT NULL,
-	safari_start_date date NOT NULL,                                 
-	return_date date NOT NULL,  
-	purpose_safari varchar(100)NOT NULL,                               
-	authorisation_status varchar(100) NOT NULL,
-	source_fund varchar(300)NOT NULL,
-	PRIMARY KEY(emp_no) )";
-	$db->query($table9); 
+	$db->query($table8); 
+	
+	
+	//Adding The Staff_Benefit Information SQL Script 
+	$createStaffBen="CREATE TABLE IF NOT EXISTS staff_ben (emp_id int(11) NOT NULL auto_increment,
+                                  Employee_numb varchar(300)NOT NULL, 
+                                  Employee_name varchar(300)NOT NULL,
+                                  Benefit_type Varchar(30)NOT NULL,                               
+                                  Benefit_desc varchar(300)NOT NULL,
+                                  Benefit_amount float(10)NOT NULL,
+                                  date_start date NOT NULL,
+                                  date_end date NOT NULL,
+                                  -- Picname varchar(1000)NOT NULL,
+                                  -- Time bigint(30)NOT NULL,                         
+                                  PRIMARY KEY(emp_id) )";
+                         $db->query($createStaffBen); 
 									 	 	
 /// End of Creating Tables SQL Scripts \\\
-	
+		
 	$sql="SELECT * FROM Administrator ";					
 	$result=mysqli_query($db,$sql);
 	$rowcount=mysqli_num_rows($result);
 
 	if($rowcount==0)
 	{
-		$enter="INSERT INTO Administrator (Password,Email,Firstname,Sirname,Mtitle,Phone) 
-			VALUES ('admin','admin@gmail.com','Patrick','Mvuma','Mr','265999107724')";
-		$db->query($enter);
-		  
-		$querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
-		"VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
-		$db->query($querydy) or die('Errorr, query failed to upload');	
+	$enter="INSERT INTO Administrator (Password,Email,Firstname,Sirname,Mtitle,Phone) VALUES	('admin','admin@gmail.com','Patrick','Mvuma','Mr','265999107724')";
+	$db->query($enter);
+	  
+	$querydy = "INSERT INTO Files (Title,Name,Size,Type) ".
+	"VALUES ('Staff','staff.csv','76','application/vnd.ms-excel')";                                 
+	$db->query($querydy) or die('Error, query failed to upload!');	
 
 	}
-                     					 		
+                     
+					 		
+
 ?>
