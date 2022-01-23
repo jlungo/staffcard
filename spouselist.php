@@ -96,11 +96,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   <script>
     $(document).ready(function() {
       $('#example').DataTable({
-
-
       });
     });
   </script>
+	
   <script type="text/javascript">
     $(document).on("click", ".open-Delete", function() {
       var myValue = $(this).data('id');
@@ -145,7 +144,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             swal("Cancelled", "This user is safe :)", "error");
           }
         });
-
     });
   </script>
 
@@ -181,6 +179,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $(".modal-body #staffid").val(myT);
   });
 </script>
+	
 <?php if (isset($_SESSION['memberadded'])) { ?>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -338,9 +337,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   session_destroy();
 }
 ?>
-
-
-
 
 <?php if (isset($_SESSION['pass'])) { ?>
   <script type="text/javascript">
