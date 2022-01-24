@@ -794,7 +794,7 @@ $retrieve = mysqli_query($db,$sqluse);
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM pension ";
+        	 <?php   $sqlmember ="SELECT * FROM pensions ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))

@@ -2,20 +2,15 @@
 	include ('conn.php');	
 	if(isset($_POST['submit']))
     
-        $Emp_No = $_POST['Emp_No'];
-        $Emp_Name = $_POST['Emp_Name'];
-        $Pension_Type = $_POST['Pension_Type'];
-        $Pension_Number = $_POST['Pension_Number'];
-        $Registered_Date = $_POST['Registered_Date'];
-        $Monthly_Contribution = $_POST['Monthly_Contribution'];
-        $Current_Balance = $_POST['Current_Balance'];
+      $emp_no=$_POST['emp_no'];
+      $emp_name=$_POST['emp_name'];
+      $pension_type=$_POST['pension_type'];
+      $pension_number=$_POST['pension_number'];
+      $registered_date=$_POST['registered_date'];
+      $monthly_contribution=$_POST['monthly_contribution'];
+      $current_balance=$_POST['current_balance'];
 	  
-        $sql = "INSERT INTO pension (Emp_No, Emp_Name, Pension_Type, Pension_Number, Registered_Date, Monthly_Contribution, Current_Balance) VALUES ('$Emp_No','$Emp_Name','$Pension_Type','$Pension_Number','$Registered_Date','$Monthly_Contribution','$Current_Balance')";
-        if (mysqli_query($conn, $sql)) {
-         echo "New record has been added successfully !";
-         header('location:pension_report.php');
-      } else {
-         echo "Error: " . $sql . ":-" . mysqli_error($conn);
-      }
-      mysqli_close($conn);
+   mysqli_query($conn,"insert into pensions (emp_no, emp_name, pension_type, pension_number, registered_date, monthly_contribution, current_balance) values ('$emp_no','$emp_name','$pension_type','$pension_number','$registered_date','$monthly_contribution','$current_balance')");
+   header('location:pension_report.php');
+   mysqli_close($conn);
 ?>

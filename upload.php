@@ -144,7 +144,7 @@ include("db_connect.php");
                     $checks=mysqli_num_rows($results);
                      if($checks!=0)
                      {
-      	 	                  $querry="DELETE FROM pension WHERE id='$tutor'";
+      	 	                  $querry="DELETE FROM pensions WHERE id='$tutor'";
                               $results=mysqli_query($db,$querry);
 							  $var = 1 ;
                                echo $var; 
