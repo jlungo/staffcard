@@ -67,7 +67,7 @@
                       }
             //this is our table  "pension information system         
           $stable12="CREATE TABLE IF NOT EXISTS pensions (id int(11) NOT NULL auto_increment,
-                           emp_no varchar(30) NOT NULL,
+                          emp_no varchar(30) NOT NULL,
                           emp_name varchar(300)NOT NULL,
                           pension_type Varchar(30)NOT NULL,                                 
                           pension_number varchar(30)NOT NULL,                                 
