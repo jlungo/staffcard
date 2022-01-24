@@ -792,8 +792,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
                     <th>ID</th>
 
                     <th>EMPLOYEE NO</th>
-                    <th>EMPLOYEE NANME</th>
-
+                    <th>EMPLOYEE NAME</th>
                     <th>MARITAL STATUS</th>
                     <th>SEX</th>
                     <th>DATE MARRIED</th>
