@@ -163,14 +163,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
        var mykm = $(this).data('ik');
 
 
-     $(".modal-title #oldname").val(myTitle);
-       $(".modal-body #oldname").val(myTitle);
-       $(".modal-body #oldpass").val(mykm);
-     $(".modal-body #ss").val(myp);
-     $(".modal-body #bb").val(mym);
-     $(".modal-body #cc").val(myn);
-     $(".modal-body #dd").val(myk);
-      $(".modal-body #staffid").val(myT);
+        $(".modal-title #staffid").val(myT);
+        $(".modal-body #oldname").val(myTitle);
+        $(".modal-body #oldpass").val(mykm);
+        $(".modal-body #ss").val(myp);
+        $(".modal-body #bb").val(mym);
+        $(".modal-body #cc").val(myn);
+        $(".modal-body #dd").val(myk);
+        $(".modal-body #staffid").val(myT);
 });
  </script>
 <?php if(isset($_SESSION['memberadded'])){?>
@@ -372,39 +372,6 @@ $retrieve = mysqli_query($db,$sqluse);
   </div>
   </div>
 
-
-
-<div id="Passwords" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
-      <div class="modal-header" style="background:#222d32">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        EDIT PENSION INFORMATION
-        	</center></h4>
-      </div>
-      <form method="post" action="upload.php" enctype='multipart/form-data'>        		
-      <div class="modal-body" >
-        <center>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='oldname'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='ss'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_number"  id='cc'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_type" id='dd'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="registered_date" id='bb'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="monthly_contribution" id='bb'></span></p>
-          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="current_balance" id='bb'></span></p>
-        </center>
-
-      </div>
-      <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Reset" id="amendreceipt" name="resetpass"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-       </form>
-  </div>
-  </div>
 <div id="Updatepicture" class="modal fade" role="dialog">
   <div class="modal-dialog" style="float:right;width:20%">
     <!-- Modal content-->
@@ -540,6 +507,38 @@ $retrieve = mysqli_query($db,$sqluse);
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="Submit"> &nbsp;
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+       </form>
+  </div>
+  </div>
+
+  <div id="Passwords" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="font-size: 14px; font-family: Times New Roman;color:black;">
+      <div class="modal-header" style="background:#222d32">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
+        EDIT PENSION INFORMATION OF <input style="border: none; background:#222d32" type="text" id="staffid" value="" readonly />
+        	</center></h4>
+      </div>
+      <form method="post" action="edit_pension.php" enctype='multipart/form-data'>        		
+      <div class="modal-body" >
+        <center>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='staffid'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp; &nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_name" id='oldname'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_type" id='ss'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_number"  id='bb'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="registered_date" id='cc'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="monthly_contribution" id='dd'></span></p>
+          <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="current_balance" id='oldpass'></span></p>
+        </center>
+
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="Update" id="amendreceipt" name="resetpass"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -767,13 +766,13 @@ $retrieve = mysqli_query($db,$sqluse);
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-            	<th>EMP NO.</th>
-              <th>EMP NAME</th>
-              <th>PENS. TYPE</th>
-              <th>PENS. NO.</th>              
-              <th>REG DATE</th>
-              <th>MON. DATE</th>           
-              <th>CURRENT BALANCE</th>
+            	<th>EMPLOYEE<br>NUMBER</th>
+              <th>EMPLOYEE<br>NAME</th>
+              <th>PENSION<br>TYPE</th>
+              <th>PENSION<br>NUMBER</th>              
+              <th>REGISTERED<br>DATE</th>
+              <th>MONTHLY<br>CONTRIBUTION</th>           
+              <th>CURRENT<br>BALANCE</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
@@ -802,7 +801,15 @@ $retrieve = mysqli_query($db,$sqluse);
                     <td>$monthly_contribution</td>
                     <td>$current_balance</td>
                     <td>
-                    <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                      <a data-toggle='modal' 
+                        data-id='$emp_no' 
+                        data-ie='$emp_name' 
+                        data-if='$pension_type' 
+                        data-ig='$pension_number'
+                        data-ih='$registered_date' 
+                        data-ij='$monthly_contribution' 
+                        data-ik='$current_balance'
+                        class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
 			                <a data-id='$id'  class='open-Delete-pension btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
