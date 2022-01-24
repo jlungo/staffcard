@@ -136,9 +136,9 @@ include("db_connect.php");
                
           }
 
- if(isset($_POST['pensions'])){ 	
+ if(isset($_POST['pension'])){ 	
 	
-	 $tutor=$_POST['pensions'];
+	 $tutor=$_POST['pension'];
  	 $querry="SELECT * FROM pensions WHERE id='$tutor' ";
                      $results=mysqli_query($db,$querry);
                     $checks=mysqli_num_rows($results);
@@ -146,7 +146,8 @@ include("db_connect.php");
                      {
       	 	                  $querry="DELETE FROM pensions WHERE id='$tutor'";
                               $results=mysqli_query($db,$querry);
-                               echo"ok"; 
+							  $var = 1 ;
+                               echo $var; 
 				      }
 				       
 	
@@ -316,4 +317,36 @@ include("db_connect.php");
 			            }
 
 	}
+
+
+
+
+
+	if(isset($_POST['edit_pension'])){
+	 	                  
+		$emp_no= mysqli_real_escape_string($db,$_POST['emp_no']);
+	   $emp_name = mysqli_real_escape_string($db,$_POST['emp_name']);		
+	 $pension_type=mysqli_real_escape_string($db,$_POST['pension_type']);
+	   $pension_number =mysqli_real_escape_string($db,$_POST['pension_number']);
+		$registered_date = mysqli_real_escape_string($db,$_POST['registered_date']);
+		  $monthly_contribution = mysqli_real_escape_string($db,$_POST['monthly_contribution']);
+		  $current_balance = mysqli_real_escape_string($db,$_POST['current_balance']);
+					 $id = mysqli_real_escape_string($db,$_POST['id']);
+				
+		   
+		  
+		
+		  $check="SELECT * FROM pensions WHERE id='$id' ";
+							  $checks=mysqli_query($db,$check);
+						 $found=mysqli_num_rows($checks);
+							 if($found!=0)
+							 {              
+									 
+									 $quer = "UPDATE pensions SET emp_no='$emp_no', emp_name='$emp_name',pension_type='$pension_type',pension_number='$pension_number',registered_date='$registered_date',monthly_contribution='$monthly_contribution',current_balance='$current_balance' WHERE id='$id' ";
+									   $db->query($quer) or die('Errorr, query failed to update');	
+									   
+									   $_SESSION['pass_edit']="okjs";				
+								   header("Location:pension_report.php");
+}
+						  }
 ?>

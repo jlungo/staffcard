@@ -124,7 +124,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                                       url: "upload.php",
                                                       data: { pension: vals},
                                                       success: function(result) {
-                                                      if(result=="ok"){
+                                                      if(result == 1){
                                                                     swal({title: "Deleted!", text: "Staff has been deleted from the database.", type: "success"},
                                                           function(){
                                                                           location.reload();
@@ -161,9 +161,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
        var myn = $(this).data('ih');
        var myk = $(this).data('ij');
        var mykm = $(this).data('ik');
+       var pensionid = $(this).data('in');
 
 
-        $(".modal-title #staffid").val(myT);
+        $(".modal-title #oldname").val(myTitle);
         $(".modal-body #oldname").val(myTitle);
         $(".modal-body #oldpass").val(mykm);
         $(".modal-body #ss").val(myp);
@@ -171,6 +172,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         $(".modal-body #cc").val(myn);
         $(".modal-body #dd").val(myk);
         $(".modal-body #staffid").val(myT);
+        $(".modal-body #pensionid").val(pensionid);
 });
  </script>
 <?php if(isset($_SESSION['memberadded'])){?>
@@ -310,6 +312,20 @@ $(document).ready(function(){
 
                     </script>
       <?php  session_destroy(); }?>
+
+
+
+      <?php if(isset($_SESSION['pass_edit'])) {?>
+<script type="text/javascript">
+
+$(document).ready(function(){
+ 		                           swal({title: "Successful!", text: "pension edited!!.", type: "success"});
+
+                               });
+
+                    </script>
+      <?php  session_destroy(); }?>
+
 
 
       <?php   $sqlid ="SELECT * FROM Users Order BY id DESC";
@@ -496,7 +512,7 @@ $retrieve = mysqli_query($db,$sqluse);
 
       <div class="modal-body" >       	
       <center> 
-            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee No.:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_no"></span></p>
+            <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_no"></span></p>
         	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_name"></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Pension Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_type"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Pension Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="pension_number"></span></p>
@@ -521,10 +537,10 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        EDIT PENSION INFORMATION OF <input style="border: none; background:#222d32" type="text" id="staffid" value="" readonly />
+        EDIT PENSION INFORMATION OF <input style="border: none; background:#222d32" type="text" id="oldname" value="" readonly />
         	</center></h4>
       </div>
-      <form method="post" action="edit_pension.php" enctype='multipart/form-data'>        		
+      <form method="post" action="upload.php" enctype='multipart/form-data'>        		
       <div class="modal-body" >
         <center>
           <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;Employee Number:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="emp_no" id='staffid'></span></p>
@@ -534,11 +550,12 @@ $retrieve = mysqli_query($db,$sqluse);
           <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Registered Date:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="date" name="registered_date" id='cc'></span></p>
           <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Monthly Contribution:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="monthly_contribution" id='dd'></span></p>
           <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;Current Balance:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="current_balance" id='oldpass'></span></p>
+          <input type= "hidden" name="id" id ="pensionid" />
         </center>
 
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" value="Update" id="amendreceipt" name="resetpass"> &nbsp;
+        <input type="submit" class="btn btn-success" value="Update" id="edit_pension" name="edit_pension"> &nbsp;
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
       </div>
@@ -783,7 +800,7 @@ $retrieve = mysqli_query($db,$sqluse);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
 	                 {
-                        $id = $found['emp_no'];
+                        $id = $found['id'];
                         $emp_no=$found['emp_no'];
                         $emp_name=$found['emp_name'];
                         $pension_number=$found['pension_number'];
@@ -802,6 +819,7 @@ $retrieve = mysqli_query($db,$sqluse);
                     <td>$current_balance</td>
                     <td>
                       <a data-toggle='modal' 
+                        data-in='$id'
                         data-id='$emp_no' 
                         data-ie='$emp_name' 
                         data-if='$pension_type' 
