@@ -142,6 +142,19 @@ $db->query($stable17);
 	$db->query($querydy) or die('Error, query failed to upload!');	
 
 	}
+
+	       //Disciplinary Information System create table  SQL script                        
+		   $disciplinarytable="CREATE TABLE IF NOT EXISTS Disciplinary (id int(11) NOT NULL auto_increment,
+		   Emp_No int(11) NOT NULL,
+		   Emp_Name varchar(300)NOT NULL, 
+		   Disciplinary_Type varchar(300)NOT NULL,
+		   Date_commited DATE NOT NULL,
+		   Date_discussed DATE NOT NULL,  
+		   Description TEXT NOT NULL,                             
+		   Action_taken TEXT NOT NULL,                                                      
+		   PRIMARY KEY(id) )";
+  $db->query($disciplinarytable);                             
+
                      
 					 		
 
