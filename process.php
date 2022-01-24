@@ -1,5 +1,5 @@
 <?php 
-include_once 'db_connect.php';
+include_once 'conn.php';
 if(isset($_POST['save']))
 {   $emp_no =$_POST['emp_no'];
     $emp_name =$_POST['emp_name'];
@@ -8,7 +8,7 @@ if(isset($_POST['save']))
     $acc_desc =$_POST['acc_desc'];
     $acc_date =$_POST['acc_date'];
     $any_desc =$_POST['any_desc'];
-    $sql = "INSERT INTO workplace (emp_no,emp_name,job_desc,acc_type,acc_desc,acc_date,any_desc) 
+    $sql = "INSERT INTO workplace (Emp_No,Emp_Name,Job_desc,Acc_type,Acc_desc,Acc_date,Any_desc) 
     VALUES('$emp_no','$emp_name','$job_desc','$acc_type', '$acc_desc', '$acc_date', '$any_desc')";
     if(mysqli_query($conn,$sql)){
         echo "New Accident Incident record created successfully!";

@@ -820,11 +820,11 @@ $retrieve = mysqli_query($db,$sqluse);
 	                 {
                         $emp_no=$found['Emp_No'];
                         $emp_name=$found['Emp_Name'];
-                        $job_desc=$found['job_desc'];
-                        $acc_type=$found['acc_type'];
-                        $acc_desc=$found['acc_desc'];
-                        $acc_date=$found['acc_date'];
-                        $any_desc=$found['any_desc'];
+                        $job_desc=$found['Job_desc'];
+                        $acc_type=$found['Acc_type'];
+                        $acc_desc=$found['Acc_desc'];
+                        $acc_date=$found['Acc_date'];
+                        $any_desc=$found['Any_desc'];
 					    	 
 			      echo"<tr>    
                     <td>$emp_no</td>                                       

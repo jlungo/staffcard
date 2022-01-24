@@ -541,27 +541,31 @@ $retrieve = mysqli_query($db,$sqluse);
               <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
               <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Certificate obtained:*</label><br>
-            <input style="width:270px;" type="text" name="cert_obtained" ></span></p><br>
+            <label for="job_desc" style="color: red;font-size:20px;">Job Description:*</label><br>
+            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="current_rank" style="color: red;font-size:20px;">Institution:*</label><br>
-               <input style="width:270px;" type="text" name="institution" ></span></p><br>
+               <label for ="Acc_type" style="color: red;font-size:20px;">Accident Type:*</label><br>
+
+               <input style="width:270px;" type="text" name="acc_type" ></span></p><br>
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Institution Adress:*</label><br>
-               <input style="width:270px;" type="text" name="institution_add" ></span></p><br>
+               <label for="Acc_desc" style="color: red;font-size:20px;">Accident Description:*</label><br>
+               <input style="width:270px;" type="text" name="acc_desc" ></span></p><br>
+
+               
         	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="date_promoted" style="color: red;font-size:20px;">Year started ACCIDENT:*</label><br>
-               <input style="width:270px;" type="date" name="year_stated_edu" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label style="color: red;font-size:20px;">Year graduated:*</label><br>
-               <input style="width:270px;" type="text" name="year_graduated" ></span></p><br>
+               <label for="acc_date" style="color: red;font-size:20px;">Accident Date:*</label><br>
+               <input style="width:270px;" type="date" name="acc_date" ></span></p><br>
+
+               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+               <label for="new_rank" style="color: red;font-size:20px;">Any Description:*</label><br>
+              <textarea name="any_desc"> </textarea>
                                    	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
          </center>
-         
       </div>
       <div class="modal-footer">
         <input type="submit" class="btn btn-success" value="submit" id="addmember" name="save"> &nbsp;
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
       </div>
       </div>
        </form>
