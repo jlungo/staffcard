@@ -28,7 +28,6 @@ $retrieved = mysqli_query($db,$sqluser);
 <!DOCTYPE HTML>
 <html>
 <head>
-
 <title>Pension Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -100,7 +99,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         } );
 
       </script>
-<script type="text/javascript"> 
+<script type="text/javascript">
             $(document).on("click", ".open-Delete-pension", function () {
                                   var myValue = $(this).data('id');
                                         swal({
@@ -111,10 +110,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         cancelButtonColor: "red",
                                         confirmButtonColor: "green",
                                         confirmButtonText: "Yes, remove!",
-                                        cancelButtonText: "No, cancel!",
+                                         cancelButtonText: "No, cancel!",
                                         closeOnConfirm: false,
                                         closeOnCancel: false,
-                                        buttonsStyling: false
+                                          buttonsStyling: false
                                         },
                      function(isConfirm){
                                       if (isConfirm) {
@@ -781,7 +780,7 @@ $retrieve = mysqli_query($db,$sqluse);
                          </div>
 
 					     <table id="example" class="display nowrap" style="width:100%">
-        <thead>
+               <thead>
             <tr>
             	<th>EMPLOYEE<br>NUMBER</th>
               <th>EMPLOYEE<br>NAME</th>
@@ -795,7 +794,7 @@ $retrieve = mysqli_query($db,$sqluse);
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM pensions ";
+        	 <?php   $sqlmember ="SELECT * FROM pension ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
@@ -831,11 +830,11 @@ $retrieve = mysqli_query($db,$sqluse);
                     </td>
 			              <td>
 			                <a data-id='$id'  class='open-Delete-pension btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
-			              </td>			 
-                </tr>"; 
-					 
-					 } 
-		
+			              </td>
+                </tr>";
+
+					 }
+
 		           	?>
             </tbody>
 
@@ -900,7 +899,7 @@ $retrieve = mysqli_query($db,$sqluse);
     </script>
 
 	<!-- Bootstrap Core JavaScript -->
-   <script src="admin/js/bootstrap.js""> </script>
+   <script src="admin/js/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	 	<script src="css/bootstrap-dropdownhover.js"></script>
 
