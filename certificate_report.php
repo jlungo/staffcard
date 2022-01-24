@@ -815,13 +815,13 @@ $retrieve = mysqli_query($db,$sqluse);
                     <td>$year_issued</td>
                     <td>$date_uploaded</td>
                     <td>
-                    <a  href='#' class='btn  btn-success' title='click to print report' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                    <a  href='#' class='btn  btn-success' title='print certificate' ><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                          </td>
                     <td>
-                    <a data-toggle='modal' data-id='$id' data-ie='$emp_no' data-if='$emp_name' data-ig='$certificate_type' data-ih='$issued_by' data-ij='$year_issued' data-ik='$date_uploaded' data-il='$attachement_name' class='open-certificate_edit btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                    <a data-toggle='modal' data-id='$id' data-ie='$emp_no' data-if='$emp_name' data-ig='$certificate_type' data-ih='$issued_by' data-ij='$year_issued' data-ik='$date_uploaded' data-il='$attachement_name' class='open-certificate_edit btn  btn-info' title='edit certificate' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                     </td>
 			              <td>
-			                <a data-id='$id'  class='open-Delete-certificate btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+			                <a data-id='$id'  class='open-Delete-certificate btn  btn-danger' title='delete certificate' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
 			              </td>			 
                 </tr>"; 
 					 
@@ -843,7 +843,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		</div>
 	<!--footer-->
 	<div class="footer">
-	  <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com
+	  <p>© 2022 Attainment . All Rights Reserved | Design and developed by Martin Msuya martincalvin731@gmail.com
 
 			</p>
 	</div>

@@ -73,7 +73,7 @@
                           issued_by varchar(50)NOT NULL,
                           year_issued int(4)NOT NULL,                                 
                           date_uploaded date NOT NULL,
-                          attachment_name varchar(1000)NOT NULL,                    
+                          attachment_name varchar(1000) NOT NULL,                    
                           PRIMARY KEY(id) )";
               $db->query($stable456);
                       
