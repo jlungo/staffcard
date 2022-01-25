@@ -50,7 +50,7 @@
                          TimeIn int(7) NOT NULL DEFAULT 0,                               
                          TimeOuty int(7) NOT NULL DEFAULT 0,
                          ActivitiesList varchar(300) NOT NULL DEFAULT 0,
-                         Supervisor varchar(300) NOT NULL,
+                         Supervisor varchar(600) NOT NULL,
                          
                          PRIMARY KEY(id) )";
                          $db->query($stable237); 
