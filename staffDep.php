@@ -7,7 +7,7 @@ if(isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){
 	$userid=$_COOKIE['adminid'];
 $useremail=$_COOKIE['adminemail'];
 
-$sqluser ="SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'";
+$sqluser ="SELECT * FROM Administrator WHERE Password='$userid' && Email='$useremail'"; //selecting all data from administrator table
 
 $retrieved = mysqli_query($db,$sqluser);
     while($found = mysqli_fetch_array($retrieved))
