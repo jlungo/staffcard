@@ -834,12 +834,7 @@ $retrieve = mysqli_query($db,$sqluse);
 		<div id="page-wrapper"  >
 			<div class="main-page" >
 	
-		
-		
-				
-				
-				
-	
+
 			<div class="charts">		
 			<div class="mid-content-top charts-grids">
 				<div class="middle-content">
