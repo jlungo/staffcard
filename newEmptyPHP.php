@@ -1,3 +1,13 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+=======
+>>>>>>> 1b3a067944470e9a8f5ac9ba4ab913a0ac62a68f
 <?php 
 session_start();
 include("db_connect.php");
