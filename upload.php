@@ -362,10 +362,10 @@ if (isset($_POST['add_staff_deduction'])) {
 			$db->query($query) or die('Error1, query failed');
 
 			$memberadd = "Deduction Successfull Added";
-			$_SESSION['memberadded'] = $memberadd;
+			$_SESSION['deductionadded'] = $memberadd;
 			header("Location: deductions_staff.php");  //member added successfully
 		} else {
-			$_SESSION['memberexist'] = "Deduction already exist";
+			$_SESSION['deductionexist'] = "Deduction already exist";
 			header("Location: deductions_staff.php");
 		}
 	} else {
