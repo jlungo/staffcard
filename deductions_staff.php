@@ -899,7 +899,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 											<th>Emp No</th>
 											<th>Emp Name</th>
 											<th>Deduction Type</th>
-											<th>Deduction Title</th>
+											<!-- <th>Deduction Title</th> -->
 											<th>Total Repayment</th>
 											<th>Start Date</th>
 											<th>End Date</th>
@@ -908,30 +908,31 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 									</thead>
 									<tbody>
 										<?php
-									$sqlmember = "SELECT * FROM staff_deduction";
+									$sqlmember = "SELECT A.*, B.title, C.Firstname, C.Sirname
+										FROM staff_deduction A, deduction B, users C
+										WHERE A.staff_id=C.id AND A.deduction_id=B.id";
 									$retrieve = mysqli_query($db, $sqlmember);
 									$count = 1;
 									while ($found = mysqli_fetch_array($retrieve)) {
 										$staff_id = $found['staff_id'];
-										$title = $found['deduction_id'];
+										$deduction_title = $found['title'];
+										$Firstname = $found['Firstname'];
+										$Sirname = $found['Sirname'];
+										$Firstname = $found['Firstname'];
 										$total_repayment = $found['total_repayment'];
 										$deducted_amount = $found['deducted_amount'];
 										$start_date = $found['start_date'];
 										$end_date = $found['end_date'];
+										
+										$empName = "$Firstname $Sirname";
 
 										echo "<tr>
 											<td>$count</td><td>$staff_id</td>
-											<td>Employee</td><td>$amount</td>
-											<td>$percentage</td>
-											<td>
-												
-											</td>
-											<td>
-												
-											</td>
-											<td>
-												
-											</td></tr>";
+											<td>$empName</td><td>$deduction_title</td>
+											<td>$total_repayment</td>
+											<td>$start_date</td><td>$end_date</td>
+											<td>$deducted_amount</td>
+											</tr>";
 										$count++;
 									}
 									?>
