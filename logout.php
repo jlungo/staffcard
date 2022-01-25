@@ -9,7 +9,7 @@ include("db_connect.php");
 	   	    setcookie("userid",$passwords,time()-(60*60*24*7));
 			setcookie("useremail",$user_email,time()-(60*60*24*7));
 			$queryz = "UPDATE Users Set Online='Offline' WHERE Password='$passwords' ";                        
-        $db->query($queryz) or die('Errorr, query failed');	
+        $db->query($queryz) or die('Errorr, query failed!');	
 							
 		    header("Location: index.php");
 	   }
