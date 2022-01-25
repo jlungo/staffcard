@@ -293,10 +293,10 @@ if (isset($_POST['add_deduction'])) {
 			$db->query($query) or die('Error1, query failed');
 
 			$memberadd = "tyy";
-			$_SESSION['memberadded'] = $memberadd;
+			$_SESSION['deductionadded'] = $memberadd;
 			header("Location: deductions.php");  //member added successfully
 		} else {
-			$_SESSION['memberexist'] = "Deduction already exist";
+			$_SESSION['deductionexist'] = "Deduction already exist";
 			header("Location: deductions.php");
 		}
 	} else {
@@ -317,7 +317,7 @@ if (isset($_POST['edit_deduction'])) {
 		$db->query($query) or die('Error1, query failed');
 
 		$memberadd = "tyy";
-		$_SESSION['memberadded'] = $memberadd;
+		$_SESSION['deductionadded'] = $memberadd;
 		header("Location: deductions.php");  //member added successfully
 	} else {
 		$_SESSION['emptytextboxes'] = "Not all text boxes were completed";

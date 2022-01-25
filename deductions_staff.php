@@ -197,6 +197,21 @@ if (isset($_COOKIE['adminid']) && $_COOKIE['adminemail']) {
 	<?php
 	session_destroy();
 } ?>
+	<?php if (isset($_SESSION['deductionadded'])) { ?>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		swal({
+			title: "Successful!",
+			text: "Deduction stored successfully!!.",
+			type: "success"
+		});
+	});
+	</script>
+
+	<?php
+	session_destroy();
+} ?>
+
 	<?php if (isset($_SESSION['memberexist'])) { ?>
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -923,7 +938,7 @@ while ($foundk = mysqli_fetch_array($retrieve)) {
 										$deducted_amount = $found['deducted_amount'];
 										$start_date = $found['start_date'];
 										$end_date = $found['end_date'];
-										
+
 										$empName = "$Firstname $Sirname";
 
 										echo "<tr>
