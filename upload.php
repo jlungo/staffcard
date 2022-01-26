@@ -162,7 +162,7 @@ if(isset($_POST['addmember']))
 			  
 	 
 									
-									$check="SELECT * FROM Next_Of_Kin_Information ";
+									$check="SELECT * FROM Next_Of_Kin_Information WHERE nname ='$nname' ";
 									$checks=mysqli_query($db,$check);
 							   $found=mysqli_num_rows($checks);
 								   if($found==0)
