@@ -533,34 +533,67 @@ $retrieve = mysqli_query($db,$sqluse);
       	<form method="post" action="process.php" enctype='multipart/form-data'>        		
 
       <div class="modal-body" >       	
-      	<center> 
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp;&nbsp;
-            <label for="emp_no" style="color: red;font-size:20px;">Emp No:*</label><br>
-            <input style="width:270px;" type="text" name="emp_no" ></span></p><br>
-        	    <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-              <label for="emp_name" style="color: red;font-size:20px;">Emp Name:*</label><br>
-              <input style="width:270px;" type="text" name="emp_name" ></span></p><br>
-        		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <label for="job_desc" style="color: red;font-size:20px;">Job Description:*</label><br>
-            <input style="width:270px;" type="text" name="job_desc" ></span></p><br>
+      <center> 
+      <table>
 
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;
-               <label for ="Acc_type" style="color: red;font-size:20px;">Accident Type:*</label><br>
+<tr>
 
-               <input style="width:270px;" type="text" name="acc_type" ></span></p><br>
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="Acc_desc" style="color: red;font-size:20px;">Accident Description:*</label><br>
-               <input style="width:270px;" type="text" name="acc_desc" ></span></p><br>
+<td><p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+    <label for="emp_no" style="color: black;font-size:20px;">Emp No:*</label></td> <td> <input style="width:270px;" type="text" name="emp_no" ></span></p></td>
 
-               
-        	     <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="acc_date" style="color: red;font-size:20px;">Accident Date:*</label><br>
-               <input style="width:270px;" type="date" name="acc_date" ></span></p><br>
+</tr>
 
-               <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
-               <label for="new_rank" style="color: red;font-size:20px;">Any Description:*</label><br>
-              <textarea name="any_desc"> </textarea>
-                                   	 <input type="hidden" name="page" value="admin.php"/>                                                        	      		
+<tr> 
+<td><p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+      <label for="emp_name" style="color: black;font-size:20px;">Emp Name:*</label></td>  
+<td>              <input style="width:270px;" type="text" name="emp_name" ></span></p>
+</td>  
+</tr>
+
+<tr> 
+<td><p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+    <label for="job_desc" style="color: black;font-size:20px;">Job Description:*</label></td>  
+<td><input style="width:270px;" type="text" name="job_desc" ></span></p></td>  
+</tr>
+
+<tr> 
+<td><p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+       <label for ="acc_type" style="color: black;font-size:20px;">Accident Type:*</label></td>  
+<td>               <input style="width:270px;" type="text" name="acc_type" ></span></p>
+</td>  
+</tr>
+
+<tr> 
+<td>                <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+       <label for="acc_desc" style="color: black;font-size:20px;">Accident Description:*</label>  </td>  
+<td>               <input style="width:270px;" type="text" name="acc_desc" ></span></p>
+</td>  
+</tr>
+
+
+<tr> 
+<td> <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+       <label for="acc_date" style="color: black;font-size:20px;">Accident Date:*</label>  
+</td>  
+<td>        <input style="width:270px;" type="date" name="acc_date" ></span>
+</p>
+</td>  
+</tr>
+
+<tr> 
+
+<td>   <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">
+       <label for="any_desc" style="color: black;font-size:20px;">Any Description:*</label> </td>  
+<td> <br> <textarea name="any_desc"style="width:270px;" > </textarea>  </td>  
+</tr>
+
+<input type="hidden" name="page" value="admin.php"/>                                                        	      		
+
+
+
+
+
+</table>                                                     	      		
          </center>
       </div>
       <div class="modal-footer">
@@ -571,7 +604,18 @@ $retrieve = mysqli_query($db,$sqluse);
        </form>
   </div>
   </div>
+
+  <div id="add_promotion" class="modal fade" role="dialog">
+
   
+  
+  
+
+  </div>
+
+
+
+
  <div id="Initialisation2" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -800,7 +844,7 @@ $retrieve = mysqli_query($db,$sqluse);
                 <th>Current Rank</th>
                 <th>New Promotion Rank</th>           
                 <th>Date Promoted</th>
-                <th>Highest ACCIDENT Level</th>
+                <th>Highest Accident Level</th>
                 
             </tr>
         </thead>

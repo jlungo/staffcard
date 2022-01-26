@@ -14,7 +14,7 @@
      $job_desc =$_POST['job_desc'];
      $acc_type =$_POST['acc_type'];
      $acc_desc =$_POST['acc_desc'];
-     $Acc_date =$_POST['Acc_date'];
+     $Acc_date =$_POST['acc_date'];
      $any_desc =$_POST['any_desc'];
 
 

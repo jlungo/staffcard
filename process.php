@@ -8,10 +8,12 @@ if(isset($_POST['save']))
     $acc_desc =$_POST['acc_desc'];
     $acc_date =$_POST['acc_date'];
     $any_desc =$_POST['any_desc'];
-    $sql = "INSERT INTO workplace (Emp_No,Emp_Name,Job_desc,Acc_type,Acc_desc,Acc_date,Any_desc) 
+    $sql = "INSERT INTO workplace (Emp_No,Emp_Name,Job_desc,Acc_type,Acc_desc,Acc_date,any_desc) 
     VALUES('$emp_no','$emp_name','$job_desc','$acc_type', '$acc_desc', '$acc_date', '$any_desc')";
     if(mysqli_query($conn,$sql)){
         echo "New Accident Incident record created successfully!";
+        header("Location:accident_report.php");
+
     } else {
         echo "Error: " . $sql . " ".mysqli_error($conn);
     }
