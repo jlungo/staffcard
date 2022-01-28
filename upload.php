@@ -48,16 +48,16 @@ include("db_connect.php");
 				               {
 				               	$mtitle="";
 				               }
-		   $check="SELECT * FROM workplace WHERE id='$id' ";
+		   $check="SELECT * FROM users WHERE id='$id' ";
 						       $checks=mysqli_query($db,$check);
 						  $found=mysqli_num_rows($checks);
 							  if($found!=0)
 							  {              $f=move_uploaded_file ($orgtmpName,'images/'.$orgName);
 					                  if(isset($f)){//image is a folder in which you will save documents
-                                                 $queryz = "UPDATE workplace SET Picname='$orgName' WHERE id='$id' ";
+                                                 $queryz = "UPDATE users SET Picname='$orgName' WHERE id='$id' ";
                                              $db->query($queryz) or die('Errorr, query failed to upload picture');}	
 									  
-									  $quer = "UPDATE workplace SET Firstname='$mfname',Sirname='$msname',Mtitle='$mtitle',Email='$memail',Staffid='$mid',Rank='$rank',Department='$minstititution' WHERE id='$id' ";
+									  $quer = "UPDATE users SET Firstname='$mfname',Sirname='$msname',Mtitle='$mtitle',Email='$memail',Staffid='$mid',Rank='$rank',Department='$minstititution' WHERE id='$id' ";
                                         $db->query($quer) or die('Errorr, query failed to update');	
 										
 										$_SESSION['pass']="okjs";				
@@ -110,14 +110,14 @@ if(isset($_POST['addmember']))
 				               	$mtitle="";
 				               }
 							   
-							   $check="SELECT * FROM workplace WHERE Firstname='$mfname' && Sirname='$msname'";
+							   $check="SELECT * FROM users WHERE Firstname='$mfname' && Sirname='$msname'";
 						       $checks=mysqli_query($db,$check);
 						  $found=mysqli_num_rows($checks);
 							  if($found==0)
 							  {
 							  	                                  move_uploaded_file ($orgtmpName,'images/'.$orgName);
 								
-							  	$query = "INSERT INTO workplace (Firstname,Sirname,Mtitle,Email,Staffid,Rank,Department,Online,Picname) ".
+							  	$query = "INSERT INTO users (Firstname,Sirname,Mtitle,Email,Staffid,Rank,Department,Online,Picname) ".
                             "VALUES ('$mfname','$msname', '$mtitle','$mphone','$mpassword','$memail','$minstititution','Offline','$orgName')";
                                  $db->query($query) or die('Error1, query failed');	
 								 
@@ -143,12 +143,12 @@ if(isset($_POST['addmember']))
  if(isset($_POST['accident'])){ 	
 	
 	 $tutor=$_POST['accident'];
- 	 $querry="SELECT * FROM workplace WHERE id='$tutor' ";
+ 	 $querry="SELECT * FROM workplace WHERE emp_no='$tutor' ";
                      $results=mysqli_query($db,$querry);
                     $checks=mysqli_num_rows($results);
                      if($checks!=0)
 					 {
-						$querry="DELETE FROM workplace WHERE id='$tutor'";
+						$querry="DELETE FROM workplace WHERE emp_no='$tutor'";
 					 $results=mysqli_query($db,$querry);
 					 $var = 1 ;
 					  echo $var; 
@@ -284,7 +284,43 @@ if(isset($_POST['addmember']))
                       	     	 	echo"Contents arleady exists"; 
 						        //exit;  
 					      }                
-                     }                
+                     }   
+				//update accident details	 
+ if(isset($_POST['accupdate'])){         
+	           
+						$emp_no = mysqli_real_escape_string($db,$_POST["emp_no"]);	//Email variable
+						$emp_name =mysqli_real_escape_string($db,$_POST["emp_name"]);	        //password variable
+						$job_desc = mysqli_real_escape_string($db,$_POST["job_desc"]);       //institution variable
+						$acc_type = mysqli_real_escape_string($db,$_POST["acc_type"]);      //phone variable
+						$acc_desc= mysqli_real_escape_string($db,$_POST["acc_desc"]);//Firstname variable
+						$acc_date= mysqli_real_escape_string($db,$_POST["acc_date"]);
+						$any_desc= mysqli_real_escape_string($db,$_POST["any_desc"]);
+						$apage= mysqli_real_escape_string($db,$_POST["apage"]);   
+					//   $idz= mysqli_real_escape_string($db,$_POST["pageid"]);   
+							
+							//   $orgName = $_FILES['filed']['name'];
+							// $orgtmpName = $_FILES['filed']['tmp_name'];
+							//   $orgSize = $_FILES['filed']['size'];
+							//  $orgType = $_FILES['filed']['type'];
+					  
+					$sqln="SELECT * FROM workplace  WHERE emp_no='$emp_no' ";
+							 $resultn=mysqli_query($db,$sqln);                    
+								   if($rowcount=mysqli_num_rows($resultn)!=0)
+								   {
+											//    move_uploaded_file ($orgtmpName,'media/'.$orgName);									                   
+											$enter="UPDATE workplace SET emp_no='$emp_no',emp_name='$emp_name',job_desc='$job_desc',acc_type='$acc_type',acc_desc='$acc_desc',acc_date='$acc_date',any_desc='$any_desc' WHERE emp_no='$emp_no' ";
+											$db->query($enter);
+											
+											$_SESSION['regX']="Pamzey";
+											
+										   header("Location:accident_report.php");
+																	   
+								   }
+								else{
+												  echo"Contents arleady exists"; 
+										  //exit;  
+									}                
+							   }  
                  
  if(isset($_POST["bulk"]))
 	{
@@ -322,5 +358,5 @@ if(isset($_POST['addmember']))
 
 	}
 ?>
- 	
-?>
+
+<!-- ?> -->
