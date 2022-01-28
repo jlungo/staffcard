@@ -891,7 +891,7 @@ $retrieve = mysqli_query($db,$sqluse);
                                 <ul class="treeview-menu">
                                     <li><a data-toggle='modal' data-id='' href='#add_promotion' class='open-Initial'><i
                                                 class="fa fa-plus"></i>Add Accident History</a></li>
-                                    <li><a href='ACCIDENT_report.php' class='open-Initial2'><i
+                                    <li><a href='Accident_report.php' class='open-Initial2'><i
                                                 class="fa fa-minus"></i>List of staff & Accident info</a></li>
                                 </ul>
                             </li>
@@ -989,17 +989,22 @@ $retrieve = mysqli_query($db,$sqluse);
                                 <thead>
                                     <tr>
 
+
+
                                         <th>Emp No</th>
                                         <th>Emp Name</th>
                                         <th>StaffID</th>
                                         <th>Email</th>
                                         <th>Department</th>
                                         <th>Rank</th>
-                                        <th>Actions</th>
-
+                                        <th>Print</th>
+                                        <th>Edit </th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
+
                                     <?php   $sqlmember ="SELECT * FROM users ";
                                           $retrieve = mysqli_query($db,$sqlmember);
                                                           $count=0;
@@ -1029,19 +1034,18 @@ $retrieve = mysqli_query($db,$sqluse);
                                             
                                                     </td>			 
                                                           </tr>";   }  ?>
-                                </tbody>
 
+                                </tbody>
                             </table>
                             <button id="clear-all-button">Clear All Filters</button>
-
                         </div>
-
                     </div>
 
                     <!--//sreen-gallery-cursual---->
                 </div>
             </div>
         </div>
+
         <!--footer-->
         <div class="footer">
             <p>© 2018 Attainment . All Rights Reserved | Design and developed by mvumapatrick@gmail.com

@@ -120,7 +120,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     </script>
     <script type="text/javascript">
     $(document).on("click", ".open-Delete-accident", function() {
-        var myValue = $(this).data('emp_no');
+        var myValue = $(this).data('id');
         swal({
                 title: "Are you sure?",
                 text: "You want to remove this staff from the database!",
@@ -993,7 +993,8 @@ $retrieve = mysqli_query($db,$sqluse);
                                                           $count=0;
                                                   while($found = mysqli_fetch_array($retrieve))
                                                 {
-                                                      $emp_no=$found['emp_No'];
+                                                    // $id = $found['id'];
+                                                    $emp_no=$found['emp_No'];
                                                       $emp_name=$found['emp_Name'];
                                                       $job_desc=$found['job_desc'];
                                                       $acc_type=$found['acc_type'];
@@ -1014,7 +1015,7 @@ $retrieve = mysqli_query($db,$sqluse);
                                                   <a data-toggle='modal' class='open-Passwords btn  btn-info' title='edit user details' href='#edit_promotion$count'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                                                   </td>
                                                   <td>
-                                                  <a data-id='$emp_no'  class='open-Delete-accident btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
+                                                  <a data-id='$id'  class='open-Delete-accident btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-trash' style='color:white;'></span></a>
                                                   </td>			 
                                                </tr>"; ?>
 

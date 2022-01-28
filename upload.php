@@ -143,12 +143,12 @@ if(isset($_POST['addmember']))
  if(isset($_POST['accident'])){ 	
 	
 	 $tutor=$_POST['accident'];
- 	 $querry="SELECT * FROM workplace WHERE emp_no='$tutor' ";
+ 	 $querry="SELECT * FROM workplace WHERE id='$tutor' ";
                      $results=mysqli_query($db,$querry);
                     $checks=mysqli_num_rows($results);
                      if($checks!=0)
 					 {
-						$querry="DELETE FROM workplace WHERE emp_no='$tutor'";
+						$querry="DELETE FROM workplace WHERE id='$tutor'";
 					 $results=mysqli_query($db,$querry);
 					 $var = 1 ;
 					  echo $var; 
