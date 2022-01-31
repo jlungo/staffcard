@@ -186,6 +186,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
            <?php
 	   session_destroy();
 		    }?>
+        <?php if (isset($_SESSION['invalidUserCert'])) { ?>
+          <script type="text/javascript">
+ 	          $(document).ready(function(){
+ 	          	                             swal({title: "Error!", text: "No staff with such ID found", type: "error"});
+                                  });
+              </script>
+        <?php }
+        session_destroy();
+        ?>
 		    <?php if(isset($_SESSION['memberexist'])){?>
                 <script type="text/javascript">
             $(document).ready(function(){
@@ -542,7 +551,6 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-body" >       	
       <center> 
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee No.:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_no"></span></p>
-        	  <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Employee Name:<label style="color: red;font-size:20px;">*</label><input style="width:250px;" type="text" name="emp_name"></span></p>
         		<p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Certificate Type:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="certificate_type"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">&nbsp; &nbsp;&nbsp;&nbsp;Issued By:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="text" name="issued_by"></span></p>
             <p style="margin-bottom:10px;"><span style="font-size: 18px; font-weight: bold;">Year Issued:<label style="color: red;font-size:20px;">*</label><input style="width:270px;" type="int" name="year_issued"></span></p>
